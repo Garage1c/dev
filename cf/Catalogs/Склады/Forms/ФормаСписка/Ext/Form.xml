@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Group>Horizontal</Group>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокExtendedTooltip" id="29"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="41">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="42"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="43"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="44">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="45"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="46"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="47">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="48"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="49"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Код" id="6">
+					<DataPath>Список.Code</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="КодКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="КодExtendedTooltip" id="30"/>
+				</LabelField>
+				<LabelField name="Наименование" id="4">
+					<DataPath>Список.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="31"/>
+				</LabelField>
+				<CheckBoxField name="ВыгружатьНаСайт" id="8">
+					<DataPath>Список.ВыгружатьНаСайт</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВыгружатьНаСайтКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ВыгружатьНаСайтExtendedTooltip" id="32"/>
+				</CheckBoxField>
+				<LabelField name="НаименованиеИнтернет" id="71">
+					<DataPath>Список.НаименованиеИнтернет</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наим. на сайте</v8:content>
+						</v8:item>
+					</Title>
+					<Width>18</Width>
+					<ContextMenu name="НаименованиеИнтернетКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="НаименованиеИнтернетРасширеннаяПодсказка" id="73"/>
+				</LabelField>
+				<CheckBoxField name="ОтгрузкаДилерам" id="10">
+					<DataPath>Список.ОтгрузкаДилерам</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОтгрузкаДилерамКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ОтгрузкаДилерамExtendedTooltip" id="33"/>
+				</CheckBoxField>
+				<CheckBoxField name="ОтгрузкаРозничнымКлиентам" id="12">
+					<DataPath>Список.ОтгрузкаРозничнымКлиентам</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОтгрузкаРозничнымКлиентамКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ОтгрузкаРозничнымКлиентамExtendedTooltip" id="34"/>
+				</CheckBoxField>
+				<CheckBoxField name="Ячеестый" id="14">
+					<DataPath>Список.Ячеестый</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЯчеестыйКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ЯчеестыйExtendedTooltip" id="35"/>
+				</CheckBoxField>
+				<CheckBoxField name="РазрешенаБыстраяПродажа" id="16">
+					<DataPath>Список.РазрешенаБыстраяПродажа</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="РазрешенаБыстраяПродажаКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="РазрешенаБыстраяПродажаExtendedTooltip" id="36"/>
+				</CheckBoxField>
+				<CheckBoxField name="УчетПоСбощикамЗаказов" id="18">
+					<DataPath>Список.УчетПоСбощикамЗаказов</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчетПоСбощикамЗаказовКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="УчетПоСбощикамЗаказовExtendedTooltip" id="37"/>
+				</CheckBoxField>
+				<CheckBoxField name="НаСайтеНеПоказыватьВсем" id="59">
+					<DataPath>Список.НаСайтеНеПоказыватьВсем</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НаСайтеНеПоказыватьВсемКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="НаСайтеНеПоказыватьВсемРасширеннаяПодсказка" id="61"/>
+				</CheckBoxField>
+				<CheckBoxField name="РазрешеноПолучениеТовараПриСамовывозе" id="62">
+					<DataPath>Список.РазрешеноПолучениеТовараПриСамовывозе</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="РазрешеноПолучениеТовараПриСамовывозеКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="РазрешеноПолучениеТовараПриСамовывозеРасширеннаяПодсказка" id="64"/>
+				</CheckBoxField>
+				<LabelField name="ОсновнойСкладНаСайте" id="68">
+					<DataPath>Список.ОсновнойСкладНаСайте</DataPath>
+					<ContextMenu name="ОсновнойСкладНаСайтеКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="ОсновнойСкладНаСайтеРасширеннаяПодсказка" id="70"/>
+				</LabelField>
+				<CheckBoxField name="ВыгружатьНаСайтВместеСОсновным" id="65">
+					<DataPath>Список.ВыгружатьНаСайтВместеСОсновным</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВыгружатьНаСайтВместеСОсновнымКонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="ВыгружатьНаСайтВместеСОсновнымРасширеннаяПодсказка" id="67"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+		<Table name="ИнтернетРегионы" id="22">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<Header>false</Header>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<DataPath>ИнтернетРегионы</DataPath>
+			<RowPictureDataPath>ИнтернетРегионы.Picture</RowPictureDataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интернет регионы</v8:content>
+				</v8:item>
+			</Title>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<ContextMenu name="ИнтернетРегионыКонтекстноеМеню" id="23"/>
+			<AutoCommandBar name="ИнтернетРегионыКоманднаяПанель" id="24"/>
+			<ExtendedTooltip name="ИнтернетРегионыExtendedTooltip" id="38"/>
+			<SearchStringAddition name="ИнтернетРегионыСтрокаПоиска" id="50">
+				<AdditionSource>
+					<Item>ИнтернетРегионы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнтернетРегионыСтрокаПоискаКонтекстноеМеню" id="51"/>
+				<ExtendedTooltip name="ИнтернетРегионыСтрокаПоискаРасширеннаяПодсказка" id="52"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ИнтернетРегионыСостояниеПросмотра" id="53">
+				<AdditionSource>
+					<Item>ИнтернетРегионы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнтернетРегионыСостояниеПросмотраКонтекстноеМеню" id="54"/>
+				<ExtendedTooltip name="ИнтернетРегионыСостояниеПросмотраРасширеннаяПодсказка" id="55"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ИнтернетРегионыУправлениеПоиском" id="56">
+				<AdditionSource>
+					<Item>ИнтернетРегионы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнтернетРегионыУправлениеПоискомКонтекстноеМеню" id="57"/>
+				<ExtendedTooltip name="ИнтернетРегионыУправлениеПоискомРасширеннаяПодсказка" id="58"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="Пометка" id="27">
+					<DataPath>ИнтернетРегионы.Check</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПометкаКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ПометкаExtendedTooltip" id="39"/>
+					<Events>
+						<Event name="OnChange">ПометкаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="Значение" id="25">
+					<DataPath>ИнтернетРегионы.Value</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЗначениеКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ЗначениеExtendedTooltip" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СправочникСклады.Ссылка,
+	СправочникСклады.ПометкаУдаления,
+	СправочникСклады.Код,
+	Наименование,
+	СправочникСклады.НаименованиеИнтернет,
+	//ВЫБОР КОГДА &amp;ТекущийЯзык = Значение.Ссылка ТОГДА СправочникСклады.Наименование ИНАЧЕ Перевод.Представление КОНЕЦ Наименование,
+	СправочникСклады.СтрокаПодключения,
+	СправочникСклады.ВыгружатьНаСайт,
+	СправочникСклады.СсылкаНаКарту,
+	СправочникСклады.Адрес,
+	СправочникСклады.РазрешеноПолучениеТовараПриСамовывозе,
+	СправочникСклады.ОтгрузкаДилерам,
+	СправочникСклады.ПриоритетСкладаДилер,
+	СправочникСклады.ПриоритетСкладаРозничныйПокупатель,
+	СправочникСклады.ОтгрузкаРозничнымКлиентам,
+	СправочникСклады.Ячеестый,
+	СправочникСклады.РазрешенаБыстраяПродажа,
+	СправочникСклады.УчетПоСбощикамЗаказов,
+	СправочникСклады.ЯчейкаПеремещенияПоУмолчанию,
+	СправочникСклады.СкладДляОплаты,
+	СправочникСклады.РемонтИнструмента,
+	СправочникСклады.НомерПодразделения,
+	СправочникСклады.ДополнительноеНаименование,
+	СправочникСклады.РозницаДляВсех,
+	СправочникСклады.ПорядокРазмещения,
+	СправочникСклады.СкладыБыстрогоПеремещения,
+	СправочникСклады.Предопределенный,
+	СправочникСклады.ИмяПредопределенныхДанных,
+	СправочникСклады.НаСайтеНеПоказыватьВсем,
+	СправочникСклады.ОсновнойСкладНаСайте,
+	СправочникСклады.ВыгружатьНаСайтВместеСОсновным,
+	СправочникСклады.ВАрхив
+ИЗ
+	Справочник.Склады КАК СправочникСклады
+
+//ЛЕВОЕ СОЕДИНЕНИЕ
+//	РегистрСведений.ПереводыПредставлений Перевод
+//ПО
+//	Язык = &amp;ТекущийЯзык И
+//	СправочникСклады.Ссылка = Перевод.Ссылка</QueryText>
+				<MainTable>Catalog.Склады</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>Наименование</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ВАрхив</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаНезарезервированногоТовара</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ИнтернетРегионы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интернет регионы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

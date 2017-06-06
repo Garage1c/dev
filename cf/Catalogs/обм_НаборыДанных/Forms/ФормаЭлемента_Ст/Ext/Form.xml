@@ -1,0 +1,887 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="35">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="36"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<CheckBoxField name="Активно" id="168">
+					<DataPath>Объект.Активно</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Активно для обмена (если выключить, в обмене участовать не будет)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="АктивноКонтекстноеМеню" id="169"/>
+					<ExtendedTooltip name="АктивноРасширеннаяПодсказка" id="170"/>
+				</CheckBoxField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<Page name="СтраницаОбщие" id="25">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница общие</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаОбщиеРасширеннаяПодсказка" id="26"/>
+					<ChildItems>
+						<UsualGroup name="Группа2" id="37">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="38"/>
+							<ChildItems>
+								<InputField name="Владелец" id="7">
+									<DataPath>Объект.Owner</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВладелецКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="9"/>
+								</InputField>
+								<InputField name="СсылкаДляТеста" id="39">
+									<DataPath>Объект.СсылкаДляТеста</DataPath>
+									<ContextMenu name="СсылкаДляТестаКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="СсылкаДляТестаРасширеннаяПодсказка" id="41"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="стрТипы" id="111">
+							<DataPath>Объект.стрТипы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Типы</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceButton>true</ChoiceButton>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="стрТипыКонтекстноеМеню" id="112"/>
+							<ExtendedTooltip name="стрТипыРасширеннаяПодсказка" id="113"/>
+							<Events>
+								<Event name="StartChoice">стрТипыНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="Группа10" id="101">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Как работает</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="Группа10РасширеннаяПодсказка" id="102"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация5" id="103">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Это как из значения можно получить ключ.
+
+Доступные переменные:
+
+Значение - произвольный, значение для получения ключа (например ссылка на справочник)
+
+Обязательное заполнение:
+
+Ключ - произвольный, в эту переменную необходимо вернуть значение данной сущности (например ссылку на справочник).
+
+</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация5КонтекстноеМеню" id="104"/>
+									<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="105"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа3" id="44">
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="45"/>
+							<ChildItems>
+								<UsualGroup name="Группа12" id="114">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа12РасширеннаяПодсказка" id="115"/>
+									<ChildItems>
+										<LabelDecoration name="Декорация7" id="116">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Алгоритм получения ключа:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация7КонтекстноеМеню" id="117"/>
+											<ExtendedTooltip name="Декорация7РасширеннаяПодсказка" id="118"/>
+										</LabelDecoration>
+										<Button name="СвойАлгоритм_АлгоритмПолученияКлюча" id="121">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.СвойАлгоритм</CommandName>
+											<ExtendedTooltip name="СвойАлгоритм_АлгоритмПолученияКлючаРасширеннаяПодсказка" id="122"/>
+										</Button>
+										<Button name="ВыбратьАлгоритм_АлгоритмПолученияКлюча" id="119">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ВыбратьАлгоритм</CommandName>
+											<ExtendedTooltip name="ВыбратьАлгоритм_АлгоритмПолученияКлючаРасширеннаяПодсказка" id="120"/>
+										</Button>
+										<Button name="ТестПолучениеКлюча" id="42">
+											<Type>Hyperlink</Type>
+											<Representation>PictureAndText</Representation>
+											<Height>1</Height>
+											<CommandName>Form.Command.ТестПолучениеКлюча</CommandName>
+											<ExtendedTooltip name="ТестПолучениеКлючаРасширеннаяПодсказка" id="43"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="АлгоритмПолученияКлюча" id="16">
+									<DataPath>АлгоритмПолученияКлюча</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<MultiLine>true</MultiLine>
+									<ExtendedEdit>true</ExtendedEdit>
+									<TextColor>style:обм_ТекстКода</TextColor>
+									<BackColor>style:обм_ФонТекстаКода</BackColor>
+									<ContextMenu name="АлгоритмПолученияКлючаКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="АлгоритмПолученияКлючаРасширеннаяПодсказка" id="18"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа11" id="106">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Как работает</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="Группа11РасширеннаяПодсказка" id="107"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация6" id="108">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Это как из строкового представления ключа можно получить данную сущность.
+
+Доступные переменные:
+
+Ключ - строка, ключ для получения значения (обычно это текстовый гуид)
+
+Обязательное заполнение:
+
+Значение - произвольный, в эту переменную необходимо вернуть значение данной сущности (например сслку на справочник).
+
+</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация6КонтекстноеМеню" id="109"/>
+									<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="110"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа4" id="46">
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="47"/>
+							<ChildItems>
+								<UsualGroup name="Группа13" id="123">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа13РасширеннаяПодсказка" id="124"/>
+									<ChildItems>
+										<LabelDecoration name="Декорация8" id="125">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Алгоритм получения значения:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация8КонтекстноеМеню" id="126"/>
+											<ExtendedTooltip name="Декорация8РасширеннаяПодсказка" id="127"/>
+										</LabelDecoration>
+										<Button name="СвойАлгоритм_АлгоритмПолученияЗначения" id="128">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.СвойАлгоритм</CommandName>
+											<ExtendedTooltip name="СвойАлгоритм_АлгоритмПолученияЗначенияРасширеннаяПодсказка" id="129"/>
+										</Button>
+										<Button name="ВыбратьАлгоритм_АлгоритмПолученияЗначения" id="130">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ВыбратьАлгоритм</CommandName>
+											<ExtendedTooltip name="ВыбратьАлгоритм_АлгоритмПолученияЗначенияРасширеннаяПодсказка" id="131"/>
+										</Button>
+										<Button name="ТестПолучениеЗначения" id="48">
+											<Type>Hyperlink</Type>
+											<Representation>PictureAndText</Representation>
+											<Height>1</Height>
+											<CommandName>Form.Command.ТестПолучениеЗначения</CommandName>
+											<ExtendedTooltip name="ТестПолучениеЗначенияРасширеннаяПодсказка" id="49"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="АлгоритмПолученияЗначения" id="32">
+									<DataPath>АлгоритмПолученияЗначения</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<MultiLine>true</MultiLine>
+									<ExtendedEdit>true</ExtendedEdit>
+									<TextColor>style:обм_ТекстКода</TextColor>
+									<BackColor>style:обм_ФонТекстаКода</BackColor>
+									<ContextMenu name="АлгоритмПолученияЗначенияКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="АлгоритмПолученияЗначенияРасширеннаяПодсказка" id="34"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПолучениеДанных" id="21">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получение</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница получение данных</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПолучениеДанныхРасширеннаяПодсказка" id="22"/>
+					<ChildItems>
+						<UsualGroup name="Группа5" id="76">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Как работает</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="77"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация1" id="83">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Алгоритм который должен из переданных ему значений данные для упаковки в json.
+
+Доступные переменные:
+
+Значения - массив, внутри ссылки (Значение)  данных для отправки
+
+Обязательное заполнение:
+
+Данные - произвольный, данные для записи в json
+
+</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="85"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа6" id="81">
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="82"/>
+							<ChildItems>
+								<UsualGroup name="Группа14" id="132">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа14РасширеннаяПодсказка" id="133"/>
+									<ChildItems>
+										<LabelDecoration name="Декорация9" id="134">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Алгоритм получения данных:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация9КонтекстноеМеню" id="135"/>
+											<ExtendedTooltip name="Декорация9РасширеннаяПодсказка" id="136"/>
+										</LabelDecoration>
+										<Button name="СвойАлгоритм_АлгоритмПолученияДанных" id="137">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.СвойАлгоритм</CommandName>
+											<ExtendedTooltip name="СвойАлгоритм_АлгоритмПолученияДанныхРасширеннаяПодсказка" id="138"/>
+										</Button>
+										<Button name="ВыбратьАлгоритм_АлгоритмПолученияДанных" id="139">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ВыбратьАлгоритм</CommandName>
+											<ExtendedTooltip name="ВыбратьАлгоритм_АлгоритмПолученияДанныхРасширеннаяПодсказка" id="140"/>
+										</Button>
+										<Button name="ТестПолученияДанных" id="50">
+											<Type>UsualButton</Type>
+											<Enabled>false</Enabled>
+											<CommandName>Form.Command.ТестПолученияДанных</CommandName>
+											<ExtendedTooltip name="ТестПолученияДанныхРасширеннаяПодсказка" id="51"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="АлгоритмПолученияДанных" id="10">
+									<DataPath>АлгоритмПолученияДанных</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Получение данных</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>50</Width>
+									<MultiLine>true</MultiLine>
+									<ExtendedEdit>true</ExtendedEdit>
+									<TextColor>style:обм_ТекстКода</TextColor>
+									<BackColor>style:обм_ФонТекстаКода</BackColor>
+									<ContextMenu name="АлгоритмПолученияДанныхКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="АлгоритмПолученияДанныхРасширеннаяПодсказка" id="12"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПреобразованиеJSON" id="71">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>JSON</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница преобразование JSON</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПреобразованиеJSONРасширеннаяПодсказка" id="72"/>
+					<ChildItems>
+						<UsualGroup name="Группа7" id="86">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Как работает</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="87"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация2" id="88">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тут обрабатываются значения JSON при записи строки JSON
+
+Доступные переменные:
+
+Свойство - строка, ключ для получения значения (обычно это текстовый гуид) 
+Значение - произвольный, обрабатываемое значения JSON 
+ЭтотОбъект - ссылка на справочник ОбменДанными в котором находится текущий код преобразования 
+Отказ - если в эту переменную установить ИСТИНА тогда такое значение обрабатываться не будет и не запишется в строку JSON
+Обязательное заполнение:
+
+Результат - произвольный, в эту переменную необходимо вернуть резултат для записи в JSON
+</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация2КонтекстноеМеню" id="89"/>
+									<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="90"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа15" id="141">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа15РасширеннаяПодсказка" id="142"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация10" id="143">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Алгоритм преобразования JSON:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация10КонтекстноеМеню" id="144"/>
+									<ExtendedTooltip name="Декорация10РасширеннаяПодсказка" id="145"/>
+								</LabelDecoration>
+								<Button name="СвойАлгоритм_АлгоритмПреобразованияJSON" id="146">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.СвойАлгоритм</CommandName>
+									<ExtendedTooltip name="СвойАлгоритм_АлгоритмПреобразованияJSONРасширеннаяПодсказка" id="147"/>
+								</Button>
+								<Button name="ВыбратьАлгоритм_АлгоритмПреобразованияJSON" id="148">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ВыбратьАлгоритм</CommandName>
+									<ExtendedTooltip name="ВыбратьАлгоритм_АлгоритмПреобразованияJSONРасширеннаяПодсказка" id="149"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="АлгоритмПреобразованияJSON" id="73">
+							<DataPath>АлгоритмПреобразованияJSON</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>50</Width>
+							<MultiLine>true</MultiLine>
+							<ExtendedEdit>true</ExtendedEdit>
+							<TextColor>style:обм_ТекстКода</TextColor>
+							<BackColor>style:обм_ФонТекстаКода</BackColor>
+							<ContextMenu name="АлгоритмПреобразованияJSONКонтекстноеМеню" id="74"/>
+							<ExtendedTooltip name="АлгоритмПреобразованияJSONРасширеннаяПодсказка" id="75"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОтправлениеДанных" id="27">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отправление</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница отправление данных</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаОтправлениеДанныхРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<UsualGroup name="Группа8" id="91">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Как работает</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="92"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация3" id="93">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Алгоритм который передает данные во внешнюю базу.
+
+Доступные переменные:
+
+ЭтотОбъект - ссылка на справочник обмен данными в котором прописан данный код
+
+ДанныеJSON - строка json, данные для передачи ОбменДанными - строка, наименование справочника "Обмен данными" правила которого используются для приема
+
+В заголовке запроса нужно указывать обязательные заголовки для определения каким набором данных обрабатывать запрос:
+
+НаборДанных - строка, наименование справочника "Набор данных" который должен принимать 
+Данные - произвольные данные для обработки
+Обязательное заполнение:
+
+Результат - булево, результат выполнения операции, Истина значит данные ушли
+
+</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация3КонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="95"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа16" id="150">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа16РасширеннаяПодсказка" id="151"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация11" id="152">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Алгоритм отправления данных:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация11КонтекстноеМеню" id="153"/>
+									<ExtendedTooltip name="Декорация11РасширеннаяПодсказка" id="154"/>
+								</LabelDecoration>
+								<Button name="СвойАлгоритм_АлгоритмОтправленияДанных" id="155">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.СвойАлгоритм</CommandName>
+									<ExtendedTooltip name="СвойАлгоритм_АлгоритмОтправленияДанныхРасширеннаяПодсказка" id="156"/>
+								</Button>
+								<Button name="ВыбратьАлгоритм_АлгоритмОтправленияДанных" id="157">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ВыбратьАлгоритм</CommandName>
+									<ExtendedTooltip name="ВыбратьАлгоритм_АлгоритмОтправленияДанныхРасширеннаяПодсказка" id="158"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="АлгоритмОтправленияДанных" id="29">
+							<DataPath>АлгоритмОтправленияДанных</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>50</Width>
+							<MultiLine>true</MultiLine>
+							<ExtendedEdit>true</ExtendedEdit>
+							<TextColor>style:обм_ТекстКода</TextColor>
+							<BackColor>style:обм_ФонТекстаКода</BackColor>
+							<ContextMenu name="АлгоритмОтправленияДанныхКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="АлгоритмОтправленияДанныхРасширеннаяПодсказка" id="31"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПриемДанных" id="23">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прием</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница прием данных</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПриемДанныхРасширеннаяПодсказка" id="24"/>
+					<ChildItems>
+						<UsualGroup name="Группа9" id="96">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Как работает</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="Группа9РасширеннаяПодсказка" id="97"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация4" id="98">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Алгоритм который принимает данные из внешней бызы.
+
+Доступные переменные:
+
+ЭтотОбъект - ссылка на справочник обмен данными в котором прописан данный код
+
+Данные - произвольный, данные пришедшие из другой базы
+
+Обязательное заполнение:
+
+Результат - булево, результат выполнения операции, Истина значит данные расшифрованы и записаны успешно
+
+</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация4КонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="100"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа17" id="159">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа17РасширеннаяПодсказка" id="160"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация12" id="161">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Алгоритм приема данных:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация12КонтекстноеМеню" id="162"/>
+									<ExtendedTooltip name="Декорация12РасширеннаяПодсказка" id="163"/>
+								</LabelDecoration>
+								<Button name="СвойАлгоритм_АлгоритмПриемаДанных" id="164">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.СвойАлгоритм</CommandName>
+									<ExtendedTooltip name="СвойАлгоритм_АлгоритмПриемаДанныхРасширеннаяПодсказка" id="165"/>
+								</Button>
+								<Button name="ВыбратьАлгоритм_АлгоритмПриемаДанных" id="166">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ВыбратьАлгоритм</CommandName>
+									<ExtendedTooltip name="ВыбратьАлгоритм_АлгоритмПриемаДанныхРасширеннаяПодсказка" id="167"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="АлгоритмПриемаДанных" id="13">
+							<DataPath>АлгоритмПриемаДанных</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>50</Width>
+							<MultiLine>true</MultiLine>
+							<ExtendedEdit>true</ExtendedEdit>
+							<TextColor>style:обм_ТекстКода</TextColor>
+							<BackColor>style:обм_ФонТекстаКода</BackColor>
+							<ContextMenu name="АлгоритмПриемаДанныхКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="АлгоритмПриемаДанныхРасширеннаяПодсказка" id="15"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.обм_НаборыДанных</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АлгоритмОтправленияДанных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Алгоритм отправления данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АлгоритмПолученияЗначения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Алгоритм получения значения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АлгоритмПолученияДанных" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Алгоритм получения данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АлгоритмПолученияКлюча" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Алгоритм получения ключа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АлгоритмПреобразованияJSON" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Алгоритм преобразования JSON</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АлгоритмПриемаДанных" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Алгоритм приема данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ТестПолучениеКлюча" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест получение ключа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест получение ключа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТестПолучениеКлюча</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ТестПолучениеЗначения" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест получение значения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест получение ключа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТестПолучениеЗначения</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ТестПолученияДанных" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест получения данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест получение ключа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТестПолученияДанных</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ВыбратьАлгоритм" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать алгоритм из библиотеки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать алгоритм</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыбратьАлгоритм</Action>
+		</Command>
+		<Command name="СвойАлгоритм" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать свой алгоритм</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свой алгоритм</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СвойАлгоритм</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ДругиеРеквизиты">
+			<Type/>
+		</Parameter>
+		<Parameter name="ТипыДляДобавления">
+			<Type/>
+		</Parameter>
+	</Parameters>
+</Form>

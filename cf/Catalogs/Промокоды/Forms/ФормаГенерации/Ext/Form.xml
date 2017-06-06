@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Генерация промо кодов</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="18">
+			<DataPath>Наименование</DataPath>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="19"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="20"/>
+		</InputField>
+		<InputField name="СрокПросоКодаОт" id="7">
+			<DataPath>СрокПромоКодаОт</DataPath>
+			<ContextMenu name="СрокПросоКодаОтКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СрокПросоКодаОтРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="СрокПросоКодаДо" id="4">
+			<DataPath>СрокПромоКодаДо</DataPath>
+			<ContextMenu name="СрокПросоКодаДоКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="СрокПросоКодаДоРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<CheckBoxField name="Многоразовый" id="1">
+			<DataPath>Многоразовый</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид промо кода</v8:content>
+				</v8:item>
+			</Title>
+			<CheckBoxType>Tumbler</CheckBoxType>
+			<EditFormat>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БЛ=Одноразовый; БИ=Многоразовый</v8:content>
+				</v8:item>
+			</EditFormat>
+			<ContextMenu name="МногоразовыйКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="МногоразовыйРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">МногоразовыйПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<InputField name="КоличествоПромокодов" id="13">
+			<DataPath>КоличествоПромокодов</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество промо кодов</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="КоличествоПромокодовКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="КоличествоПромокодовРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="ПроцентСкидки" id="10">
+			<DataPath>ПроцентСкидки</DataPath>
+			<ContextMenu name="ПроцентСкидкиКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ПроцентСкидкиРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<Table name="КаналыПродаж" id="21">
+			<Representation>List</Representation>
+			<Height>3</Height>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<AutoAddIncomplete>false</AutoAddIncomplete>
+			<AutoMarkIncomplete>false</AutoMarkIncomplete>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>КаналыПродаж</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КаналыПродажКонтекстноеМеню" id="22"/>
+			<AutoCommandBar name="КаналыПродажКоманднаяПанель" id="23"/>
+			<ExtendedTooltip name="КаналыПродажРасширеннаяПодсказка" id="24"/>
+			<SearchStringAddition name="КаналыПродажСтрокаПоиска" id="25">
+				<AdditionSource>
+					<Item>КаналыПродаж</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КаналыПродажСтрокаПоискаКонтекстноеМеню" id="26"/>
+				<ExtendedTooltip name="КаналыПродажСтрокаПоискаРасширеннаяПодсказка" id="27"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КаналыПродажСостояниеПросмотра" id="28">
+				<AdditionSource>
+					<Item>КаналыПродаж</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КаналыПродажСостояниеПросмотраКонтекстноеМеню" id="29"/>
+				<ExtendedTooltip name="КаналыПродажСостояниеПросмотраРасширеннаяПодсказка" id="30"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КаналыПродажУправлениеПоиском" id="31">
+				<AdditionSource>
+					<Item>КаналыПродаж</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КаналыПродажУправлениеПоискомКонтекстноеМеню" id="32"/>
+				<ExtendedTooltip name="КаналыПродажУправлениеПоискомРасширеннаяПодсказка" id="33"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnEditEnd">КаналыПродажПриОкончанииРедактирования</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="КаналыПродажКаналПродаж" id="34">
+					<DataPath>КаналыПродаж.КаналПродаж</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="КаналыПродажКаналПродажКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="КаналыПродажКаналПродажРасширеннаяПодсказка" id="36"/>
+					<Events>
+						<Event name="ChoiceProcessing">КаналыПродажКаналПродажОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="КаналыПродажИсточникПромокода" id="37">
+					<DataPath>КаналыПродаж.ИсточникПромокода</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Владелец</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Items.КаналыПродаж.CurrentData.КаналПродаж</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="КаналыПродажИсточникПромокодаКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="КаналыПродажИсточникПромокодаРасширеннаяПодсказка" id="39"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Button name="ГенерацияПромоКодов" id="16">
+			<Type>UsualButton</Type>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<CommandName>Form.Command.ГенерацияПромоКодов</CommandName>
+			<ExtendedTooltip name="ГенерацияПромоКодовРасширеннаяПодсказка" id="17"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Многоразовый" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Многоразовый</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокПромоКодаОт" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок промо кода от</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокПромоКодаДо" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок промо кода до</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроцентСкидки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Процент скидки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>4</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоПромокодов" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество промокодов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Наименование" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КаналыПродаж" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каналы продаж</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КаналПродаж" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Канал продаж</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КаналыПродаж</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИсточникПромокода" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник промокода</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИсточникиРаспространенияПромоКодов</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ГенерацияПромоКодов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Генерация промо кодов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Генерация промо кодов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ГенерацияПромоКодов</Action>
+		</Command>
+	</Commands>
+</Form>

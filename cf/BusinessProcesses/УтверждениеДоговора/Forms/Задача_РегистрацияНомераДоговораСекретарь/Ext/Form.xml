@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Зарегистрировать номер договора</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКнопки" id="70">
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопкиРасширеннаяПодсказка" id="71"/>
+			<ChildItems>
+				<Button name="ЗарегистрироватьДоговор" id="74">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ЗарегистрироватьДоговор</CommandName>
+					<ExtendedTooltip name="ЗарегистрироватьДоговорРасширеннаяПодсказка" id="75"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Адресация" id="52">
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адресация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адресация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="АдресацияРасширеннаяПодсказка" id="53"/>
+			<ChildItems>
+				<UsualGroup name="ЗадачаНазначена" id="54">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задача назначена</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задача назначена</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="ЗадачаНазначенаРасширеннаяПодсказка" id="55"/>
+					<ChildItems>
+						<InputField name="Роль" id="56">
+							<DataPath>Объект.Роль</DataPath>
+							<ContextMenu name="РольКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="РольРасширеннаяПодсказка" id="58"/>
+						</InputField>
+						<InputField name="Пользователь" id="59">
+							<DataPath>Объект.Пользователь</DataPath>
+							<ContextMenu name="ПользовательКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="61"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ЗадачаВыполнена" id="62">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задача выполнена</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задача выполнена</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="ЗадачаВыполненаРасширеннаяПодсказка" id="63"/>
+					<ChildItems>
+						<InputField name="Исполнитель" id="64">
+							<DataPath>Объект.Исполнитель</DataPath>
+							<ContextMenu name="ИсполнительКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="ИсполнительРасширеннаяПодсказка" id="66"/>
+						</InputField>
+						<InputField name="ДатаВыполнения" id="67">
+							<DataPath>Объект.ДатаВыполнения</DataPath>
+							<ContextMenu name="ДатаВыполненияКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ДатаВыполненияРасширеннаяПодсказка" id="69"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ДоговорВладелец" id="121">
+			<DataPath>Договор.Owner</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>false</ChoiceButton>
+			<ContextMenu name="ДоговорВладелецКонтекстноеМеню" id="122"/>
+			<ExtendedTooltip name="ДоговорВладелецРасширеннаяПодсказка" id="123"/>
+		</InputField>
+		<InputField name="НомерДоговора" id="124">
+			<DataPath>НомерДоговора</DataPath>
+			<ContextMenu name="НомерДоговораКонтекстноеМеню" id="125"/>
+			<ExtendedTooltip name="НомерДоговораРасширеннаяПодсказка" id="126"/>
+		</InputField>
+		<UsualGroup name="Группа1" id="127">
+			<Group>Horizontal</Group>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="128"/>
+			<ChildItems>
+				<Pages name="ГруппаКомментарийФайлы" id="129">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа комментарий файлы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа комментарий файлы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаКомментарийФайлыРасширеннаяПодсказка" id="130"/>
+					<ChildItems>
+						<Page name="ГруппаКомментарий" id="131">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Комментарий</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа комментарий</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаКомментарийРасширеннаяПодсказка" id="132"/>
+							<ChildItems>
+								<TextDocumentField name="Комментарий" id="133">
+									<DataPath>Объект.Комментарий</DataPath>
+									<ContextMenu name="КомментарийКонтекстноеМеню" id="134"/>
+									<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="135"/>
+								</TextDocumentField>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаПрикрепленныхФайлов" id="136">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Прикрепленные файлы</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа прикрепленных файлов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаПрикрепленныхФайловРасширеннаяПодсказка" id="137"/>
+						</Page>
+					</ChildItems>
+				</Pages>
+				<UsualGroup name="Группа2" id="138">
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="139"/>
+					<ChildItems>
+						<HTMLDocumentField name="Комментарии" id="140">
+							<DataPath>НомерДоговора</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>30</Width>
+							<ContextMenu name="КомментарииКонтекстноеМеню" id="141"/>
+							<ExtendedTooltip name="КомментарииРасширеннаяПодсказка" id="142"/>
+						</HTMLDocumentField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:TaskObject.ЗадачаПользователю</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Договор" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерДоговора" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>25</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Комментарии" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗарегистрироватьДоговор" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарегистрировать договор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарегистрировать договор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗарегистрироватьДоговор</Action>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.ЗакладкиЗадач.StandardCommand.OpenByValue.Задача</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.ТоварыСборокЗаказов.StandardCommand.OpenByValue.Задача</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.СтадииПодписанияДоговоров.StandardCommand.OpenByValue.Договор</Command>
+				<Type>Added</Type>
+				<Attribute>Договор</Attribute>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

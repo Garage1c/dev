@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="30">
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<InputField name="Новинка" id="44">
+					<DataPath>Объект.Новинка</DataPath>
+					<ContextMenu name="НовинкаКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="НовинкаРасширеннаяПодсказка" id="46"/>
+					<Events>
+						<Event name="OnChange">НовинкаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="ВыводитьНаценку" id="41">
+					<DataPath>Объект.ВыводитьНаценку</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Для дилеров</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВыводитьНаценкуКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ВыводитьНаценкуРасширеннаяПодсказка" id="43"/>
+					<Events>
+						<Event name="OnChange">ВыводитьНаценкуПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ТипЦенДилера" id="38">
+					<DataPath>Объект.ТипЦенДилера</DataPath>
+					<ContextMenu name="ТипЦенДилераКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТипЦенДилераРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="ВалютаДилера" id="32">
+					<DataPath>Объект.ВалютаДилера</DataPath>
+					<ContextMenu name="ВалютаДилераКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ВалютаДилераРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ВалютаРозницы" id="35">
+					<DataPath>Объект.ВалютаРозницы</DataPath>
+					<ContextMenu name="ВалютаРозницыКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ВалютаРозницыРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="Комментарий" id="86">
+					<DataPath>Объект.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="87"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="88"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="75">
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="76"/>
+			<ChildItems>
+				<Table name="Новинки" id="47">
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<SelectionMode>SingleRow</SelectionMode>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.Новинки</DataPath>
+					<CommandSet>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>CancelSearch</ExcludedCommand>
+						<ExcludedCommand>OutputList</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+						<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Find</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="НовинкиКонтекстноеМеню" id="48"/>
+					<AutoCommandBar name="НовинкиКоманднаяПанель" id="49">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="Сформировать" id="81">
+								<Type>CommandBarButton</Type>
+								<DefaultButton>true</DefaultButton>
+								<CommandName>Form.Command.Сформировать</CommandName>
+								<ExtendedTooltip name="СформироватьРасширеннаяПодсказка" id="82"/>
+							</Button>
+							<Button name="ПоменитьВсё" id="77">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УстановитьФлажки</CommandName>
+								<ExtendedTooltip name="ПоменитьВсёРасширеннаяПодсказка" id="78"/>
+							</Button>
+							<Button name="УбратьПометкуУВсех" id="79">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УбратьФлажки</CommandName>
+								<ExtendedTooltip name="УбратьПометкуУВсехРасширеннаяПодсказка" id="80"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="НовинкиРасширеннаяПодсказка" id="50"/>
+					<SearchStringAddition name="НовинкиСтрокаПоиска" id="51">
+						<AdditionSource>
+							<Item>Новинки</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НовинкиСтрокаПоискаКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="НовинкиСтрокаПоискаРасширеннаяПодсказка" id="55"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="НовинкиСостояниеПросмотра" id="56">
+						<AdditionSource>
+							<Item>Новинки</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НовинкиСостояниеПросмотраКонтекстноеМеню" id="59"/>
+						<ExtendedTooltip name="НовинкиСостояниеПросмотраРасширеннаяПодсказка" id="60"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="НовинкиУправлениеПоиском" id="61">
+						<AdditionSource>
+							<Item>Новинки</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="НовинкиУправлениеПоискомКонтекстноеМеню" id="64"/>
+						<ExtendedTooltip name="НовинкиУправлениеПоискомРасширеннаяПодсказка" id="65"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<CheckBoxField name="НовинкиПометка" id="72">
+							<DataPath>Объект.Новинки.Пометка</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НовинкиПометкаКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="НовинкиПометкаРасширеннаяПодсказка" id="74"/>
+						</CheckBoxField>
+						<InputField name="Артикул" id="83">
+							<DataPath>Объект.Новинки.Номенклатура.Артикул</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="АртикулКонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="АртикулРасширеннаяПодсказка" id="85"/>
+						</InputField>
+						<InputField name="НовинкиНоменклатура" id="69">
+							<DataPath>Объект.Новинки.Номенклатура</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НовинкиНоменклатураКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="НовинкиНоменклатураРасширеннаяПодсказка" id="71"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<UsualGroup name="ГруппаОперативнойИнформацииТовара" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа оперативной информации товара</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа оперативной информации товара</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОперативнойИнформацииТовараExtendedTooltip" id="17"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПечатьНовинок</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НовинкиПредставление</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Новинки.Ссылка</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Новинки.Новинка</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="style:ШрифтКрупногоВыделенногоТекста" kind="StyleItem"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Сформировать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Сформировать</Action>
+		</Command>
+		<Command name="УстановитьФлажки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыбратьВсе</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="УбратьФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Убрать флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Убрать флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УбратьВсё</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Новинка">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Новинки</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

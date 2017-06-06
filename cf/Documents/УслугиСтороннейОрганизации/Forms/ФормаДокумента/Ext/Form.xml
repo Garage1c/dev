@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа2" id="77">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="78"/>
+			<ChildItems>
+				<InputField name="Номер" id="79">
+					<DataPath>Объект.Number</DataPath>
+					<ContextMenu name="НомерКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="81"/>
+				</InputField>
+				<InputField name="Дата" id="82">
+					<DataPath>Объект.Date</DataPath>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="83"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="84"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Организация" id="31">
+			<DataPath>Объект.Организация</DataPath>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="33"/>
+		</InputField>
+		<InputField name="Партнер" id="34">
+			<DataPath>Объект.Партнер</DataPath>
+			<ContextMenu name="ПартнерКонтекстноеМеню" id="35"/>
+			<ExtendedTooltip name="ПартнерРасширеннаяПодсказка" id="36"/>
+		</InputField>
+		<InputField name="Контрагент" id="37">
+			<DataPath>Объект.Контрагент</DataPath>
+			<ContextMenu name="КонтрагентКонтекстноеМеню" id="38"/>
+			<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="39"/>
+		</InputField>
+		<InputField name="Описание" id="28">
+			<DataPath>Объект.Описание</DataPath>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="ОписаниеКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="30"/>
+		</InputField>
+		<UsualGroup name="Группа3" id="88">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="89"/>
+			<ChildItems>
+				<InputField name="Сумма" id="1">
+					<DataPath>Объект.Сумма</DataPath>
+					<ContextMenu name="СуммаКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="СпособРаспределения" id="85">
+					<DataPath>Объект.СпособРаспределения</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<ContextMenu name="СпособРаспределенияКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="СпособРаспределенияРасширеннаяПодсказка" id="87"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Группа1" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределение расходов</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="47"/>
+			<ChildItems>
+				<Page name="Перемещения" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Распределение расходов на отгрузки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Перемещения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПеремещенияРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<Table name="Документы" id="4">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.РаспределениеНаПеремещения</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДокументыКонтекстноеМеню" id="5"/>
+							<AutoCommandBar name="ДокументыКоманднаяПанель" id="6">
+								<ChildItems>
+									<Button name="УстановитьДатуДокумента" id="90">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УстановитьДатуДокумента</CommandName>
+										<ExtendedTooltip name="УстановитьДатуДокументаРасширеннаяПодсказка" id="91"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДокументыРасширеннаяПодсказка" id="7"/>
+							<SearchStringAddition name="ДокументыСтрокаПоиска" id="8">
+								<AdditionSource>
+									<Item>Документы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыСтрокаПоискаКонтекстноеМеню" id="9"/>
+								<ExtendedTooltip name="ДокументыСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДокументыСостояниеПросмотра" id="11">
+								<AdditionSource>
+									<Item>Документы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыСостояниеПросмотраКонтекстноеМеню" id="12"/>
+								<ExtendedTooltip name="ДокументыСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДокументыУправлениеПоиском" id="14">
+								<AdditionSource>
+									<Item>Документы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыУправлениеПоискомКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="ДокументыУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДокументыНомерСтроки" id="17">
+									<DataPath>Объект.РаспределениеНаПеремещения.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДокументыНомерСтрокиКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="ДокументыНомерСтрокиРасширеннаяПодсказка" id="19"/>
+								</LabelField>
+								<InputField name="ДокументыДокумент" id="20">
+									<DataPath>Объект.РаспределениеНаПеремещения.Документ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДокументыДокументКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ДокументыДокументРасширеннаяПодсказка" id="22"/>
+								</InputField>
+								<LabelField name="ДокументыДокументПроцессЗаказчикЗаказ" id="74">
+									<DataPath>Объект.РаспределениеНаПеремещения.Документ.Процесс.Заказчик.Заказ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДокументыДокументПроцессЗаказчикЗаказКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="ДокументыДокументПроцессЗаказчикЗаказРасширеннаяПодсказка" id="76"/>
+								</LabelField>
+								<InputField name="ДокументыСкладОтправитель" id="40">
+									<DataPath>Объект.РаспределениеНаПеремещения.Документ.СкладОтправитель</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Склад-отправитель</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДокументыСкладОтправительКонтекстноеМеню" id="41"/>
+									<ExtendedTooltip name="ДокументыСкладОтправительРасширеннаяПодсказка" id="42"/>
+								</InputField>
+								<InputField name="ДокументыСкладПолучатель" id="43">
+									<DataPath>Объект.РаспределениеНаПеремещения.Документ.СкладПолучатель</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Склад-получатель</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДокументыСкладПолучательКонтекстноеМеню" id="44"/>
+									<ExtendedTooltip name="ДокументыСкладПолучательРасширеннаяПодсказка" id="45"/>
+								</InputField>
+								<InputField name="ДокументыСумма" id="23">
+									<DataPath>Объект.РаспределениеНаПеремещения.Сумма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДокументыСуммаКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ДокументыСуммаРасширеннаяПодсказка" id="25"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Поступления" id="50">
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Распределение расходов на поступления</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поступления</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПоступленияРасширеннаяПодсказка" id="51"/>
+					<ChildItems>
+						<Table name="РаспределениеНаПоступления" id="52">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.РаспределениеНаПоступления</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РаспределениеНаПоступленияКонтекстноеМеню" id="53"/>
+							<AutoCommandBar name="РаспределениеНаПоступленияКоманднаяПанель" id="54"/>
+							<ExtendedTooltip name="РаспределениеНаПоступленияРасширеннаяПодсказка" id="55"/>
+							<SearchStringAddition name="РаспределениеНаПоступленияСтрокаПоиска" id="56">
+								<AdditionSource>
+									<Item>РаспределениеНаПоступления</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспределениеНаПоступленияСтрокаПоискаКонтекстноеМеню" id="57"/>
+								<ExtendedTooltip name="РаспределениеНаПоступленияСтрокаПоискаРасширеннаяПодсказка" id="58"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РаспределениеНаПоступленияСостояниеПросмотра" id="59">
+								<AdditionSource>
+									<Item>РаспределениеНаПоступления</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспределениеНаПоступленияСостояниеПросмотраКонтекстноеМеню" id="60"/>
+								<ExtendedTooltip name="РаспределениеНаПоступленияСостояниеПросмотраРасширеннаяПодсказка" id="61"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РаспределениеНаПоступленияУправлениеПоиском" id="62">
+								<AdditionSource>
+									<Item>РаспределениеНаПоступления</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспределениеНаПоступленияУправлениеПоискомКонтекстноеМеню" id="63"/>
+								<ExtendedTooltip name="РаспределениеНаПоступленияУправлениеПоискомРасширеннаяПодсказка" id="64"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="РаспределениеНаПоступленияНомерСтроки" id="65">
+									<DataPath>Объект.РаспределениеНаПоступления.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РаспределениеНаПоступленияНомерСтрокиКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="РаспределениеНаПоступленияНомерСтрокиРасширеннаяПодсказка" id="67"/>
+								</LabelField>
+								<InputField name="РаспределениеНаПоступленияДокумент" id="68">
+									<DataPath>Объект.РаспределениеНаПоступления.Документ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РаспределениеНаПоступленияДокументКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="РаспределениеНаПоступленияДокументРасширеннаяПодсказка" id="70"/>
+								</InputField>
+								<InputField name="РаспределениеНаПоступленияСумма" id="71">
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РаспределениеНаПоступленияСуммаКонтекстноеМеню" id="72"/>
+									<ExtendedTooltip name="РаспределениеНаПоступленияСуммаРасширеннаяПодсказка" id="73"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.УслугиСтороннейОрганизации</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.РаспределениеНаПеремещения"/>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="УстановитьДатуДокумента" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить дату документа как дату последней отгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить дату документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьДату</Action>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.РасчетСебестоимости.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.ЦеныНоменклатуры.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.ТаможенныеЦены.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

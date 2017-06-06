@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоследняяДатаЗаказа</dataPath>
+			<field>ПоследняяДатаЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Последняя дата заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВсегоКоличествоЗаказов</dataPath>
+			<field>ВсегоКоличествоЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего количество заказов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТекущееКоличествоЗаказов</dataPath>
+			<field>ТекущееКоличествоЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее количество заказов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БылоКоличествоЗаказов</dataPath>
+			<field>БылоКоличествоЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Было количество заказов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Порядок</dataPath>
+			<field>Порядок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порядок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БылоСуммаОтгрузок</dataPath>
+			<field>БылоСуммаОтгрузок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Было сумма отгрузок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТекущаяСуммаОтгрузок</dataPath>
+			<field>ТекущаяСуммаОтгрузок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая сумма отгрузок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВсегоСуммаОтгрузок</dataPath>
+			<field>ВсегоСуммаОтгрузок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего сумма отгрузок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоследняяДатаОтгрузки</dataPath>
+			<field>ПоследняяДатаОтгрузки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Последняя дата отгрузки</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МесяцевНетОтгрузок</dataPath>
+			<field>МесяцевНетОтгрузок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяцев нет отгрузок</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МесяцевМеждуПервойИПоследнейОтгрузками</dataPath>
+			<field>МесяцевМеждуПервойИПоследнейОтгрузками</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяцев между первой и последней отгрузками</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойМенеджер</dataPath>
+			<field>ОсновнойМенеджер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной менеджер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДолгиПоОтгрузкам.Контрагент КАК Контрагент,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ДолгиПоОтгрузкам.Заказ) КАК БылоКоличествоЗаказов,
+	СУММА(ДолгиПоОтгрузкам.Сумма) КАК БылоСуммаОтгрузок
+ПОМЕСТИТЬ втПостоянныйКлиентБыло
+ИЗ
+	РегистрНакопления.ДолгиПоОтгрузкам КАК ДолгиПоОтгрузкам
+ГДЕ
+	ДолгиПоОтгрузкам.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+	И ДолгиПоОтгрузкам.Заказ &lt;&gt; НЕОПРЕДЕЛЕНО
+	И ДолгиПоОтгрузкам.ДокументОтгрузки &lt;&gt; НЕОПРЕДЕЛЕНО
+	И ДолгиПоОтгрузкам.Заказ.Дата МЕЖДУ ДОБАВИТЬКДАТЕ(ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, МЕСЯЦ, -1), МЕСЯЦ, -&amp;ПостоянныйМесяцев) И ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, МЕСЯЦ, -1)
+	И ДолгиПоОтгрузкам.Контрагент &lt;&gt; &amp;ПустойКонтрагент
+
+СГРУППИРОВАТЬ ПО
+	ДолгиПоОтгрузкам.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДолгиПоОтгрузкам.Контрагент КАК Контрагент,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ДолгиПоОтгрузкам.Заказ) КАК ТекущееКоличествоЗаказов,
+	СУММА(ДолгиПоОтгрузкам.Сумма) КАК ТекущаяСуммаОтгрузок
+ПОМЕСТИТЬ втПостоянныйКлиентСейчас
+ИЗ
+	РегистрНакопления.ДолгиПоОтгрузкам КАК ДолгиПоОтгрузкам
+ГДЕ
+	ДолгиПоОтгрузкам.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+	И ДолгиПоОтгрузкам.Заказ &lt;&gt; НЕОПРЕДЕЛЕНО
+	И ДолгиПоОтгрузкам.ДокументОтгрузки &lt;&gt; НЕОПРЕДЕЛЕНО
+	И ДолгиПоОтгрузкам.Заказ.Дата &gt; ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, МЕСЯЦ, -&amp;ПостоянныйМесяцев)
+	И ДолгиПоОтгрузкам.Контрагент &lt;&gt; &amp;ПустойКонтрагент
+
+СГРУППИРОВАТЬ ПО
+	ДолгиПоОтгрузкам.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	втПостоянныйКлиентСейчас.Контрагент,
+	втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов,
+	втПостоянныйКлиентСейчас.ТекущаяСуммаОтгрузок,
+	втПостоянныйКлиентБыло.БылоКоличествоЗаказов,
+	втПостоянныйКлиентБыло.БылоСуммаОтгрузок,
+	ВЫБОР
+		КОГДА втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов &gt;= &amp;ПостоянныйКоличество
+				И втПостоянныйКлиентБыло.Контрагент ЕСТЬ NULL 
+			ТОГДА "Неожиданно появишвийся Постоянный клиент"
+		КОГДА втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов &gt;= &amp;ПостоянныйКоличество
+				И втПостоянныйКлиентБыло.БылоКоличествоЗаказов &lt; &amp;ПостоянныйКоличество
+			ТОГДА "Новый Постоянный клиент"
+		КОГДА втПостоянныйКлиентБыло.БылоКоличествоЗаказов &gt;= &amp;ПостоянныйКоличество
+				И втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов &lt; &amp;ПостоянныйКоличество
+			ТОГДА "Теряемый Постоянный клиент"
+		КОГДА втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов &gt;= &amp;ПостоянныйКоличество
+			ТОГДА "Постоянный клиент"
+		ИНАЧЕ NULL
+	КОНЕЦ КАК Статус,
+	ВЫБОР
+		КОГДА втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов &gt;= &amp;ПостоянныйКоличество
+				И втПостоянныйКлиентБыло.Контрагент ЕСТЬ NULL 
+			ТОГДА 20
+		КОГДА втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов &gt;= &amp;ПостоянныйКоличество
+				И втПостоянныйКлиентБыло.БылоКоличествоЗаказов &lt; &amp;ПостоянныйКоличество
+			ТОГДА 30
+		КОГДА втПостоянныйКлиентБыло.БылоКоличествоЗаказов &gt;= &amp;ПостоянныйКоличество
+				И втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов &lt; &amp;ПостоянныйКоличество
+			ТОГДА 10
+		КОГДА втПостоянныйКлиентСейчас.ТекущееКоличествоЗаказов &gt;= &amp;ПостоянныйКоличество
+			ТОГДА 40
+		ИНАЧЕ NULL
+	КОНЕЦ КАК Порядок
+ПОМЕСТИТЬ втПостоянныеКлиенты
+ИЗ
+	втПостоянныйКлиентСейчас КАК втПостоянныйКлиентСейчас
+		ЛЕВОЕ СОЕДИНЕНИЕ втПостоянныйКлиентБыло КАК втПостоянныйКлиентБыло
+		ПО втПостоянныйКлиентСейчас.Контрагент = втПостоянныйКлиентБыло.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДолгиПоОтгрузкам.Контрагент КАК Контрагент,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ДолгиПоОтгрузкам.Заказ) КАК ВсегоКоличествоЗаказов,
+	МАКСИМУМ(ДолгиПоОтгрузкам.Заказ.Дата) КАК ПоследняяДатаЗаказа,
+	МАКСИМУМ(ДолгиПоОтгрузкам.Период) КАК ПоследняяДатаОтгрузки,
+	СУММА(ДолгиПоОтгрузкам.Сумма) КАК ВсегоСуммаОтгрузок,
+	РАЗНОСТЬДАТ(МИНИМУМ(ДолгиПоОтгрузкам.Период), МАКСИМУМ(ДолгиПоОтгрузкам.Период), МЕСЯЦ) КАК МесяцевМеждуПервойИПоследнейОтгрузками,
+	РАЗНОСТЬДАТ(МАКСИМУМ(ДолгиПоОтгрузкам.Период), &amp;ТекущаяДата, МЕСЯЦ) КАК МесяцевНетОтгрузок
+ПОМЕСТИТЬ втВсеКонтрагенты
+ИЗ
+	РегистрНакопления.ДолгиПоОтгрузкам КАК ДолгиПоОтгрузкам
+ГДЕ
+	ДолгиПоОтгрузкам.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+	И ДолгиПоОтгрузкам.Заказ &lt;&gt; НЕОПРЕДЕЛЕНО
+	И ДолгиПоОтгрузкам.ДокументОтгрузки &lt;&gt; НЕОПРЕДЕЛЕНО
+	И ДолгиПоОтгрузкам.Контрагент &lt;&gt; &amp;ПустойКонтрагент
+	И ДолгиПоОтгрузкам.Заказ.Дата &gt;= &amp;ДатаНачалаОбработки
+
+СГРУППИРОВАТЬ ПО
+	ДолгиПоОтгрузкам.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	втВсеКонтрагенты.Контрагент.ОсновнойМенеджер КАК ОсновнойМенеджер,
+	втВсеКонтрагенты.Контрагент,
+	втВсеКонтрагенты.ВсегоКоличествоЗаказов,
+	втВсеКонтрагенты.ПоследняяДатаЗаказа,
+	втВсеКонтрагенты.ПоследняяДатаОтгрузки,
+	втВсеКонтрагенты.ВсегоСуммаОтгрузок,
+	втВсеКонтрагенты.МесяцевМеждуПервойИПоследнейОтгрузками,
+	втВсеКонтрагенты.МесяцевНетОтгрузок,
+	втПостоянныеКлиенты.ТекущееКоличествоЗаказов,
+	втПостоянныеКлиенты.ТекущаяСуммаОтгрузок,
+	втПостоянныеКлиенты.БылоКоличествоЗаказов,
+	втПостоянныеКлиенты.БылоСуммаОтгрузок,
+	ВЫБОР
+		КОГДА НЕ втПостоянныеКлиенты.Статус ЕСТЬ NULL 
+			ТОГДА втПостоянныеКлиенты.Статус
+		КОГДА втВсеКонтрагенты.МесяцевНетОтгрузок &gt;= &amp;ПотерянныйМесяцев
+			ТОГДА "Потерянный"
+		КОГДА втВсеКонтрагенты.ВсегоКоличествоЗаказов = 1
+			ТОГДА "Новый"
+		ИНАЧЕ "Активный"
+	КОНЕЦ КАК Статус,
+	ВЫБОР
+		КОГДА НЕ втПостоянныеКлиенты.Порядок ЕСТЬ NULL 
+			ТОГДА втПостоянныеКлиенты.Порядок
+		КОГДА втВсеКонтрагенты.МесяцевНетОтгрузок &gt;= &amp;ПотерянныйМесяцев
+			ТОГДА 50
+		КОГДА втВсеКонтрагенты.ВсегоКоличествоЗаказов = 1
+			ТОГДА 60
+		ИНАЧЕ 70
+	КОНЕЦ КАК Порядок
+ИЗ
+	втВсеКонтрагенты КАК втВсеКонтрагенты
+		ЛЕВОЕ СОЕДИНЕНИЕ втПостоянныеКлиенты КАК втПостоянныеКлиенты
+		ПО втВсеКонтрагенты.Контрагент = втПостоянныеКлиенты.Контрагент
+{ГДЕ
+	(втВсеКонтрагенты.Контрагент.ОсновнойМенеджер = &amp;ОсновнойМенеджер)}</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ВсегоКоличествоЗаказов</dataPath>
+		<expression>Сумма(ВсегоКоличествоЗаказов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Порядок</dataPath>
+		<expression>Максимум(Порядок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВсегоСуммаОтгрузок</dataPath>
+		<expression>Сумма(ВсегоСуммаОтгрузок)</expression>
+	</totalField>
+	<parameter>
+		<name>ОсновнойМенеджер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной менеджер</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Пользователи</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПостоянныйМесяцев</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Постоянный месяцев</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПостоянныйКоличество</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Постоянный количество</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПотерянныйМесяцев</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Потерянный месяцев</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>12</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаНачалаОбработки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала обработки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПустойКонтрагент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Пустой контрагент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВсегоСуммаОтгрузок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВсегоКоличествоЗаказов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МесяцевМеждуПервойИПоследнейОтгрузками</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МесяцевНетОтгрузок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПоследняяДатаЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПоследняяДатаОтгрузки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>БылоКоличествоЗаказов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>БылоСуммаОтгрузок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТекущееКоличествоЗаказов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТекущаяСуммаОтгрузок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Порядок</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ОсновнойМенеджер</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>bc66a51a-4fac-4520-9ce2-d05d5e545ecb</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПостоянныйМесяцев</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">3</dcscor:value>
+					<dcsset:userSettingID>648f3e80-bf0c-48d4-8d81-59f91f6d1ff5</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПостоянныйКоличество</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+					<dcsset:userSettingID>c0dcefe7-743a-4168-9f9c-2187ea1a45ea</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПотерянныйМесяцев</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">3</dcscor:value>
+					<dcsset:userSettingID>60270077-3a67-493d-9a06-f6f80ee7f2fc</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТекущаяДата</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаНачалаОбработки</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>2016-01-01T00:00:00</v8:date>
+					</dcscor:value>
+					<dcsset:userSettingID>ae720f97-fbc5-45bb-b389-df78815ae245</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Порядок</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ВсегоСуммаОтгрузок</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ВсегоКоличествоЗаказов</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Яркий</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Статус</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОсновнойМенеджер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

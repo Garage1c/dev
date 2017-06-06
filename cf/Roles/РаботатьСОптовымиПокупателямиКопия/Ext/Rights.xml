@@ -1,0 +1,996 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.4">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>true</setForAttributesByDefault>
+	<independentRightsOfChildObjects>true</independentRightsOfChildObjects>
+	<object>
+		<name>DataProcessor.ПечатьОбщихФорм.Command.ПечатьУПД</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.TabularSection.КтоМожетПросматриватьСтоимость</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ПлатежноеПоручениеИсходящее</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+    &amp;ДоступныВсеПартнеры ИЛИ
+    Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+    Партнер В(  ВЫБРАТЬ Партнер
+                ИЗ      РегистрСведений.ПравоПросмотраПартнеров
+                ГДЕ     Пользователь В(&amp;ДоступныеПользователи))</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Document.РеализацияТоваров</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+    &amp;ДоступныВсеПартнеры ИЛИ
+    Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+    Партнер В(  ВЫБРАТЬ Партнер
+                ИЗ      РегистрСведений.ПравоПросмотраПартнеров
+                ГДЕ     Пользователь В(&amp;ДоступныеПользователи))</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.Attribute.УстановитьНовыйПарольПриВходе</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.Dimension.ЗаказПокупателя</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.ПечатьОбщихФорм.Command.ПечатьТОРГ12</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.TabularSection.Состав</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+    &amp;ДоступныВсеПартнеры ИЛИ
+    Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+    Партнер В(  ВЫБРАТЬ Партнер
+                ИЗ      РегистрСведений.ПравоПросмотраПартнеров
+                ГДЕ     Пользователь В(&amp;ДоступныеПользователи))</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.Attribute.Партнер</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.КорректировкаЗаказаПокупателя</name>
+	</object>
+	<object>
+		<name>BusinessProcess.ЗаявкаПокупателя</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+    &amp;ДоступныВсеПартнеры ИЛИ
+    Заказ.Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+    Заказ.Партнер В(  ВЫБРАТЬ Партнер
+                ИЗ      РегистрСведений.ПравоПросмотраПартнеров
+                ГДЕ     Пользователь В(&amp;ДоступныеПользователи))</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Document.РасходныйКассовыйОрдер</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+
+// по партнерам
+(
+
+(
+    &amp;ДоступныВсеПартнеры ИЛИ
+    Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+    Партнер В(  ВЫБРАТЬ Партнер
+                ИЗ      РегистрСведений.ПравоПросмотраПартнеров
+                ГДЕ     Пользователь В(&amp;ДоступныеПользователи))
+                
+) 
+
+
+И               
+// По кассам
+
+(
+
+&amp;ТекущийПользователь В (
+    ВЫБРАТЬ Пользователь 
+    ИЗ РегистрСведений.ПравоПросмотраКассы
+    ГДЕ     Касса = Неопределено или
+            Касса = ЗНАЧЕНИЕ(Справочник.БанковскиеСчета.ПустаяСсылка) или
+            Касса = ЗНАЧЕНИЕ(Справочник.Кассы.ПустаяСсылка))  ИЛИ
+            
+Касса В(
+    ВЫБРАТЬ Касса 
+    ИЗ РегистрСведений.ПравоПросмотраКассы
+    ГДЕ Пользователь = &amp;ТекущийПользователь Или
+        Пользователь = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)  )   
+ )
+        
+ )</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.Attribute.Организация</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.Dimension.Номенклатура</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ПлатежноеПоручениеВходящее</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+	&amp;ДоступныВсеПартнеры ИЛИ
+	Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+	Партнер В(	ВЫБРАТЬ Партнер
+				ИЗ		РегистрСведений.ПравоПросмотраПартнеров
+				ГДЕ		Пользователь В(&amp;ДоступныеПользователи))
+					
+					</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Document.РеализацияТоваров.Command.ПечатьАктОбОказанииУслуг</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьЗаказПокупателяСоСрокомДоставки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.Resource.Сумма</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.БанковскиеСчета</name>
+	</object>
+	<object>
+		<name>DataProcessor.УправлениеДоступом.Command.УправлениеДоступомКПартнерам</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.Resource.Количество</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.РеализацияТоваров.Command.ПечатьРеализацияТоваров</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.Dimension.Смена</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.StandardAttribute.Active</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.StandardAttribute.LineNumber</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.StandardAttribute.Recorder</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.StandardAttribute.Period</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьКвитанция</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.Attribute.КонтрольВремениПосещений</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.ПечатьОбщихФорм.Command.ПечатьСчетФактура</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПартнеров</name>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.Dimension.Склад</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.Attribute.РедактированиеЦеныВДокументе</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.Attribute.ФизЛицо</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.TabularSection.КтоМожетПросматриватьСтоимость.Attribute.Пользователь</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.Dimension.Цена</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьЗаказСНаличием</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.Attribute.ЗапретЧужихРазмещений</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.PredefinedDataName</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.Predefined</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.Ref</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.DeletionMark</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.IsFolder</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.Owner</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.Parent</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.Description</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.StandardAttribute.Code</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ПриходныйКассовыйОрдер</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+
+// по партнерам
+(
+
+(
+    &amp;ДоступныВсеПартнеры ИЛИ
+    Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+    Партнер В(  ВЫБРАТЬ Партнер
+                ИЗ      РегистрСведений.ПравоПросмотраПартнеров
+                ГДЕ     Пользователь В(&amp;ДоступныеПользователи))
+                
+) 
+
+
+И               
+// По кассам
+
+(
+
+&amp;ТекущийПользователь В (
+    ВЫБРАТЬ Пользователь 
+    ИЗ РегистрСведений.ПравоПросмотраКассы
+    ГДЕ     Касса = Неопределено или
+            Касса = ЗНАЧЕНИЕ(Справочник.БанковскиеСчета.ПустаяСсылка) или
+            Касса = ЗНАЧЕНИЕ(Справочник.Кассы.ПустаяСсылка))  ИЛИ
+            
+Касса В(
+    ВЫБРАТЬ Касса 
+    ИЗ РегистрСведений.ПравоПросмотраКассы
+    ГДЕ Пользователь = &amp;ТекущийПользователь Или
+        Пользователь = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)  )   
+ )
+        
+ )</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьСчетНаОплатуИнструмент</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.Resource.Сумма</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.TabularSection.Состав.Attribute.Пользователь</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.ПечатьОбщихФорм.Command.ПечатьТТН</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьСчетНаОплатуИнтрейд</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.TabularSection.ПрофилиИнтернетПочты.Attribute.Профиль</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.КоммерческоеПредложение</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ ВидятВсе = ИСТИНА ИЛИ Автор = &amp;ТекущийПользователь</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.StandardAttribute.RecordType</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.StandardAttribute.Active</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.StandardAttribute.LineNumber</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.StandardAttribute.Recorder</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.StandardAttribute.Period</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.АктСверкиВзаиморасчетов</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+	&amp;ДоступныВсеПартнеры ИЛИ
+	Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+	Партнер В(	ВЫБРАТЬ Партнер
+				ИЗ		РегистрСведений.ПравоПросмотраПартнеров
+				ГДЕ		Пользователь В(&amp;ДоступныеПользователи))
+					
+					</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.Dimension.Упаковка</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Партнеры.Command.Контрагенты</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.КоммерческоеПредложение.Command.СоздатьЗаявку</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.Продажи.Dimension.Заказ</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Партнеры.Command.Документы</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>DocumentJournal.ДокументыПартнера</name>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.PredefinedDataName</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.Predefined</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.Ref</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.DeletionMark</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.IsFolder</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.Owner</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.Parent</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.Description</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ГруппыПользователей.StandardAttribute.Code</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.Attribute.Почта</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьСпецификации</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьСчетНаОплатуТулс</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьСчетНаОплату</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьСчетНаОплатуКукушкина</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьСчетНаОплатуССортировкой</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.Resource.Количество</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Пользователи.TabularSection.ПрофилиИнтернетПочты</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ВозвратОтПокупателя</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ГДЕ 
+	&amp;ДоступныВсеПартнеры ИЛИ
+	Партнер.ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ 
+	Партнер В(	ВЫБРАТЬ Партнер
+				ИЗ		РегистрСведений.ПравоПросмотраПартнеров
+				ГДЕ		Пользователь В(&amp;ДоступныеПользователи))
+					
+					</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ПечатьЗаказПокупателя</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя.Command.ВПочтуСчетНаОплату</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.РеализацияТоваров.Command.ПечатьРасходнаяНакладная</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.ДолгиПоОплате_Управление.Command.АнализОплатПоЗаказам</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.АктСверкиВзаиморасчетов.Command.ПечатьСверки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.Dimension.Размещение</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ЗаказыПокупателей.Dimension.Номенклатура</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+</Rights>

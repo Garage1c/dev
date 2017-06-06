@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Какие документы уйдут в минус если отменить проведение</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Документ" id="1">
+			<DataPath>Объект.Документ</DataPath>
+			<ContextMenu name="ДокументКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДокументРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<Table name="ЗависимыеДокументы" id="3">
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<DataPath>Объект.ЗависимыеДокументы</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ЗависимыеДокументыКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="ЗависимыеДокументыКоманднаяПанель" id="5">
+				<ChildItems>
+					<Button name="ЗависимыеДокументыСправка" id="17">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Help</CommandName>
+						<ExtendedTooltip name="ЗависимыеДокументыСправкаРасширеннаяПодсказка" id="19"/>
+					</Button>
+					<Button name="Заполнить" id="16">
+						<Type>CommandBarButton</Type>
+						<DefaultButton>true</DefaultButton>
+						<CommandName>Form.Command.Заполнить</CommandName>
+						<ExtendedTooltip name="ЗаполнитьРасширеннаяПодсказка" id="20"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ЗависимыеДокументыРасширеннаяПодсказка" id="21"/>
+			<SearchStringAddition name="ЗависимыеДокументыСтрокаПоиска" id="22">
+				<AdditionSource>
+					<Item>ЗависимыеДокументы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗависимыеДокументыСтрокаПоискаКонтекстноеМеню" id="23"/>
+				<ExtendedTooltip name="ЗависимыеДокументыСтрокаПоискаРасширеннаяПодсказка" id="24"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ЗависимыеДокументыСостояниеПросмотра" id="25">
+				<AdditionSource>
+					<Item>ЗависимыеДокументы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗависимыеДокументыСостояниеПросмотраКонтекстноеМеню" id="26"/>
+				<ExtendedTooltip name="ЗависимыеДокументыСостояниеПросмотраРасширеннаяПодсказка" id="27"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ЗависимыеДокументыУправлениеПоиском" id="28">
+				<AdditionSource>
+					<Item>ЗависимыеДокументы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗависимыеДокументыУправлениеПоискомКонтекстноеМеню" id="29"/>
+				<ExtendedTooltip name="ЗависимыеДокументыУправлениеПоискомРасширеннаяПодсказка" id="30"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ЗависимыеДокументыНомерСтроки" id="6">
+					<DataPath>Объект.ЗависимыеДокументы.LineNumber</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЗависимыеДокументыНомерСтрокиКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ЗависимыеДокументыНомерСтрокиРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="ЗависимыеДокументыДокумент" id="8">
+					<DataPath>Объект.ЗависимыеДокументы.Документ</DataPath>
+					<EditMode>Directly</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ChoiceButton>false</ChoiceButton>
+					<OpenButton>true</OpenButton>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ЗависимыеДокументыДокументКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ЗависимыеДокументыДокументРасширеннаяПодсказка" id="32"/>
+				</InputField>
+				<InputField name="ЗависимыеДокументыИмяРегистра" id="10">
+					<DataPath>Объект.ЗависимыеДокументы.ИмяРегистра</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЗависимыеДокументыИмяРегистраКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ЗависимыеДокументыИмяРегистраРасширеннаяПодсказка" id="33"/>
+				</InputField>
+				<InputField name="ЗависимыеДокументыИзмерения" id="12">
+					<DataPath>Объект.ЗависимыеДокументы.Измерения</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЗависимыеДокументыИзмеренияКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ЗависимыеДокументыИзмеренияРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ЗависимыеДокументыРесурсы" id="14">
+					<DataPath>Объект.ЗависимыеДокументы.Ресурсы</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЗависимыеДокументыРесурсыКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ЗависимыеДокументыРесурсыРасширеннаяПодсказка" id="35"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.АнализВлиянияОтменыПроведенияНаРегистрыНакопления</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.Документ</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+	</Commands>
+</Form>

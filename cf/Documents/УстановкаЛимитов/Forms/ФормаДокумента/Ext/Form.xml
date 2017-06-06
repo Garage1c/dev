@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ОбщиеРеквизиты" id="46">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Command.ДополнительныеРеквизиты</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ОбщиеРеквизиты</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ОбщиеРеквизитыExtendedTooltip" id="47"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Контрагент" id="51">
+			<DataPath>Объект.Контрагент</DataPath>
+			<ContextMenu name="КонтрагентКонтекстноеМеню" id="52"/>
+			<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="53"/>
+		</InputField>
+		<Table name="Лимиты" id="10">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Лимиты</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ЛимитыКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ЛимитыКоманднаяПанель" id="12">
+				<ChildItems>
+					<Button name="ЛимитыЗагрузитьДанныеТабличногоДокумента" id="44">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗагрузитьДанныеТабличногоДокумента</CommandName>
+						<ExtendedTooltip name="ЛимитыЗагрузитьДанныеТабличногоДокументаРасширеннаяПодсказка" id="45"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ЛимитыРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ЛимитыСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>Лимиты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЛимитыСтрокаПоискаКонтекстноеМеню" id="17"/>
+				<ExtendedTooltip name="ЛимитыСтрокаПоискаРасширеннаяПодсказка" id="18"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ЛимитыСостояниеПросмотра" id="19">
+				<AdditionSource>
+					<Item>Лимиты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЛимитыСостояниеПросмотраКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ЛимитыСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ЛимитыУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>Лимиты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ЛимитыУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ЛимитыУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ЛимитыНомерСтроки" id="29">
+					<DataPath>Объект.Лимиты.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЛимитыНомерСтрокиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ЛимитыНомерСтрокиРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="ЛимитыИнициатор" id="32">
+					<DataPath>Объект.Лимиты.Инициатор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЛимитыИнициаторКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ЛимитыИнициаторРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">ЛимитыИнициаторПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ЛимитыСумма" id="35">
+					<DataPath>Объект.Лимиты.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЛимитыСуммаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ЛимитыСуммаРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ЛимитыТекущийЛимит" id="38">
+					<DataPath>Объект.Лимиты.ТекущийЛимит</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЛимитыТекущийЛимитКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ЛимитыТекущийЛимитРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Комментарий" id="41">
+			<DataPath>Объект.Комментарий</DataPath>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="42"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="43"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.УстановкаЛимитов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьДанныеТабличногоДокумента" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить данные табличного документа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить данные табличного документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьДанныеТабличногоДокумента</Action>
+		</Command>
+		<Command name="ДополнительныеРеквизиты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДополнительныеРеквизиты</Action>
+		</Command>
+	</Commands>
+</Form>

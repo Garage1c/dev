@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОбщиеРеквизиты" id="40">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Command.ОбщиеРеквизиты</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ОбщиеРеквизиты</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаОбщиеРеквизитыРасширеннаяПодсказка" id="41"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="100">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="101"/>
+			<ChildItems>
+				<LabelField name="Номер" id="102">
+					<DataPath>Объект.Number</DataPath>
+					<ContextMenu name="НомерКонтекстноеМеню" id="103"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="104"/>
+				</LabelField>
+				<LabelField name="Дата" id="105">
+					<DataPath>Объект.Date</DataPath>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="106"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="107"/>
+				</LabelField>
+				<InputField name="Период" id="120">
+					<DataPath>Период</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="121"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="122"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="114">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="115"/>
+			<ChildItems>
+				<Table name="Товары" id="42">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.Товары</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТоварыКонтекстноеМеню" id="43"/>
+					<AutoCommandBar name="ТоварыКоманднаяПанель" id="44">
+						<ChildItems>
+							<Button name="ТоварыЗаполнитьПоСкладу" id="118">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ЗаполнитьПоСкладу</CommandName>
+								<ExtendedTooltip name="ТоварыЗаполнитьПоСкладуРасширеннаяПодсказка" id="119"/>
+							</Button>
+							<Popup name="ТоварыКорзина" id="123">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Товары корзина</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Товары корзина</v8:content>
+									</v8:item>
+								</ToolTip>
+								<Picture>
+									<xr:Ref>CommonPicture.Корзина</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<Representation>Picture</Representation>
+								<ExtendedTooltip name="ТоварыКорзинаРасширеннаяПодсказка" id="124"/>
+								<ChildItems>
+									<Button name="ТоварыРедактироватьТоварВКорзине" id="125">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РедактироватьТоварВКорзине</CommandName>
+										<ExtendedTooltip name="ТоварыРедактироватьТоварВКорзинеРасширеннаяПодсказка" id="126"/>
+									</Button>
+									<Button name="ТоварыОчиститьКорзину" id="127">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОчиститьКорзину</CommandName>
+										<ExtendedTooltip name="ТоварыОчиститьКорзинуРасширеннаяПодсказка" id="128"/>
+									</Button>
+									<Button name="ТоварыДобавитьВКорзину" id="129">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ДобавитьВКорзину</CommandName>
+										<ExtendedTooltip name="ТоварыДобавитьВКорзинуРасширеннаяПодсказка" id="130"/>
+									</Button>
+									<Button name="ТоварыВставитьИзКорзины" id="131">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВставитьИзКорзины</CommandName>
+										<ExtendedTooltip name="ТоварыВставитьИзКорзиныРасширеннаяПодсказка" id="132"/>
+									</Button>
+								</ChildItems>
+							</Popup>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ТоварыРасширеннаяПодсказка" id="45"/>
+					<SearchStringAddition name="ТоварыСтрокаПоиска" id="46">
+						<AdditionSource>
+							<Item>Товары</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТоварыСтрокаПоискаКонтекстноеМеню" id="49"/>
+						<ExtendedTooltip name="ТоварыСтрокаПоискаРасширеннаяПодсказка" id="50"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТоварыСостояниеПросмотра" id="51">
+						<AdditionSource>
+							<Item>Товары</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТоварыСостояниеПросмотраКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="ТоварыСостояниеПросмотраРасширеннаяПодсказка" id="55"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТоварыУправлениеПоиском" id="56">
+						<AdditionSource>
+							<Item>Товары</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТоварыУправлениеПоискомКонтекстноеМеню" id="59"/>
+						<ExtendedTooltip name="ТоварыУправлениеПоискомРасширеннаяПодсказка" id="60"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="OnActivateRow">ТоварыПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="ЗаказыНомерСтроки" id="61">
+							<DataPath>Объект.Товары.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыНомерСтрокиКонтекстноеМеню" id="62"/>
+							<ExtendedTooltip name="ЗаказыНомерСтрокиРасширеннаяПодсказка" id="63"/>
+						</LabelField>
+						<InputField name="ЗаказыЗаказ" id="64">
+							<DataPath>Объект.Товары.Заказ</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыЗаказКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="ЗаказыЗаказРасширеннаяПодсказка" id="66"/>
+						</InputField>
+						<InputField name="ЗаказыЗаказчик" id="67">
+							<DataPath>Объект.Товары.Заказчик</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыЗаказчикКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ЗаказыЗаказчикРасширеннаяПодсказка" id="69"/>
+						</InputField>
+						<InputField name="ЗаказыНоменклатура" id="70">
+							<DataPath>Объект.Товары.Номенклатура</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыНоменклатураКонтекстноеМеню" id="71"/>
+							<ExtendedTooltip name="ЗаказыНоменклатураРасширеннаяПодсказка" id="72"/>
+						</InputField>
+						<InputField name="ЗаказыУпаковка" id="73">
+							<DataPath>Объект.Товары.Упаковка</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыУпаковкаКонтекстноеМеню" id="74"/>
+							<ExtendedTooltip name="ЗаказыУпаковкаРасширеннаяПодсказка" id="75"/>
+						</InputField>
+						<InputField name="ЗаказыРазмещение" id="76">
+							<DataPath>Объект.Товары.Размещение</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыРазмещениеКонтекстноеМеню" id="77"/>
+							<ExtendedTooltip name="ЗаказыРазмещениеРасширеннаяПодсказка" id="78"/>
+						</InputField>
+						<InputField name="ЗаказыЦена" id="79">
+							<DataPath>Объект.Товары.Цена</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыЦенаКонтекстноеМеню" id="80"/>
+							<ExtendedTooltip name="ЗаказыЦенаРасширеннаяПодсказка" id="81"/>
+						</InputField>
+						<InputField name="ЗаказыПроцентРучнойСкидки" id="82">
+							<DataPath>Объект.Товары.ПроцентРучнойСкидки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыПроцентРучнойСкидкиКонтекстноеМеню" id="83"/>
+							<ExtendedTooltip name="ЗаказыПроцентРучнойСкидкиРасширеннаяПодсказка" id="84"/>
+						</InputField>
+						<InputField name="ЗаказыПроцентАвтоматическойСкидки" id="85">
+							<DataPath>Объект.Товары.ПроцентАвтоматическойСкидки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыПроцентАвтоматическойСкидкиКонтекстноеМеню" id="86"/>
+							<ExtendedTooltip name="ЗаказыПроцентАвтоматическойСкидкиРасширеннаяПодсказка" id="87"/>
+						</InputField>
+						<InputField name="ЗаказыСтавкаНДС" id="88">
+							<DataPath>Объект.Товары.СтавкаНДС</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыСтавкаНДСКонтекстноеМеню" id="89"/>
+							<ExtendedTooltip name="ЗаказыСтавкаНДСРасширеннаяПодсказка" id="90"/>
+						</InputField>
+						<InputField name="ЗаказыАкция" id="91">
+							<DataPath>Объект.Товары.Акция</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыАкцияКонтекстноеМеню" id="92"/>
+							<ExtendedTooltip name="ЗаказыАкцияРасширеннаяПодсказка" id="93"/>
+						</InputField>
+						<InputField name="ЗаказыКоличество" id="94">
+							<DataPath>Объект.Товары.Количество</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыКоличествоКонтекстноеМеню" id="95"/>
+							<ExtendedTooltip name="ЗаказыКоличествоРасширеннаяПодсказка" id="96"/>
+						</InputField>
+						<InputField name="ЗаказыСумма" id="97">
+							<DataPath>Объект.Товары.Сумма</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ЗаказыСуммаКонтекстноеМеню" id="98"/>
+							<ExtendedTooltip name="ЗаказыСуммаРасширеннаяПодсказка" id="99"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<UsualGroup name="ГруппаОперативнойИнформацииТовара" id="116">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа оперативной информации товара</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа оперативной информации товара</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОперативнойИнформацииТовараExtendedTooltip" id="117"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.СнятиеРезерва</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="Период" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбщиеРеквизиты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общие реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общие реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбщиеРеквизиты</Action>
+		</Command>
+		<Command name="ЗаполнитьПоСкладу" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по складу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по складу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоСкладу</Action>
+		</Command>
+		<Command name="ОчиститьКорзину" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить корзину</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить корзину</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Alt+Q</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.КорзинаУдалить</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ОчиститьКорзину</Action>
+		</Command>
+		<Command name="РедактироватьТоварВКорзине" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать товар в корзине</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать товар в корзине</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Alt+E</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.КорзинаРедактирование</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>РедактироватьТоварВКорзине</Action>
+		</Command>
+		<Command name="ДобавитьВКорзину" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить в корзину</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить в корзину</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Alt+C</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.КорзинаПоложить</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьВКорзину</Action>
+		</Command>
+		<Command name="ВставитьИзКорзины" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить из корзины</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить из корзины</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Alt+V</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.КарзинаВыложить</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ВставитьИзКорзины</Action>
+		</Command>
+	</Commands>
+</Form>

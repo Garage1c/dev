@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказПоставщику</dataPath>
+			<field>ЗаказПоставщику</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Упаковка</dataPath>
+			<field>Упаковка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена</dataPath>
+			<field>Цена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтавкаНДС</dataPath>
+			<field>СтавкаНДС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодМесяц</dataPath>
+			<field>ПериодМесяц</field>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодГод</dataPath>
+			<field>ПериодГод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период год</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>3</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инвойс</dataPath>
+			<field>Инвойс</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПришло</dataPath>
+			<field>КоличествоПришло</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество пришло</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОтгружено</dataPath>
+			<field>КоличествоОтгружено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество отгружено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗаказано</dataPath>
+			<field>КоличествоЗаказано</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество заказано</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документы</dataPath>
+			<field>Документы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Партнер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЗаказано</dataPath>
+			<field>СуммаЗаказано</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма заказано</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОтгружено</dataPath>
+			<field>СуммаОтгружено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма отгружено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПришло</dataPath>
+			<field>СуммаПришло</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма пришло</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ПрошедшийПериод.Номенклатура,
+	ПрошедшийПериод.КоличествоЗаказано,
+	ПрошедшийПериод.КоличествоОтгружено,
+	ПрошедшийПериод.КоличествоПришло,
+	ПрошедшийПериод.ПериодМесяц,
+	ПрошедшийПериод.ПериодГод,
+	ПрошедшийПериод.Документ КАК Документы,
+	ПрошедшийПериод.Партнер,
+	ПрошедшийПериод.СуммаЗаказано,
+	ПрошедшийПериод.СуммаОтгружено,
+	ПрошедшийПериод.СуммаПришло
+ИЗ
+	(ВЫБРАТЬ
+		ЗаказыПоставщикамОстаткиИОбороты.Номенклатура КАК Номенклатура,
+		ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.КоличествоПриход, 0) КАК КоличествоЗаказано,
+		ВЫБОР
+			КОГДА ЗаказыПоставщикамОстаткиИОбороты.Регистратор ССЫЛКА Документ.Инвойс
+				ТОГДА ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.КоличествоРасход, 0)
+			ИНАЧЕ 0
+		КОНЕЦ КАК КоличествоОтгружено,
+		ВЫБОР
+			КОГДА ЗаказыПоставщикамОстаткиИОбороты.Регистратор ССЫЛКА Документ.ПоступлениеТоваров
+				ТОГДА ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.КоличествоРасход, 0)
+			ИНАЧЕ 0
+		КОНЕЦ КАК КоличествоПришло,
+		МЕСЯЦ(ЗаказыПоставщикамОстаткиИОбороты.ПериодМесяц) КАК ПериодМесяц,
+		ГОД(ЗаказыПоставщикамОстаткиИОбороты.ПериодМесяц) КАК ПериодГод,
+		ЗаказыПоставщикамОстаткиИОбороты.Регистратор КАК Документ,
+		ЗаказыПоставщикамОстаткиИОбороты.Регистратор.Партнер КАК Партнер,
+		ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.СуммаПриход, 0) КАК СуммаЗаказано,
+		ВЫБОР
+			КОГДА ЗаказыПоставщикамОстаткиИОбороты.Регистратор ССЫЛКА Документ.Инвойс
+				ТОГДА ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.СуммаРасход, 0)
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаОтгружено,
+		ВЫБОР
+			КОГДА ЗаказыПоставщикамОстаткиИОбороты.Регистратор ССЫЛКА Документ.ПоступлениеТоваров
+				ТОГДА ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.СуммаРасход, 0)
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаПришло
+	ИЗ
+		РегистрНакопления.ЗаказыПоставщикам.ОстаткиИОбороты({(&amp;НачалоПериода)}, {(&amp;КонецПериода)}, Авто, , ) КАК ЗаказыПоставщикамОстаткиИОбороты) КАК ПрошедшийПериод
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВложенныйЗапрос.Номенклатура,
+	0,
+	ВложенныйЗапрос.КоличествоОтгружено,
+	0,
+	ВложенныйЗапрос.ПериодМесяц,
+	ВложенныйЗапрос.ПериодГод,
+	ВложенныйЗапрос.Документ,
+	ВложенныйЗапрос.Партнер,
+	0,
+	ВложенныйЗапрос.СуммаОтгружено,
+	0
+ИЗ
+	(ВЫБРАТЬ
+		ЗаказыПоставщикамОстаткиИОбороты.Номенклатура КАК Номенклатура,
+		ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.КоличествоКонечныйОстаток, 0) КАК КоличествоОтгружено,
+		МЕСЯЦ(ДОБАВИТЬКДАТЕ(ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику.Дата, ДЕНЬ, ЗаказыПоставщикамОстаткиИОбороты.Номенклатура.ВремяНаПроизводство)) КАК ПериодМесяц,
+		ГОД(ДОБАВИТЬКДАТЕ(ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику.Дата, ДЕНЬ, ЗаказыПоставщикамОстаткиИОбороты.Номенклатура.ВремяНаПроизводство)) КАК ПериодГод,
+		ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику КАК Документ,
+		ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику.Партнер КАК Партнер,
+		ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.СуммаКонечныйОстаток, 0) КАК СуммаОтгружено
+	ИЗ
+		РегистрНакопления.ЗаказыПоставщикам.ОстаткиИОбороты({(&amp;НачалоПериода)}, &amp;ТекущаяДата {(&amp;ТекущаяДата)}, Авто, , ) КАК ЗаказыПоставщикамОстаткиИОбороты) КАК ВложенныйЗапрос
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВложенныйЗапрос.Номенклатура,
+	0,
+	0,
+	ВложенныйЗапрос.КоличествоПришло,
+	ВложенныйЗапрос.ПериодМесяц,
+	ВложенныйЗапрос.ПериодГод,
+	ВложенныйЗапрос.Документ,
+	ВложенныйЗапрос.Партнер,
+	0,
+	0,
+	ВложенныйЗапрос.СуммаПришло
+ИЗ
+	(ВЫБРАТЬ
+		ТоварыПоставщиковВПутиОстаткиИОбороты.Номенклатура КАК Номенклатура,
+		ЕСТЬNULL(ТоварыПоставщиковВПутиОстаткиИОбороты.КоличествоКонечныйОстаток, 0) КАК КоличествоПришло,
+		МЕСЯЦ(ДОБАВИТЬКДАТЕ(ТоварыПоставщиковВПутиОстаткиИОбороты.Инвойс.Дата, ДЕНЬ, ТоварыПоставщиковВПутиОстаткиИОбороты.ЗаказПоставщику.Партнер.СрокВПути)) КАК ПериодМесяц,
+		ГОД(ДОБАВИТЬКДАТЕ(ТоварыПоставщиковВПутиОстаткиИОбороты.Инвойс.Дата, ДЕНЬ, ТоварыПоставщиковВПутиОстаткиИОбороты.ЗаказПоставщику.Партнер.СрокВПути)) КАК ПериодГод,
+		ТоварыПоставщиковВПутиОстаткиИОбороты.Инвойс КАК Документ,
+		ТоварыПоставщиковВПутиОстаткиИОбороты.Инвойс.Партнер КАК Партнер,
+		ЕСТЬNULL(ТоварыПоставщиковВПутиОстаткиИОбороты.СуммаКонечныйОстаток, 0) КАК СуммаПришло
+	ИЗ
+		РегистрНакопления.ТоварыПоставщиковВПути.ОстаткиИОбороты({(&amp;НачалоПериода)}, &amp;ТекущаяДата {(&amp;ТекущаяДата)}, Авто, , ) КАК ТоварыПоставщиковВПутиОстаткиИОбороты) КАК ВложенныйЗапрос
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВложенныйЗапрос.Номенклатура,
+	0,
+	0,
+	ВложенныйЗапрос.КоличествоПришло,
+	ВложенныйЗапрос.ПериодМесяц,
+	ВложенныйЗапрос.ПериодГод,
+	ВложенныйЗапрос.Документ,
+	ВложенныйЗапрос.Партнер,
+	0,
+	0,
+	ВложенныйЗапрос.СуммаПришло
+ИЗ
+	(ВЫБРАТЬ
+		ЗаказыПоставщикамОстаткиИОбороты.Номенклатура КАК Номенклатура,
+		ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.КоличествоКонечныйОстаток, 0) КАК КоличествоПришло,
+		МЕСЯЦ(ДОБАВИТЬКДАТЕ(ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику.Дата, ДЕНЬ, ЗаказыПоставщикамОстаткиИОбороты.Номенклатура.ВремяНаПроизводство + ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику.Партнер.СрокВПути)) КАК ПериодМесяц,
+		ГОД(ДОБАВИТЬКДАТЕ(ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику.Дата, ДЕНЬ, ЗаказыПоставщикамОстаткиИОбороты.Номенклатура.ВремяНаПроизводство + ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику.Партнер.СрокВПути)) КАК ПериодГод,
+		ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику КАК Документ,
+		ЗаказыПоставщикамОстаткиИОбороты.ЗаказПоставщику.Партнер КАК Партнер,
+		ЕСТЬNULL(ЗаказыПоставщикамОстаткиИОбороты.СуммаКонечныйОстаток, 0) КАК СуммаПришло
+	ИЗ
+		РегистрНакопления.ЗаказыПоставщикам.ОстаткиИОбороты({(&amp;НачалоПериода)}, &amp;ТекущаяДата {(&amp;ТекущаяДата)}, Авто, , ) КАК ЗаказыПоставщикамОстаткиИОбороты) КАК ВложенныйЗапрос
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ПрошедшийПериодПослеИнвойса.Номенклатура,
+	ПрошедшийПериодПослеИнвойса.КоличествоЗаказано,
+	ПрошедшийПериодПослеИнвойса.КоличествоОтгружено,
+	ПрошедшийПериодПослеИнвойса.КоличествоПришло,
+	ПрошедшийПериодПослеИнвойса.ПериодМесяц,
+	ПрошедшийПериодПослеИнвойса.ПериодГод,
+	ПрошедшийПериодПослеИнвойса.Документ,
+	ПрошедшийПериодПослеИнвойса.Партнер,
+	ПрошедшийПериодПослеИнвойса.СуммаЗаказано,
+	ПрошедшийПериодПослеИнвойса.СуммаОтгружено,
+	ПрошедшийПериодПослеИнвойса.СуммаПришло
+ИЗ
+	(ВЫБРАТЬ
+		ТоварыПоставщиковВПутиОстаткиИОбороты.Номенклатура КАК Номенклатура,
+		0 КАК КоличествоЗаказано,
+		0 КАК КоличествоОтгружено,
+		ВЫБОР
+			КОГДА ТоварыПоставщиковВПутиОстаткиИОбороты.Регистратор ССЫЛКА Документ.ПоступлениеТоваров
+				ТОГДА ЕСТЬNULL(ТоварыПоставщиковВПутиОстаткиИОбороты.КоличествоРасход, 0)
+			ИНАЧЕ 0
+		КОНЕЦ КАК КоличествоПришло,
+		МЕСЯЦ(ТоварыПоставщиковВПутиОстаткиИОбороты.ПериодМесяц) КАК ПериодМесяц,
+		ГОД(ТоварыПоставщиковВПутиОстаткиИОбороты.ПериодМесяц) КАК ПериодГод,
+		ТоварыПоставщиковВПутиОстаткиИОбороты.Регистратор КАК Документ,
+		ТоварыПоставщиковВПутиОстаткиИОбороты.Регистратор.Партнер КАК Партнер,
+		0 КАК СуммаЗаказано,
+		0 КАК СуммаОтгружено,
+		ВЫБОР
+			КОГДА ТоварыПоставщиковВПутиОстаткиИОбороты.Регистратор ССЫЛКА Документ.ПоступлениеТоваров
+				ТОГДА ЕСТЬNULL(ТоварыПоставщиковВПутиОстаткиИОбороты.СуммаРасход, 0)
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаПришло
+	ИЗ
+		РегистрНакопления.ТоварыПоставщиковВПути.ОстаткиИОбороты({(&amp;НачалоПериода)}, {(&amp;КонецПериода)}, Авто, , ) КАК ТоварыПоставщиковВПутиОстаткиИОбороты) КАК ПрошедшийПериодПослеИнвойса</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоЗаказано</dataPath>
+		<expression>Сумма(КоличествоЗаказано)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОтгружено</dataPath>
+		<expression>Сумма(КоличествоОтгружено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПришло</dataPath>
+		<expression>Сумма(КоличествоПришло)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаЗаказано</dataPath>
+		<expression>Сумма(СуммаЗаказано)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаОтгружено</dataPath>
+		<expression>Сумма(СуммаОтгружено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПришло</dataPath>
+		<expression>Сумма(СуммаПришло)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(ТекущаяДата(),"День")</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПериодГод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПериодМесяц</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура.Артикул</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоЗаказано</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОтгружено</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПришло</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаЗаказано</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОтгружено</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПришло</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>205e4875-4415-4407-a7b3-a9b1aa3d8f5c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>7de559d8-1856-4382-b3d5-c77675b8a3f8</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заказано, отгружено, пришло</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодГод</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ПериодМесяц</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПериодМесяц</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Партнер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Номенклатура</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Номенклатура</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Номенклатура.Артикул</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>КоличествоЗаказано</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаЗаказано</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>КоличествоОтгружено</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаОтгружено</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>КоличествоПришло</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаПришло</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоЗаказано</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаЗаказано</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоОтгружено</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаОтгружено</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПришло</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПришло</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

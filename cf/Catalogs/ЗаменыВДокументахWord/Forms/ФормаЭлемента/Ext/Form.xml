@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Наименование" id="3">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="16"/>
+		</InputField>
+		<Table name="Замены" id="5">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Замены</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ЗаменыКонтекстноеМеню" id="6"/>
+			<AutoCommandBar name="ЗаменыКоманднаяПанель" id="7"/>
+			<ExtendedTooltip name="ЗаменыРасширеннаяПодсказка" id="17"/>
+			<SearchStringAddition name="ЗаменыСтрокаПоиска" id="18">
+				<AdditionSource>
+					<Item>Замены</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗаменыСтрокаПоискаКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="ЗаменыСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ЗаменыСостояниеПросмотра" id="21">
+				<AdditionSource>
+					<Item>Замены</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗаменыСостояниеПросмотраКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ЗаменыСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ЗаменыУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>Замены</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗаменыУправлениеПоискомКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="ЗаменыУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ЗаменыНомерСтроки" id="8">
+					<DataPath>Объект.Замены.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЗаменыНомерСтрокиКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ЗаменыНомерСтрокиРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<InputField name="ЗаменыЧтоЗаменять" id="10">
+					<DataPath>Объект.Замены.ЧтоЗаменять</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЗаменыЧтоЗаменятьКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ЗаменыЧтоЗаменятьРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ЗаменыНаЧтоЗаменять" id="12">
+					<DataPath>Объект.Замены.НаЧтоЗаменять</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="ЗаменыНаЧтоЗаменятьКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ЗаменыНаЧтоЗаменятьРасширеннаяПодсказка" id="29"/>
+					<Events>
+						<Event name="Opening">ЗаменыНаЧтоЗаменятьОткрытие</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="ЗаменыВерхнийКолонтитул" id="34">
+					<DataPath>Объект.Замены.ВерхнийКолонтитул</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>в т.ч. в верх.колонтитуле</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаменыВерхнийКолонтитулКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ЗаменыВерхнийКолонтитулРасширеннаяПодсказка" id="36"/>
+				</CheckBoxField>
+				<CheckBoxField name="ЗаменыНижнийКолонтитул" id="31">
+					<DataPath>Объект.Замены.НижнийКолонтитул</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>в т.ч. в нижнем</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаменыНижнийКолонтитулКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ЗаменыНижнийКолонтитулРасширеннаяПодсказка" id="33"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+		<LabelDecoration name="Декорация1" id="14">
+			<TextColor>style:ЦветИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Замена это выражение по команде "Вычислить"
+Доступны сл. переменные:
+- Организация - справочник ссылка организация
+- Партнер - справочник ссылка партнер
+- Контрагент - справочник ссылка контрагент
+- ИндексДоговора - индекс строки номера договора в контрагенте
+
+Выражение происходит на клиенте, если нужно выполнить на сервере
+тогда нужно вызывать команду 
+"ВычислитьНаСервере(&lt;Выражение&gt;, Организация, Партнер, контрагент, ИндексДоговора)"
+где Организация, Партнер, Контрагент и ИндексДоговора не обязательные парвметры</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация1КонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="30"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ЗаменыВДокументахWord</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

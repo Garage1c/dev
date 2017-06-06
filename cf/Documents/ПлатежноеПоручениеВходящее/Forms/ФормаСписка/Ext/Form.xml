@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаСправочникПартнерыДокументы" id="93">
+				<Type>CommandBarButton</Type>
+				<CommandName>Catalog.Партнеры.Command.Документы</CommandName>
+				<DataPath>Items.Список.CurrentData.Партнер</DataPath>
+				<ExtendedTooltip name="ФормаСправочникПартнерыДокументыРасширеннаяПодсказка" id="94"/>
+			</Button>
+			<Button name="ФормаОбработкаДолгиПоОплате_УправлениеАнализОплатПоЗаказам" id="91">
+				<Type>CommandBarButton</Type>
+				<CommandName>DataProcessor.ДолгиПоОплате_Управление.Command.АнализОплатПоЗаказам</CommandName>
+				<DataPath>Items.Список.CurrentData.Партнер</DataPath>
+				<ExtendedTooltip name="ФормаОбработкаДолгиПоОплате_УправлениеАнализОплатПоЗаказамРасширеннаяПодсказка" id="92"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокExtendedTooltip" id="50"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="76">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="77"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="78"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="79">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="80"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="81"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="82">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="83"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="84"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Дата" id="4">
+					<DataPath>Список.Date</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаExtendedTooltip" id="51"/>
+				</LabelField>
+				<LabelField name="Номер" id="6">
+					<DataPath>Список.Number</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="НомерКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="НомерExtendedTooltip" id="52"/>
+				</LabelField>
+				<LabelField name="Партнер" id="34">
+					<DataPath>Список.Партнер</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ПартнерКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ПартнерExtendedTooltip" id="53"/>
+				</LabelField>
+				<LabelField name="ПартнерОсновнойМенеджер" id="48">
+					<DataPath>Список.Контрагент.ОсновнойМенеджер</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ПартнерОсновнойМенеджерКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="ПартнерОсновнойМенеджерExtendedTooltip" id="54"/>
+				</LabelField>
+				<LabelField name="Организация" id="30">
+					<DataPath>Список.Организация</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="55"/>
+				</LabelField>
+				<LabelField name="Сумма" id="40">
+					<DataPath>Список.Сумма</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="СуммаКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="СуммаExtendedTooltip" id="56"/>
+				</LabelField>
+				<LabelField name="СуммаВзаиморасчетов" id="73">
+					<DataPath>Список.СуммаВзаиморасчетов</DataPath>
+					<ContextMenu name="СуммаВзаиморасчетовКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="СуммаВзаиморасчетовРасширеннаяПодсказка" id="75"/>
+				</LabelField>
+				<LabelField name="Валюта" id="20">
+					<DataPath>Список.Валюта</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ВалютаКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ВалютаExtendedTooltip" id="57"/>
+				</LabelField>
+				<LabelField name="ДатаВходящегоДокумента" id="8">
+					<DataPath>Список.ДатаВходящегоДокумента</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ДатаВходящегоДокументаКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ДатаВходящегоДокументаExtendedTooltip" id="58"/>
+				</LabelField>
+				<LabelField name="НомерВходящегоДокумента" id="10">
+					<DataPath>Список.НомерВходящегоДокумента</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="НомерВходящегоДокументаКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="НомерВходящегоДокументаExtendedTooltip" id="59"/>
+				</LabelField>
+				<LabelField name="ВидОперации" id="44">
+					<DataPath>Список.ВидОперации</DataPath>
+					<ContextMenu name="ВидОперацииКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ВидОперацииExtendedTooltip" id="60"/>
+				</LabelField>
+				<LabelField name="СтатьяДвиженияДенежныхСредств" id="46">
+					<DataPath>Список.СтатьяДвиженияДенежныхСредств</DataPath>
+					<ContextMenu name="СтатьяДвиженияДенежныхСредствКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="СтатьяДвиженияДенежныхСредствExtendedTooltip" id="61"/>
+				</LabelField>
+				<LabelField name="НазначениеПлатежа" id="12">
+					<DataPath>Список.НазначениеПлатежа</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="НазначениеПлатежаКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="НазначениеПлатежаExtendedTooltip" id="62"/>
+				</LabelField>
+				<LabelField name="Комментарий" id="26">
+					<DataPath>Список.Комментарий</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="КомментарийExtendedTooltip" id="63"/>
+				</LabelField>
+				<LabelField name="ВходящийНомер" id="14">
+					<DataPath>Список.ВходящийНомер</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ВходящийНомерКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ВходящийНомерExtendedTooltip" id="64"/>
+				</LabelField>
+				<LabelField name="БанковскийСчетОрганизации" id="16">
+					<DataPath>Список.БанковскийСчетОрганизации</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="БанковскийСчетОрганизацииКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="БанковскийСчетОрганизацииExtendedTooltip" id="65"/>
+				</LabelField>
+				<LabelField name="БанковскийСчетПартнера" id="18">
+					<DataPath>Список.БанковскийСчетПартнера</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="БанковскийСчетПартнераКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="БанковскийСчетПартнераExtendedTooltip" id="66"/>
+				</LabelField>
+				<LabelField name="Грузоотправитель" id="22">
+					<DataPath>~Список.Грузоотправитель</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ГрузоотправительКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ГрузоотправительExtendedTooltip" id="67"/>
+				</LabelField>
+				<LabelField name="Грузополучатель" id="24">
+					<DataPath>~Список.Грузополучатель</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ГрузополучательКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ГрузополучательExtendedTooltip" id="68"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="28">
+					<DataPath>Список.Контрагент</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="КонтрагентExtendedTooltip" id="69"/>
+				</LabelField>
+				<LabelField name="Ответственный" id="32">
+					<DataPath>Список.Ответственный</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ОтветственныйExtendedTooltip" id="70"/>
+				</LabelField>
+				<LabelField name="Подразделение" id="38">
+					<DataPath>Список.Подразделение</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ПодразделениеКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ПодразделениеExtendedTooltip" id="71"/>
+				</LabelField>
+				<LabelField name="Отдел" id="88">
+					<DataPath>Список.Отдел</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОтделКонтекстноеМеню" id="89"/>
+					<ExtendedTooltip name="ОтделРасширеннаяПодсказка" id="90"/>
+				</LabelField>
+				<LabelField name="ТипЦен" id="42">
+					<DataPath>~Список.ТипЦен</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ТипЦенКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="ТипЦенExtendedTooltip" id="72"/>
+				</LabelField>
+				<CheckBoxField name="РасшифровкаЗаполнена" id="85">
+					<DataPath>Список.РасшифровкаЗаполнена</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="РасшифровкаЗаполненаКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="РасшифровкаЗаполненаРасширеннаяПодсказка" id="87"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Document.ПлатежноеПоручениеВходящее</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

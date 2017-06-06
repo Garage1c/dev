@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа2" id="12">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2ExtendedTooltip" id="30"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаЧасов" id="14">
+					<Width>6</Width>
+					<Height>3</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка часов</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показать список заказов в очереди</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Hyperlink>true</Hyperlink>
+					<Picture>
+						<xr:Ref>CommonPicture.Часы</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="КартинкаЧасовКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="КартинкаЧасовExtendedTooltip" id="31"/>
+					<Events>
+						<Event name="Click">КартинкаЧасовНажатие</Event>
+					</Events>
+				</PictureDecoration>
+				<UsualGroup name="Группа3" id="13">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа3ExtendedTooltip" id="32"/>
+					<ChildItems>
+						<LabelField name="СостояниеЗаказа" id="1">
+							<DataPath>СостояниеЗаказа</DataPath>
+							<Font ref="style:ШрифтСостояний" kind="StyleItem"/>
+							<ContextMenu name="СостояниеЗаказаКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="СостояниеЗаказаExtendedTooltip" id="33"/>
+						</LabelField>
+						<InputField name="ОчередьСборки" id="3">
+							<DataPath>ОчередьСборки</DataPath>
+							<ContextMenu name="ОчередьСборкиКонтекстноеМеню" id="4"/>
+							<ExtendedTooltip name="ОчередьСборкиExtendedTooltip" id="34"/>
+							<Events>
+								<Event name="OnChange">ОчередьСборкиПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаИнформацияПоОчереди" id="29">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа информация по очереди</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа информация по очереди</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИнформацияПоОчередиExtendedTooltip" id="35"/>
+							<ChildItems>
+								<LabelDecoration name="ИнформацияПоОчереди" id="21">
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextColor>style:ЦветИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>В очереди находиться 10 заказов
+из них 3 заказа в текущей
+-----------------   -----------------   -----------------
+общее количество ожидающих сборки 25 заказов</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ИнформацияПоОчередиКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="ИнформацияПоОчередиExtendedTooltip" id="36"/>
+									<Events>
+										<Event name="Click">ИнформацияПоОчередиНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<Button name="Показать" id="28">
+									<Type>UsualButton</Type>
+									<Visible>false</Visible>
+									<CommandName>Form.Command.Показать</CommandName>
+									<ExtendedTooltip name="ПоказатьExtendedTooltip" id="37"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа4" id="17">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа4ExtendedTooltip" id="38"/>
+			<ChildItems>
+				<InputField name="ПланируемаяДатаОтгрузки" id="5">
+					<DataPath>ПланируемаяДатаОтгрузки</DataPath>
+					<ContextMenu name="ПланируемаяДатаОтгрузкиКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ПланируемаяДатаОтгрузкиExtendedTooltip" id="39"/>
+					<Events>
+						<Event name="OnChange">ПланируемаяДатаОтгрузкиПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelDecoration name="Декорация1" id="26">
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="Декорация1ExtendedTooltip" id="40"/>
+				</LabelDecoration>
+				<Button name="КнопкаОтменить" id="18">
+					<Type>UsualButton</Type>
+					<Width>5</Width>
+					<Height>2</Height>
+					<CommandName>Form.Command.Отменить</CommandName>
+					<ExtendedTooltip name="КнопкаОтменитьExtendedTooltip" id="41"/>
+				</Button>
+				<Button name="КнопкаНазначить" id="16">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<Width>5</Width>
+					<Height>2</Height>
+					<CommandName>Form.Command.Назначить</CommandName>
+					<ExtendedTooltip name="КнопкаНазначитьExtendedTooltip" id="42"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа1" id="11">
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="Группа1ExtendedTooltip" id="43"/>
+			<ChildItems>
+				<LabelField name="ФактическаяДатаОтгрузки" id="7">
+					<DataPath>ФактическаяДатаОтгрузки</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отгружен</v8:content>
+						</v8:item>
+					</Title>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДЛФ=DDT</v8:content>
+						</v8:item>
+					</Format>
+					<TextColor>style:ЦветИнформационнойНадписи</TextColor>
+					<ContextMenu name="ФактическаяДатаОтгрузкиКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ФактическаяДатаОтгрузкиExtendedTooltip" id="44"/>
+				</LabelField>
+				<UsualGroup name="Группа5" id="25">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа5ExtendedTooltip" id="45"/>
+					<ChildItems>
+						<LabelField name="Ответственный" id="9">
+							<DataPath>Ответственный</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>кто изменил</v8:content>
+								</v8:item>
+							</Title>
+							<TextColor>style:ЦветИнформационнойНадписи</TextColor>
+							<ContextMenu name="ОтветственныйКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="ОтветственныйExtendedTooltip" id="46"/>
+						</LabelField>
+						<LabelField name="ДатаИзменения" id="23">
+							<DataPath>ДатаИзменения</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<Width>16</Width>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДЛФ=DDT</v8:content>
+								</v8:item>
+							</Format>
+							<TextColor>style:ЦветИнформационнойНадписи</TextColor>
+							<ContextMenu name="ДатаИзмененияКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="ДатаИзмененияExtendedTooltip" id="47"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ПланируемаяДатаОтгрузки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Планируемая дата отгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФактическаяДатаОтгрузки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактическая дата отгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Заказ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ОчередьСборки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очередь сборки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПредставлениеОчередиСборкиЗаказа</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Ответственный" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеЗаказа" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние заказа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СостоянияЗаказа</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаИзменения" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата изменения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Назначить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить очередь заказа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЧасыЗапуск</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Назначить</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="Отменить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить очередь заказа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЧасыСтоп</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Отменить</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="Показать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЧасыСсылка</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Показать</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Заказ">
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

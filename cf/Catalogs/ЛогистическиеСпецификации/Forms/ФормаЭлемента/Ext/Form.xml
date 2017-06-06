@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="63"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Состав" id="7">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Состав</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СоставКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="СоставКоманднаяПанель" id="9"/>
+			<ExtendedTooltip name="СоставРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="СоставСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СоставСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоставСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СоставСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоставУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="СоставУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnEditEnd">СоставПриОкончанииРедактирования</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="СоставНомерСтроки" id="20">
+					<DataPath>Объект.Состав.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СоставНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<InputField name="СоставПоставщик" id="23">
+					<DataPath>Объект.Состав.Поставщик</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставПоставщикКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="СоставПоставщикРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<CheckBoxField name="СоставИмпорт" id="26">
+					<DataPath>Объект.Состав.Импорт</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СоставИмпортКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СоставИмпортРасширеннаяПодсказка" id="28"/>
+				</CheckBoxField>
+				<InputField name="СоставСпособДоставки" id="29">
+					<DataPath>Объект.Состав.СпособДоставки</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Самовывоз со склада поставщика</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ВариантДоставки.EnumValue.СамовывозСоСкладаПоставщика</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Самовывоз с терминала</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ВариантДоставки.EnumValue.СамовывозСТерминала</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Доставка до склада ТК</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ВариантДоставки.EnumValue.ДоставкаДоСкладаТК</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Доставка со склада поставщиком</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ВариантДоставки.EnumValue.ДоставкаДоСкладаПоставщиком</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СоставСпособДоставкиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СоставСпособДоставкиРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="СоставРастаможка" id="32">
+					<DataPath>Объект.Состав.Растаможка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставРастаможкаКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="СоставРастаможкаРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="СоставВремяЗабора" id="35">
+					<DataPath>Объект.Состав.ВремяЗабора</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставВремяЗабораКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="СоставВремяЗабораРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="СоставСанктПетербург" id="38">
+					<DataPath>Объект.Состав.СанктПетербург</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставСанктПетербургКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="СоставСанктПетербургРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="СоставМосква" id="41">
+					<DataPath>Объект.Состав.Москва</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставМоскваКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="СоставМоскваРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="СоставНижнийНовгород" id="44">
+					<DataPath>Объект.Состав.НижнийНовгород</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставНижнийНовгородКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="СоставНижнийНовгородРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="СоставМурманск" id="47">
+					<DataPath>Объект.Состав.Мурманск</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставМурманскКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="СоставМурманскРасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="СоставНовокузнецк" id="50">
+					<DataPath>Объект.Состав.Новокузнецк</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставНовокузнецкКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="СоставНовокузнецкРасширеннаяПодсказка" id="52"/>
+				</InputField>
+				<InputField name="СоставХабаровск" id="53">
+					<DataPath>Объект.Состав.Хабаровск</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставХабаровскКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="СоставХабаровскРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="СоставАвтор" id="56">
+					<DataPath>Объект.Состав.Автор</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставАвторКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="СоставАвторРасширеннаяПодсказка" id="58"/>
+				</InputField>
+				<InputField name="СоставДатаПоследнегоИзменения" id="59">
+					<DataPath>Объект.Состав.ДатаПоследнегоИзменения</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставДатаПоследнегоИзмененияКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="СоставДатаПоследнегоИзмененияРасширеннаяПодсказка" id="61"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ЛогистическиеСпецификации</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ОснРеквизиты" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Осн реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Осн реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОснРеквизитыExtendedTooltip" id="96"/>
+			<ChildItems>
+				<InputField name="Наименование" id="3">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="97"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодExtendedTooltip" id="98"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа" id="93">
+			<Group>Horizontal</Group>
+			<ExtendedTooltip name="ГруппаExtendedTooltip" id="99"/>
+			<ChildItems>
+				<UsualGroup name="ПравыеРеквизиты" id="51">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правые реквизиты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правые реквизиты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПравыеРеквизитыExtendedTooltip" id="100"/>
+					<ChildItems>
+						<InputField name="ВидОбъекта" id="36">
+							<DataPath>Объект.ВидОбъекта</DataPath>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ВидОбъектаКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="ВидОбъектаExtendedTooltip" id="101"/>
+							<Events>
+								<Event name="StartChoice">ВидОбъектаНачалоВыбора</Event>
+								<Event name="ChoiceProcessing">ВидОбъектаОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="ИмяТаблицы" id="5">
+							<DataPath>Объект.ИмяТаблицы</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ИмяТаблицыКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="ИмяТаблицыExtendedTooltip" id="102"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ЛевыеРеквизиты" id="39">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левые реквизиты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левые реквизиты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ChildItemsWidth>LeftWide</ChildItemsWidth>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ЛевыеРеквизитыExtendedTooltip" id="103"/>
+					<ChildItems>
+						<CheckBoxField name="Кэшировать" id="94">
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="КэшироватьКонтекстноеМеню" id="95"/>
+							<ExtendedTooltip name="КэшироватьExtendedTooltip" id="104"/>
+						</CheckBoxField>
+						<CheckBoxField name="ЭтоГруппа" id="49">
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЭтоГруппаКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ЭтоГруппаExtendedTooltip" id="105"/>
+						</CheckBoxField>
+						<CheckBoxField name="НеУдалятьПриСинхронизации" id="88">
+							<DataPath>Объект.НеУдалятьПриСинхронизации</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НеУдалятьПриСинхронизацииКонтекстноеМеню" id="89"/>
+							<ExtendedTooltip name="НеУдалятьПриСинхронизацииExtendedTooltip" id="106"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="СтраницыExtendedTooltip" id="107"/>
+			<ChildItems>
+				<Page name="ГруппаОписаниеСтрок" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание строк</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаОписаниеСтрокExtendedTooltip" id="108"/>
+					<ChildItems>
+						<Table name="ОписаниеСтрок" id="11">
+							<Representation>List</Representation>
+							<SkipOnInput>false</SkipOnInput>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ЗагружаемыеСтроки</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ОписаниеСтрокКонтекстноеМеню" id="12"/>
+							<AutoCommandBar name="ОписаниеСтрокКоманднаяПанель" id="13">
+								<ChildItems>
+									<Button name="Кнопка" id="40">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Command.ЗагрузитьСтруктуру</CommandName>
+										<ExtendedTooltip name="КнопкаExtendedTooltip" id="109"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ОписаниеСтрокExtendedTooltip" id="110"/>
+							<SearchStringAddition name="ОписаниеСтрокСтрокаПоиска" id="132">
+								<AdditionSource>
+									<Item>ОписаниеСтрок</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОписаниеСтрокСтрокаПоискаКонтекстноеМеню" id="133"/>
+								<ExtendedTooltip name="ОписаниеСтрокСтрокаПоискаРасширеннаяПодсказка" id="134"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОписаниеСтрокСостояниеПросмотра" id="135">
+								<AdditionSource>
+									<Item>ОписаниеСтрок</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОписаниеСтрокСостояниеПросмотраКонтекстноеМеню" id="136"/>
+								<ExtendedTooltip name="ОписаниеСтрокСостояниеПросмотраРасширеннаяПодсказка" id="137"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОписаниеСтрокУправлениеПоиском" id="138">
+								<AdditionSource>
+									<Item>ОписаниеСтрок</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОписаниеСтрокУправлениеПоискомКонтекстноеМеню" id="139"/>
+								<ExtendedTooltip name="ОписаниеСтрокУправлениеПоискомРасширеннаяПодсказка" id="140"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<ColumnGroup name="Группа1" id="47">
+									<ExtendedTooltip name="Группа1ExtendedTooltip" id="111"/>
+									<ChildItems>
+										<InputField name="ОписаниеСтрокНомерКолонки" id="16">
+											<DataPath>Объект.ЗагружаемыеСтроки.ИмяКолонки</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Имя колонки MySQL</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номер колонки в экселе откуда брать значение</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОписаниеСтрокНомерКолонкиКонтекстноеМеню" id="17"/>
+											<ExtendedTooltip name="ОписаниеСтрокНомерКолонкиExtendedTooltip" id="112"/>
+										</InputField>
+										<ColumnGroup name="Группа4" id="56">
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="Группа4ExtendedTooltip" id="113"/>
+											<ChildItems>
+												<InputField name="ИмяПоискаРеквизита" id="57">
+													<DataPath>Объект.ЗагружаемыеСтроки.ИмяРеквизита</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Имя реквизита 1С</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Имя реквизита у объекта если загружаемое значение ссылка и нужно определить эту ссылку</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ИмяПоискаРеквизитаКонтекстноеМеню" id="58"/>
+													<ExtendedTooltip name="ИмяПоискаРеквизитаExtendedTooltip" id="114"/>
+												</InputField>
+												<CheckBoxField name="РеквизитПоиска" id="43">
+													<DataPath>Объект.ЗагружаемыеСтроки.ЭтоРеквизитПоиска</DataPath>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>фигня, не работает нормально</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="РеквизитПоискаКонтекстноеМеню" id="44"/>
+													<ExtendedTooltip name="РеквизитПоискаExtendedTooltip" id="115"/>
+												</CheckBoxField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="Группа2" id="48">
+									<ExtendedTooltip name="Группа2ExtendedTooltip" id="116"/>
+									<ChildItems>
+										<InputField name="ОписаниеСтрокТипОбъекта" id="20">
+											<DataPath>Объект.ЗагружаемыеСтроки.ТипОбъекта</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип объекта MySQL</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип загружаемого реквизита</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="ОписаниеСтрокТипОбъектаКонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ОписаниеСтрокТипОбъектаExtendedTooltip" id="117"/>
+											<Events>
+												<Event name="StartChoice">ОписаниеСтрокТипОбъектаНачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ОписаниеСтрокИмяРеквизита" id="18">
+											<DataPath>Объект.ЗагружаемыеСтроки.ТипОбъекта2</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип объекта MySQL 2</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Имя реквизита у загружаемого объекта</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОписаниеСтрокИмяРеквизитаКонтекстноеМеню" id="19"/>
+											<ExtendedTooltip name="ОписаниеСтрокИмяРеквизитаExtendedTooltip" id="118"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="Выражение" id="45">
+									<DataPath>Объект.ЗагружаемыеСтроки.Выражение</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выражение на языке 1С</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<MultiLine>true</MultiLine>
+									<ExtendedEdit>true</ExtendedEdit>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="ВыражениеКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ВыражениеExtendedTooltip" id="119"/>
+									<Events>
+										<Event name="Opening">ВыражениеОткрытие</Event>
+										<Event name="ChoiceProcessing">ВыражениеОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОтборы" id="64">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отборы 1С</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница отборы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаОтборыExtendedTooltip" id="120"/>
+					<ChildItems>
+						<Table name="Отборы1С" id="65">
+							<SkipOnInput>false</SkipOnInput>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Отборы1С</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="Отборы1СКонтекстноеМеню" id="66"/>
+							<AutoCommandBar name="Отборы1СКоманднаяПанель" id="67"/>
+							<ExtendedTooltip name="Отборы1СExtendedTooltip" id="121"/>
+							<SearchStringAddition name="Отборы1ССтрокаПоиска" id="141">
+								<AdditionSource>
+									<Item>Отборы1С</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="Отборы1ССтрокаПоискаКонтекстноеМеню" id="142"/>
+								<ExtendedTooltip name="Отборы1ССтрокаПоискаРасширеннаяПодсказка" id="143"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="Отборы1ССостояниеПросмотра" id="144">
+								<AdditionSource>
+									<Item>Отборы1С</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="Отборы1ССостояниеПросмотраКонтекстноеМеню" id="145"/>
+								<ExtendedTooltip name="Отборы1ССостояниеПросмотраРасширеннаяПодсказка" id="146"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="Отборы1СУправлениеПоиском" id="147">
+								<AdditionSource>
+									<Item>Отборы1С</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="Отборы1СУправлениеПоискомКонтекстноеМеню" id="148"/>
+								<ExtendedTooltip name="Отборы1СУправлениеПоискомРасширеннаяПодсказка" id="149"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ОтборыНомерСтроки" id="68">
+									<DataPath>Объект.Отборы1С.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОтборыНомерСтрокиКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ОтборыНомерСтрокиExtendedTooltip" id="122"/>
+								</LabelField>
+								<InputField name="ОтборыИмяРеквизита" id="70">
+									<DataPath>Объект.Отборы1С.ИмяРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОтборыИмяРеквизитаКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ОтборыИмяРеквизитаExtendedTooltip" id="123"/>
+								</InputField>
+								<InputField name="ОтборыВидСравнения" id="72">
+									<DataPath>Объект.Отборы1С.ВидСравнения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОтборыВидСравненияКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ОтборыВидСравненияExtendedTooltip" id="124"/>
+								</InputField>
+								<InputField name="ОтборыЗначение" id="74">
+									<DataPath>Объект.Отборы1С.Значение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОтборыЗначениеКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="ОтборыЗначениеExtendedTooltip" id="125"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="группаОтборыMySQL" id="76">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор MySQL</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа отборы my SQL</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="группаОтборыMySQLExtendedTooltip" id="126"/>
+					<ChildItems>
+						<Table name="Таблица" id="77">
+							<SkipOnInput>false</SkipOnInput>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ОтборыMySQL</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаКонтекстноеМеню" id="78"/>
+							<AutoCommandBar name="ТаблицаКоманднаяПанель" id="79"/>
+							<ExtendedTooltip name="ТаблицаExtendedTooltip" id="127"/>
+							<SearchStringAddition name="ТаблицаСтрокаПоиска" id="150">
+								<AdditionSource>
+									<Item>Таблица</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаСтрокаПоискаКонтекстноеМеню" id="151"/>
+								<ExtendedTooltip name="ТаблицаСтрокаПоискаРасширеннаяПодсказка" id="152"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаСостояниеПросмотра" id="153">
+								<AdditionSource>
+									<Item>Таблица</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаСостояниеПросмотраКонтекстноеМеню" id="154"/>
+								<ExtendedTooltip name="ТаблицаСостояниеПросмотраРасширеннаяПодсказка" id="155"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаУправлениеПоиском" id="156">
+								<AdditionSource>
+									<Item>Таблица</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаУправлениеПоискомКонтекстноеМеню" id="157"/>
+								<ExtendedTooltip name="ТаблицаУправлениеПоискомРасширеннаяПодсказка" id="158"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ТаблицаНомерСтроки" id="80">
+									<DataPath>Объект.ОтборыMySQL.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаНомерСтрокиКонтекстноеМеню" id="81"/>
+									<ExtendedTooltip name="ТаблицаНомерСтрокиExtendedTooltip" id="128"/>
+								</LabelField>
+								<InputField name="ТаблицаИмяПоля" id="82">
+									<DataPath>Объект.ОтборыMySQL.ИмяПоля</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаИмяПоляКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="ТаблицаИмяПоляExtendedTooltip" id="129"/>
+								</InputField>
+								<InputField name="ТаблицаВидСравнения" id="84">
+									<DataPath>Объект.ОтборыMySQL.ВидСравнения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаВидСравненияКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="ТаблицаВидСравненияExtendedTooltip" id="130"/>
+								</InputField>
+								<InputField name="ТаблицаЗначение" id="86">
+									<DataPath>Объект.ОтборыMySQL.Значение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаЗначениеКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="ТаблицаЗначениеExtendedTooltip" id="131"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПравилаОбменаMySQL</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьСтруктуру" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить структуру</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить структуру</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьСтруктуру</Action>
+		</Command>
+	</Commands>
+</Form>

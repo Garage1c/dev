@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ИмяФайла" id="1">
+			<DataPath>Объект.ИмяФайла</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ChoiceButton>true</ChoiceButton>
+			<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="ИмяФайлаКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ИмяФайлаРасширеннаяПодсказка" id="17"/>
+			<Events>
+				<Event name="StartChoice">ИмяФайлаНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<CheckBoxField name="ОбновлятьНаСайте" id="13">
+			<DataPath>Объект.ОбновлятьНаСайте</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все загруженные свойства обновяться на сайте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОбновлятьНаСайтеКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ОбновлятьНаСайтеРасширеннаяПодсказка" id="18"/>
+		</CheckBoxField>
+		<CheckBoxField name="ВыгрузитьВсеЛисты" id="15">
+			<DataPath>Объект.ВыгрузитьВсеЛисты</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ВыгрузитьВсеЛистыКонтекстноеМеню" id="16"/>
+			<ExtendedTooltip name="ВыгрузитьВсеЛистыРасширеннаяПодсказка" id="19"/>
+			<Events>
+				<Event name="OnChange">ВыгрузитьВсеЛистыПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<InputField name="ЛистЭкселя" id="9">
+			<DataPath>Объект.ЛистЭкселя</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя листа</v8:content>
+				</v8:item>
+			</Title>
+			<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="ЛистЭкселяКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="ЛистЭкселяРасширеннаяПодсказка" id="20"/>
+		</InputField>
+		<LabelDecoration name="Декорация1" id="11">
+			<TextColor>style:ЦветТекстаИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>
+Загрузка данных со 2й строки
+
+Номера колонок:
+Поиск по коду - колонка №1
+Поиск по производителю - колонка № 4
+Поиск свойства по наименованию - колонка №5
+Поиск значения свойства - колонка №6</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация1КонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="21"/>
+		</LabelDecoration>
+		<CommandBar name="Группа" id="8">
+			<HorizontalLocation>Right</HorizontalLocation>
+			<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="22"/>
+			<ChildItems>
+				<Button name="Кнопка" id="7">
+					<Type>CommandBarButton</Type>
+					<Representation>PictureAndText</Representation>
+					<SkipOnInput>false</SkipOnInput>
+					<CommandName>Form.Command.Загрузить</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузить данные</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КнопкаРасширеннаяПодсказка" id="23"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЗагрузкаСвойств</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.ОбновлятьНаСайте</Field>
+				<Field>Объект.ЛистЭкселя</Field>
+				<Field>Объект.ИмяФайла</Field>
+				<Field>Объект.ВыгрузитьВсеЛисты</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Загрузить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Эксель</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Загрузить</Action>
+		</Command>
+	</Commands>
+</Form>

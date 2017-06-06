@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="Картинка" id="1">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.Загрузка</CommandName>
+				<ExtendedTooltip name="КартинкаРасширеннаяПодсказка" id="16"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<InputField name="ИмяКаталога" id="2">
+			<DataPath>Объект.ИмяКаталога</DataPath>
+			<ChoiceButton>true</ChoiceButton>
+			<ContextMenu name="ИмяКаталогаКонтекстноеМеню" id="3"/>
+			<ExtendedTooltip name="ИмяКаталогаРасширеннаяПодсказка" id="17"/>
+			<Events>
+				<Event name="StartChoice">ИмяКаталогаНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="ФайлЭкселя" id="6">
+			<DataPath>Объект.ИмяФайлаЭкселя</DataPath>
+			<ChoiceButton>true</ChoiceButton>
+			<ContextMenu name="ФайлЭкселяКонтекстноеМеню" id="7"/>
+			<ExtendedTooltip name="ФайлЭкселяРасширеннаяПодсказка" id="18"/>
+			<Events>
+				<Event name="StartChoice">ФайлЭкселяНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="ЛистЭкселя" id="4">
+			<DataPath>Объект.ЛистЭкселя</DataPath>
+			<ContextMenu name="ЛистЭкселяКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ЛистЭкселяРасширеннаяПодсказка" id="19"/>
+		</InputField>
+		<InputField name="ПоискПо" id="14">
+			<DataPath>Объект.ПоискПо</DataPath>
+			<TextEdit>false</TextEdit>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>коду</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">Код</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>артикулу</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">Артикул</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Код(1) + Артикул(2)</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">Код+Артикул</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ChoiceListButton>true</ChoiceListButton>
+			<ContextMenu name="ПоискПоКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="ПоискПоРасширеннаяПодсказка" id="20"/>
+		</InputField>
+		<CheckBoxField name="ОсновноеИзображение" id="8">
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОсновноеИзображениеКонтекстноеМеню" id="9"/>
+			<ExtendedTooltip name="ОсновноеИзображениеРасширеннаяПодсказка" id="21"/>
+		</CheckBoxField>
+		<LabelDecoration name="Декорация1" id="12">
+			<Height>12</Height>
+			<TextColor>style:ЦветТекстаИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>загрузка со второй строки
+
+Номера колонок:
+Поиск -  колонка №1 
+          (если выбран вариант Код+Артикул тогда Код в колонке№1 артикул в колонке №2)
+
+Обозначение главной картинки - "main_img" - колонка №5
+имя файла маленькой картинки - колонка №6
+имя файла большой картинки - колонка №4
+
+имя картинки задается по имени файла большой картинки</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация1КонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="22"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЗагрузкаКартинок</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.ПоискПо</Field>
+				<Field>Объект.НомерКолонки</Field>
+				<Field>Объект.ЛистЭкселя</Field>
+				<Field>Объект.ИмяФайлаЭкселя</Field>
+				<Field>Объект.ИмяКаталога</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Загрузка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Загрузка</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРезерва</dataPath>
+			<field>ДокументРезерва</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Размещение</dataPath>
+			<field>Размещение</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Упаковка</dataPath>
+			<field>Упаковка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказчик</dataPath>
+			<field>Заказчик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВнутреннийЗаказ</dataPath>
+			<field>ВнутреннийЗаказ</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	МинимальныеОстаткиНаСкладеСрезПоследних.Товар КАК Номенклатура,
+	МинимальныеОстаткиНаСкладеСрезПоследних.МинимальныйОстаток КАК Мин,
+	МинимальныеОстаткиНаСкладеСрезПоследних.РекомендуемыйОстаток КАК Рек
+ПОМЕСТИТЬ СписокЭталона
+ИЗ
+	РегистрСведений.МинимальныеОстаткиНаСкладе.СрезПоследних(, Склад = &amp;СкладПолучатель {(Товар В
+			    (ВЫБРАТЬ
+			        НГ.Номенклатура КАК Товар
+			    ИЗ
+			        Справочник.НоменклатурныеГруппы.Состав КАК НГ
+			    ГДЕ
+			        НГ.Ссылка в ( &amp;НоменклатурнаяГруппа))), (Регистратор В (&amp;ДокументУстановкиМинОстатка))}) КАК МинимальныеОстаткиНаСкладеСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Ост.Номенклатура,
+	СУММА(Ост.КоличествоОстаток - ЕСТЬNULL(Рез.КоличествоОстаток, 0)) КАК Остаток
+ПОМЕСТИТЬ ОстаткиОтправителя
+ИЗ
+	РегистрНакопления.ТоварыНаСкладах.Остатки(
+			,
+			Склад В (&amp;СкладыОтправитель)
+				И Номенклатура В
+					(ВЫБРАТЬ
+						СписокЭталона.Номенклатура
+					ИЗ
+						СписокЭталона)) КАК Ост
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыВРезерве.Остатки(
+				,
+				Размещение В (&amp;СкладыОтправитель)
+					И Номенклатура В
+						(ВЫБРАТЬ
+							СписокЭталона.Номенклатура
+						ИЗ
+							СписокЭталона)) КАК Рез
+		ПО Ост.Номенклатура = Рез.Номенклатура
+			И Ост.Склад = Рез.Размещение
+
+СГРУППИРОВАТЬ ПО
+	Ост.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(Ост.КоличествоОстаток, 0) - ЕСТЬNULL(Рез.КоличествоОстаток, 0) + ЕСТЬNULL(ВнЗаказы.КоличествоОстаток, 0) КАК Остаток,
+	СписокЭталона.Номенклатура КАК Номенклатура
+ПОМЕСТИТЬ ОстаткиПолучателя
+ИЗ
+	СписокЭталона КАК СписокЭталона
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыНаСкладах.Остатки(
+				,
+				Склад = &amp;СкладПолучатель
+					И Номенклатура В
+						(ВЫБРАТЬ
+							СписокЭталона.Номенклатура
+						ИЗ
+							СписокЭталона)) КАК Ост
+		ПО СписокЭталона.Номенклатура = Ост.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыВРезерве.Остатки(
+				,
+				Размещение = &amp;СкладПолучатель
+					И Номенклатура В
+						(ВЫБРАТЬ
+							СписокЭталона.Номенклатура
+						ИЗ
+							СписокЭталона)) КАК Рез
+		ПО СписокЭталона.Номенклатура = Рез.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ВнутренниеЗаказы.Остатки(
+				,
+				Заказчик = &amp;СкладПолучатель
+					И Номенклатура В
+						(ВЫБРАТЬ
+							СписокЭталона.Номенклатура
+						ИЗ
+							СписокЭталона)) КАК ВнЗаказы
+		ПО СписокЭталона.Номенклатура = ВнЗаказы.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Эталон.Номенклатура КАК Номенклатура,
+	ВЫБОР
+		КОГДА Отпр.Остаток &lt; Эталон.Рек - ЕСТЬNULL(Получ.Остаток, 0)
+			ТОГДА Отпр.Остаток
+		ИНАЧЕ Эталон.Рек - ЕСТЬNULL(Получ.Остаток, 0)
+	КОНЕЦ КАК Количество
+ИЗ
+	СписокЭталона КАК Эталон
+		ЛЕВОЕ СОЕДИНЕНИЕ ОстаткиОтправителя КАК Отпр
+		ПО Эталон.Номенклатура = Отпр.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ ОстаткиПолучателя КАК Получ
+		ПО Эталон.Номенклатура = Получ.Номенклатура
+ГДЕ
+	Эталон.Мин &gt;= ЕСТЬNULL(Получ.Остаток, 0)
+	И Отпр.Остаток &gt; 0
+	И Эталон.Рек &gt; Получ.Остаток</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СкладПолучатель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Склад получатель</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Склады</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СкладыОтправитель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Склады отправитель</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Склады</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>ДокументУстановкиМинОстатка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Документ установки рекомендуемого остатка</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.УстановкаМинимальногоОстатка</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>НоменклатурнаяГруппа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатурная группа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Номенклатура</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СкладПолучатель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СкладыОтправитель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>0c8584eb-0c9e-47bd-9e5f-d936ab96268d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДокументУстановкиМинОстатка</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>f107e515-3c21-4169-b2b6-cb66ec81ea74</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НоменклатурнаяГруппа</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>0a50b878-3b76-4042-beab-98b87604e385</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

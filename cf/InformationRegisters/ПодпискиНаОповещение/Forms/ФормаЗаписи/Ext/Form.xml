@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Оповестить о событии</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаУдалитьПодписку" id="27">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<OnlyInAllActions>true</OnlyInAllActions>
+				<CommandName>Form.StandardCommand.Delete</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Delete</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Удалить подписку</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаУдалитьПодпискуРасширеннаяПодсказка" id="28"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа2" id="29">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<CheckBoxField name="Активно" id="10">
+					<DataPath>Запись.Активно</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="АктивноКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="АктивноРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">АктивноПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ДатаПодписки" id="13">
+					<DataPath>Запись.ДатаПодписки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оповещать начиная с</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаПодпискиКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ДатаПодпискиРасширеннаяПодсказка" id="15"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа1" id="25">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<InputField name="Событие" id="4">
+					<DataPath>Запись.Событие</DataPath>
+					<ChoiceParameters>
+						<app:item name="Отбор.Отключено">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">false</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ContextMenu name="СобытиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="СобытиеРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">СобытиеПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Подписчик" id="1">
+					<DataPath>Запись.Подписчик</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+						<xr:Value name="Role.ПолныеПраваВОбласти">true</xr:Value>
+					</UserVisible>
+					<ContextMenu name="ПодписчикКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ПодписчикРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСсылка" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ссылка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСсылкаРасширеннаяПодсказка" id="43"/>
+			<ChildItems>
+				<InputField name="Ссылка" id="7">
+					<DataPath>Запись.Ссылка</DataPath>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНастройки" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<InputField name="Настройки" id="16">
+					<DataPath>Запись.Настройки</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+						<xr:Value name="Role.ПолныеПраваВОбласти">true</xr:Value>
+					</UserVisible>
+					<ContextMenu name="НастройкиКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="НастройкиРасширеннаяПодсказка" id="18"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаМесто" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа место</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа место</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаМестоРасширеннаяПодсказка" id="47"/>
+			<ChildItems>
+				<InputField name="Место" id="19">
+					<DataPath>Запись.Место</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+						<xr:Value name="Role.ПолныеПраваВОбласти">true</xr:Value>
+					</UserVisible>
+					<ContextMenu name="МестоКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="МестоРасширеннаяПодсказка" id="21"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНазнОсновногоМенеджера" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа назн основного менеджера</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа назн основного менеджера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>DontUse</ThroughAlign>
+			<ExtendedTooltip name="ГруппаНазнОсновногоМенеджераРасширеннаяПодсказка" id="49"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияОповещатьОСменеосновногоВсегда" id="56">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>59</MaxWidth>
+					<TextColor>style:ЦветТекстаИнформационнойНадписи</TextColor>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Если ничего не выбрано:
+тогда система будет оповещать&lt;b&gt; &lt;/&gt;&lt;b&gt;&lt;color #ff0000&gt;о всех &lt;/&gt;&lt;/&gt;назначениях основного менеджера &lt;u&gt;любого пользователя&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияОповещатьОСменеосновногоВсегдаКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ДекорацияОповещатьОСменеосновногоВсегдаРасширеннаяПодсказка" id="58"/>
+				</LabelDecoration>
+				<CheckBoxField name="ЕслиМеняНазначилиОсновнымМенеджером" id="50">
+					<DataPath>НазначилиОсновнымМенеджером</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оповещать если назначили основным менеджером</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЕслиМеняНазначилиОсновнымМенеджеромКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ЕслиМеняНазначилиОсновнымМенеджеромРасширеннаяПодсказка" id="52"/>
+					<Events>
+						<Event name="OnChange">ЕслиМеняНазначилиОсновнымМенеджеромПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="ЕслиМеняСнялиОсновногоМенеджера" id="53">
+					<DataPath>СнялиОсновногоМенеджера</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оповещать если сняли с основного менеджера</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЕслиМеняСнялиОсновногоМенеджераКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ЕслиМеняСнялиОсновногоМенеджераРасширеннаяПодсказка" id="55"/>
+					<Events>
+						<Event name="OnChange">ЕслиМеняСнялиОсновногоМенеджераПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="СписокПользователей" id="63">
+					<DataPath>СписокПользователей</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительно оповещать если это произошло с</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="СписокПользователейКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="СписокПользователейРасширеннаяПодсказка" id="65"/>
+					<Events>
+						<Event name="OnChange">СписокПользователейПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВыводаОповещений" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Куда сообщить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вывода оповещений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаВыводаОповещенийРасширеннаяПодсказка" id="32"/>
+			<ChildItems>
+				<CheckBoxField name="ОповещатьMsg" id="36">
+					<DataPath>ОповещатьMsg</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оповещение выйдет прямо в 1с</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОповещатьMsgКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ОповещатьMsgРасширеннаяПодсказка" id="38"/>
+				</CheckBoxField>
+				<CheckBoxField name="ОповещатьMail" id="33">
+					<DataPath>ОповещатьMail</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На почту указанную в профиле придет оповещение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОповещатьMailКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ОповещатьMailРасширеннаяПодсказка" id="35"/>
+					<Events>
+						<Event name="OnChange">ОповещатьMailПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="ОповещатьTgr" id="39">
+					<DataPath>ОповещатьTgr</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В разработке</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОповещатьTgrКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ОповещатьTgrРасширеннаяПодсказка" id="41"/>
+					<Events>
+						<Event name="OnChange">ОповещатьTgrПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ПодпискиНаОповещение</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОповещатьMsg" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оповещать в 1с</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОповещатьMail" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Послать письмо</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОповещатьTgr" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В телеграм</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НазначилиОсновнымМенеджером" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначили основным менеджером</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СнялиОсновногоМенеджера" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Если меня сняли с основного менеджера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокПользователей" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Parameters>
+		<Parameter name="Событие">
+			<Type>
+				<v8:Type>cfg:CatalogRef.События</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Пользователь">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

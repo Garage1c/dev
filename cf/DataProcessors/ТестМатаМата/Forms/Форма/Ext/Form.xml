@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<Group>Horizontal</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОтправить" id="27">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Отправить</CommandName>
+				<ExtendedTooltip name="ФормаОтправитьРасширеннаяПодсказка" id="28"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="19">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<InputField name="data_begin" id="1">
+					<DataPath>Объект.data_begin</DataPath>
+					<ContextMenu name="data_beginКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="data_beginРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">ПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="data_end" id="4">
+					<DataPath>Объект.data_end</DataPath>
+					<ContextMenu name="data_endКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="data_endРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="mvz" id="7">
+					<DataPath>Объект.mvz</DataPath>
+					<ContextMenu name="mvzКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="mvzРасширеннаяПодсказка" id="9"/>
+					<Events>
+						<Event name="OnChange">ПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="transaction_id" id="10">
+					<DataPath>Объект.transaction_id</DataPath>
+					<ContextMenu name="transaction_idКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="transaction_idРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">ПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="partner_user_id" id="13">
+					<DataPath>Объект.partner_user_id</DataPath>
+					<ContextMenu name="partner_user_idКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="partner_user_idРасширеннаяПодсказка" id="15"/>
+					<Events>
+						<Event name="OnChange">ПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="detail" id="16">
+					<DataPath>Объект.detail</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="detailКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="detailРасширеннаяПодсказка" id="18"/>
+					<Events>
+						<Event name="OnChange">ПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<TextDocumentField name="стрЗапрос" id="21">
+			<DataPath>стрЗапрос</DataPath>
+			<ContextMenu name="стрЗапросКонтекстноеМеню" id="22"/>
+			<ExtendedTooltip name="стрЗапросРасширеннаяПодсказка" id="23"/>
+		</TextDocumentField>
+		<TextDocumentField name="стрОтвет" id="24">
+			<DataPath>стрОтвет</DataPath>
+			<ContextMenu name="стрОтветКонтекстноеМеню" id="25"/>
+			<ExtendedTooltip name="стрОтветРасширеннаяПодсказка" id="26"/>
+		</TextDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ТестМатаМата</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.transaction_id</Field>
+				<Field>Объект.partner_user_id</Field>
+				<Field>Объект.mvz</Field>
+				<Field>Объект.detail</Field>
+				<Field>Объект.data_end</Field>
+				<Field>Объект.data_begin</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="стрЗапрос" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стр запрос</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="стрОтвет" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стр ответ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Отправить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отправить</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ОснРеквизиты" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Осн реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Осн реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОснРеквизитыExtendedTooltip" id="70"/>
+			<ChildItems>
+				<InputField name="Наименование" id="3">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="71"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодExtendedTooltip" id="72"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа" id="39">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ChildItemsWidth>LeftWide</ChildItemsWidth>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаExtendedTooltip" id="73"/>
+			<ChildItems>
+				<UsualGroup name="ЛевоеПоле" id="66">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левое поле</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левое поле</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ЛевоеПолеExtendedTooltip" id="74"/>
+					<ChildItems>
+						<InputField name="ВидОбъекта" id="36">
+							<DataPath>Объект.ВидОбъекта</DataPath>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ВидОбъектаКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="ВидОбъектаExtendedTooltip" id="75"/>
+							<Events>
+								<Event name="StartChoice">ВидОбъектаНачалоВыбора</Event>
+								<Event name="ChoiceProcessing">ВидОбъектаОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="ИмяФайла" id="5">
+							<DataPath>Объект.ИмяФайла</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ИмяФайлаКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="ИмяФайлаExtendedTooltip" id="76"/>
+							<Events>
+								<Event name="StartChoice">ИмяФайлаНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="листЭкселя" id="52">
+							<DataPath>Объект.ЛистЭкселя</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя листа</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="листЭкселяКонтекстноеМеню" id="53"/>
+							<ExtendedTooltip name="листЭкселяExtendedTooltip" id="77"/>
+						</InputField>
+						<InputField name="ВидЗагрузки" id="7">
+							<DataPath>Объект.ВидЗагрузки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ВидЗагрузкиКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ВидЗагрузкиExtendedTooltip" id="78"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ПравоеПоле" id="67">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правое поле</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правое поле</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПравоеПолеExtendedTooltip" id="79"/>
+					<ChildItems>
+						<InputField name="ПерваяСтрока" id="54">
+							<DataPath>Объект.НачальнаяСтрока</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Первая строка</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>С какой строки начинаются данные</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ContextMenu name="ПерваяСтрокаКонтекстноеМеню" id="55"/>
+							<ExtendedTooltip name="ПерваяСтрокаExtendedTooltip" id="80"/>
+						</InputField>
+						<CheckBoxField name="ЭтоГруппа" id="49">
+							<DataPath>Объект.Группа</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЭтоГруппаКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ЭтоГруппаExtendedTooltip" id="81"/>
+						</CheckBoxField>
+						<CheckBoxField name="НеСоздавать" id="64">
+							<DataPath>Объект.НеСоздавать</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НеСоздаватьКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="НеСоздаватьExtendedTooltip" id="82"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="СтраницыExtendedTooltip" id="83"/>
+			<ChildItems>
+				<Page name="ГруппаОписаниеСтрок" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание строк</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаОписаниеСтрокExtendedTooltip" id="84"/>
+					<ChildItems>
+						<Table name="ОписаниеСтрок" id="11">
+							<Representation>List</Representation>
+							<SkipOnInput>false</SkipOnInput>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ЗагружаемыеСтроки</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ОписаниеСтрокКонтекстноеМеню" id="12"/>
+							<AutoCommandBar name="ОписаниеСтрокКоманднаяПанель" id="13">
+								<ChildItems>
+									<Button name="Кнопка" id="40">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Command.ЗагрузитьСтруктуру</CommandName>
+										<ExtendedTooltip name="КнопкаExtendedTooltip" id="85"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ОписаниеСтрокExtendedTooltip" id="86"/>
+							<SearchStringAddition name="ОписаниеСтрокСтрокаПоиска" id="101">
+								<AdditionSource>
+									<Item>ОписаниеСтрок</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОписаниеСтрокСтрокаПоискаКонтекстноеМеню" id="102"/>
+								<ExtendedTooltip name="ОписаниеСтрокСтрокаПоискаРасширеннаяПодсказка" id="103"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОписаниеСтрокСостояниеПросмотра" id="104">
+								<AdditionSource>
+									<Item>ОписаниеСтрок</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОписаниеСтрокСостояниеПросмотраКонтекстноеМеню" id="105"/>
+								<ExtendedTooltip name="ОписаниеСтрокСостояниеПросмотраРасширеннаяПодсказка" id="106"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОписаниеСтрокУправлениеПоиском" id="107">
+								<AdditionSource>
+									<Item>ОписаниеСтрок</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОписаниеСтрокУправлениеПоискомКонтекстноеМеню" id="108"/>
+								<ExtendedTooltip name="ОписаниеСтрокУправлениеПоискомРасширеннаяПодсказка" id="109"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<ColumnGroup name="Группа1" id="47">
+									<ExtendedTooltip name="Группа1ExtendedTooltip" id="87"/>
+									<ChildItems>
+										<InputField name="ОписаниеСтрокТипОбъекта" id="20">
+											<DataPath>Объект.ЗагружаемыеСтроки.ТипОбъекта</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип загружаемого реквизита</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="ОписаниеСтрокТипОбъектаКонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ОписаниеСтрокТипОбъектаExtendedTooltip" id="88"/>
+											<Events>
+												<Event name="StartChoice">ОписаниеСтрокТипОбъектаНачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ОписаниеСтрокНомерКолонки" id="16">
+											<DataPath>Объект.ЗагружаемыеСтроки.НомерКолонки</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номер колонки в экселе откуда брать значение</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОписаниеСтрокНомерКолонкиКонтекстноеМеню" id="17"/>
+											<ExtendedTooltip name="ОписаниеСтрокНомерКолонкиExtendedTooltip" id="89"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="Группа2" id="48">
+									<ExtendedTooltip name="Группа2ExtendedTooltip" id="90"/>
+									<ChildItems>
+										<CheckBoxField name="РеквизитПоиска" id="41">
+											<DataPath>Объект.ЗагружаемыеСтроки.ЭтоРеквизитПоиска</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Реквизит поиска</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Означет что по этому реквизиту определяется конкретный объект загрузки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="РеквизитПоискаКонтекстноеМеню" id="42"/>
+											<ExtendedTooltip name="РеквизитПоискаExtendedTooltip" id="91"/>
+										</CheckBoxField>
+										<CheckBoxField name="ТочноеСоответствие" id="43">
+											<DataPath>Объект.ЗагружаемыеСтроки.ТочноеСоответствие</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>фигня, не работает нормально</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ТочноеСоответствиеКонтекстноеМеню" id="44"/>
+											<ExtendedTooltip name="ТочноеСоответствиеExtendedTooltip" id="92"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="Группа4" id="56">
+									<ExtendedTooltip name="Группа4ExtendedTooltip" id="93"/>
+									<ChildItems>
+										<ColumnGroup name="Группа5" id="59">
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="Группа5ExtendedTooltip" id="94"/>
+											<ChildItems>
+												<InputField name="ОписаниеСтрокИмяРеквизита" id="18">
+													<DataPath>Объект.ЗагружаемыеСтроки.ИмяРеквизита</DataPath>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Имя реквизита у загружаемого объекта</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ОписаниеСтрокИмяРеквизитаКонтекстноеМеню" id="19"/>
+													<ExtendedTooltip name="ОписаниеСтрокИмяРеквизитаExtendedTooltip" id="95"/>
+												</InputField>
+												<InputField name="НомерГруппировкиСтрок" id="60">
+													<DataPath>Объект.ЗагружаемыеСтроки.НомерГруппировкиСтрок</DataPath>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Если в одну и туже таблицу значений нужно запихать из одной строки экселя несколько строк таблицы, тогдв нужно проставить номера этих строк</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="НомерГруппировкиСтрокКонтекстноеМеню" id="61"/>
+													<ExtendedTooltip name="НомерГруппировкиСтрокExtendedTooltip" id="96"/>
+												</InputField>
+												<InputField name="ЭтоТаблица" id="68">
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЭтоТаблицаКонтекстноеМеню" id="69"/>
+													<ExtendedTooltip name="ЭтоТаблицаExtendedTooltip" id="97"/>
+												</InputField>
+												<CheckBoxField name="НеДобавлятьЕслиТакойЕсть" id="62">
+													<DataPath>Объект.ЗагружаемыеСтроки.НеДобавлятьЕслиТакойЕсть</DataPath>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Если в табличной части есть такое значение реквизита тогда его добавлять строку не нужно</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="НеДобавлятьЕслиТакойЕстьКонтекстноеМеню" id="63"/>
+													<ExtendedTooltip name="НеДобавлятьЕслиТакойЕстьExtendedTooltip" id="98"/>
+												</CheckBoxField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="ИмяПоискаРеквизита" id="57">
+											<DataPath>Объект.ЗагружаемыеСтроки.ИмяРеквизитаПоискаСсылки</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Имя реквизита у объекта если загружаемое значение ссылка и нужно определить эту ссылку</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ИмяПоискаРеквизитаКонтекстноеМеню" id="58"/>
+											<ExtendedTooltip name="ИмяПоискаРеквизитаExtendedTooltip" id="99"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="Выражение" id="45">
+									<DataPath>Объект.ЗагружаемыеСтроки.Выражение</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выражение на языке 1С</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<MultiLine>true</MultiLine>
+									<ExtendedEdit>true</ExtendedEdit>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="ВыражениеКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ВыражениеExtendedTooltip" id="100"/>
+									<Events>
+										<Event name="Opening">ВыражениеОткрытие</Event>
+										<Event name="ChoiceProcessing">ВыражениеОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПравилаОбменаСЭкселем</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьСтруктуру" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить структуру</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить структуру</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьСтруктуру</Action>
+		</Command>
+	</Commands>
+</Form>

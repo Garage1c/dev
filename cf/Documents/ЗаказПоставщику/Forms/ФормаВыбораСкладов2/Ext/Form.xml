@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeLoadDataFromSettingsAtServer">ПередЗагрузкойДанныхИзНастроекНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Поставщик" id="34">
+			<DataPath>Поставщик</DataPath>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ПоставщикКонтекстноеМеню" id="35"/>
+			<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="36"/>
+		</InputField>
+		<InputField name="Производитель" id="37">
+			<DataPath>Производитель</DataPath>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ПроизводительКонтекстноеМеню" id="38"/>
+			<ExtendedTooltip name="ПроизводительРасширеннаяПодсказка" id="39"/>
+			<Events>
+				<Event name="StartChoice">ПроизводительНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="КатегорияТовара" id="48">
+			<DataPath>КатегорияТовара</DataPath>
+			<ContextMenu name="КатегорияТовараКонтекстноеМеню" id="49"/>
+			<ExtendedTooltip name="КатегорияТовараРасширеннаяПодсказка" id="50"/>
+		</InputField>
+		<CheckBoxField name="ПроизводительНеЗаполнен" id="45">
+			<DataPath>ПроизводительНеЗаполнен</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПроизводительНеЗаполненКонтекстноеМеню" id="46"/>
+			<ExtendedTooltip name="ПроизводительНеЗаполненРасширеннаяПодсказка" id="47"/>
+		</CheckBoxField>
+		<CheckBoxField name="ТолькоПодтверженные" id="40">
+			<DataPath>ТолькоПодтверженные</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ТолькоПодтверженныеКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="ТолькоПодтверженныеРасширеннаяПодсказка" id="42"/>
+		</CheckBoxField>
+		<Table name="Склады" id="1">
+			<Representation>List</Representation>
+			<Header>false</Header>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<DataPath>Склады</DataPath>
+			<RowPictureDataPath>Склады.Picture</RowPictureDataPath>
+			<ContextMenu name="СкладыКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СкладыКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="СкладыСнятьФлажки" id="32">
+						<Type>CommandBarButton</Type>
+						<OnlyInAllActions>true</OnlyInAllActions>
+						<CommandName>Form.Item.Склады.StandardCommand.UncheckAll</CommandName>
+						<ExtendedTooltip name="СкладыСнятьФлажкиРасширеннаяПодсказка" id="33"/>
+					</Button>
+					<Button name="СкладыУстановитьФлажки" id="30">
+						<Type>CommandBarButton</Type>
+						<OnlyInAllActions>true</OnlyInAllActions>
+						<CommandName>Form.Item.Склады.StandardCommand.CheckAll</CommandName>
+						<ExtendedTooltip name="СкладыУстановитьФлажкиРасширеннаяПодсказка" id="31"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СкладыРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СкладыСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>Склады</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СкладыСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СкладыСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СкладыСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>Склады</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СкладыСостояниеПросмотраКонтекстноеМеню" id="13"/>
+				<ExtendedTooltip name="СкладыСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СкладыУправлениеПоиском" id="15">
+				<AdditionSource>
+					<Item>Склады</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СкладыУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="СкладыУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="СкладыПометка" id="23">
+					<DataPath>Склады.Check</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СкладыПометкаКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="СкладыПометкаРасширеннаяПодсказка" id="25"/>
+					<Events>
+						<Event name="OnChange">СкладыПометкаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="СкладыЗначение" id="20">
+					<DataPath>Склады.Value</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СкладыЗначениеКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СкладыЗначениеРасширеннаяПодсказка" id="22"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<CommandBar name="Группа1" id="26">
+			<HorizontalLocation>Right</HorizontalLocation>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="27"/>
+			<ChildItems>
+				<Button name="Выбрать" id="28">
+					<Type>CommandBarButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.Выбрать</CommandName>
+					<ExtendedTooltip name="ВыбратьРасширеннаяПодсказка" id="29"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Склады" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склады</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Save>
+				<Field>Склады</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Поставщик" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поставщик</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+			<Save>
+				<Field>Поставщик</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Производитель" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Производитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Save>
+				<Field>Производитель</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ТолькоПодтверженные" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только подтвержденные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ТолькоПодтверженные</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ПроизводительНеЗаполнен" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Производитель не заполнен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПроизводительНеЗаполнен</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="КатегорияТовара" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Категория товара</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.КатегорииТоваров</v8:Type>
+			</Type>
+			<Save>
+				<Field>КатегорияТовара</Field>
+			</Save>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Склады</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Склады.Пометка</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаНезарезервированногоТовара</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Выбрать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Выбрать</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Поставщик">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

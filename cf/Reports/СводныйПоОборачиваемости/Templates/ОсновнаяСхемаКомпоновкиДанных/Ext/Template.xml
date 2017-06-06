@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Акция</dataPath>
+			<field>Акция</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инвойс</dataPath>
+			<field>Инвойс</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Упаковка</dataPath>
+			<field>Упаковка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРубОстаткаНачального</dataPath>
+			<field>СуммаРубОстаткаНачального</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма руб остатка начального</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>СуммаРубОстатка</dcscom:balanceGroupName>
+				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтавкаНДС</dataPath>
+			<field>СтавкаНДС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументПродажи</dataPath>
+			<field>ДокументПродажи</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказПоставщику</dataPath>
+			<field>ЗаказПоставщику</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена</dataPath>
+			<field>Цена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Смена</dataPath>
+			<field>Смена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВыбСклады</dataPath>
+			<field>ВыбСклады</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб склады</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокНаСкладахНачальный</dataPath>
+			<field>ОстатокНаСкладахНачальный</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток на складах начальный</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПродажПоСебестоимостиЗаПериод</dataPath>
+			<field>СуммаПродажПоСебестоимостиЗаПериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма продаж по себестоимости за период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПродажЗаПериод</dataPath>
+			<field>КоличествоПродажЗаПериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество продаж за период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПриходНаСкладыЗаПериод</dataPath>
+			<field>ПриходНаСкладыЗаПериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приход на склады за период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПродажЗаПериод</dataPath>
+			<field>СуммаПродажЗаПериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма продаж за период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРубОстатка</dataPath>
+			<field>СуммаРубОстатка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма руб остатка</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>СуммаРубОстатка</dcscom:balanceGroupName>
+				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТоварыЗаказно</dataPath>
+			<field>ТоварыЗаказно</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары заказно</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВПутиНаСклады</dataPath>
+			<field>КоличествоВПутиНаСклады</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество в пути на склады</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокНаСкладах</dataPath>
+			<field>ОстатокНаСкладах</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток на складах</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СкладОтправитель</dataPath>
+			<field>СкладОтправитель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Маршрут</dataPath>
+			<field>Маршрут</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказчик</dataPath>
+			<field>Заказчик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВПутиПодЗаказ</dataPath>
+			<field>КоличествоВПутиПодЗаказ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество в пути под заказ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦентральныеСклады</dataPath>
+			<field>ЦентральныеСклады</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Центральные склады</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокНаЦентральныхСкладах</dataPath>
+			<field>ОстатокНаЦентральныхСкладах</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток на центральных складах</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДнейПродажи</dataPath>
+			<field>КоличествоДнейПродажи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество дней продажи</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДокументовПродажи</dataPath>
+			<field>КоличествоДокументовПродажи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество документов продажи</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДнейНаОстатке</dataPath>
+			<field>КоличествоДнейНаОстатке</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество дней на остатке</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументПоступления</dataPath>
+			<field>ДокументПоступления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поставщик</dataPath>
+			<field>Поставщик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоступилоНаСклад</dataPath>
+			<field>ПоступилоНаСклад</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступило на склад</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТоварыПоставщикаВПути</dataPath>
+			<field>ТоварыПоставщикаВПути</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары поставщика в пути</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоследнегоПоступления</dataPath>
+			<field>ДатаПоследнегоПоступления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата последнего поступления</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query> // ------------ Курсы типа цен ------------------------
+ 
+ВЫБРАТЬ 	Валюта, Курс, Кратность
+ПОМЕСТИТь 	Курсы
+ИЗ			РегистрСведений.КурсыВалют.СрезПоследних({&amp;КонецПериода});
+ 
+
+ // ------------ Товары с себестоимостью ------------------------
+
+ ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЕСТЬNULL(	ЦенСеб.Цена * (ЕСТЬNULL(КурсТипаЦен.Курс, 1) * ЕСТЬNULL(КурсВыбВалюты.Кратность, 1)) / (ЕСТЬNULL(КурсВыбВалюты.Курс, 1) * ЕСТЬNULL(КурсТипаЦен.Кратность, 1)),
+				ЦенЗакуп.Цена * (ЕСТЬNULL(КурсЦенЗакуп.Курс, 1) * ЕСТЬNULL(КурсВыбВалюты.Кратность, 1)) / (ЕСТЬNULL(КурсВыбВалюты.Курс, 1) * ЕСТЬNULL(КурсЦенЗакуп.Кратность, 1))
+			) 	Цена,
+	ЕСТЬNULL(ЦенСеб.Номенклатура, ЦенЗакуп.Номенклатура) Номенклатура
+
+ПОМЕСТИТЬ ТоварыСебестоимость
+    
+	ИЗ
+		РегистрСведений.ЦеныНоменклатуры.СрезПоследних({&amp;КонецПериода},ТипЦен В (ВЫБРАТЬ Себестоимость ИЗ Константы) {
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК ЦенСеб	
+	ПОЛНОЕ СОЕДИНЕНИЕ	
+		РегистрСведений.ЦеныНоменклатуры.СрезПоследних({&amp;КонецПериода},ТипЦен = &amp;ТипЦенЗакупочная {
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК ЦенЗакуп	
+	
+	ПО ЦенСеб.Номенклатура = ЦенЗакуп.Номенклатура 
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ 
+		Курсы КурсВыбВалюты
+	ПО 
+		КурсВыбВалюты.Валюта В (ВЫБРАТЬ ВалютаУправленческогоУчета ИЗ Константы)
+		
+	ЛЕВОЕ СОЕДИНЕНИЕ 
+		Курсы КурсТипаЦен
+	ПО 
+		КурсТипаЦен.Валюта = ЦенСеб.Валюта
+		
+	ЛЕВОЕ СОЕДИНЕНИЕ 
+		Курсы КурсЦенЗакуп
+	ПО 
+		КурсЦенЗакуп.Валюта = ЦенЗакуп.Валюта
+;
+//--------------------- Ожидаемое поступление ---------------------------		
+
+ВЫБРАТЬ 
+	Номенклатура,
+	СУММА(Заказано) 	Заказано,
+	СУММА(ВПути)		ВПути
+ПОМЕСТИТЬ ОжидаемоеПоступление
+ИЗ
+(
+	ВЫБРАТЬ
+			Номенклатура, 
+			ВЫБОР 
+				КОГДА	Упаковка = &amp;ПустаяУпаковка 
+				ТОГДА	Зак.КоличествоОстаток
+				ИНАЧЕ 	Зак.КоличествоОстаток * Зак.Упаковка.Коэффициент
+				КОНЕЦ	Заказано,
+			0 ВПути
+				
+	ИЗ							
+		РегистрНакопления.ЗаказыПоставщикам.Остатки({&amp;КонецПериода}, {
+											Номенклатура.* КАК Номенклатура, 
+											Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК Зак
+
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		Номенклатура,
+		0,
+		ВЫБОР 
+				КОГДА	Упаковка = &amp;ПустаяУпаковка 
+				ТОГДА	КоличествоОстаток
+				ИНАЧЕ 	КоличествоОстаток * Упаковка.Коэффициент
+				КОНЕЦ
+							
+	ИЗ
+		РегистрНакопления.ТоварыПоставщиковВПути.Остатки({&amp;КонецПериода}, {
+											Номенклатура.* КАК Номенклатура,
+											Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК Путь
+	//	ПО Зак.Номенклатура = Путь.Номенклатура И Зак.Упаковка = Путь.Упаковка
+
+) Запр		
+СГРУППИРОВАТЬ ПО Номенклатура    
+;
+//----------------- Поступление товаров от поставщика ------------------
+
+ВЫБРАТЬ
+	Номенклатура,
+	0,
+	0,
+	СУММА(ВЫБОР 
+			КОГДА	Упаковка = &amp;ПустаяУпаковка 
+			ТОГДА	КоличествоОборот
+			ИНАЧЕ 	КоличествоОборот * Упаковка.Коэффициент
+			КОНЕЦ) Поступило,
+	МАКСИМУМ(ДокументПоступления.Дата) ДатаПоследнегоПоступления
+ПОМЕСТИТЬ ПоступлениеОтПоставщика	
+ИЗ
+	РегистрНакопления.Закупки.Обороты({&amp;НачалоПериода},{&amp;КонецПериода},,{
+										Номенклатура.* КАК Номенклатура,
+										Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК Закуп
+				
+СГРУППИРОВАТЬ ПО Номенклатура
+
+;
+//-------------------------- Количество продаж -----------------------
+ВЫБРАТЬ
+	Номенклатура,
+	СУММА(КоличествоДокументовПродажи) 	КоличествоДокументовПродажи,
+	СУММА(КоличествоДнейПродажи) 		КоличествоДнейПродажи
+ПОМЕСТИТЬ КоличествоПродаж
+ИЗ
+(	
+	ВЫБРАТЬ
+	Номенклатура,
+	КОЛИЧЕСТВО(ДокументПродажи) КоличествоДокументовПродажи,
+	0 							КоличествоДнейПродажи
+
+	ИЗ
+		РегистрНакопления.Продажи.Обороты({&amp;НачалоПериода}, {&amp;КонецПериода},,{
+									Склад КАК ВыбСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)})
+	СГРУППИРОВАТЬ ПО Номенклатура
+
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		Номенклатура,
+		0,
+		КОЛИЧЕСТВО(Период)
+	ИЗ
+		РегистрНакопления.Продажи.Обороты({&amp;НачалоПериода}, {&amp;КонецПериода}, День,{
+									Склад КАК ВыбСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)})
+	СГРУППИРОВАТЬ ПО Номенклатура
+) Запр
+СГРУППИРОВАТЬ ПО Номенклатура
+;
+//----------------------Таблица Дат (дней в периоде)-----------------------
+ВЫБРАТЬ
+	ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(&amp;НачалоПериода, ДЕНЬ), ДЕНЬ, t.n) КАК ДатаКалендаря
+
+ПОМЕСТИТЬ ТаблицаДат
+ИЗ
+    (	ВЫБРАТЬ
+        	6 * (t1.a - 1) + t2.b - 1 КАК n
+    	ИЗ
+        	(ВЫБРАТЬ 1 КАК a ОБЪЕДИНИТЬ ВЫБРАТЬ 2 ОБЪЕДИНИТЬ ВЫБРАТЬ 3  ОБЪЕДИНИТЬ  ВЫБРАТЬ 4 ОБЪЕДИНИТЬ  ВЫБРАТЬ 5 ОБЪЕДИНИТЬ  ВЫБРАТЬ 6) КАК t1
+        
+        	ВНУТРЕННЕЕ СОЕДИНЕНИЕ 
+            
+        		(ВЫБРАТЬ 1 КАК b ОБЪЕДИНИТЬ ВЫБРАТЬ 2 ОБЪЕДИНИТЬ ВЫБРАТЬ 3 ОБЪЕДИНИТЬ  ВЫБРАТЬ  4  ОБЪЕДИНИТЬ ВЫБРАТЬ  5 ОБЪЕДИНИТЬ ВЫБРАТЬ 6) КАК t2
+	
+        		ПО ИСТИНА
+      ) КАК t
+            
+ГДЕ
+
+    ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(&amp;НачалоПериода, ДЕНЬ), ДЕНЬ, t.n) &lt; &amp;КонецПериода 
+;
+//------------------ Количество дней на остатке -------------------------
+    
+ВЫБРАТЬ
+    ОстаткиПериоды.Номенклатура,
+    КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Календарь.ДатаКалендаря) КАК Количество
+ПОМЕСТИТЬ КоличествоДнейНаОстатке
+ИЗ
+    ТаблицаДат КАК Календарь
+        ВНУТРЕННЕЕ СОЕДИНЕНИЕ 
+        (
+			ВЫБРАТЬ
+            	ТоварыНаСкладахНач.Номенклатура 	КАК Номенклатура,
+            	ТоварыНаСкладахНач.Период 			КАК ПериодНач,
+            	МИНИМУМ(ТоварыНаСкладахКон.Период) 	КАК ПериодКон
+       		 ИЗ
+            	РегистрНакопления.ТоварыНаСкладах.ОстаткиИОбороты({&amp;НачалоПериода}, {&amp;КонецПериода}, День, ДвиженияИГраницыПериода, {
+									Склад КАК ВыбСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК ТоварыНаСкладахНач
+                ВНУТРЕННЕЕ СОЕДИНЕНИЕ 
+                
+                РегистрНакопления.ТоварыНаСкладах.ОстаткиИОбороты({&amp;НачалоПериода}, {&amp;КонецПериода}, День, ДвиженияИГраницыПериода, {
+									Склад КАК ВыбСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК ТоварыНаСкладахКон
+                
+                ПО ТоварыНаСкладахНач.Номенклатура = ТоварыНаСкладахКон.Номенклатура И ТоварыНаСкладахНач.Склад = ТоварыНаСкладахКон.Склад
+                                     
+                    И (ТоварыНаСкладахНач.КоличествоНачальныйОстаток = 0
+                        ИЛИ ТоварыНаСкладахНач.Период = НАЧАЛОПЕРИОДА({&amp;НачалоПериода}, ДЕНЬ))
+                    И (ТоварыНаСкладахКон.КоличествоКонечныйОстаток = 0
+                        ИЛИ ТоварыНаСкладахКон.Период = НАЧАЛОПЕРИОДА({&amp;КонецПериода}, ДЕНЬ))
+                    И ТоварыНаСкладахНач.Период &lt;= ТоварыНаСкладахКон.Период
+
+        	СГРУППИРОВАТЬ ПО
+           		ТоварыНаСкладахНач.Номенклатура,
+            	ТоварыНаСкладахНач.Период
+  	 	) КАК ОстаткиПериоды
+       
+         ПО (Календарь.ДатаКалендаря МЕЖДУ {&amp;НачалоПериода} И {&amp;КонецПериода})
+            И (Календарь.ДатаКалендаря МЕЖДУ ОстаткиПериоды.ПериодНач И ОстаткиПериоды.ПериодКон)
+
+
+СГРУППИРОВАТЬ ПО
+    ОстаткиПериоды.Номенклатура 
+;
+
+ВЫБРАТЬ
+	Спр.Ссылка Номенклатура,	
+	ЕСТЬNULL(Тов.КоличествоНачальныйОстаток,0) 		ОстатокНаСкладахНачальный,
+	ЕСТЬNULL(Тов.КоличествоКонечныйОстаток,0)		ОстатокНаСкладах,
+	ЕСТЬNULL(Тов.КоличествоНачальныйОстаток,0)*ЕСТЬNULL(Себ.Цена,0) 	СуммаРубОстаткаНачального,
+	ЕСТЬNULL(Тов.КоличествоКонечныйОстаток,0) *ЕСТЬNULL(Себ.Цена,0)  	СуммаРубОстатка,
+	ЕСТЬNULL(Тов.КоличествоПриход,0)									ПриходНаСкладыЗаПериод,
+	ЕСТЬNULL(Прод.СуммаОборот,0) 								СуммаПродажЗаПериод,
+	ЕСТЬNULL(Прод.КоличествоОборот,0)*ЕСТЬNULL(Себ.Цена,0) 		СуммаПродажПоСебестоимостиЗаПериод,
+	ЕСТЬNULL(Прод.КоличествоОборот,0)							КоличествоПродажЗаПериод,
+	ЕСТЬNULL(Ожидаем.ВПути, 0)									ТоварыПоставщикаВПути,
+	ЕСТЬNULL(Ожидаем.Заказано, 0)	                            ТоварыЗаказно,
+	ЕСТЬNULL(Закупки.Поступило, 0)	                            ПоступилоНаСклад,
+	ЕСТЬNULL(Закупки.ДатаПоследнегоПоступления, 0)	            ДатаПоследнегоПоступления,
+	ЕСТЬNULL(ТовВПутиПодЗаказ.КоличествоОстаток,0)              КоличествоВПутиПодЗаказ,
+	ЕСТЬNULL(ТовВПути.КоличествоОстаток,0)                      КоличествоВПутиНаСклады,
+	ЕСТЬNULL(ТовЦентральные.КоличествоОстаток,0)				ОстатокНаЦентральныхСкладах,
+	ЕСТЬNULL(КоличПродаж.КоличествоДокументовПродажи,0)			КоличествоДокументовПродажи,
+	ЕСТЬNULL(КоличПродаж.КоличествоДнейПродажи,0)               КоличествоДнейПродажи,
+	ЕСТЬNULL(ДнейНаОстатке.Количество,0)						КоличествоДнейНаОстатке
+ИЗ
+	Справочник.Номенклатура Спр
+	ЛЕВОЕ СОЕДИНЕНИЕ
+	РегистрНакопления.ТоварыНаСкладах.ОстаткиИОбороты({&amp;НачалоПериода}, {&amp;КонецПериода}, , ,{
+									Склад КАК ВыбСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК Тов
+		ПО Спр.Ссылка = Тов.Номенклатура
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ
+	РегистрНакопления.ТоварыНаСкладах.Остатки({&amp;КонецПериода},{
+									Склад КАК ЦентральныеСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК ТовЦентральные
+		ПО Спр.Ссылка = ТовЦентральные.Номенклатура
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ
+	РегистрНакопления.ТоварыВПути.Остатки({&amp;КонецПериода}, НЕ Заказчик.Заказ ССЫЛКА Документ.ВнутреннийЗаказ {
+									СкладПолучатель КАК ВыбСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК ТовВПутиПодЗаказ
+		ПО Спр.Ссылка = ТовВПутиПодЗаказ.Номенклатура
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ
+	РегистрНакопления.ТоварыВПути.Остатки({&amp;КонецПериода}, Заказчик.Заказ ССЫЛКА Документ.ВнутреннийЗаказ {
+									СкладПолучатель КАК ВыбСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК ТовВПути
+		ПО Спр.Ссылка = ТовВПути.Номенклатура
+		
+		
+	ЛЕВОЕ СОЕДИНЕНИЕ
+	РегистрНакопления.Продажи.Обороты({&amp;НачалоПериода}, {&amp;КонецПериода},,{
+									Склад КАК ВыбСклады,
+									Номенклатура.* КАК Номенклатура,
+									Номенклатура В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}) КАК Прод
+		ПО Спр.Ссылка = Прод.Номенклатура
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ
+		ТоварыСебестоимость Себ
+		ПО Спр.Ссылка = Себ.Номенклатура
+	ЛЕВОЕ СОЕДИНЕНИЕ
+		ОжидаемоеПоступление Ожидаем
+		ПО Спр.Ссылка = Ожидаем.Номенклатура
+	ЛЕВОЕ СОЕДИНЕНИЕ
+		КоличествоПродаж  КоличПродаж
+		ПО Спр.Ссылка = КоличПродаж.Номенклатура
+	ЛЕВОЕ СОЕДИНЕНИЕ
+		КоличествоДнейНаОстатке ДнейНаОстатке
+		ПО Спр.Ссылка = ДнейНаОстатке.Номенклатура
+	ЛЕВОЕ СОЕДИНЕНИЕ
+		ПоступлениеОтПоставщика Закупки
+		ПО Спр.Ссылка = Закупки.Номенклатура	
+			
+{ГДЕ
+	Спр.Ссылка.* КАК Номенклатура,
+	Спр.Ссылка В (ВЫБРАТЬ Номенклатура Из Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа)}
+</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоВПутиНаСклады</dataPath>
+		<expression>Сумма(КоличествоВПутиНаСклады)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВПутиПодЗаказ</dataPath>
+		<expression>Сумма(КоличествоВПутиПодЗаказ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПродажЗаПериод</dataPath>
+		<expression>Сумма(КоличествоПродажЗаПериод)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОстатокНаСкладах</dataPath>
+		<expression>Сумма(ОстатокНаСкладах)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОстатокНаСкладахНачальный</dataPath>
+		<expression>Сумма(ОстатокНаСкладахНачальный)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОстатокНаЦентральныхСкладах</dataPath>
+		<expression>Сумма(ОстатокНаЦентральныхСкладах)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПриходНаСкладыЗаПериод</dataPath>
+		<expression>Сумма(ПриходНаСкладыЗаПериод)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПродажЗаПериод</dataPath>
+		<expression>Сумма(СуммаПродажЗаПериод)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПродажПоСебестоимостиЗаПериод</dataPath>
+		<expression>Сумма(СуммаПродажПоСебестоимостиЗаПериод)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаРубОстатка</dataPath>
+		<expression>Сумма(СуммаРубОстатка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаРубОстаткаНачального</dataPath>
+		<expression>Сумма(СуммаРубОстаткаНачального)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ТоварыЗаказно</dataPath>
+		<expression>Сумма(ТоварыЗаказно)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДокументовПродажи</dataPath>
+		<expression>Сумма(КоличествоДокументовПродажи)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДнейПродажи</dataPath>
+		<expression>Сумма(КоличествоДнейПродажи)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДнейНаОстатке</dataPath>
+		<expression>Сумма(КоличествоДнейНаОстатке)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПоступилоНаСклад</dataPath>
+		<expression>Сумма(ПоступилоНаСклад)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДатаПоследнегоПоступления</dataPath>
+		<expression>Максимум(ДатаПоследнегоПоступления)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ТоварыПоставщикаВПути</dataPath>
+		<expression>Сумма(ТоварыПоставщикаВПути)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НоменклатурнаяГруппа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатурная группа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПустаяУпаковка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Пустая упаковка</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.УпаковкиНоменклатуры</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.УпаковкиНоменклатуры.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТипЦенЗакупочная</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тип цен закупочная</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ТипыЦен</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокНаЦентральныхСкладах</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПриходНаСкладыЗаПериод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокНаСкладахНачальный</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокНаСкладах</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаРубОстаткаНачального</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаРубОстатка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПродажЗаПериод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПродажЗаПериод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПродажПоСебестоимостиЗаПериод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоВПутиНаСклады</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоВПутиПодЗаказ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТоварыЗаказно</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТоварыПоставщикаВПути</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПоступилоНаСклад</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПоследнегоПоступления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоДокументовПродажи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоДнейПродажи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоДнейНаОстатке</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ВыбСклады</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>9196439c-2f18-4cee-9177-e2116f7d68b5</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склады</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ЦентральныеСклады</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>38473bb4-e51d-4900-888e-eeeb27b6aff5</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>470b8d5e-5cf7-478f-a6ce-eb96b2878b88</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>dddf5388-f513-4b67-9dd3-88978d299dc9</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НоменклатурнаяГруппа</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>19bb2fbd-092c-4403-8bbf-607609078eda</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТипЦенЗакупочная</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>b283cd92-175e-4ad4-aaf8-611fde59baea</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Номенклатура</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

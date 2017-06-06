@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаДополнительныеРеквизиты" id="53">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ДополнительныеРеквизиты</CommandName>
+				<ExtendedTooltip name="ФормаДополнительныеРеквизитыРасширеннаяПодсказка" id="54"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="51">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<InputField name="ДатаНачала" id="45">
+					<DataPath>Объект.ДатаНачала</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Купон действует с</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="47"/>
+				</InputField>
+				<InputField name="ДатаОкончания" id="48">
+					<DataPath>Объект.ДатаОкончания</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>по</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="50"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Купоны" id="55">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Купоны</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КупоныКонтекстноеМеню" id="56"/>
+			<AutoCommandBar name="КупоныКоманднаяПанель" id="57"/>
+			<ExtendedTooltip name="КупоныРасширеннаяПодсказка" id="58"/>
+			<SearchStringAddition name="КупоныСтрокаПоиска" id="74">
+				<AdditionSource>
+					<Item>Купоны</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КупоныСтрокаПоискаКонтекстноеМеню" id="75"/>
+				<ExtendedTooltip name="КупоныСтрокаПоискаРасширеннаяПодсказка" id="76"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КупоныСостояниеПросмотра" id="77">
+				<AdditionSource>
+					<Item>Купоны</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КупоныСостояниеПросмотраКонтекстноеМеню" id="78"/>
+				<ExtendedTooltip name="КупоныСостояниеПросмотраРасширеннаяПодсказка" id="79"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КупоныУправлениеПоиском" id="80">
+				<AdditionSource>
+					<Item>Купоны</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КупоныУправлениеПоискомКонтекстноеМеню" id="81"/>
+				<ExtendedTooltip name="КупоныУправлениеПоискомРасширеннаяПодсказка" id="82"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="НомерСтроки" id="59">
+					<DataPath>Объект.Купоны.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерСтрокиКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="НомерСтрокиРасширеннаяПодсказка" id="61"/>
+				</LabelField>
+				<InputField name="Купон" id="62">
+					<DataPath>Объект.Купоны.Купон</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КупонКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="КупонРасширеннаяПодсказка" id="64"/>
+				</InputField>
+				<InputField name="Количество" id="65">
+					<DataPath>Объект.Купоны.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КоличествоКонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="КоличествоРасширеннаяПодсказка" id="67"/>
+				</InputField>
+				<CheckBoxField name="ВозвратКупона" id="68">
+					<DataPath>Объект.Купоны.ВозвратКупона</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВозвратКупонаКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="ВозвратКупонаРасширеннаяПодсказка" id="70"/>
+				</CheckBoxField>
+				<InputField name="КоличествоКЗакрытию" id="71">
+					<DataPath>Объект.Купоны.КоличествоКЗакрытию</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="КоличествоКЗакрытиюКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="КоличествоКЗакрытиюРасширеннаяПодсказка" id="73"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РегистрацияКупонов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ДополнительныеРеквизиты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОбщиеРеквизиты</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДополнительныеРеквизиты</Action>
+		</Command>
+	</Commands>
+</Form>

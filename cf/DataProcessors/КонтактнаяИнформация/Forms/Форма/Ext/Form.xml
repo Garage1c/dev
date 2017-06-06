@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Контактная информация</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="NewWriteProcessing">ОбработкаЗаписиНового</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="200">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="201"/>
+			<ChildItems>
+				<Table name="КонтактнаяИнформация" id="172">
+					<Representation>Tree</Representation>
+					<AutoAddIncomplete>false</AutoAddIncomplete>
+					<InitialTreeView>ExpandAllLevels</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>КонтактнаяИнформация</DataPath>
+					<RowPictureDataPath>КонтактнаяИнформация.Картинка</RowPictureDataPath>
+					<RowsPicture>
+						<xr:Ref>CommonPicture.КартинкиКИ</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</RowsPicture>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<ContextMenu name="КонтактнаяИнформацияКонтекстноеМеню" id="173"/>
+					<AutoCommandBar name="КонтактнаяИнформацияКоманднаяПанель" id="174">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="КонтактнаяИнформацияДобавить" id="208">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.КонтактнаяИнформация.StandardCommand.Add</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<ExtendedTooltip name="КонтактнаяИнформацияДобавитьРасширеннаяПодсказка" id="209"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияУдалить" id="204">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<OnlyInAllActions>true</OnlyInAllActions>
+								<CommandName>Form.Item.КонтактнаяИнформация.StandardCommand.Delete</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияУдалитьРасширеннаяПодсказка" id="205"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияСохранитьКонтактнуюИнформацию" id="202">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СохранитьКонтактнуюИнформацию</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияСохранитьКонтактнуюИнформациюРасширеннаяПодсказка" id="203"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияДобавитьКонтактноеЛицо" id="206">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьКонтактноеЛицо</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияДобавитьКонтактноеЛицоРасширеннаяПодсказка" id="207"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияПереместитьВверх" id="210">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.КонтактнаяИнформация.StandardCommand.MoveUp</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияПереместитьВверхРасширеннаяПодсказка" id="211"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияПереместитьВниз" id="212">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.КонтактнаяИнформация.StandardCommand.MoveDown</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияПереместитьВнизРасширеннаяПодсказка" id="213"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияИзменить" id="214">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.КонтактнаяИнформация.StandardCommand.Change</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияИзменитьРасширеннаяПодсказка" id="215"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияСортироватьСписокПоВозрастанию" id="216">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.КонтактнаяИнформация.StandardCommand.SortListAsc</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="217"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияСортироватьСписокПоУбыванию" id="218">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.КонтактнаяИнформация.StandardCommand.SortListDesc</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="219"/>
+							</Button>
+							<Button name="КонтактнаяИнформацияВывестиСписок" id="220">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.КонтактнаяИнформация.StandardCommand.OutputList</CommandName>
+								<ExtendedTooltip name="КонтактнаяИнформацияВывестиСписокРасширеннаяПодсказка" id="221"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="КонтактнаяИнформацияРасширеннаяПодсказка" id="175"/>
+					<SearchStringAddition name="КонтактнаяИнформацияСтрокаПоиска" id="222">
+						<AdditionSource>
+							<Item>КонтактнаяИнформация</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КонтактнаяИнформацияСтрокаПоискаКонтекстноеМеню" id="223"/>
+						<ExtendedTooltip name="КонтактнаяИнформацияСтрокаПоискаРасширеннаяПодсказка" id="224"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="КонтактнаяИнформацияСостояниеПросмотра" id="225">
+						<AdditionSource>
+							<Item>КонтактнаяИнформация</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КонтактнаяИнформацияСостояниеПросмотраКонтекстноеМеню" id="226"/>
+						<ExtendedTooltip name="КонтактнаяИнформацияСостояниеПросмотраРасширеннаяПодсказка" id="227"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="КонтактнаяИнформацияУправлениеПоиском" id="228">
+						<AdditionSource>
+							<Item>КонтактнаяИнформация</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="КонтактнаяИнформацияУправлениеПоискомКонтекстноеМеню" id="229"/>
+						<ExtendedTooltip name="КонтактнаяИнформацияУправлениеПоискомРасширеннаяПодсказка" id="230"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="DragCheck">КонтактнаяИнформацияПроверкаПеретаскивания</Event>
+						<Event name="BeforeAddRow">КонтактнаяИнформацияПередНачаломДобавления</Event>
+						<Event name="BeforeDeleteRow">КонтактнаяИнформацияПередУдалением</Event>
+						<Event name="OnActivateRow">КонтактнаяИнформацияПриАктивизацииСтроки</Event>
+						<Event name="Drag">КонтактнаяИнформацияПеретаскивание</Event>
+						<Event name="OnStartEdit">КонтактнаяИнформацияПриНачалеРедактирования</Event>
+						<Event name="OnChange">КонтактнаяИнформацияПриИзменении</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="Ссылка" id="176">
+							<DataPath>КонтактнаяИнформация.Ссылка</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="СсылкаКонтекстноеМеню" id="177"/>
+							<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="178"/>
+							<Events>
+								<Event name="OnChange">СсылкаПриИзменении</Event>
+								<Event name="StartChoice">СсылкаНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="Представление" id="185">
+							<DataPath>КонтактнаяИнформация.Представление</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<MultiLine>true</MultiLine>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ПредставлениеКонтекстноеМеню" id="186"/>
+							<ExtendedTooltip name="ПредставлениеРасширеннаяПодсказка" id="187"/>
+							<Events>
+								<Event name="StartChoice">КонтактнаяИнформацияПредставлениеНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="ЗначениеПоУмолчанию" id="188">
+							<DataPath>КонтактнаяИнформация.ЗначениеПоУмолчанию</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>значение по умолчанию</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗначениеПоУмолчаниюКонтекстноеМеню" id="189"/>
+							<ExtendedTooltip name="ЗначениеПоУмолчаниюРасширеннаяПодсказка" id="190"/>
+						</CheckBoxField>
+						<InputField name="Комментарий" id="191">
+							<DataPath>КонтактнаяИнформация.Комментарий</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КомментарийКонтекстноеМеню" id="192"/>
+							<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="193"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<HTMLDocumentField name="КарточкаКонтакта" id="197">
+					<DataPath>КарточкаПартнера</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительная информация</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<Width>25</Width>
+					<ContextMenu name="КарточкаКонтактаКонтекстноеМеню" id="198"/>
+					<ExtendedTooltip name="КарточкаКонтактаРасширеннаяПодсказка" id="199"/>
+				</HTMLDocumentField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.КонтактнаяИнформация</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КарточкаПартнера" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Карточка партнера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокКонтрагентов" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список контрагентов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НайденныеСсылки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найденные ссылки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Данные" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Метаданные" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Метаданные</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ссылка" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Индекс" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="УИДСтр" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>УИДСтр</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДолгПарнера" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Долг парнера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВалютаУпр" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта упр</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>7</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КонтактнаяИнформация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контактная информация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+						<v8:Type>cfg:CatalogRef.КонтактныеЛица</v8:Type>
+						<v8:Type>cfg:CatalogRef.ВидыКонтактнойИнформации</v8:Type>
+						<v8:Type>cfg:CatalogRef.ТочкиПродаж</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ID" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеПоУмолчанию" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение по умолчанию</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Комментарий" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Картинка" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Вид_уд" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид уд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыКонтактнойИнформации</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Объект_уд" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект уд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+						<v8:Type>cfg:CatalogRef.КонтактныеЛица</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Поля" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поля</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<AdditionalColumns table="КонтактнаяИнформация.Поля"/>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Объединить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объединить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объединить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.NewWindow</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Объединить</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СохранитьКонтактнуюИнформацию" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить КИ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить контактную информацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьКонтактнуюИнформацию</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ДобавитьКонтактноеЛицо" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить контактное лицо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить контактное лицо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.КонтактноеЛицо</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьКонтактноеЛицо</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Контакт">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+				<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+				<v8:Type>cfg:CatalogRef.КонтактныеЛица</v8:Type>
+				<v8:Type>cfg:CatalogRef.ТочкиПродаж</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>События в базе</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="События" id="1">
+			<ReadOnly>true</ReadOnly>
+			<RowSelectionMode>Row</RowSelectionMode>
+			<Header>false</Header>
+			<HorizontalScrollBar>DontUse</HorizontalScrollBar>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialListView>Beginning</InitialListView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Create</ExcludedCommand>
+			</CommandSet>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>5</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СобытияКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СобытияКоманднаяПанель" id="3">
+				<ChildItems>
+					<Button name="СобытияОткрытьПодпискиНаОповещения" id="49">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОткрытьПодпискиНаОповещения</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.ReportSettings</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СобытияОткрытьПодпискиНаОповещенияРасширеннаяПодсказка" id="50"/>
+					</Button>
+					<Button name="СобытияКнопка1" id="47">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<OnlyInAllActions>true</OnlyInAllActions>
+						<CommandName>Form.Item.События.StandardCommand.Refresh</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.Refresh</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СобытияКнопка1РасширеннаяПодсказка" id="48"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СобытияРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СобытияСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>События</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СобытияСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СобытияСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СобытияСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>События</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СобытияСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СобытияСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СобытияУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>События</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СобытияУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СобытияУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<ColumnGroup name="Колонки" id="39">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Колонки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Колонки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="КолонкиРасширеннаяПодсказка" id="40"/>
+					<ChildItems>
+						<ColumnGroup name="ВерхнииКолонки" id="35">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Верхнии колонки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Верхнии колонки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>InCell</Group>
+							<ExtendedTooltip name="ВерхнииКолонкиРасширеннаяПодсказка" id="36"/>
+							<ChildItems>
+								<LabelField name="СобытияДатаСобытия" id="14">
+									<DataPath>Список.ДатаСобытия</DataPath>
+									<Format>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДЛФ=T</v8:content>
+										</v8:item>
+									</Format>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="СобытияДатаСобытияКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="СобытияДатаСобытияРасширеннаяПодсказка" id="16"/>
+								</LabelField>
+								<LabelField name="СобытияСсылка" id="44">
+									<DataPath>Список.Ссылка</DataPath>
+									<Hiperlink>true</Hiperlink>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="СобытияСсылкаКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="СобытияСсылкаРасширеннаяПодсказка" id="46"/>
+								</LabelField>
+								<LabelField name="СобытияСобытие" id="41">
+									<DataPath>Список.Событие</DataPath>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="СобытияСобытиеКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="СобытияСобытиеРасширеннаяПодсказка" id="43"/>
+								</LabelField>
+								<LabelField name="СобытияОповеститель" id="23">
+									<DataPath>Список.Оповеститель</DataPath>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="СобытияОповестительКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="СобытияОповестительРасширеннаяПодсказка" id="25"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НижнииКолонки" id="37">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нижнии колонки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нижнии колонки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="НижнииКолонкиРасширеннаяПодсказка" id="38"/>
+							<ChildItems>
+								<LabelField name="СобытияКраткоеОписание" id="17">
+									<DataPath>Список.КраткоеОписание</DataPath>
+									<ContextMenu name="СобытияКраткоеОписаниеКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="СобытияКраткоеОписаниеРасширеннаяПодсказка" id="19"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Оп.Событие, ДатаСобытия, Ссылка, Название, КраткоеОписание, Соб.Пользователь Оповеститель
+ИЗ
+	РегистрСведений.ОтправленныеСобытия Оп
+	
+ЛЕВОЕ СОЕДИНЕНИЕ
+	РегистрСведений.События Соб
+ПО
+	Соб.guid = Оп.guid
+	
+ГДЕ
+	Оп.Пользователь = &amp;Пользователь</QueryText>
+				<MainTable>InformationRegister.ОтправленныеСобытия</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаСобытия</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Пользователь" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьПодпискиНаОповещения" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть подписки на оповещения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть подписки на оповещения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьПодпискиНаОповещения</Action>
+		</Command>
+	</Commands>
+</Form>

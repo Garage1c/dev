@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="65"/>
+		</InputField>
+		<InputField name="Дата" id="3">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="66"/>
+		</InputField>
+		<InputField name="ВедущаяЗадача" id="5">
+			<DataPath>Объект.HeadTask</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВедущаяЗадачаКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ВедущаяЗадачаРасширеннаяПодсказка" id="67"/>
+		</InputField>
+		<InputField name="Заказ" id="7">
+			<DataPath>Объект.Заказ</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ЗаказКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ЗаказРасширеннаяПодсказка" id="68"/>
+		</InputField>
+		<CheckBoxField name="Отменен" id="9">
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтмененКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="ОтмененРасширеннаяПодсказка" id="69"/>
+		</CheckBoxField>
+		<CheckBoxField name="СразуВыполнитьПервуюЗадачу" id="11">
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СразуВыполнитьПервуюЗадачуКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="СразуВыполнитьПервуюЗадачуРасширеннаяПодсказка" id="70"/>
+		</CheckBoxField>
+		<InputField name="Комментарий" id="13">
+			<DataPath>Объект.Комментарий</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="71"/>
+		</InputField>
+		<CheckBoxField name="ЭтоБыстраяПродажа" id="26">
+			<DataPath>1/0:75b0d584-3306-4f7e-b00f-2e574a718adb</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ЭтоБыстраяПродажаКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="ЭтоБыстраяПродажаРасширеннаяПодсказка" id="72"/>
+		</CheckBoxField>
+		<CheckBoxField name="Стартован" id="22">
+			<DataPath>Объект.Started</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СтартованКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="СтартованРасширеннаяПодсказка" id="73"/>
+		</CheckBoxField>
+		<CheckBoxField name="Завершен" id="24">
+			<DataPath>Объект.Completed</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ЗавершенКонтекстноеМеню" id="25"/>
+			<ExtendedTooltip name="ЗавершенРасширеннаяПодсказка" id="74"/>
+		</CheckBoxField>
+		<Table name="текЗадачи" id="28">
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>текЗадачи</DataPath>
+			<RowPictureDataPath>текЗадачи.DefaultPicture</RowPictureDataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="текЗадачиКонтекстноеМеню" id="29"/>
+			<AutoCommandBar name="текЗадачиКоманднаяПанель" id="30"/>
+			<ExtendedTooltip name="текЗадачиРасширеннаяПодсказка" id="75"/>
+			<SearchStringAddition name="текЗадачиСтрокаПоиска" id="76">
+				<AdditionSource>
+					<Item>текЗадачи</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="текЗадачиСтрокаПоискаКонтекстноеМеню" id="77"/>
+				<ExtendedTooltip name="текЗадачиСтрокаПоискаРасширеннаяПодсказка" id="78"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="текЗадачиСостояниеПросмотра" id="79">
+				<AdditionSource>
+					<Item>текЗадачи</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="текЗадачиСостояниеПросмотраКонтекстноеМеню" id="80"/>
+				<ExtendedTooltip name="текЗадачиСостояниеПросмотраРасширеннаяПодсказка" id="81"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="текЗадачиУправлениеПоиском" id="82">
+				<AdditionSource>
+					<Item>текЗадачи</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="текЗадачиУправлениеПоискомКонтекстноеМеню" id="83"/>
+				<ExtendedTooltip name="текЗадачиУправлениеПоискомРасширеннаяПодсказка" id="84"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">текЗадачиВыбор</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="текЗадачиБизнесПроцесс" id="31">
+					<DataPath>текЗадачи.BusinessProcess</DataPath>
+					<ContextMenu name="текЗадачиБизнесПроцессКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="текЗадачиБизнесПроцессРасширеннаяПодсказка" id="85"/>
+				</LabelField>
+				<LabelField name="текЗадачиВерсияДанных" id="33">
+					<DataPath>текЗадачи.DataVersion</DataPath>
+					<ContextMenu name="текЗадачиВерсияДанныхКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="текЗадачиВерсияДанныхРасширеннаяПодсказка" id="86"/>
+				</LabelField>
+				<LabelField name="текЗадачиДата" id="35">
+					<DataPath>текЗадачи.Date</DataPath>
+					<ContextMenu name="текЗадачиДатаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="текЗадачиДатаРасширеннаяПодсказка" id="87"/>
+				</LabelField>
+				<CheckBoxField name="текЗадачиПометкаУдаления" id="37">
+					<DataPath>текЗадачи.DeletionMark</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="текЗадачиПометкаУдаленияКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="текЗадачиПометкаУдаленияРасширеннаяПодсказка" id="88"/>
+				</CheckBoxField>
+				<LabelField name="текЗадачиНаименование" id="39">
+					<DataPath>текЗадачи.Description</DataPath>
+					<ContextMenu name="текЗадачиНаименованиеКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="текЗадачиНаименованиеРасширеннаяПодсказка" id="89"/>
+				</LabelField>
+				<CheckBoxField name="текЗадачиВыполнена" id="41">
+					<DataPath>текЗадачи.Executed</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="текЗадачиВыполненаКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="текЗадачиВыполненаРасширеннаяПодсказка" id="90"/>
+				</CheckBoxField>
+				<LabelField name="текЗадачиНомер" id="43">
+					<DataPath>текЗадачи.Number</DataPath>
+					<ContextMenu name="текЗадачиНомерКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="текЗадачиНомерРасширеннаяПодсказка" id="91"/>
+				</LabelField>
+				<LabelField name="текЗадачиСсылка" id="45">
+					<DataPath>текЗадачи.Ref</DataPath>
+					<ContextMenu name="текЗадачиСсылкаКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="текЗадачиСсылкаРасширеннаяПодсказка" id="92"/>
+				</LabelField>
+				<LabelField name="текЗадачиТочкаМаршрута" id="47">
+					<DataPath>текЗадачи.RoutePoint</DataPath>
+					<ContextMenu name="текЗадачиТочкаМаршрутаКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="текЗадачиТочкаМаршрутаРасширеннаяПодсказка" id="93"/>
+				</LabelField>
+				<LabelField name="текЗадачиДатаВыполнения" id="49">
+					<DataPath>текЗадачи.ДатаВыполнения</DataPath>
+					<ContextMenu name="текЗадачиДатаВыполненияКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="текЗадачиДатаВыполненияРасширеннаяПодсказка" id="94"/>
+				</LabelField>
+				<LabelField name="текЗадачиЗаказ" id="51">
+					<DataPath>текЗадачи.Заказ</DataPath>
+					<ContextMenu name="текЗадачиЗаказКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="текЗадачиЗаказРасширеннаяПодсказка" id="95"/>
+				</LabelField>
+				<LabelField name="текЗадачиИсполнитель" id="53">
+					<DataPath>текЗадачи.Исполнитель</DataPath>
+					<ContextMenu name="текЗадачиИсполнительКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="текЗадачиИсполнительРасширеннаяПодсказка" id="96"/>
+				</LabelField>
+				<LabelField name="текЗадачиКомментарий" id="55">
+					<DataPath>текЗадачи.Комментарий</DataPath>
+					<ContextMenu name="текЗадачиКомментарийКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="текЗадачиКомментарийРасширеннаяПодсказка" id="97"/>
+				</LabelField>
+				<LabelField name="текЗадачиПользователь" id="57">
+					<DataPath>текЗадачи.Пользователь</DataPath>
+					<ContextMenu name="текЗадачиПользовательКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="текЗадачиПользовательРасширеннаяПодсказка" id="98"/>
+				</LabelField>
+				<LabelField name="текЗадачиРоль" id="59">
+					<DataPath>текЗадачи.Роль</DataPath>
+					<ContextMenu name="текЗадачиРольКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="текЗадачиРольРасширеннаяПодсказка" id="99"/>
+				</LabelField>
+				<LabelField name="текЗадачиСклад" id="61">
+					<DataPath>текЗадачи.Склад</DataPath>
+					<ContextMenu name="текЗадачиСкладКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="текЗадачиСкладРасширеннаяПодсказка" id="100"/>
+				</LabelField>
+				<LabelField name="текЗадачиСтандартнаяКартинка" id="63">
+					<DataPath>текЗадачи.DefaultPicture</DataPath>
+					<ContextMenu name="текЗадачиСтандартнаяКартинкаКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="текЗадачиСтандартнаяКартинкаРасширеннаяПодсказка" id="101"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<Table name="ИнтернетЗаказы" id="15">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>1/0:5047b626-0e2c-43ff-86d2-54e202f2bc94</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ИнтернетЗаказыКонтекстноеМеню" id="16"/>
+			<AutoCommandBar name="ИнтернетЗаказыКоманднаяПанель" id="17"/>
+			<ExtendedTooltip name="ИнтернетЗаказыРасширеннаяПодсказка" id="102"/>
+			<SearchStringAddition name="ИнтернетЗаказыСтрокаПоиска" id="103">
+				<AdditionSource>
+					<Item>ИнтернетЗаказы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнтернетЗаказыСтрокаПоискаКонтекстноеМеню" id="104"/>
+				<ExtendedTooltip name="ИнтернетЗаказыСтрокаПоискаРасширеннаяПодсказка" id="105"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ИнтернетЗаказыСостояниеПросмотра" id="106">
+				<AdditionSource>
+					<Item>ИнтернетЗаказы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнтернетЗаказыСостояниеПросмотраКонтекстноеМеню" id="107"/>
+				<ExtendedTooltip name="ИнтернетЗаказыСостояниеПросмотраРасширеннаяПодсказка" id="108"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ИнтернетЗаказыУправлениеПоиском" id="109">
+				<AdditionSource>
+					<Item>ИнтернетЗаказы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнтернетЗаказыУправлениеПоискомКонтекстноеМеню" id="110"/>
+				<ExtendedTooltip name="ИнтернетЗаказыУправлениеПоискомРасширеннаяПодсказка" id="111"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ИнтернетЗаказыНомерСтроки" id="18">
+					<DataPath>1/0:5047b626-0e2c-43ff-86d2-54e202f2bc94/-2</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИнтернетЗаказыНомерСтрокиКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ИнтернетЗаказыНомерСтрокиРасширеннаяПодсказка" id="112"/>
+				</LabelField>
+				<InputField name="ИнтернетЗаказыИнтернетЗаказ" id="20">
+					<DataPath>1/0:5047b626-0e2c-43ff-86d2-54e202f2bc94/0:da61923c-3be1-48a8-860f-2eac7af3060a</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИнтернетЗаказыИнтернетЗаказКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ИнтернетЗаказыИнтернетЗаказРасширеннаяПодсказка" id="113"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:BusinessProcessObject.ВнутренняяЗаявка</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="текЗадачи" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тек задачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ЗадачаЗадачаПользователю.Ссылка,
+	ЗадачаЗадачаПользователю.ВерсияДанных,
+	ЗадачаЗадачаПользователю.ПометкаУдаления,
+	ЗадачаЗадачаПользователю.Номер,
+	ЗадачаЗадачаПользователю.Дата,
+	ЗадачаЗадачаПользователю.БизнесПроцесс,
+	ЗадачаЗадачаПользователю.ТочкаМаршрута,
+	ЗадачаЗадачаПользователю.Наименование,
+	ЗадачаЗадачаПользователю.Выполнена,
+	ЗадачаЗадачаПользователю.ДатаВыполнения,
+	ЗадачаЗадачаПользователю.Исполнитель,
+	ЗадачаЗадачаПользователю.Заказ,
+	ЗадачаЗадачаПользователю.Склад,
+	ЗадачаЗадачаПользователю.Пользователь,
+	ЗадачаЗадачаПользователю.Роль,
+	ЗадачаЗадачаПользователю.Комментарий
+ИЗ
+	Задача.ЗадачаПользователю КАК ЗадачаЗадачаПользователю
+	
+ГДЕ БизнесПроцесс = &amp;Ссылка</QueryText>
+				<MainTable>Task.ЗадачаПользователю</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

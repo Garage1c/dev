@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Change</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<ButtonGroup name="ФормаГруппа1" id="51">
+				<ExtendedTooltip name="ФормаГруппа1РасширеннаяПодсказка" id="71"/>
+				<ChildItems>
+					<Button name="ФормаСправочникКартинкиРемонтаОткрытьПрикрепленныеФотографии" id="50">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Catalog.КартинкиРемонта.Command.ОткрытьПрикрепленныеФотографии</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Прикрепить фото</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаСправочникКартинкиРемонтаОткрытьПрикрепленныеФотографииРасширеннаяПодсказка" id="72"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="ФормаОбщаяКомандаПоказатьСхемуБП" id="48">
+				<Type>CommandBarButton</Type>
+				<CommandName>CommonCommand.ПоказатьСхемуБП</CommandName>
+				<DataPath>Items.Список.CurrentData.Ref</DataPath>
+				<ExtendedTooltip name="ФормаОбщаяКомандаПоказатьСхемуБПРасширеннаяПодсказка" id="73"/>
+			</Button>
+			<Button name="ФормаОбщаяКомандаСвязанныеДокументыПроцессы" id="63">
+				<Type>CommandBarButton</Type>
+				<CommandName>CommonCommand.СвязанныеДокументыПроцессы</CommandName>
+				<DataPath>Items.Список.CurrentData.Ref</DataPath>
+				<ExtendedTooltip name="ФормаОбщаяКомандаСвязанныеДокументыПроцессыРасширеннаяПодсказка" id="74"/>
+			</Button>
+			<Button name="ФормаИзменитьФорму" id="64">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="75"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.КартинкаСостояния</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Ref>CommonPicture.СостоянияЗаказНаряда</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</RowsPicture>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Create</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Choose</ExcludedCommand>
+				<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+			</CommandSet>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="76"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="77">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="78"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="79"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="80">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="81"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="82"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="83">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="84"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="85"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Дата" id="6">
+					<DataPath>Список.Date</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="86"/>
+				</LabelField>
+				<LabelField name="Номер" id="4">
+					<DataPath>Список.Number</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="НомерКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="87"/>
+				</LabelField>
+				<LabelField name="Состояние" id="42">
+					<DataPath>Список.Состояние</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="СостояниеКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="СостояниеРасширеннаяПодсказка" id="88"/>
+				</LabelField>
+				<LabelField name="КоличествоКартинок" id="103">
+					<DataPath>Список.КоличествоКартинок</DataPath>
+					<ShowInHeader>false</ShowInHeader>
+					<ContextMenu name="КоличествоКартинокКонтекстноеМеню" id="104"/>
+					<ExtendedTooltip name="КоличествоКартинокРасширеннаяПодсказка" id="105"/>
+				</LabelField>
+				<LabelField name="СкладПолучатель" id="54">
+					<DataPath>Список.СкладПолучатель</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склад выдачи</v8:content>
+						</v8:item>
+					</Title>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="СкладПолучательКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="СкладПолучательРасширеннаяПодсказка" id="89"/>
+				</LabelField>
+				<LabelField name="Склад" id="34">
+					<DataPath>Список.Склад</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="СкладКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="90"/>
+				</LabelField>
+				<LabelField name="Организация" id="44">
+					<DataPath>Список.Организация</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="91"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="106">
+					<DataPath>Список.Контрагент</DataPath>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="107"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="108"/>
+				</LabelField>
+				<LabelField name="ЗаказНаряд" id="14">
+					<DataPath>Список.ЗаказНаряд</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ЗаказНарядКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ЗаказНарядРасширеннаяПодсказка" id="93"/>
+				</LabelField>
+				<LabelField name="Сумма" id="46">
+					<DataPath>Список.Сумма</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="СуммаКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="94"/>
+				</LabelField>
+				<PictureField name="КартинкаОплаты" id="56">
+					<DataPath>Список.КартинкаОплаты</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оплата</v8:content>
+						</v8:item>
+					</Title>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.ОплатаЗаказаРасширенная</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="КартинкаОплатыКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="КартинкаОплатыРасширеннаяПодсказка" id="95"/>
+				</PictureField>
+				<CheckBoxField name="Гарантия" id="20">
+					<DataPath>Список.Гарантия</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ГарантияКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ГарантияРасширеннаяПодсказка" id="96"/>
+				</CheckBoxField>
+				<LabelField name="Менеджер" id="52">
+					<DataPath>Список.Менеджер</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Менеджер</v8:content>
+						</v8:item>
+					</Title>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="МенеджерКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="97"/>
+				</LabelField>
+				<CheckBoxField name="ГарантияСогласована" id="60">
+					<DataPath>Список.ГарантияСогласована</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ГарантияСогласованаКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="ГарантияСогласованаРасширеннаяПодсказка" id="98"/>
+				</CheckBoxField>
+				<CheckBoxField name="ИнструментПринят" id="58">
+					<DataPath>Список.ИнструментПринят</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИнструментПринятКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="ИнструментПринятРасширеннаяПодсказка" id="99"/>
+				</CheckBoxField>
+				<LabelField name="Грузоотправитель" id="26">
+					<DataPath/>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ГрузоотправительКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ГрузоотправительРасширеннаяПодсказка" id="100"/>
+				</LabelField>
+				<LabelField name="Грузополучатель" id="28">
+					<DataPath/>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ГрузополучательКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ГрузополучательРасширеннаяПодсказка" id="101"/>
+				</LabelField>
+				<LabelField name="Плательщик" id="32">
+					<DataPath>Список.Плательщик</DataPath>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ПлательщикКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ПлательщикРасширеннаяПодсказка" id="102"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	Ремонт.Ссылка,
+	Ремонт.ПометкаУдаления,
+	Ремонт.Номер,
+	Ремонт.Дата,
+	Ремонт.Завершен,
+	Ремонт.ВедущаяЗадача,
+	Ремонт.Стартован,
+	Ремонт.ЗаказНаряд,
+	Ремонт.Организация 				Организация,
+	Ремонт.ЗаказНаряд.Сумма		 	Сумма,
+	//Зап.Гарантия					Гарантия,
+	Ремонт.ЕстьГарантия 			Гарантия,
+	Ремонт.ИнструментПринят,
+	Ремонт.ГарантияСогласована,
+	Ремонт.Партнер,
+	Ремонт.Контрагент,
+	Ремонт.Менеджер,
+	Ремонт.Плательщик,
+	Ремонт.СкладПолучатель,
+	Ремонт.Склад,
+	Ремонт.КоличествоКартинок,
+	Сост.Состояние,
+	ВЫБОР 
+	 КОГДА Сост.Состояние = &amp;ОформитьЗаявку ТОГДА 8
+	 КОГДА Сост.Состояние = &amp;ПринятьИнструмент ТОГДА 2
+	 КОГДА Сост.Состояние = &amp;СогласоватьГарантию ТОГДА 9
+	 КОГДА Сост.Состояние = &amp;ПроизвестиДефектовку ТОГДА 7
+	 КОГДА Сост.Состояние = &amp;СогласоватьСКлиентом ТОГДА 4
+	 КОГДА Сост.Состояние = &amp;ОжиданиеОплаты ТОГДА 3
+	 КОГДА Сост.Состояние = &amp;ПередатьКлиенту ТОГДА 6
+ 	 КОГДА Сост.Состояние = &amp;ПредупредитьКлиента ТОГДА 4
+	 КОГДА Завершен И (НЕ ИнструментПринят ИЛИ НЕ ГарантияСогласована ИЛИ НЕ ЗаказНаряд.Проведен) ТОГДА 5
+	 КОГДА Завершен И ЗаказНаряд.Проведен И ИнструментПринят И ГарантияСогласована ТОГДА 10
+	КОНЕЦ КартинкаСостояния,
+			//ВЫБОР КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ОформитьЗаявку) ТОГДА "Оформить заявку"
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПринятьИнструмент) ТОГДА "Принять инструмент"
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.СогласоватьГарантию) ТОГДА "Согласовать гарантию"
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПроизвестиДефектовку) ТОГДА "Произвести дефектовку"
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.СогласоватьСКлиентом) ТОГДА "Согласовать с клиентом"
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ОжиданиеОплаты) ТОГДА "Ожидание оплаты"
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПередатьКлиенту) И Ремонт.СкладПолучатель &lt;&gt; МАКСИМУМ(Задач.Склад) ТОГДА "Передать на склад вадачи"
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПередатьКлиенту) И Ремонт.СкладПолучатель = МАКСИМУМ(Задач.Склад) ТОГДА "Передать клиенту"
+			//  КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПредупредитьКлиента) ТОГДА "Предупредить клиента"
+			// КОГДА Завершен И (НЕ ИнструментПринят ИЛИ НЕ ГарантияСогласована ИЛИ НЕ ЗаказНаряд.Проведен) ТОГДА "Отменен"
+			// КОГДА Завершен И ЗаказНаряд.Проведен И ИнструментПринят И ГарантияСогласована ТОГДА "Выполнен"
+			//КОНЕЦ Состояние,
+			//ВЫБОР 
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ОформитьЗаявку) ТОГДА 8
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПринятьИнструмент) ТОГДА 2
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.СогласоватьГарантию) ТОГДА 9
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПроизвестиДефектовку) ТОГДА 7
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.СогласоватьСКлиентом) ТОГДА 4
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ОжиданиеОплаты) ТОГДА 3
+			// КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПередатьКлиенту) ТОГДА 6
+			//  КОГДА МАКСИМУМ(Задач.ТочкаМаршрута) = ЗНАЧЕНИЕ(БизнесПроцесс.РемонтИнструмента.ТочкаМаршрута.ПредупредитьКлиента) ТОГДА 4
+			// КОГДА Завершен И (НЕ ИнструментПринят ИЛИ НЕ ГарантияСогласована ИЛИ НЕ ЗаказНаряд.Проведен) ТОГДА 5
+			// КОГДА Завершен И ЗаказНаряд.Проведен И ИнструментПринят И ГарантияСогласована ТОГДА 10
+			//КОНЕЦ КартинкаСостояния
+			ВЫБОР КОГДА Ремонт.ЗаказНаряд.Сумма	&gt; 0 ТОГДА
+				ВЫБОР КОГДА Опл.сумма = Ремонт.ЗаказНаряд.Сумма ТОГДА 3 КОГДА естьnull(Опл.сумма,0) = 0 ТОГДА 1 ИНАЧЕ 2 КОНЕЦ 
+			ИНАЧЕ 0 КОНЕЦ КартинкаОплаты
+	
+ИЗ
+	БизнесПроцесс.РемонтИнструмента КАК Ремонт
+	//ЛЕВОЕ СОЕДИНЕНИЕ
+	//(ВЫБРАТЬ Ссылка, МАКСИМУМ(Гарантия) Гарантия ИЗ БизнесПроцесс.РемонтИнструмента.Товары СГРУППИРОВАТЬ ПО Ссылка) Зап
+	//ПО Ремонт.Ссылка = Зап.Ссылка
+	//ЛЕВОЕ СОЕДИНЕНИЕ
+	//	Задача.ЗадачаПользователю Задач
+	//ПО 	
+	//	Задач.БизнесПроцесс = Ремонт.Ссылка И 
+	//	Не Задач.Выполнена И 
+	//	Не Задач.ПометкаУдаления
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ	РегистрСведений.СостоянияЗаказовТекущее Сост
+	ПО 					Сост.Заказ = Ремонт.Ссылка	
+
+	ЛЕВОЕ СОЕДИНЕНИЕ 	(выбрать заказ , сумма(сумма) из регистрНакопления.ДолгиПоОтгрузкам ГДЕ видДвижения=Значение(ВидДвиженияНакопления.Расход)сгруппировать по заказ) Опл
+	ПО					Ремонт.ЗаказНаряд = Опл.Заказ	
+		
+			//СГРУППИРОВАТЬ ПО Ремонт.Ссылка // , Зап.Гарантия 		</QueryText>
+				<MainTable>BusinessProcess.РемонтИнструмента</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

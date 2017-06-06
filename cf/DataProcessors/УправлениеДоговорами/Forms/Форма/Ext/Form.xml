@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Управление договорами</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="СтрокаОтмены" id="81">
+			<DataPath>СтрокаОтмены</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<Hiperlink>true</Hiperlink>
+			<BackColor>#FCF6BA</BackColor>
+			<ContextMenu name="СтрокаОтменыКонтекстноеМеню" id="82"/>
+			<ExtendedTooltip name="СтрокаОтменыExtendedTooltip" id="101"/>
+			<Events>
+				<Event name="Click">СтрокаОтменыНажатие</Event>
+			</Events>
+		</LabelField>
+		<UsualGroup name="Группа1" id="53">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ChildItemsWidth>LeftWidest</ChildItemsWidth>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1ExtendedTooltip" id="102"/>
+			<ChildItems>
+				<SpreadSheetDocumentField name="Таблица" id="48">
+					<DataPath>Таблица</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Height>15</Height>
+					<ShowHeaders>true</ShowHeaders>
+					<VerticalScrollBar>true</VerticalScrollBar>
+					<HorizontalScrollBar>true</HorizontalScrollBar>
+					<ContextMenu name="ТаблицаКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="ТаблицаExtendedTooltip" id="103"/>
+					<Events>
+						<Event name="DetailProcessing">ТаблицаОбработкаРасшифровки</Event>
+					</Events>
+				</SpreadSheetDocumentField>
+				<UsualGroup name="Группа2" id="55">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2ExtendedTooltip" id="104"/>
+					<ChildItems>
+						<UsualGroup name="Группа3" id="78">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа3ExtendedTooltip" id="105"/>
+							<ChildItems>
+								<Button name="Сформировать" id="54">
+									<Type>UsualButton</Type>
+									<DefaultButton>true</DefaultButton>
+									<CommandName>Form.Command.Сформировать</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Обновить список</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СформироватьExtendedTooltip" id="106"/>
+								</Button>
+								<CheckBoxField name="ОбновлятьПриУстановке" id="76">
+									<DataPath>ОбновлятьПослеУстановки</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>после каждой установки, список будет автомотически обновляться</v8:content>
+										</v8:item>
+									</ToolTip>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ОбновлятьПриУстановкеКонтекстноеМеню" id="77"/>
+									<ExtendedTooltip name="ОбновлятьПриУстановкеExtendedTooltip" id="107"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаФильтры" id="58">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фильтр списка</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фильтры</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаФильтрыExtendedTooltip" id="108"/>
+							<ChildItems>
+								<InputField name="ГруппаПартнер" id="56">
+									<DataPath>ГруппаПартнер</DataPath>
+									<ClearButton>true</ClearButton>
+									<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+									<ContextMenu name="ГруппаПартнерКонтекстноеМеню" id="57"/>
+									<ExtendedTooltip name="ГруппаПартнерExtendedTooltip" id="109"/>
+								</InputField>
+								<InputField name="Организация" id="70">
+									<DataPath>ОрганизацияФильтр</DataPath>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="ОрганизацияКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="110"/>
+								</InputField>
+								<InputField name="Менеджер" id="99">
+									<DataPath>Менеджер</DataPath>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="МенеджерКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="МенеджерExtendedTooltip" id="111"/>
+								</InputField>
+								<InputField name="Наименование" id="68">
+									<DataPath>Наименование</DataPath>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="НаименованиеКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="НаименованиеExtendedTooltip" id="112"/>
+								</InputField>
+								<InputField name="НомерДоговораФильтр" id="83">
+									<DataPath>НомерДоговораФильтр</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>№ договора</v8:content>
+										</v8:item>
+									</Title>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="НомерДоговораФильтрКонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="НомерДоговораФильтрExtendedTooltip" id="113"/>
+								</InputField>
+								<InputField name="ИНН" id="72">
+									<DataPath>ИНН</DataPath>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="ИННКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ИННExtendedTooltip" id="114"/>
+								</InputField>
+								<UsualGroup name="Группа4" id="89">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа4ExtendedTooltip" id="115"/>
+									<ChildItems>
+										<CheckBoxField name="СНомерами" id="85">
+											<DataPath>СНомерами</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СНомерамиКонтекстноеМеню" id="86"/>
+											<ExtendedTooltip name="СНомерамиExtendedTooltip" id="116"/>
+										</CheckBoxField>
+										<CheckBoxField name="БезНомеров" id="87">
+											<DataPath>БезНомеров</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="БезНомеровКонтекстноеМеню" id="88"/>
+											<ExtendedTooltip name="БезНомеровExtendedTooltip" id="117"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПериодФильтр" id="92">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа период фильтр</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПериодФильтрExtendedTooltip" id="118"/>
+									<ChildItems>
+										<InputField name="ДатаФильтр" id="90">
+											<DataPath>ДатаФильтр</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Период</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="ДатаФильтрКонтекстноеМеню" id="91"/>
+											<ExtendedTooltip name="ДатаФильтрExtendedTooltip" id="119"/>
+										</InputField>
+										<CheckBoxField name="ВходитВПериод" id="95">
+											<DataPath>ВходитВПериод</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ВходитВПериодКонтекстноеМеню" id="96"/>
+											<ExtendedTooltip name="ВходитВПериодExtendedTooltip" id="120"/>
+										</CheckBoxField>
+										<CheckBoxField name="НеВходитВПериод" id="93">
+											<DataPath>НеВходитВПериод</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="НеВходитВПериодКонтекстноеМеню" id="94"/>
+											<ExtendedTooltip name="НеВходитВПериодExtendedTooltip" id="121"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаУстановка" id="59">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Установить</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа установка</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаУстановкаExtendedTooltip" id="122"/>
+							<ChildItems>
+								<CheckBoxField name="Переписать" id="97">
+									<DataPath>Переписать</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Переписать полностью все (даже пустыми)</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Все значения будут переписаны, иначе только дополнены</v8:content>
+										</v8:item>
+									</ToolTip>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПереписатьКонтекстноеМеню" id="98"/>
+									<ExtendedTooltip name="ПереписатьExtendedTooltip" id="123"/>
+								</CheckBoxField>
+								<CheckBoxField name="НовыйНомерДоговора" id="60">
+									<DataPath>НовыйНомерДоговора</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НовыйНомерДоговораКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="НовыйНомерДоговораExtendedTooltip" id="124"/>
+								</CheckBoxField>
+								<CheckBoxField name="ДоговорПоУмолчанию" id="79">
+									<DataPath>ДоговорПоУмолчанию</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДоговорПоУмолчаниюКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="ДоговорПоУмолчаниюExtendedTooltip" id="125"/>
+								</CheckBoxField>
+								<InputField name="ОрганизацияУстановка" id="74">
+									<DataPath>ОрганизацияУстановка</DataPath>
+									<ContextMenu name="ОрганизацияУстановкаКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="ОрганизацияУстановкаExtendedTooltip" id="126"/>
+								</InputField>
+								<InputField name="ДатаОкончания" id="64">
+									<DataPath>Период</DataPath>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ДатаОкончанияExtendedTooltip" id="127"/>
+								</InputField>
+								<InputField name="ДокументВорд" id="66">
+									<DataPath>ДокументВорд</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ</v8:content>
+										</v8:item>
+									</Title>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="ДокументВордКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="ДокументВордExtendedTooltip" id="128"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Таблица" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Объект" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.УправлениеДоговорами</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ГруппаПартнер" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+			</Type>
+			<Save>
+				<Field>ГруппаПартнер</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НовыйНомерДоговора" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новый номер договора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>НовыйНомерДоговора</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Период" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+			<Save>
+				<Field>Период</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДокументВорд" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ ворд</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДокументыWord</v8:Type>
+			</Type>
+			<Save>
+				<Field>ДокументВорд</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Наименование" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>Наименование</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОрганизацияФильтр" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОрганизацияФильтр</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИНН" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИНН</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>12</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ИНН</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОрганизацияУстановка" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОрганизацияУстановка</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОбновлятьПослеУстановки" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновлять после установки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОбновлятьПослеУстановки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДоговорПоУмолчанию" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор по умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ДоговорПоУмолчанию</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СтрокаОтмены" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строка отмены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерДоговораФильтр" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора фильтр</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>15</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>НомерДоговораФильтр</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="БезНомеров" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Без номеров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>БезНомеров</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СНомерами" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С номерами</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>СНомерами</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДатаФильтр" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата фильтр</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<Save>
+				<Field>ДатаФильтр</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВходитВПериод" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Входит в период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВходитВПериод</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НеВходитВПериод" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не входит в период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>НеВходитВПериод</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Переписать" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переписать</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>Переписать</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Менеджер" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Сформировать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Сформировать</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,328 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.garagetools.ru">
+	<objectType name="Manufacturer">
+		<property name="guid" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="manufacture_rank" type="xs:int"/>
+		<property name="country" type="xs:string"/>
+	</objectType>
+	<objectType name="Category">
+		<property name="guid" type="xs:string"/>
+		<property name="id_number" type="xs:int"/>
+		<property name="h1" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="parent" type="xs:string"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="property" type="d3p1:Property" lowerBound="0" upperBound="-1"/>
+		<property name="categories" type="xs:string" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="alies" type="xs:string"/>
+		<property name="alies_en" type="xs:string"/>
+		<property name="images_count" type="xs:int"/>
+		<property name="code_1c" type="xs:string"/>
+		<property name="parents" type="xs:string" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="meta_keywords" type="xs:string"/>
+		<property name="meta_description" type="xs:string"/>
+		<property name="description" type="xs:string"/>
+		<property name="for_dealers" type="xs:boolean"/>
+	</objectType>
+	<objectType name="Product">
+		<property name="guid" type="xs:string"/>
+		<property name="category" type="xs:string"/>
+		<property name="h1" type="xs:string"/>
+		<property name="manufacturer" type="xs:string"/>
+		<property name="id_number" type="xs:int"/>
+		<property name="name" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="price" type="xs:float"/>
+		<property name="instock" type="xs:float"/>
+		<property name="instockunits" type="xs:string"/>
+		<property name="instock_for_dealer" type="xs:float"/>
+		<property name="weight" type="xs:float"/>
+		<property name="geometry" type="xs:float"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="value" type="d3p1:Value" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="images_count" type="xs:int"/>
+		<property name="images_guids" type="xs:string" lowerBound="0" upperBound="-1"/>
+		<property name="categories" type="xs:string" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="alies" type="xs:string"/>
+		<property name="alies_en" type="xs:string"/>
+		<property name="squares" type="xs:int"/>
+		<property name="expected" type="xs:boolean"/>
+		<property name="date_expected" type="xs:date"/>
+		<property name="code" type="xs:string"/>
+		<property name="product_code" type="xs:string"/>
+		<property name="item_order" type="xs:boolean"/>
+		<property name="text_supply" type="xs:string"/>
+		<property name="description" type="xs:string"/>
+		<property name="manufacture_rank" type="xs:int"/>
+		<property name="evaluation" type="xs:int" nillable="false" default="0"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="in_stock_warehouses" type="d3p1:In_stock_warehouse" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="prices" type="d3p1:Price" lowerBound="0" upperBound="-1"/>
+		<property name="new" type="xs:boolean"/>
+		<property name="sale" type="xs:boolean"/>
+		<property name="akcii" type="xs:boolean"/>
+		<property name="analogs" type="xs:string" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="related" type="xs:string" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="meta_keywords" type="xs:string"/>
+		<property name="meta_description" type="xs:string"/>
+		<property name="barcode" type="xs:string"/>
+		<property name="for_dealers" type="xs:boolean"/>
+	</objectType>
+	<objectType name="List_products">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="product" type="d3p1:Product" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="List_categories">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="category" type="d3p1:Category" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Property">
+		<property name="title" type="xs:string"/>
+		<property name="guid" type="xs:string"/>
+		<property name="basetype" type="xs:string"/>
+		<property name="units"/>
+		<property name="public" type="xs:boolean"/>
+	</objectType>
+	<objectType name="List_manufacturers">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="manufacturer" type="d3p1:Manufacturer" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Property_enum">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="property" type="d3p1:Property"/>
+		<property name="guid" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+	</objectType>
+	<objectType name="Value">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="property" type="d3p1:Property"/>
+		<property name="value" type="xs:string"/>
+	</objectType>
+	<objectType name="List_property_enums">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="property_enum" type="d3p1:Property_enum" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Price_type">
+		<property name="guid" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+	</objectType>
+	<objectType name="List_product_price">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="line_product_price" type="d3p1:Line_product_price" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Line_product_price">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="price_type" type="d3p1:Price_type"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="product" type="d3p1:Product"/>
+		<property name="price" type="xs:float"/>
+	</objectType>
+	<objectType name="Comparison_guid">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="line_comparison" type="d3p1:Line_comparison" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Line_comparison">
+		<property name="guid" type="xs:string"/>
+		<property name="guids" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Warehouse">
+		<property name="guid" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="title_full" type="xs:string"/>
+		<property name="map" type="xs:string"/>
+		<property name="adress" type="xs:string"/>
+		<property name="for_dealer" type="xs:boolean"/>
+		<property name="for_pickup" type="xs:boolean"/>
+	</objectType>
+	<objectType name="In_stock_warehouse">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="warehouse" type="d3p1:Warehouse"/>
+		<property name="instok" type="xs:float"/>
+		<property name="instock_for_dealer" type="xs:float"/>
+		<property name="waiting" type="xs:float"/>
+		<property name="transit" type="xs:float"/>
+		<property name="reserve" type="xs:float"/>
+		<property name="free" type="xs:float"/>
+		<property name="squares" type="xs:int"/>
+	</objectType>
+	<objectType name="List_orders">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="hat" type="d3p1:Hat_order" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Hat_order">
+		<property name="guid" type="xs:string"/>
+		<property name="number" type="xs:string"/>
+		<property name="date" type="xs:dateTime"/>
+		<property name="total" type="xs:float"/>
+		<property name="method" type="xs:string"/>
+		<property name="payment" type="xs:string"/>
+		<property name="status" type="xs:string"/>
+		<property name="type_order" type="xs:string"/>
+		<property name="comment" type="xs:string"/>
+	</objectType>
+	<objectType name="Line_order">
+		<property name="guid" type="xs:string"/>
+		<property name="sum" type="xs:float"/>
+		<property name="quantity" type="xs:float"/>
+	</objectType>
+	<objectType name="Order">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="hat" type="d3p1:Hat_order"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="line" type="d3p1:Line_order" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Table_order">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="line_order" type="d3p1:Line_order" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Comment">
+		<property name="product" type="xs:string"/>
+		<property name="user" type="xs:string"/>
+		<property name="evaluation" type="xs:int"/>
+		<property name="comment" type="xs:string"/>
+	</objectType>
+	<objectType name="List_comments">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="comment" type="d3p1:Comment" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Heading">
+		<property name="guid" type="xs:string"/>
+		<property name="parent" type="xs:string"/>
+		<property name="this_news" type="xs:boolean"/>
+		<property name="name" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="alies" type="xs:string"/>
+		<property name="short_text" type="xs:string"/>
+		<property name="code_1c" type="xs:string"/>
+		<property name="meta_keywords" type="xs:string"/>
+		<property name="meta_description" type="xs:string"/>
+	</objectType>
+	<objectType name="Article">
+		<property name="guid" type="xs:string"/>
+		<property name="heading" type="xs:string"/>
+		<property name="parent" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="alies" type="xs:string"/>
+		<property name="public_date" type="xs:dateTime" nillable="true"/>
+		<property name="short_text" type="xs:string"/>
+		<property name="long_text" type="xs:string"/>
+		<property name="image" type="xs:boolean" nillable="true"/>
+		<property name="code_1c" type="xs:string"/>
+		<property name="meta_keywords" type="xs:string"/>
+		<property name="meta_description" type="xs:string"/>
+	</objectType>
+	<objectType name="List_headings">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="heading" type="d3p1:Heading" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="List_articles_short">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="article_short" type="d3p1:Article_short" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Article_short">
+		<property name="guid" type="xs:string"/>
+		<property name="heading" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="alies" type="xs:string"/>
+		<property name="data" type="xs:dateTime"/>
+		<property name="short_text" type="xs:string"/>
+		<property name="image" type="xs:boolean"/>
+		<property name="code_1c" type="xs:string"/>
+		<property name="meta_keywords" type="xs:string"/>
+		<property name="meta_description" type="xs:string"/>
+	</objectType>
+	<objectType name="List_warehouses">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="warehouse" type="d3p1:Warehouse" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Price">
+		<property name="price_guid" type="xs:string"/>
+		<property name="price" type="xs:float"/>
+	</objectType>
+	<objectType name="Contact">
+		<property name="guid" type="xs:string"/>
+		<property name="parent" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="alies" type="xs:string"/>
+		<property name="adress" type="xs:string"/>
+		<property name="image" type="xs:base64Binary" nillable="true"/>
+		<property name="map" type="xs:string"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="phones" type="d3p1:Phone" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="messageres" type="d3p1:Messager" lowerBound="0" upperBound="-1"/>
+		<property name="emails" type="xs:string" lowerBound="0" upperBound="-1"/>
+		<property name="text_html" type="xs:string"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="users" type="d3p1:Contact_user" lowerBound="0" upperBound="-1"/>
+		<property name="code_1c" type="xs:string"/>
+		<property name="meta_keywords" type="xs:string"/>
+		<property name="meta_description" type="xs:string"/>
+	</objectType>
+	<objectType name="Contact_user">
+		<property name="guid" type="xs:string"/>
+		<property name="contact" type="xs:string"/>
+		<property name="departament" type="xs:string"/>
+		<property name="position" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="image" type="xs:base64Binary" nillable="true"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="phones" type="d3p1:Phone" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="messageres" type="d3p1:Messager" lowerBound="0" upperBound="-1"/>
+		<property name="emails" type="xs:string" lowerBound="0" upperBound="-1"/>
+		<property name="text_html" type="xs:string"/>
+	</objectType>
+	<objectType name="Phone">
+		<property name="type" type="xs:string"/>
+		<property name="number" type="xs:string"/>
+	</objectType>
+	<objectType name="Messager">
+		<property name="type" type="xs:string"/>
+		<property name="number" type="xs:string"/>
+	</objectType>
+	<objectType name="List_headings_contacts">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="heading_contact" type="d3p1:Heading_contact" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Heading_contact">
+		<property name="guid" type="xs:string"/>
+		<property name="parent" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+		<property name="alies" type="xs:string"/>
+		<property name="adress" type="xs:string"/>
+		<property xmlns:d3p1="http://www.garagetools.ru" name="phones" type="d3p1:Phone" lowerBound="0" upperBound="-1"/>
+		<property name="meta_keywords" type="xs:string"/>
+		<property name="meta_description" type="xs:string"/>
+	</objectType>
+	<objectType name="Type_price">
+		<property name="guid" type="xs:string"/>
+		<property name="title" type="xs:string"/>
+	</objectType>
+	<objectType name="List_types_prices">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="type_price" type="d3p1:Type_price" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Order_service">
+		<property name="user" type="xs:string"/>
+		<property name="guid" type="xs:string"/>
+		<property name="number" type="xs:string"/>
+		<property name="doc_date" type="xs:dateTime"/>
+		<property name="total" type="xs:float"/>
+		<property name="status" type="xs:string"/>
+		<property name="comment" type="xs:string"/>
+	</objectType>
+	<objectType name="List_orders_service">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="order_service" type="d3p1:Order_service" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Billing">
+		<property name="user" type="xs:string"/>
+		<property name="guid" type="xs:string"/>
+		<property name="doc_date" type="xs:dateTime"/>
+		<property name="doc_name" type="xs:string"/>
+		<property name="in_doc" type="xs:float"/>
+		<property name="out_doc" type="xs:float"/>
+	</objectType>
+	<objectType name="List_billings">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="billing" type="d3p1:Billing" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="List_guids">
+		<property name="guid" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="List_properties">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="property" type="d3p1:Property" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Blog_comment">
+		<property name="article" type="xs:string"/>
+		<property name="user" type="xs:string"/>
+		<property name="evaluation" type="xs:int"/>
+		<property name="comment" type="xs:string"/>
+	</objectType>
+	<objectType name="List_blog_comments">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="comment" type="d3p1:Blog_comment" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Reserve">
+		<property xmlns:d3p1="http://www.garagetools.ru" name="line_reserve" type="d3p1:Line_reserve" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="Line_reserve">
+		<property name="product" type="xs:string"/>
+		<property name="count" type="xs:float"/>
+		<property name="reserve" type="xs:boolean"/>
+	</objectType>
+</package>

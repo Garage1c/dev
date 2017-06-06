@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаДополнительныеРеквизиты" id="61">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ДополнительныеРеквизиты</CommandName>
+				<ExtendedTooltip name="ФормаДополнительныеРеквизитыРасширеннаяПодсказка" id="62"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="66">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="67"/>
+			<ChildItems>
+				<InputField name="Месяц" id="7">
+					<DataPath>Объект.Месяц</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="МесяцКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="МесяцРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="ВидОчков" id="63">
+					<DataPath>Объект.ВидОчков</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВидОчковКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="ВидОчковРасширеннаяПодсказка" id="65"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Очки" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Очки</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ОчкиКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ОчкиКоманднаяПанель" id="12">
+				<ChildItems>
+					<Button name="ОчкиЗаполнитьСотрудников" id="59">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьСотрудников</CommandName>
+						<ExtendedTooltip name="ОчкиЗаполнитьСотрудниковРасширеннаяПодсказка" id="60"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ОчкиРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ОчкиСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>Очки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ОчкиСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ОчкиСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ОчкиСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>Очки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ОчкиСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ОчкиСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ОчкиУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>Очки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ОчкиУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ОчкиУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ОчкиНомерСтроки" id="23">
+					<DataPath>Объект.Очки.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ОчкиНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="ОчкиСотрудник" id="26">
+					<DataPath>Объект.Очки.Сотрудник</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиСотрудникКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ОчкиСотрудникРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ОчкиОтдел" id="29">
+					<DataPath>Объект.Очки.Отдел</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиОтделКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ОчкиОтделРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ОчкиПодразделения" id="32">
+					<DataPath>Объект.Очки.Подразделение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиПодразделенияКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ОчкиПодразделенияРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ОчкиАвто" id="35">
+					<DataPath>Объект.Очки.Авто</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиАвтоКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ОчкиАвтоРасширеннаяПодсказка" id="37"/>
+					<Events>
+						<Event name="OnChange">ЗатратыПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОчкиКарта" id="38">
+					<DataPath>Объект.Очки.Карта</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиКартаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ОчкиКартаРасширеннаяПодсказка" id="40"/>
+					<Events>
+						<Event name="OnChange">ЗатратыПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОчкиАвансы" id="41">
+					<DataPath>Объект.Очки.Авансы</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиАвансыКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ОчкиАвансыРасширеннаяПодсказка" id="43"/>
+					<Events>
+						<Event name="OnChange">ЗатратыПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОчкиПитание" id="44">
+					<DataPath>Объект.Очки.Питание</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиПитаниеКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ОчкиПитаниеРасширеннаяПодсказка" id="46"/>
+					<Events>
+						<Event name="OnChange">ЗатратыПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОчкиДолг" id="47">
+					<DataPath>Объект.Очки.Долг</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиДолгКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ОчкиДолгРасширеннаяПодсказка" id="49"/>
+					<Events>
+						<Event name="OnChange">ЗатратыПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОчкиПрочее" id="50">
+					<DataPath>Объект.Очки.Прочее</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиПрочееКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ОчкиПрочееРасширеннаяПодсказка" id="52"/>
+					<Events>
+						<Event name="OnChange">ЗатратыПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОчкиКомментарий" id="53">
+					<DataPath>Объект.Очки.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ContextMenu name="ОчкиКомментарийКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ОчкиКомментарийРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="ОчкиИтого" id="56">
+					<DataPath>Объект.Очки.Итого</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ОчкиИтогоКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ОчкиИтогоРасширеннаяПодсказка" id="58"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<LabelField name="ОчкиИтогИтого" id="68">
+			<DataPath>Объект.Очки.TotalИтого</DataPath>
+			<ContextMenu name="ОчкиИтогИтогоКонтекстноеМеню" id="69"/>
+			<ExtendedTooltip name="ОчкиИтогИтогоРасширеннаяПодсказка" id="70"/>
+		</LabelField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.УменьшениеОчков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьСотрудников" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить сотрудников</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить сотрудников</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьСотрудников</Action>
+		</Command>
+		<Command name="ДополнительныеРеквизиты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОбщиеРеквизиты</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДополнительныеРеквизиты</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОчиститьКодКлиента" id="65">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОчиститьКодКлиента</CommandName>
+				<ExtendedTooltip name="ФормаОчиститьКодКлиентаРасширеннаяПодсказка" id="66"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа2" id="31">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2ExtendedTooltip" id="33"/>
+			<ChildItems>
+				<Table name="Список" id="1">
+					<CommandBarLocation>None</CommandBarLocation>
+					<DefaultItem>true</DefaultItem>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<InitialTreeView>ExpandTopLevel</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Список</DataPath>
+					<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+					<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СписокExtendedTooltip" id="34"/>
+					<SearchStringAddition name="СписокСтрокаПоиска" id="50">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="51"/>
+						<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="52"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокСостояниеПросмотра" id="53">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="55"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокУправлениеПоиском" id="56">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="57"/>
+						<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="58"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="НомерКлиента" id="62">
+							<DataPath>Список.НомерКлиента</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="НомерКлиентаКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="НомерКлиентаРасширеннаяПодсказка" id="64"/>
+						</LabelField>
+						<LabelField name="Наименование" id="4">
+							<DataPath>Список.Description</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="НаименованиеExtendedTooltip" id="35"/>
+						</LabelField>
+						<LabelField name="ОсновнойМенеджер" id="22">
+							<DataPath>Список.ОсновнойМенеджер</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ОсновнойМенеджерКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ОсновнойМенеджерExtendedTooltip" id="36"/>
+						</LabelField>
+						<LabelField name="ТипЦен" id="20">
+							<DataPath>Список.ТипЦен</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ТипЦенКонтекстноеМеню" id="21"/>
+							<ExtendedTooltip name="ТипЦенExtendedTooltip" id="37"/>
+						</LabelField>
+						<LabelField name="Категория" id="70">
+							<DataPath>Список.Категория</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="КатегорияКонтекстноеМеню" id="71"/>
+							<ExtendedTooltip name="КатегорияРасширеннаяПодсказка" id="72"/>
+						</LabelField>
+						<LabelField name="Регионы" id="28">
+							<DataPath>Список.Регионы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Regionen</v8:content>
+								</v8:item>
+							</Title>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="РегионыКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="РегионыExtendedTooltip" id="38"/>
+						</LabelField>
+						<ColumnGroup name="Группа1" id="30">
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="Группа1ExtendedTooltip" id="39"/>
+							<ChildItems>
+								<CheckBoxField name="Дилер" id="26">
+									<DataPath>Список.Дилер</DataPath>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДилерКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ДилерExtendedTooltip" id="40"/>
+								</CheckBoxField>
+								<CheckBoxField name="Клиент" id="8">
+									<DataPath>Список.Клиент</DataPath>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="КлиентКонтекстноеМеню" id="9"/>
+									<ExtendedTooltip name="КлиентExtendedTooltip" id="41"/>
+								</CheckBoxField>
+								<CheckBoxField name="Поставщик" id="10">
+									<DataPath>Список.Поставщик</DataPath>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПоставщикКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="ПоставщикExtendedTooltip" id="42"/>
+								</CheckBoxField>
+								<CheckBoxField name="Конкурент" id="12">
+									<DataPath>Список.Конкурент</DataPath>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="КонкурентКонтекстноеМеню" id="13"/>
+									<ExtendedTooltip name="КонкурентExtendedTooltip" id="43"/>
+								</CheckBoxField>
+								<CheckBoxField name="ПрочиеОтношения" id="14">
+									<DataPath>Список.ПрочиеОтношения</DataPath>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПрочиеОтношенияКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="ПрочиеОтношенияExtendedTooltip" id="44"/>
+								</CheckBoxField>
+							</ChildItems>
+						</ColumnGroup>
+						<LabelField name="Email" id="67">
+							<DataPath>Список.Email</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<Width>25</Width>
+							<ContextMenu name="EmailКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="69"/>
+						</LabelField>
+						<LabelField name="Комментарий" id="18">
+							<DataPath>Список.Комментарий</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<Height>1</Height>
+							<ContextMenu name="КомментарийКонтекстноеМеню" id="19"/>
+							<ExtendedTooltip name="КомментарийExtendedTooltip" id="45"/>
+						</LabelField>
+						<LabelField name="УровеньСкидки" id="16">
+							<DataPath>Список.УровеньСкидки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Rabattstufe</v8:content>
+								</v8:item>
+							</Title>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="УровеньСкидкиКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="УровеньСкидкиExtendedTooltip" id="46"/>
+						</LabelField>
+						<CheckBoxField name="ЭтоКонтрагентБухгалтерии" id="24">
+							<DataPath>Список.ЭтоКонтрагентБухгалтерии</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЭтоКонтрагентБухгалтерииКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="ЭтоКонтрагентБухгалтерииExtendedTooltip" id="47"/>
+						</CheckBoxField>
+						<LabelField name="ДнейОтсрочки" id="59">
+							<DataPath>Список.ДнейОтсрочки</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ДнейОтсрочкиКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="ДнейОтсрочкиРасширеннаяПодсказка" id="61"/>
+						</LabelField>
+						<LabelField name="Код" id="6">
+							<DataPath>Список.Code</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="КодКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="КодExtendedTooltip" id="48"/>
+						</LabelField>
+						<LabelField name="ОткудаПришел" id="73">
+							<DataPath>Список.ОткудаПришел</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ОткудаПришелКонтекстноеМеню" id="74"/>
+							<ExtendedTooltip name="ОткудаПришелРасширеннаяПодсказка" id="75"/>
+						</LabelField>
+						<LabelField name="ДатаСоздания" id="76">
+							<DataPath>Список.ДатаСоздания</DataPath>
+							<ContextMenu name="ДатаСозданияКонтекстноеМеню" id="77"/>
+							<ExtendedTooltip name="ДатаСозданияРасширеннаяПодсказка" id="78"/>
+						</LabelField>
+						<LabelField name="Автор" id="79">
+							<DataPath>Список.Автор</DataPath>
+							<ContextMenu name="АвторКонтекстноеМеню" id="80"/>
+							<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="81"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+				<UsualGroup name="ГруппаОперативнойИнформации" id="32">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа оперативной информации</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа оперативной информации</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОперативнойИнформацииExtendedTooltip" id="49"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СправочникПартнеры.Ссылка,
+	СправочникПартнеры.ПометкаУдаления,
+	СправочникПартнеры.Предопределенный,
+	СправочникПартнеры.Родитель,
+	СправочникПартнеры.ЭтоГруппа,
+	СправочникПартнеры.Код,
+	СправочникПартнеры.Наименование,
+	СправочникПартнеры.Клиент,
+	СправочникПартнеры.Поставщик,
+	СправочникПартнеры.Конкурент,
+	СправочникПартнеры.ПрочиеОтношения,
+	СправочникПартнеры.ОсновнойМенеджер,	
+	СправочникПартнеры.ЭтоКонтрагентБухгалтерии,
+	СправочникПартнеры.Дилер,
+	НомерКлиента,
+	СправочникПартнеры.Автор,
+	
+	// RLS
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА СправочникПартнеры.ТипЦен ИНАЧЕ NULL КОНЕЦ 
+	ТипЦен,
+                
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА СправочникПартнеры.УровеньСкидки ИНАЧЕ NULL КОНЕЦ 
+	УровеньСкидки,
+	
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА СправочникПартнеры.Комментарий ИНАЧЕ NULL КОНЕЦ 
+	Комментарий,
+	
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА СправочникПартнеры.Категория ИНАЧЕ NULL КОНЕЦ 
+	Категория,
+	
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА СправочникПартнеры.ОткудаПришел ИНАЧЕ NULL КОНЕЦ 
+	ОткудаПришел,
+	
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА СправочникПартнеры.ДатаСоздания ИНАЧЕ NULL КОНЕЦ 
+	ДатаСоздания,
+	
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА КИ.Представление ИНАЧЕ NULL КОНЕЦ 
+	Email,
+    
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА Рег.Регионы ИНАЧЕ NULL КОНЕЦ 
+	Регионы,
+	
+	ВЫБОР КОГДА &amp;ДоступныВсеПартнеры ИЛИ ОсновнойМенеджер В (&amp;ДоступныеПользователи) ИЛИ Ссылка В(  ВЫБРАТЬ Партнер ИЗ РегистрСведений.ПравоПросмотраПартнеров ГДЕ Пользователь В(&amp;ДоступныеПользователи)) ТОГДА ДнейОтсрочки ИНАЧЕ NULL КОНЕЦ 
+	ДнейОтсрочки
+
+	//СправочникПартнеры.КонтактнаяИнформация,
+	
+ИЗ
+	Справочник.Партнеры КАК СправочникПартнеры
+	
+ЛЕВОЕ СОЕДИНЕНИЕ	РегистрСведений.РегионыПартнераПредставление Рег
+ПО					СправочникПартнеры.Ссылка = Рег.Партнер
+	
+ЛЕВОЕ СОЕДИНЕНИЕ 	(	ВЫБРАТЬ Партнер, МАКСИМУМ(Регион) Регион 
+						ИЗ РегистрСведений.РегионыПартнера 
+						СГРУППИРОВАТЬ ПО Партнер {ГДЕ Регион КАК Регион}) РегВнутр
+ПО СправочникПартнеры.Ссылка = РегВнутр.Партнер
+
+ЛЕВОЕ СОЕДИНЕНИЕ	(	ВЫБРАТЬ Партнер, МАКСИМУМ(Представление)
+						ИЗ(
+								ВЫБРАТЬ Объект Партнер, ПОДСТРОКА(Представление, 1, 50) Представление  
+								ИЗ 		РегистрСведений.ПредставлениеКонтактнойИнформации 
+								ГДЕ Объект ССЫЛКА Справочник.Партнеры И Вид В ИЕРАРХИИ(&amp;ЭлектроннаяПочта)
+								
+								ОБЪЕДИНИТЬ ВСЕ
+								
+								ВЫБРАТЬ Спр.Партнер, ПОДСТРОКА(Инф.Представление, 1, 50)
+								ИЗ Справочник.Контрагенты Спр
+	 							
+	 							ЛЕВОЕ СОЕДИНЕНИЕ 	РегистрСведений.ПредставлениеКонтактнойИнформации Инф
+	  							ПО 					Спр.Ссылка = Инф.Объект
+	  							
+								ГДЕ Вид В ИЕРАРХИИ(&amp;ЭлектроннаяПочта)) Зап
+						СГРУППИРОВАТЬ ПО Партнер ) КИ
+						
+ПО СправочникПартнеры.Ссылка = КИ.Партнер	
+	
+{ГДЕ РегВнутр.Регион КАК Регион}</QueryText>
+				<MainTable>Catalog.Партнеры</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОчиститьКодКлиента" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить код клиента</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Klar Kundenkonto</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить код клиента</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьКодКлиента</Action>
+		</Command>
+	</Commands>
+</Form>

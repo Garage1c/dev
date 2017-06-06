@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Акция</dataPath>
+			<field>Акция</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЗаказа</dataPath>
+			<field>СуммаЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОплаты</dataPath>
+			<field>СуммаОплаты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма оплаты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Себестоимость</dataPath>
+			<field>Себестоимость</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Себестоимость</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Упаковка</dataPath>
+			<field>Упаковка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Касса</dataPath>
+			<field>Касса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Касса</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Продавец</dataPath>
+			<field>Продавец</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Чек</dataPath>
+			<field>Чек</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОплаты</dataPath>
+			<field>ТипОплаты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КурсУЕ</dataPath>
+			<field>КурсУЕ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Курс валюты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>//------------------ Таблица курса валют на день заказа -------------------------
+    
+ВЫБРАТЬ
+    Зак.Чек,
+    КурсУЕ.Валюта,
+	КурсУЕ.Курс,
+	КурсУЕ.Кратность
+ПОМЕСТИТЬ ТаблицаВалютПоДням
+ИЗ	РегистрНакопления.ПродажиВРозницу.Обороты({&amp;НачалоПериода},{&amp;КонецПериода},, {Склад КАК Склад} {Чек.Касса КАК Касса}) Зак
+    ЛЕВОЕ СОЕДИНЕНИЕ 
+    (
+        ВЫБРАТЬ Таб.Валюта, Таб.Курс, Таб.Период ПериодНач, Таб.Кратность,  
+        ВЫБОР 
+        	КОГДА 	МИНИМУМ(Таб1.Период) ЕСТЬ NULL 
+        	ТОГДА 	&amp;КонецПериода
+        	ИНАЧЕ	ДОБАВИТЬКДАТЕ(МИНИМУМ(Таб1.Период), СЕКУНДА, -1) 
+      	КОНЕЦ ПериодКон
+		ИЗ 
+			(ВЫБРАТЬ Валюта, Период, Курс, Кратность ИЗ РегистрСведений.КурсыВалют //ГДЕ Валюта = &amp;Валюта
+			 ) Таб
+
+			ЛЕВОЕ СОЕДИНЕНИЕ 
+	
+			(ВЫБРАТЬ Валюта, Период, Курс ИЗ РегистрСведений.КурсыВалют //ГДЕ Валюта = &amp;Валюта 
+			 ) Таб1 
+			
+			ПО Таб.Валюта = Таб1.Валюта И Таб.Период &lt; Таб1.Период
+	 	
+	 	СГРУППИРОВАТЬ ПО Таб.Валюта, Таб.Курс, Таб.Период, Таб.Кратность
+	) КАК КурсУЕ
+ 
+ ПО (Чек.Дата МЕЖДУ КурсУЕ.ПериодНач И КурсУЕ.ПериодКон)
+ 
+// ГДЕ Календарь.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+ 
+ //УПОРЯДОЧИТЬ ПО ДатаКалендаря 
+;
+
+// Выберим себестоимость и сумму отгрузок
+
+ВЫБРАТЬ 
+	Прод.Чек, 
+	СУММА(Прод.СуммаОборот) СуммаОплаты,
+	СУММА(Прод.СуммаОборот) СуммаЗаказа, 
+	МАКСИМУМ(ТабВал.Курс) КурсУЕ,
+    СУММА(Прод.КоличествоОборот * 
+    	ЕСТЬNULL(ЦенСеб.Цена*(ЕСТЬNULL(ТабВал.Курс,1)*ЕСТЬNULL(ВалРуб.Кратность,1))/(ЕСТЬNULL(ТабВал.Кратность,1)*ЕСТЬNULL(ВалРуб.Курс,1)), 
+    	ЕСТЬNULL(ЦенЗак.Цена*(ЕСТЬNULL(ТабВалЗакуп.Курс,1)*ЕСТЬNULL(ВалРуб.Кратность,1))/(ЕСТЬNULL(ТабВалЗакуп.Кратность,1)*ЕСТЬNULL(ВалРуб.Курс,1)), 
+    	0))
+    	) Себестоимость		
+	//СУММА(Прод.КоличествоОборот * ЕСТЬNULL((ЦенСеб.Цена*(ЕСТЬNULL(ВалЦен.Курс,1)*ЕСТЬNULL(ВалРуб.Кратность,1))/(ЕСТЬNULL(ВалЦен.Кратность,1)*ЕСТЬNULL(ВалРуб.Курс,1))), ЕСТЬNULL(ЦенЗак.Цена, 0))) Себестоимость
+ПОМЕСТИТЬ СебестоимостьЗаказов
+ИЗ РегистрНакопления.ПродажиВРозницу.Обороты({&amp;НачалоПериода},{&amp;КонецПериода},, {Склад КАК Склад} {Чек.Касса КАК Касса}) КАК Прод
+
+    ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних({&amp;КонецПериода}, ТипЦен = &amp;ТипЦенСебестоимость И Упаковка = &amp;ПустаяУпаковка) ЦенСеб
+    ПО Прод.Номенклатура = ЦенСеб.Номенклатура 
+
+	ЛЕВОЕ СОЕДИНЕНИЕ 
+		ТаблицаВалютПоДням ТабВал 
+		ПО Прод.Чек = ТабВал.Чек И ЦенСеб.Валюта = ТабВал.Валюта 
+
+    ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних({&amp;КонецПериода}, ТипЦен  =&amp;ТипЦенЗакупка И Упаковка = &amp;ПустаяУпаковка) ЦенЗак
+    ПО Прод.Номенклатура = ЦенЗак.Номенклатура
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ 
+		ТаблицаВалютПоДням ТабВалЗакуп 
+		ПО Прод.Чек = ТабВалЗакуп.Чек И ЦенСеб.Валюта = ТабВалЗакуп.Валюта 
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КурсыВалют.СрезПоследних({&amp;КонецПериода}, Валюта В (ВЫБРАТЬ ВалютаУправленческогоУчета ИЗ Константы)) ВалРуб
+	ПО ИСТИНА
+
+СГРУППИРОВАТЬ ПО Прод.Чек
+;
+// Теперь посчитаем вместе
+
+ВЫБРАТЬ 	
+	Регистратор Чек, СуммаОборот СуммаОплаты, СуммаОборот СуммаЗаказа, Отгр.Себестоимость, Отгр.КурсУЕ
+ИЗ 
+	РегистрНакопления.РозничныеПродажи.Обороты({&amp;НачалоПериода},{&amp;КонецПериода}, Регистратор, {Смена.Касса КАК Касса}) Долг
+
+ЛЕВОЕ СОЕДИНЕНИЕ
+    СебестоимостьЗаказов Отгр
+ПО
+    Долг.Регистратор = Отгр.Чек
+
+
+</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Процент</dataPath>
+		<expression>100 / СуммаЗаказа * СуммаОплаты</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>3</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Прибыль</dataPath>
+		<expression>ВЫБОР КОГДА Себестоимость = 0 ТОГДА 0 ИНАЧЕ (СуммаОплаты/СуммаЗаказа) * (СуммаЗаказа - Себестоимость) КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Прибыль</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>СуммаОплаты</dataPath>
+		<expression>Сумма(СуммаОплаты)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаЗаказа</dataPath>
+		<expression>Сумма(СуммаЗаказа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Себестоимость</dataPath>
+		<expression>Сумма(Себестоимость)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Прибыль</dataPath>
+		<expression>Сумма(Прибыль)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КурсУЕ</dataPath>
+		<expression>Максимум(КурсУЕ)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПустаяУпаковка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Пустая упаковка</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.УпаковкиНоменклатуры</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.УпаковкиНоменклатуры.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТипЦенСебестоимость</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тип цен себестоимость</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ТипыЦен</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТипЦенЗакупка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тип цен закупка</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ТипыЦен</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Процент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОплаты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Себестоимость</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Прибыль</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КурсУЕ</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Склад</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>7cec8939-fd60-440e-baa8-3686450106e2</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Касса</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>5b238389-6714-4542-bd5c-5692faef0b6e</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>f10ecdca-e19d-467e-9d29-f48d86c67aab</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>5b11d418-40b2-4faf-9767-5c8c4e98494d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТипЦенСебестоимость</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>7bd809d7-fd12-452f-9c66-e560754f96a9</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТипЦенЗакупка</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>1853fa6a-020a-441f-bdbe-ab53220d454c</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Чек</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

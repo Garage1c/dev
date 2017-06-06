@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ПолучитьИзExcel" id="12">
+				<Type>CommandBarButton</Type>
+				<Check>true</Check>
+				<CommandName>Form.Command.ПолучитьИзExcel</CommandName>
+				<ExtendedTooltip name="ПолучитьИзExcelРасширеннаяПодсказка" id="22"/>
+			</Button>
+			<Button name="ФормаЗаписатьДанные" id="35">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаписатьДанные</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьДанныеРасширеннаяПодсказка" id="36"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Файл" id="15">
+			<DataPath>Объект.Файл</DataPath>
+			<ChoiceButton>true</ChoiceButton>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ФайлКонтекстноеМеню" id="16"/>
+			<ExtendedTooltip name="ФайлРасширеннаяПодсказка" id="24"/>
+			<Events>
+				<Event name="StartChoice">ВыбратьФайл</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ОсновнаяГруппа" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обязательные параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ОсновнаяГруппаРасширеннаяПодсказка" id="25"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация" id="13">
+					<Font bold="true" underline="true" kind="AutoFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Укажите номера колонок</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<ContextMenu name="ДекорацияКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ДекорацияРасширеннаяПодсказка" id="26"/>
+				</LabelDecoration>
+				<InputField name="Номенклатура" id="18">
+					<DataPath>Объект.Номенклатура</DataPath>
+					<ContextMenu name="НоменклатураКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="Поставщик" id="29">
+					<DataPath>Объект.Поставщик</DataPath>
+					<ContextMenu name="ПоставщикКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="Матрица" id="32">
+					<DataPath>Объект.Матрица</DataPath>
+					<ContextMenu name="МатрицаКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="МатрицаРасширеннаяПодсказка" id="34"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДанныеФайла" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные файла</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаДанныеФайлаРасширеннаяПодсказка" id="63"/>
+			<ChildItems>
+				<Table name="ТаблицаФайла" id="37">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.ТаблицаФайла</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТаблицаФайлаКонтекстноеМеню" id="38">
+						<Autofill>false</Autofill>
+					</ContextMenu>
+					<AutoCommandBar name="ТаблицаФайлаКоманднаяПанель" id="39">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ТаблицаФайлаРасширеннаяПодсказка" id="40"/>
+					<SearchStringAddition name="ТаблицаФайлаСтрокаПоиска" id="41">
+						<AdditionSource>
+							<Item>ТаблицаФайла</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаФайлаСтрокаПоискаКонтекстноеМеню" id="42"/>
+						<ExtendedTooltip name="ТаблицаФайлаСтрокаПоискаРасширеннаяПодсказка" id="43"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТаблицаФайлаСостояниеПросмотра" id="44">
+						<AdditionSource>
+							<Item>ТаблицаФайла</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаФайлаСостояниеПросмотраКонтекстноеМеню" id="45"/>
+						<ExtendedTooltip name="ТаблицаФайлаСостояниеПросмотраРасширеннаяПодсказка" id="46"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТаблицаФайлаУправлениеПоиском" id="47">
+						<AdditionSource>
+							<Item>ТаблицаФайла</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаФайлаУправлениеПоискомКонтекстноеМеню" id="48"/>
+						<ExtendedTooltip name="ТаблицаФайлаУправлениеПоискомРасширеннаяПодсказка" id="49"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="ТаблицаФайлаНоменклатура" id="53">
+							<DataPath>Объект.ТаблицаФайла.Номенклатура</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаФайлаНоменклатураКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ТаблицаФайлаНоменклатураРасширеннаяПодсказка" id="55"/>
+						</InputField>
+						<InputField name="ТаблицаФайлаПоставщик" id="56">
+							<DataPath>Объект.ТаблицаФайла.Поставщик</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаФайлаПоставщикКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="ТаблицаФайлаПоставщикРасширеннаяПодсказка" id="58"/>
+						</InputField>
+						<CheckBoxField name="ТаблицаФайлаМатрица" id="59">
+							<DataPath>Объект.ТаблицаФайла.Матрица</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ТаблицаФайлаМатрицаКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="ТаблицаФайлаМатрицаРасширеннаяПодсказка" id="61"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЗагрузкаАссортиментнойМатрицы</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПолучитьИзExcel" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить из excel</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить из excel</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Эксель</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПолучитьИзExcel</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ЗаписатьДанные" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewTable</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаписатьДанные</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

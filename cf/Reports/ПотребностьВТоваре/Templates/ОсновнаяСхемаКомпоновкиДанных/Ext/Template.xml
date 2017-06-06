@@ -1,0 +1,1087 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОстаток</dataPath>
+			<field>КоличествоОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество в очереди</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Очередь</dataPath>
+			<field>Очередь</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ответственный</dataPath>
+			<field>Ответственный</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Упаковка</dataPath>
+			<field>Упаковка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Упаковка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поставщик</dataPath>
+			<field>Поставщик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗакупитьНедостающее</dataPath>
+			<field>ЗакупитьНедостающее</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закупить недостающее</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказПоставщику</dataPath>
+			<field>ЗаказПоставщику</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказано</dataPath>
+			<field>Заказано</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказано</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена</dataPath>
+			<field>Цена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтавкаНДС</dataPath>
+			<field>СтавкаНДС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаОтправкиВЗакупку</dataPath>
+			<field>ДатаОтправкиВЗакупку</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата отправки в закупку</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Производитель</dataPath>
+			<field>Производитель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Производитель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияТовара</dataPath>
+			<field>КатегорияТовара</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Категория товара</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокЗаменыНаСкладе</dataPath>
+			<field>ОстатокЗаменыНаСкладе</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток замены на складе</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРезерва</dataPath>
+			<field>ДокументРезерва</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Размещение</dataPath>
+			<field>Размещение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокВсего</dataPath>
+			<field>ОстатокВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокНаЦСкладе</dataPath>
+			<field>ОстатокНаЦСкладе</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток на центр. складе</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Резерв</dataPath>
+			<field>Резерв</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Резерв</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РезервНаЦСкладе</dataPath>
+			<field>РезервНаЦСкладе</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Резерв на центр. складе</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВПути</dataPath>
+			<field>ВПути</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В пути</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инвойс</dataPath>
+			<field>Инвойс</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоступления</dataPath>
+			<field>ДатаПоступления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ориентировочный приход</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МенеджерЗакупок</dataPath>
+			<field>МенеджерЗакупок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закупщик</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатусПотребности</dataPath>
+			<field>СтатусПотребности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус потребности</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Разм.Заказ,
+	Разм.Заказ.Ответственный КАК Ответственный,
+	Разм.Заказ.ЗакупитьНедостающее КАК ЗакупитьНедостающее,
+	Разм.Заказ.ДатаОтправкиВЗакупку КАК ДатаОтправкиВЗакупку,
+	Разм.Заказ.Контрагент КАК Контрагент,
+	Разм.Номенклатура.Производитель КАК Производитель,
+	Разм.Номенклатура.КатегорияТовара КАК КатегорияТовара,
+	Разм.Номенклатура,
+	Разм.Очередь,
+	Разм.КоличествоОстаток,
+	ОстаткиНаСкладах.ОстатокВсего,
+	ОстаткиНаСкладах.ОстатокНаЦСкладе,
+	ТоварыВРезерве.Резерв,
+	ТоварыВРезерве.РезервНаЦСкладе,
+	ТоварыВПути.ВПути,
+	Разм.Номенклатура.Поставщик.МенеджерЗакупок КАК МенеджерЗакупок,
+	ВЫРАЗИТЬ(Разм.Номенклатура.Комментарий КАК СТРОКА(200)) КАК Комментарий
+ПОМЕСТИТЬ Резервы
+ИЗ
+	РегистрНакопления.РазмещениеЗаказов.Остатки(, {(Номенклатура = &amp;Номенклатура)}) КАК Разм
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ТоварыНаСкладахОстатки.Номенклатура КАК Номенклатура,
+			СУММА(ТоварыНаСкладахОстатки.КоличествоОстаток) КАК ОстатокВсего,
+			СУММА(ВЫБОР
+					КОГДА ТоварыНаСкладахОстатки.Склад В (&amp;Склад)
+						ТОГДА ЕСТЬNULL(ТоварыНаСкладахОстатки.КоличествоОстаток, 0)
+					ИНАЧЕ 0
+				КОНЕЦ) КАК ОстатокНаЦСкладе
+		ИЗ
+			РегистрНакопления.ТоварыНаСкладах.Остатки КАК ТоварыНаСкладахОстатки
+		
+		СГРУППИРОВАТЬ ПО
+			ТоварыНаСкладахОстатки.Номенклатура) КАК ОстаткиНаСкладах
+		ПО Разм.Номенклатура = ОстаткиНаСкладах.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			СУММА(ТоварыВРезервеОстатки.КоличествоОстаток) КАК Резерв,
+			ТоварыВРезервеОстатки.Номенклатура КАК Номенклатура,
+			СУММА(ВЫБОР
+					КОГДА ТоварыВРезервеОстатки.Размещение В (&amp;Склад)
+						ТОГДА ЕСТЬNULL(ТоварыВРезервеОстатки.КоличествоОстаток, 0)
+					ИНАЧЕ 0
+				КОНЕЦ) КАК РезервНаЦСкладе
+		ИЗ
+			РегистрНакопления.ТоварыВРезерве.Остатки КАК ТоварыВРезервеОстатки
+		
+		СГРУППИРОВАТЬ ПО
+			ТоварыВРезервеОстатки.Номенклатура) КАК ТоварыВРезерве
+		ПО Разм.Номенклатура = ТоварыВРезерве.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ТоварыПоставщиковВПутиОстатки.Номенклатура КАК Номенклатура,
+			ТоварыПоставщиковВПутиОстатки.КоличествоОстаток КАК ВПути
+		ИЗ
+			РегистрНакопления.ТоварыПоставщиковВПути.Остатки КАК ТоварыПоставщиковВПутиОстатки) КАК ТоварыВПути
+		ПО Разм.Номенклатура = ТоварыВПути.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПоставщикиСрезПоследних.Номенклатура,
+	МАКСИМУМ(ПоставщикиСрезПоследних.Период) КАК ДатаПоследнегоПоступления
+ПОМЕСТИТЬ ПоследниеЗакупки
+ИЗ
+	РегистрСведений.Поставщики.СрезПоследних(
+			,
+			Номенклатура В
+				(ВЫБРАТЬ
+					Резервы.Номенклатура
+				ИЗ
+					Резервы)) КАК ПоставщикиСрезПоследних
+
+СГРУППИРОВАТЬ ПО
+	ПоставщикиСрезПоследних.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Закуп.Номенклатура,
+	Пост.Поставщик
+ПОМЕСТИТЬ ПоследнийПоставщик
+ИЗ
+	ПоследниеЗакупки КАК Закуп
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Поставщики.СрезПоследних(
+				,
+				Номенклатура В
+					(ВЫБРАТЬ
+						Резервы.Номенклатура
+					ИЗ
+						Резервы)) КАК Пост
+		ПО Закуп.Номенклатура = Пост.Номенклатура
+			И Закуп.ДатаПоследнегоПоступления = Пост.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НоменклатураЗаменыСрезПоследних.Контрагент,
+	НоменклатураЗаменыСрезПоследних.Номенклатура,
+	НоменклатураЗаменыСрезПоследних.НоменклатураЗамена
+ПОМЕСТИТЬ ТоварыЗамены
+ИЗ
+	РегистрСведений.НоменклатураЗамены.СрезПоследних(
+			,
+			Номенклатура В
+					(ВЫБРАТЬ
+						Резервы.Номенклатура
+					ИЗ
+						Резервы)
+				И Контрагент В
+					(ВЫБРАТЬ
+						Резервы.Контрагент
+					ИЗ
+						Резервы)) КАК НоменклатураЗаменыСрезПоследних
+ГДЕ
+	НоменклатураЗаменыСрезПоследних.Использование = ИСТИНА
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Тов.Номенклатура,
+	Тов.Контрагент,
+	СУММА(ЕСТЬNULL(Ост.КоличествоОстаток, 0) - ЕСТЬNULL(Рез.КоличествоОстаток, 0)) КАК ОстатокЗаменыНаСкладе
+ПОМЕСТИТЬ ТоварыЗаменыОстатки
+ИЗ
+	ТоварыЗамены КАК Тов
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыНаСкладах.Остатки(
+				,
+				Номенклатура В
+					(ВЫБРАТЬ
+						ТоварыЗамены.НоменклатураЗамена
+					ИЗ
+						ТоварыЗамены)) КАК Ост
+		ПО Тов.НоменклатураЗамена = Ост.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыВРезерве.Остатки(
+				,
+				Номенклатура В
+					(ВЫБРАТЬ
+						ТоварыЗамены.НоменклатураЗамена
+					ИЗ
+						ТоварыЗамены)) КАК Рез
+		ПО Тов.НоменклатураЗамена = Рез.Номенклатура
+
+СГРУППИРОВАТЬ ПО
+	Тов.Контрагент,
+	Тов.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Разм.Заказ,
+	Разм.Ответственный,
+	Разм.ЗакупитьНедостающее,
+	Разм.ДатаОтправкиВЗакупку,
+	Разм.Номенклатура,
+	Разм.Производитель,
+	Разм.КатегорияТовара,
+	Пост.Поставщик,
+	Разм.Очередь,
+	МАКСИМУМ(Разм.КоличествоОстаток) КАК КоличествоОстаток,
+	Закуп.ЗаказПоставщику,
+	СУММА(Закуп.КоличествоОстаток) КАК Заказано,
+	СУММА(Тов.ОстатокЗаменыНаСкладе) КАК ОстатокЗаменыНаСкладе,
+	СУММА(Разм.ОстатокВсего) КАК ОстатокВсего,
+	СУММА(Разм.ОстатокНаЦСкладе) КАК ОстатокНаЦСкладе,
+	СУММА(Разм.Резерв) КАК Резерв,
+	СУММА(Разм.РезервНаЦСкладе) КАК РезервНаЦСкладе,
+	СУММА(Разм.ВПути) КАК ВПути,
+	Разм.МенеджерЗакупок,
+	Закуп.ЗаказПоставщику.ДатаПоступления КАК ДатаПоступления,
+	ВЫБОР
+		КОГДА Разм.ЗакупитьНедостающее = ЛОЖЬ
+			ТОГДА "Не требует заказа"
+		ИНАЧЕ ВЫБОР
+				КОГДА Разм.ОстатокНаЦСкладе - Разм.РезервНаЦСкладе &gt; 0
+					ТОГДА "Есть на ЦС"
+				ИНАЧЕ ВЫБОР
+						КОГДА Закуп.ЗаказПоставщику &lt;&gt; ЗНАЧЕНИЕ(Документ.ЗАказПоставщику.ПустаяСсылка)
+							ТОГДА ВЫБОР
+									КОГДА Закуп.ЗаказПоставщику.ДатаПоступления &lt; &amp;ТекущаяДата
+										ТОГДА "Просрочено"
+									ИНАЧЕ "Заказано"
+								КОНЕЦ
+						ИНАЧЕ ВЫБОР
+								КОГДА Разм.КоличествоОстаток &lt; Разм.ВПути + Закуп.КоличествоОстаток
+									ТОГДА "Заказано"
+								ИНАЧЕ "Заказать"
+							КОНЕЦ
+					КОНЕЦ
+			КОНЕЦ
+	КОНЕЦ КАК СтатусПотребности,
+	Разм.Комментарий
+ИЗ
+	Резервы КАК Разм
+		ЛЕВОЕ СОЕДИНЕНИЕ ПоследнийПоставщик КАК Пост
+		ПО Разм.Номенклатура = Пост.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ЗаказыПоставщикам.Остатки(
+				,
+				Номенклатура В
+					(ВЫБРАТЬ
+						Резервы.Номенклатура
+					ИЗ
+						Резервы)) КАК Закуп
+		ПО Разм.Номенклатура = Закуп.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыЗаменыОстатки КАК Тов
+		ПО Разм.Номенклатура = Тов.Номенклатура
+			И Разм.Контрагент = Тов.Контрагент
+
+СГРУППИРОВАТЬ ПО
+	Разм.Заказ,
+	Разм.Ответственный,
+	Разм.ЗакупитьНедостающее,
+	Разм.ДатаОтправкиВЗакупку,
+	Разм.Номенклатура,
+	Разм.Производитель,
+	Разм.КатегорияТовара,
+	Пост.Поставщик,
+	Разм.Очередь,
+	Закуп.ЗаказПоставщику,
+	Разм.МенеджерЗакупок,
+	Закуп.ЗаказПоставщику.ДатаПоступления,
+	ВЫБОР
+		КОГДА Разм.ЗакупитьНедостающее = ЛОЖЬ
+			ТОГДА "Не требует заказа"
+		ИНАЧЕ ВЫБОР
+				КОГДА Разм.ОстатокНаЦСкладе - Разм.РезервНаЦСкладе &gt; 0
+					ТОГДА "Есть на ЦС"
+				ИНАЧЕ ВЫБОР
+						КОГДА Закуп.ЗаказПоставщику &lt;&gt; ЗНАЧЕНИЕ(Документ.ЗАказПоставщику.ПустаяСсылка)
+							ТОГДА ВЫБОР
+									КОГДА Закуп.ЗаказПоставщику.ДатаПоступления &lt; &amp;ТекущаяДата
+										ТОГДА "Просрочено"
+									ИНАЧЕ "Заказано"
+								КОНЕЦ
+						ИНАЧЕ ВЫБОР
+								КОГДА Разм.КоличествоОстаток &lt; Разм.ВПути + Закуп.КоличествоОстаток
+									ТОГДА "Заказано"
+								ИНАЧЕ "Заказать"
+							КОНЕЦ
+					КОНЕЦ
+			КОНЕЦ
+	КОНЕЦ,
+	Разм.Комментарий</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоОстаток</dataPath>
+		<expression>Сумма(КоличествоОстаток)</expression>
+		<group>ВПути</group>
+		<group>ДатаОтправкиВЗакупку</group>
+		<group>ДатаПоступления</group>
+		<group>Заказ</group>
+		<group>Заказано</group>
+		<group>ЗаказПоставщику</group>
+		<group>ЗакупитьНедостающее</group>
+		<group>КатегорияТовара</group>
+		<group>КоличествоОстаток</group>
+		<group>МенеджерЗакупок</group>
+		<group>МенеджерЗакупок Иерархия</group>
+		<group>Номенклатура</group>
+		<group>Номенклатура Иерархия</group>
+		<group>ОстатокВсего</group>
+		<group>ОстатокЗаменыНаСкладе</group>
+		<group>ОстатокНаЦСкладе</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Очередь</group>
+		<group>Поставщик</group>
+		<group>Поставщик Иерархия</group>
+		<group>Производитель</group>
+		<group>Резерв</group>
+		<group>РезервНаЦСкладе</group>
+		<group>СтатусПотребности</group>
+	</totalField>
+	<totalField>
+		<dataPath>Заказано</dataPath>
+		<expression>Сумма(Заказано)</expression>
+		<group>ВПути</group>
+		<group>ДатаОтправкиВЗакупку</group>
+		<group>ДатаПоступления</group>
+		<group>Заказ</group>
+		<group>Заказано</group>
+		<group>ЗаказПоставщику</group>
+		<group>ЗакупитьНедостающее</group>
+		<group>КатегорияТовара</group>
+		<group>КоличествоОстаток</group>
+		<group>МенеджерЗакупок</group>
+		<group>МенеджерЗакупок Иерархия</group>
+		<group>Номенклатура</group>
+		<group>Номенклатура Иерархия</group>
+		<group>ОстатокВсего</group>
+		<group>ОстатокЗаменыНаСкладе</group>
+		<group>ОстатокНаЦСкладе</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Очередь</group>
+		<group>Поставщик</group>
+		<group>Поставщик Иерархия</group>
+		<group>Производитель</group>
+		<group>Резерв</group>
+		<group>РезервНаЦСкладе</group>
+		<group>СтатусПотребности</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОстатокЗаменыНаСкладе</dataPath>
+		<expression>Сумма(ОстатокЗаменыНаСкладе)</expression>
+		<group>ВПути</group>
+		<group>ДатаОтправкиВЗакупку</group>
+		<group>ДатаПоступления</group>
+		<group>Заказ</group>
+		<group>Заказано</group>
+		<group>ЗаказПоставщику</group>
+		<group>ЗакупитьНедостающее</group>
+		<group>КатегорияТовара</group>
+		<group>КоличествоОстаток</group>
+		<group>МенеджерЗакупок</group>
+		<group>МенеджерЗакупок Иерархия</group>
+		<group>Номенклатура</group>
+		<group>Номенклатура Иерархия</group>
+		<group>ОстатокВсего</group>
+		<group>ОстатокЗаменыНаСкладе</group>
+		<group>ОстатокНаЦСкладе</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Очередь</group>
+		<group>Поставщик</group>
+		<group>Поставщик Иерархия</group>
+		<group>Производитель</group>
+		<group>Резерв</group>
+		<group>РезервНаЦСкладе</group>
+		<group>СтатусПотребности</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОстатокНаЦСкладе</dataPath>
+		<expression>Сумма(ОстатокНаЦСкладе)</expression>
+		<group>ВПути</group>
+		<group>ДатаОтправкиВЗакупку</group>
+		<group>ДатаПоступления</group>
+		<group>Заказ</group>
+		<group>Заказано</group>
+		<group>ЗаказПоставщику</group>
+		<group>ЗакупитьНедостающее</group>
+		<group>КатегорияТовара</group>
+		<group>КоличествоОстаток</group>
+		<group>МенеджерЗакупок</group>
+		<group>МенеджерЗакупок Иерархия</group>
+		<group>Номенклатура</group>
+		<group>Номенклатура Иерархия</group>
+		<group>ОстатокВсего</group>
+		<group>ОстатокЗаменыНаСкладе</group>
+		<group>ОстатокНаЦСкладе</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Очередь</group>
+		<group>Поставщик</group>
+		<group>Поставщик Иерархия</group>
+		<group>Производитель</group>
+		<group>Резерв</group>
+		<group>РезервНаЦСкладе</group>
+		<group>СтатусПотребности</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОстатокВсего</dataPath>
+		<expression>Сумма(ОстатокВсего)</expression>
+		<group>ВПути</group>
+		<group>ДатаОтправкиВЗакупку</group>
+		<group>ДатаПоступления</group>
+		<group>Заказ</group>
+		<group>Заказано</group>
+		<group>ЗаказПоставщику</group>
+		<group>ЗакупитьНедостающее</group>
+		<group>КатегорияТовара</group>
+		<group>КоличествоОстаток</group>
+		<group>МенеджерЗакупок</group>
+		<group>МенеджерЗакупок Иерархия</group>
+		<group>Номенклатура</group>
+		<group>Номенклатура Иерархия</group>
+		<group>ОстатокВсего</group>
+		<group>ОстатокЗаменыНаСкладе</group>
+		<group>ОстатокНаЦСкладе</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Очередь</group>
+		<group>Поставщик</group>
+		<group>Поставщик Иерархия</group>
+		<group>Производитель</group>
+		<group>Резерв</group>
+		<group>РезервНаЦСкладе</group>
+		<group>СтатусПотребности</group>
+	</totalField>
+	<totalField>
+		<dataPath>Резерв</dataPath>
+		<expression>Сумма(Резерв)</expression>
+		<group>ВПути</group>
+		<group>ДатаОтправкиВЗакупку</group>
+		<group>ДатаПоступления</group>
+		<group>Заказ</group>
+		<group>Заказано</group>
+		<group>ЗаказПоставщику</group>
+		<group>ЗакупитьНедостающее</group>
+		<group>КатегорияТовара</group>
+		<group>КоличествоОстаток</group>
+		<group>МенеджерЗакупок</group>
+		<group>МенеджерЗакупок Иерархия</group>
+		<group>Номенклатура</group>
+		<group>Номенклатура Иерархия</group>
+		<group>ОстатокВсего</group>
+		<group>ОстатокЗаменыНаСкладе</group>
+		<group>ОстатокНаЦСкладе</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Очередь</group>
+		<group>Поставщик</group>
+		<group>Поставщик Иерархия</group>
+		<group>Производитель</group>
+		<group>Резерв</group>
+		<group>РезервНаЦСкладе</group>
+		<group>СтатусПотребности</group>
+	</totalField>
+	<totalField>
+		<dataPath>РезервНаЦСкладе</dataPath>
+		<expression>Сумма(РезервНаЦСкладе)</expression>
+		<group>ВПути</group>
+		<group>ДатаОтправкиВЗакупку</group>
+		<group>ДатаПоступления</group>
+		<group>Заказ</group>
+		<group>Заказано</group>
+		<group>ЗаказПоставщику</group>
+		<group>ЗакупитьНедостающее</group>
+		<group>КатегорияТовара</group>
+		<group>КоличествоОстаток</group>
+		<group>МенеджерЗакупок</group>
+		<group>МенеджерЗакупок Иерархия</group>
+		<group>Номенклатура</group>
+		<group>Номенклатура Иерархия</group>
+		<group>ОстатокВсего</group>
+		<group>ОстатокЗаменыНаСкладе</group>
+		<group>ОстатокНаЦСкладе</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Очередь</group>
+		<group>Поставщик</group>
+		<group>Поставщик Иерархия</group>
+		<group>Производитель</group>
+		<group>Резерв</group>
+		<group>РезервНаЦСкладе</group>
+		<group>СтатусПотребности</group>
+	</totalField>
+	<totalField>
+		<dataPath>ВПути</dataPath>
+		<expression>Сумма(ВПути)</expression>
+		<group>ВПути</group>
+		<group>ДатаОтправкиВЗакупку</group>
+		<group>ДатаПоступления</group>
+		<group>Заказ</group>
+		<group>Заказано</group>
+		<group>ЗаказПоставщику</group>
+		<group>ЗакупитьНедостающее</group>
+		<group>КатегорияТовара</group>
+		<group>КоличествоОстаток</group>
+		<group>МенеджерЗакупок</group>
+		<group>МенеджерЗакупок Иерархия</group>
+		<group>Номенклатура</group>
+		<group>Номенклатура Иерархия</group>
+		<group>ОстатокВсего</group>
+		<group>ОстатокЗаменыНаСкладе</group>
+		<group>ОстатокНаЦСкладе</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Очередь</group>
+		<group>Поставщик</group>
+		<group>Поставщик Иерархия</group>
+		<group>Производитель</group>
+		<group>Резерв</group>
+		<group>РезервНаЦСкладе</group>
+		<group>СтатусПотребности</group>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Номенклатура</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатура</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Номенклатура.ПустаяСсылка</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Склад</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Центр склад</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Склады</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОстаток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заказано</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокЗаменыНаСкладе</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокНаЦСкладе</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Резерв</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РезервНаЦСкладе</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВПути</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>a728333b-6a27-4164-bb39-0cde35973845</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Номенклатура</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Номенклатура.ПустаяСсылка</dcscor:value>
+					<dcsset:userSettingID>3b21f0a4-66f8-4d45-b577-a64a35faa56c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Склад</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>355ce71a-3919-4dcb-a76c-cc271157b63e</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Заказ</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДатаПоступления</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Поставщик</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Очередь</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Ответственный</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ЗакупитьНедостающее</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДатаОтправкиВЗакупку</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>МенеджерЗакупок</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Подробный</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Подробный</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОстаток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заказано</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокНаЦСкладе</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Резерв</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РезервНаЦСкладе</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВПути</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">СтатусПотребности</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">Есть на ЦС</dcsset:right>
+					<dcsset:right xsi:type="xs:string">Заказано</dcsset:right>
+					<dcsset:right xsi:type="xs:string">Просрочено</dcsset:right>
+					<dcsset:right xsi:type="xs:string">Заказать</dcsset:right>
+					<dcsset:right xsi:type="xs:string">Не требует заказа</dcsset:right>
+					<dcsset:userSettingID>6accba6d-8c21-4a5c-8939-3916ff2ec574</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>a728333b-6a27-4164-bb39-0cde35973845</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Номенклатура</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Номенклатура.ПустаяСсылка</dcscor:value>
+					<dcsset:userSettingID>cd433e65-42d4-472a-b142-1378f3187940</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Склад</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>faee7170-7407-4d36-adcb-11680091c900</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТекущаяДата</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Есть на ЦС</dcscor:value>
+					<dcsset:userSettingID>8f00a18a-e79b-4f2b-b5b6-0779e725c4e0</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Заказ</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Номенклатура.Артикул</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Номенклатура</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>СтатусПотребности</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Производитель</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>КатегорияТовара</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Поставщик</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Очередь</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Ответственный</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ЗакупитьНедостающее</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДатаОтправкиВЗакупку</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДатаПоступления</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>МенеджерЗакупок</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ЗаказПоставщику</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
