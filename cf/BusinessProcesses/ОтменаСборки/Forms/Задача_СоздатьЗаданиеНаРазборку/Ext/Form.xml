@@ -3,7 +3,7 @@
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
-			<v8:content>Разобрать заказ</v8:content>
+			<v8:content>Создать заказ на разборку</v8:content>
 		</v8:item>
 	</Title>
 	<AutoTitle>false</AutoTitle>
@@ -82,15 +82,25 @@
 					</Button>
 				</ChildItems>
 			</Popup>
-			<Button name="ФормаПечатьСборочногоЛиста" id="71">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.Command.ПечатьСборочногоЛиста</CommandName>
-				<ExtendedTooltip name="ФормаПечатьСборочногоЛистаExtendedTooltip" id="81"/>
+			<Button name="ФормаВРазборку" id="141">
+				<Type>CommandBarHyperlink</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ВРазборку</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.Разборка</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаВРазборкуРасширеннаяПодсказка" id="142"/>
 			</Button>
-			<Button name="Кнопка_ТоварВозвращенНаМесто" id="59">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.Command.ТоварВозвращен</CommandName>
-				<ExtendedTooltip name="Кнопка_ТоварВозвращенНаМестоExtendedTooltip" id="82"/>
+			<Button name="ФормаОтмена" id="143">
+				<Type>CommandBarHyperlink</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Delete</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="144"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -157,22 +167,6 @@
 					<ContextMenu name="ЯчейкаСборочногоЛистаКонтекстноеМеню" id="137"/>
 					<ExtendedTooltip name="ЯчейкаСборочногоЛистаРасширеннаяПодсказка" id="138"/>
 				</InputField>
-				<Button name="ТоварыВыбратьСборщика" id="134">
-					<Type>Hyperlink</Type>
-					<Representation>PictureAndText</Representation>
-					<CommandName>Form.Command.ВыбратьСборщика</CommandName>
-					<Picture>
-						<xr:Ref>CommonPicture.Сборщик</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</Picture>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Сборщик товаров</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ТоварыВыбратьСборщикаExtendedTooltip" id="135"/>
-				</Button>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="Адресация" id="15">
@@ -346,27 +340,6 @@
 							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 							<ContextMenu name="ТоварыКоличествоКонтекстноеМеню" id="39"/>
 							<ExtendedTooltip name="ТоварыКоличествоExtendedTooltip" id="99"/>
-						</InputField>
-						<InputField name="ТоварыЯчейка" id="128">
-							<DataPath>Товары.Ячейка</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<AutoMarkIncomplete>true</AutoMarkIncomplete>
-							<ChoiceParameterLinks>
-								<xr:Link>
-									<xr:Name>Отбор.Владелец</xr:Name>
-									<xr:DataPath xsi:type="xs:string">Объект.Склад</xr:DataPath>
-									<xr:ValueChange>Clear</xr:ValueChange>
-								</xr:Link>
-							</ChoiceParameterLinks>
-							<ContextMenu name="ТоварыЯчейкаКонтекстноеМеню" id="129"/>
-							<ExtendedTooltip name="ТоварыЯчейкаРасширеннаяПодсказка" id="130"/>
-						</InputField>
-						<InputField name="ТоварыСборщик" id="69">
-							<DataPath>Товары.Сборщик</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-							<ContextMenu name="ТоварыСборщикКонтекстноеМеню" id="70"/>
-							<ExtendedTooltip name="ТоварыСборщикExtendedTooltip" id="101"/>
 						</InputField>
 					</ChildItems>
 				</Table>
@@ -551,53 +524,34 @@
 			</Picture>
 			<Action>ПоказатьСкрытьАдресацию</Action>
 		</Command>
-		<Command name="ТоварВозвращен" id="1">
+		<Command name="ВРазборку" id="1">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Товар разобран</v8:content>
+					<v8:content>В разборку</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Товар возвращен</v8:content>
+					<v8:content>В разборку</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Picture>
-				<xr:Ref>StdPicture.ExecuteTask</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
-			<Action>ТоварВозвращен</Action>
-			<Representation>TextPicture</Representation>
+			<Action>ВРазборку</Action>
 		</Command>
-		<Command name="ПечатьСборочногоЛиста" id="3">
+		<Command name="Отмена" id="5">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Печать сборочного листа</v8:content>
+					<v8:content>Отмена</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Печать сборочного листа</v8:content>
+					<v8:content>Отмена</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Picture>
-				<xr:Ref>StdPicture.Print</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
-			<Action>ПечатьСборочногоЛиста</Action>
-		</Command>
-		<Command name="ВыбратьСборщика" id="4">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Один сборщик на все</v8:content>
-				</v8:item>
-			</Title>
-			<Action>ВыбратьСборщика</Action>
 		</Command>
 	</Commands>
 </Form>
