@@ -39,21 +39,40 @@
 			<ExtendedTooltip name="ШапкаExtendedTooltip" id="76"/>
 		</UsualGroup>
 		<UsualGroup name="Группа1" id="49">
-			<Group>Horizontal</Group>
+			<Group>Vertical</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="Группа1ExtendedTooltip" id="77"/>
 			<ChildItems>
-				<InputField name="Склад" id="21">
-					<DataPath>Объект.Склад</DataPath>
-					<Width>20</Width>
-					<HorizontalStretch>false</HorizontalStretch>
-					<ContextMenu name="СкладКонтекстноеМеню" id="22"/>
-					<ExtendedTooltip name="СкладExtendedTooltip" id="78"/>
-					<Events>
-						<Event name="OnChange">СкладПриИзменении</Event>
-					</Events>
-				</InputField>
+				<UsualGroup name="Группа3" id="121">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="122"/>
+					<ChildItems>
+						<InputField name="Склад" id="21">
+							<DataPath>Объект.Склад</DataPath>
+							<Width>20</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СкладКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="СкладExtendedTooltip" id="78"/>
+							<Events>
+								<Event name="OnChange">СкладПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Ревизор" id="115">
+							<DataPath>Объект.Ревизор</DataPath>
+							<ContextMenu name="РевизорКонтекстноеМеню" id="116"/>
+							<ExtendedTooltip name="РевизорРасширеннаяПодсказка" id="117"/>
+						</InputField>
+						<CheckBoxField name="ИнвентаризацияПринята" id="118">
+							<DataPath>Объект.ИнвентаризацияПринята</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИнвентаризацияПринятаКонтекстноеМеню" id="119"/>
+							<ExtendedTooltip name="ИнвентаризацияПринятаРасширеннаяПодсказка" id="120"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
 				<CommandBar name="Группа2" id="50">
 					<CommandSource>Item.КомпоновщикНастроекНастройкиОтбор</CommandSource>
 					<ExtendedTooltip name="Группа2ExtendedTooltip" id="79"/>
