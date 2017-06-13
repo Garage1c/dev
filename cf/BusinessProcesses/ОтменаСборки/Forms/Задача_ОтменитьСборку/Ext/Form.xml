@@ -3,7 +3,7 @@
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
-			<v8:content>Разобрать заказ</v8:content>
+			<v8:content>Вернуть товар собранный ранее</v8:content>
 		</v8:item>
 	</Title>
 	<AutoTitle>false</AutoTitle>
@@ -120,59 +120,18 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ШапкаExtendedTooltip" id="83"/>
 			<ChildItems>
+				<InputField name="Партнер" id="46">
+					<DataPath>Партнер</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ПартнерКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ПартнерExtendedTooltip" id="84"/>
+				</InputField>
 				<InputField name="Заказ" id="48">
 					<DataPath>Объект.Заказ</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<ContextMenu name="ЗаказКонтекстноеМеню" id="49"/>
 					<ExtendedTooltip name="ЗаказExtendedTooltip" id="85"/>
 				</InputField>
-				<InputField name="Контрагент" id="46">
-					<DataPath>Контрагент</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<ContextMenu name="КонтрагентКонтекстноеМеню" id="47"/>
-					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="84"/>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="Шапка2" id="139">
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Шапка2</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Group>Horizontal</Group>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="Шапка2РасширеннаяПодсказка" id="140"/>
-			<ChildItems>
-				<InputField name="СборочныйЛист" id="131">
-					<DataPath>СборочныйЛист</DataPath>
-					<ContextMenu name="СборочныйЛистКонтекстноеМеню" id="132"/>
-					<ExtendedTooltip name="СборочныйЛистРасширеннаяПодсказка" id="133"/>
-				</InputField>
-				<InputField name="ЯчейкаСборочногоЛиста" id="136">
-					<DataPath>ЯчейкаСобранногоТовара</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<ContextMenu name="ЯчейкаСборочногоЛистаКонтекстноеМеню" id="137"/>
-					<ExtendedTooltip name="ЯчейкаСборочногоЛистаРасширеннаяПодсказка" id="138"/>
-				</InputField>
-				<Button name="ТоварыВыбратьСборщика" id="134">
-					<Type>Hyperlink</Type>
-					<Representation>PictureAndText</Representation>
-					<CommandName>Form.Command.ВыбратьСборщика</CommandName>
-					<Picture>
-						<xr:Ref>CommonPicture.Сборщик</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</Picture>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Сборщик товаров</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ТоварыВыбратьСборщикаExtendedTooltip" id="135"/>
-				</Button>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="Адресация" id="15">
@@ -285,6 +244,7 @@
 			<ChildItems>
 				<Table name="Товары" id="33">
 					<Representation>List</Representation>
+					<ReadOnly>true</ReadOnly>
 					<AutoInsertNewRow>true</AutoInsertNewRow>
 					<EnableStartDrag>true</EnableStartDrag>
 					<EnableDrag>true</EnableDrag>
@@ -340,26 +300,69 @@
 							<ContextMenu name="ТоварыНоменклатураКонтекстноеМеню" id="37"/>
 							<ExtendedTooltip name="ТоварыНоменклатураExtendedTooltip" id="97"/>
 						</InputField>
+						<InputField name="ТоварыУпаковка" id="44">
+							<DataPath>Товары.Упаковка</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ТоварыУпаковкаКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="ТоварыУпаковкаExtendedTooltip" id="98"/>
+						</InputField>
 						<InputField name="ТоварыКоличество" id="38">
-							<DataPath>Товары.Количество</DataPath>
+							<DataPath>Товары.Собрано</DataPath>
 							<EditMode>EnterOnInput</EditMode>
 							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 							<ContextMenu name="ТоварыКоличествоКонтекстноеМеню" id="39"/>
 							<ExtendedTooltip name="ТоварыКоличествоExtendedTooltip" id="99"/>
 						</InputField>
-						<InputField name="ТоварыЯчейка" id="128">
-							<DataPath>Товары.Ячейка</DataPath>
+						<InputField name="ТоварыСкладЯчейка" id="67">
+							<DataPath>Товары.Размещение</DataPath>
 							<EditMode>EnterOnInput</EditMode>
-							<AutoMarkIncomplete>true</AutoMarkIncomplete>
-							<ChoiceParameterLinks>
-								<xr:Link>
-									<xr:Name>Отбор.Владелец</xr:Name>
-									<xr:DataPath xsi:type="xs:string">Объект.Склад</xr:DataPath>
-									<xr:ValueChange>Clear</xr:ValueChange>
-								</xr:Link>
-							</ChoiceParameterLinks>
-							<ContextMenu name="ТоварыЯчейкаКонтекстноеМеню" id="129"/>
-							<ExtendedTooltip name="ТоварыЯчейкаРасширеннаяПодсказка" id="130"/>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ChoiceParameters>
+								<app:item name="Отбор.ВАрхив">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">false</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<ContextMenu name="ТоварыСкладЯчейкаКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ТоварыСкладЯчейкаExtendedTooltip" id="100"/>
+						</InputField>
+						<InputField name="ТоварыЦена" id="104">
+							<DataPath>Товары.Цена</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ТоварыЦенаКонтекстноеМеню" id="105"/>
+							<ExtendedTooltip name="ТоварыЦенаРасширеннаяПодсказка" id="106"/>
+						</InputField>
+						<InputField name="ТоварыПроцентРучнойСкидки" id="107">
+							<DataPath>Товары.ПроцентРучнойСкидки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ТоварыПроцентРучнойСкидкиКонтекстноеМеню" id="108"/>
+							<ExtendedTooltip name="ТоварыПроцентРучнойСкидкиРасширеннаяПодсказка" id="109"/>
+						</InputField>
+						<InputField name="ТоварыПроцентАвтоматическойСкидки" id="110">
+							<DataPath>Товары.ПроцентАвтоматическойСкидки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ТоварыПроцентАвтоматическойСкидкиКонтекстноеМеню" id="111"/>
+							<ExtendedTooltip name="ТоварыПроцентАвтоматическойСкидкиРасширеннаяПодсказка" id="112"/>
+						</InputField>
+						<InputField name="ТоварыСтавкаНДС" id="113">
+							<DataPath>Товары.СтавкаНДС</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ТоварыСтавкаНДСКонтекстноеМеню" id="114"/>
+							<ExtendedTooltip name="ТоварыСтавкаНДСРасширеннаяПодсказка" id="115"/>
+						</InputField>
+						<InputField name="ТоварыСумма" id="116">
+							<DataPath>Товары.Сумма</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="ТоварыСуммаКонтекстноеМеню" id="117"/>
+							<ExtendedTooltip name="ТоварыСуммаРасширеннаяПодсказка" id="118"/>
 						</InputField>
 						<InputField name="ТоварыСборщик" id="69">
 							<DataPath>Товары.Сборщик</DataPath>
@@ -422,15 +425,28 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
-		<Attribute name="Контрагент" id="5">
+		<Attribute name="Заказ" id="4">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Контрагент</v8:content>
+					<v8:content>Заказ</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+				<v8:Type>cfg:DocumentRef.ВнутреннийЗаказ</v8:Type>
+				<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+				<v8:Type>cfg:DocumentRef.ИнтернетЗаказПокупателя</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Партнер" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Партнер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
 			</Type>
 			<SavedData>true</SavedData>
 		</Attribute>
@@ -457,7 +473,7 @@
 						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
 					</Type>
 				</Column>
-				<Column name="Количество" id="2">
+				<Column name="Собрано" id="2">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -495,40 +511,87 @@
 						<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
 					</Type>
 				</Column>
-				<Column name="Ячейка" id="4">
+				<Column name="Размещение" id="3">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Ячейка</v8:content>
+							<v8:content>Размещение</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>cfg:CatalogRef.Ячейки</v8:Type>
+						<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Цена" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цена</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПроцентРучнойСкидки" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент ручной скидки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>5</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПроцентАвтоматическойСкидки" id="7">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>5</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтавкаНДС" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка НДС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СтавкиНДС</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
 					</Type>
 				</Column>
 			</Columns>
-		</Attribute>
-		<Attribute name="СборочныйЛист" id="7">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сборочный лист</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>cfg:DocumentRef.СборочныйЛист</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ЯчейкаСобранногоТовара" id="8">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Ячейка собранного товара</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>cfg:CatalogRef.Ячейки</v8:Type>
-			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -555,7 +618,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Товар разобран</v8:content>
+					<v8:content>Товар возвращен на место</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -589,15 +652,6 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>ПечатьСборочногоЛиста</Action>
-		</Command>
-		<Command name="ВыбратьСборщика" id="4">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Один сборщик на все</v8:content>
-				</v8:item>
-			</Title>
-			<Action>ВыбратьСборщика</Action>
 		</Command>
 	</Commands>
 </Form>
