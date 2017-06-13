@@ -49,6 +49,8 @@
 			</Button>
 			<Button name="КнопкаПроверитьЗапуск" id="92">
 				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Enabled>false</Enabled>
 				<CommandName>Form.Command.ПроверитьЗапуск</CommandName>
 				<ExtendedTooltip name="КнопкаПроверитьЗапускExtendedTooltip" id="114"/>
 			</Button>
@@ -59,6 +61,8 @@
 			</Button>
 			<Button name="КнопкаСделатьКакВЯчейках" id="55">
 				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Enabled>false</Enabled>
 				<CommandName>Form.Command.СделатьКакВЯчейках</CommandName>
 				<Title>
 					<v8:item>
@@ -121,16 +125,25 @@
 						<Event name="OnChange">СкладПриИзменении</Event>
 					</Events>
 				</InputField>
+				<InputField name="Ревизор" id="181">
+					<DataPath>Объект.Ревизор</DataPath>
+					<ContextMenu name="РевизорКонтекстноеМеню" id="182"/>
+					<ExtendedTooltip name="РевизорРасширеннаяПодсказка" id="183"/>
+				</InputField>
 			</ChildItems>
 		</UsualGroup>
+		<InputField name="ДокИнвентаризация" id="187">
+			<DataPath>Объект.ДокИнвентаризация</DataPath>
+			<ContextMenu name="ДокИнвентаризацияКонтекстноеМеню" id="188"/>
+			<ExtendedTooltip name="ДокИнвентаризацияРасширеннаяПодсказка" id="189"/>
+		</InputField>
 		<LabelDecoration name="НадписьПередЗапуском" id="87">
 			<TextColor>style:ЦветИнформационнойНадписи</TextColor>
 			<Title formatted="false">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Перед запуском инвентаризации, необходимо:
-1. Выравнить (если есть) остатки ячеек с остатками склада
-2. Убедится что нет резервов на инвентаризируемый товар </v8:content>
+Убедится что нет резервов на инвентаризируемый товар </v8:content>
 				</v8:item>
 			</Title>
 			<ContextMenu name="НадписьПередЗапускомКонтекстноеМеню" id="88"/>
@@ -448,7 +461,6 @@
 									<ExtendedTooltip name="ТоварыКоличествоРасхождениеExtendedTooltip" id="142"/>
 								</InputField>
 								<InputField name="ТоварыВПоиске" id="109">
-									<DataPath>1/0:9faa7e25-aeb7-4a50-8e16-02f8d91de6bd/0:bf178791-dd79-4754-beb7-1b5317378a73</DataPath>
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<ContextMenu name="ТоварыВПоискеКонтекстноеМеню" id="110"/>
@@ -554,6 +566,7 @@
 							<ChildItems>
 								<CheckBoxField name="ТоварыРеквизитВыравнить" id="85">
 									<DataPath>Объект.Товары.ВыравнитьКоличество</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<CheckBoxType>Auto</CheckBoxType>
@@ -580,6 +593,12 @@
 									<BackColor>style:FormBackColor</BackColor>
 									<ContextMenu name="ТоварыОбщееКоличествоНаСкладеКонтекстноеМеню" id="76"/>
 									<ExtendedTooltip name="ТоварыОбщееКоличествоНаСкладеExtendedTooltip" id="153"/>
+								</InputField>
+								<InputField name="ТоварыСобрано" id="184">
+									<DataPath>Объект.Товары.Собрано</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыСобраноКонтекстноеМеню" id="185"/>
+									<ExtendedTooltip name="ТоварыСобраноРасширеннаяПодсказка" id="186"/>
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>

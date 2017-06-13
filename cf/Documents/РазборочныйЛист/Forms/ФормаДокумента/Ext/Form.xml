@@ -37,13 +37,11 @@
 			<ExtendedTooltip name="ГруппаСборкаОконченаРасширеннаяПодсказка" id="134"/>
 			<ChildItems>
 				<CheckBoxField name="СборкаОкончена" id="121">
-					<DataPath>1/0:d0b50cd9-2c64-4db2-8e76-dcaca72912f0</DataPath>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="СборкаОконченаКонтекстноеМеню" id="122"/>
 					<ExtendedTooltip name="СборкаОконченаРасширеннаяПодсказка" id="123"/>
 				</CheckBoxField>
 				<InputField name="ДатаСборки" id="130">
-					<DataPath>1/0:ee7fe154-400b-4d26-803b-006d928c4ba7</DataPath>
 					<Enabled>false</Enabled>
 					<ReadOnly>true</ReadOnly>
 					<Title>
@@ -94,6 +92,7 @@
 					<ExtendedTooltip name="РеквизитыШапкиExtendedTooltip" id="80"/>
 					<ChildItems>
 						<InputField name="Склад" id="60">
+							<DataPath>Объект.Склад</DataPath>
 							<ContextMenu name="СкладКонтекстноеМеню" id="61"/>
 							<ExtendedTooltip name="СкладExtendedTooltip" id="81"/>
 						</InputField>
@@ -102,6 +101,11 @@
 							<Wrap>false</Wrap>
 							<ContextMenu name="ЗаказКонтекстноеМеню" id="8"/>
 							<ExtendedTooltip name="ЗаказExtendedTooltip" id="82"/>
+						</InputField>
+						<InputField name="СборочныйЛист" id="135">
+							<DataPath>Объект.СборочныйЛист</DataPath>
+							<ContextMenu name="СборочныйЛистКонтекстноеМеню" id="136"/>
+							<ExtendedTooltip name="СборочныйЛистРасширеннаяПодсказка" id="137"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -143,7 +147,7 @@
 							<ChoiceParameterLinks>
 								<xr:Link>
 									<xr:Name>Отбор.Владелец</xr:Name>
-									<xr:DataPath xsi:type="xs:string">1/0:debc06a7-8f71-4b52-8d57-28b3c7e59aa4</xr:DataPath>
+									<xr:DataPath xsi:type="xs:string">Объект.Склад</xr:DataPath>
 									<xr:ValueChange>Clear</xr:ValueChange>
 								</xr:Link>
 							</ChoiceParameterLinks>
@@ -271,7 +275,6 @@
 					<ExtendedTooltip name="ТоварыВСборкеExtendedTooltip" id="92"/>
 				</InputField>
 				<InputField name="ТоварыСобрать" id="118">
-					<DataPath>1/0:f856536d-2dcc-4824-9e95-b7ac1e4ffb2b/0:14804356-5612-4222-b580-24d82f4b181d</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ТоварыСобратьКонтекстноеМеню" id="119"/>
 					<ExtendedTooltip name="ТоварыСобратьРасширеннаяПодсказка" id="120"/>
@@ -297,7 +300,6 @@
 					<ExtendedTooltip name="ТоварыУстановитьРезервExtendedTooltip" id="94"/>
 				</CheckBoxField>
 				<InputField name="ТоварыНеНайдено" id="115">
-					<DataPath>1/0:f856536d-2dcc-4824-9e95-b7ac1e4ffb2b/0:b27115e9-f7c8-4eb7-8098-e2622bb67bb5</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 					<ContextMenu name="ТоварыНеНайденоКонтекстноеМеню" id="116"/>
