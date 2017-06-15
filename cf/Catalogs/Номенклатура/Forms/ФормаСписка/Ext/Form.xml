@@ -438,7 +438,8 @@
 	Спр.ТипНоменклатуры,
 	ЕСТЬNULL(Рег.Цена, 0) Цена,
 	ЕСТЬNULL(Рег.СвободныйОстаток, 0) Остаток,
-	Спр.Сертификат
+	Спр.Сертификат,
+	Спр.БольшеНеПоставляется
 ИЗ
 	Справочник.Номенклатура КАК Спр
 
@@ -519,6 +520,22 @@
 								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 									<dcscor:parameter>ЦветТекста</dcscor:parameter>
 									<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">БольшеНеПоставляется</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
 								</dcscor:item>
 							</dcsset:appearance>
 						</dcsset:item>
