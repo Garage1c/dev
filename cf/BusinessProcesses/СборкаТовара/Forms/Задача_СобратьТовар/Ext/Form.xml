@@ -436,6 +436,20 @@
 					<ContextMenu name="ЯчейкаСобранногоТовараКонтекстноеМеню" id="254"/>
 					<ExtendedTooltip name="ЯчейкаСобранногоТовараРасширеннаяПодсказка" id="255"/>
 				</InputField>
+				<CheckBoxField name="VIP" id="268">
+					<DataPath>ПроверитьКонтролеру</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="VIPКонтекстноеМеню" id="269"/>
+					<ExtendedTooltip name="VIPРасширеннаяПодсказка" id="270"/>
+					<Events>
+						<Event name="OnChange">ПроверитьКонтролераПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="Контролер" id="265">
+					<DataPath>Контролер</DataPath>
+					<ContextMenu name="КонтролерКонтекстноеМеню" id="266"/>
+					<ExtendedTooltip name="КонтролерРасширеннаяПодсказка" id="267"/>
+				</InputField>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ДействияЗадачи" id="16">
@@ -1227,6 +1241,29 @@
 					<v8:FractionDigits>3</v8:FractionDigits>
 					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Контролер" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контролер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПроверитьКонтролеру" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить контролеру</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>

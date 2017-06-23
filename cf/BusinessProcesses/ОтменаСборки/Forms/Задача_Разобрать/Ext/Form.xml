@@ -3,7 +3,7 @@
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
-			<v8:content>Разобрать заказ</v8:content>
+			<v8:content>Разобрать товар</v8:content>
 		</v8:item>
 	</Title>
 	<AutoTitle>false</AutoTitle>
@@ -92,6 +92,16 @@
 				<CommandName>Form.Command.ТоварВозвращен</CommandName>
 				<ExtendedTooltip name="Кнопка_ТоварВозвращенНаМестоExtendedTooltip" id="82"/>
 			</Button>
+			<Button name="Кнопка_Отмена" id="147">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Delete</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="Кнопка_ОтменаРасширеннаяПодсказка" id="148"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -146,17 +156,6 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="Шапка2РасширеннаяПодсказка" id="140"/>
 			<ChildItems>
-				<InputField name="СборочныйЛист" id="131">
-					<DataPath>СборочныйЛист</DataPath>
-					<ContextMenu name="СборочныйЛистКонтекстноеМеню" id="132"/>
-					<ExtendedTooltip name="СборочныйЛистРасширеннаяПодсказка" id="133"/>
-				</InputField>
-				<InputField name="ЯчейкаСборочногоЛиста" id="136">
-					<DataPath>ЯчейкаСобранногоТовара</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<ContextMenu name="ЯчейкаСборочногоЛистаКонтекстноеМеню" id="137"/>
-					<ExtendedTooltip name="ЯчейкаСборочногоЛистаРасширеннаяПодсказка" id="138"/>
-				</InputField>
 				<Button name="ТоварыВыбратьСборщика" id="134">
 					<Type>Hyperlink</Type>
 					<Representation>PictureAndText</Representation>
@@ -328,6 +327,7 @@
 					<ChildItems>
 						<InputField name="ТоварыНоменклатураАртикул" id="60">
 							<DataPath>Товары.Номенклатура.Артикул</DataPath>
+							<ReadOnly>true</ReadOnly>
 							<EditMode>EnterOnInput</EditMode>
 							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 							<ContextMenu name="ТоварыНоменклатураАртикулКонтекстноеМеню" id="61"/>
@@ -335,17 +335,33 @@
 						</InputField>
 						<InputField name="ТоварыНоменклатура" id="36">
 							<DataPath>Товары.Номенклатура</DataPath>
+							<ReadOnly>true</ReadOnly>
 							<EditMode>EnterOnInput</EditMode>
 							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 							<ContextMenu name="ТоварыНоменклатураКонтекстноеМеню" id="37"/>
 							<ExtendedTooltip name="ТоварыНоменклатураExtendedTooltip" id="97"/>
 						</InputField>
+						<InputField name="ТоварыСборочныйЛист" id="141">
+							<DataPath>Товары.СборочныйЛист</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТоварыСборочныйЛистКонтекстноеМеню" id="142"/>
+							<ExtendedTooltip name="ТоварыСборочныйЛистРасширеннаяПодсказка" id="143"/>
+						</InputField>
 						<InputField name="ТоварыКоличество" id="38">
 							<DataPath>Товары.Количество</DataPath>
+							<ReadOnly>true</ReadOnly>
 							<EditMode>EnterOnInput</EditMode>
 							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 							<ContextMenu name="ТоварыКоличествоКонтекстноеМеню" id="39"/>
 							<ExtendedTooltip name="ТоварыКоличествоExtendedTooltip" id="99"/>
+						</InputField>
+						<InputField name="ТоварыЯчейкаСобранногоТовара" id="144">
+							<DataPath>Товары.СборочныйЛист.ЯчейкаСобранногоТовара</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТоварыЯчейкаСобранногоТовараКонтекстноеМеню" id="145"/>
+							<ExtendedTooltip name="ТоварыЯчейкаСобранногоТовараРасширеннаяПодсказка" id="146"/>
 						</InputField>
 						<InputField name="ТоварыЯчейка" id="128">
 							<DataPath>Товары.Ячейка</DataPath>
@@ -499,36 +515,25 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Ячейка</v8:content>
+							<v8:content>Ячейка разбора</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>cfg:CatalogRef.Ячейки</v8:Type>
 					</Type>
 				</Column>
+				<Column name="СборочныйЛист" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сборочный лист</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.СборочныйЛист</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
-		</Attribute>
-		<Attribute name="СборочныйЛист" id="7">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сборочный лист</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>cfg:DocumentRef.СборочныйЛист</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ЯчейкаСобранногоТовара" id="8">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Ячейка собранного товара</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>cfg:CatalogRef.Ячейки</v8:Type>
-			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -598,6 +603,21 @@
 				</v8:item>
 			</Title>
 			<Action>ВыбратьСборщика</Action>
+		</Command>
+		<Command name="Отмена" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
 		</Command>
 	</Commands>
 </Form>

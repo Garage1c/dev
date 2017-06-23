@@ -105,7 +105,7 @@
 							<ExtendedTooltip name="ЗаказExtendedTooltip" id="82"/>
 						</InputField>
 						<InputField name="СборочныйЛист" id="135">
-							<DataPath>Объект.СборочныйЛист</DataPath>
+							<DataPath>1/0:78d9fd53-b717-4d07-8474-929b43acc916</DataPath>
 							<ContextMenu name="СборочныйЛистКонтекстноеМеню" id="136"/>
 							<ExtendedTooltip name="СборочныйЛистРасширеннаяПодсказка" id="137"/>
 						</InputField>
@@ -118,22 +118,22 @@
 					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="114"/>
 					<ChildItems>
 						<InputField name="Вес" id="104">
-							<DataPath>Объект.Вес</DataPath>
+							<DataPath>1/0:cc16e190-eb36-46a2-8c1a-fd34bc9580aa</DataPath>
 							<ContextMenu name="ВесКонтекстноеМеню" id="105"/>
 							<ExtendedTooltip name="ВесРасширеннаяПодсказка" id="106"/>
 						</InputField>
 						<InputField name="Объем" id="107">
-							<DataPath>Объект.Объем</DataPath>
+							<DataPath>1/0:a7d49524-5795-40dc-9c7a-f0702077e50a</DataPath>
 							<ContextMenu name="ОбъемКонтекстноеМеню" id="108"/>
 							<ExtendedTooltip name="ОбъемРасширеннаяПодсказка" id="109"/>
 						</InputField>
 						<InputField name="КоличествоМест" id="127">
-							<DataPath>Объект.КоличествоМест</DataPath>
+							<DataPath>1/0:6a8b921b-0809-43e5-a047-6d13071b11f8</DataPath>
 							<ContextMenu name="КоличествоМестКонтекстноеМеню" id="128"/>
 							<ExtendedTooltip name="КоличествоМестРасширеннаяПодсказка" id="129"/>
 						</InputField>
 						<InputField name="ЯчейкаСобранногоТовара" id="124">
-							<DataPath>Объект.ЯчейкаСобранногоТовара</DataPath>
+							<DataPath>1/0:5748f5c9-7f56-4eca-8400-223c6a4578be</DataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -229,6 +229,12 @@
 						<Event name="OnChange">НоменклатураПриИзменении</Event>
 					</Events>
 				</InputField>
+				<InputField name="ТоварыСборочныйЛист" id="138">
+					<DataPath>Объект.Товары.СборочныйЛист</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварыСборочныйЛистКонтекстноеМеню" id="139"/>
+					<ExtendedTooltip name="ТоварыСборочныйЛистРасширеннаяПодсказка" id="140"/>
+				</InputField>
 				<InputField name="ТоварыЯчейка" id="69">
 					<DataPath>Объект.Товары.Ячейка</DataPath>
 					<EditMode>EnterOnInput</EditMode>
@@ -236,78 +242,18 @@
 					<ContextMenu name="ТоварыЯчейкаКонтекстноеМеню" id="70"/>
 					<ExtendedTooltip name="ТоварыЯчейкаExtendedTooltip" id="87"/>
 				</InputField>
+				<InputField name="ТоварыКоличество" id="141">
+					<DataPath>Объект.Товары.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварыКоличествоКонтекстноеМеню" id="142"/>
+					<ExtendedTooltip name="ТоварыКоличествоРасширеннаяПодсказка" id="143"/>
+				</InputField>
 				<InputField name="ТоварыСборщик" id="63">
 					<DataPath>Объект.Товары.Сборщик</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 					<ContextMenu name="ТоварыСборщикКонтекстноеМеню" id="64"/>
 					<ExtendedTooltip name="ТоварыСборщикExtendedTooltip" id="89"/>
-				</InputField>
-				<InputField name="Упаковка" id="41">
-					<DataPath>Объект.Товары.Упаковка</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-					<QuickChoice>true</QuickChoice>
-					<ChoiceParameterLinks>
-						<xr:Link>
-							<xr:Name>Отбор.Владелец</xr:Name>
-							<xr:DataPath xsi:type="xs:string">Items.Товары.CurrentData.Номенклатура</xr:DataPath>
-							<xr:ValueChange>Clear</xr:ValueChange>
-						</xr:Link>
-					</ChoiceParameterLinks>
-					<ContextMenu name="УпаковкаКонтекстноеМеню" id="42"/>
-					<ExtendedTooltip name="УпаковкаExtendedTooltip" id="90"/>
-					<Events>
-						<Event name="OnChange">УпаковкаПриИзменении</Event>
-					</Events>
-				</InputField>
-				<InputField name="КоличествоВУпаковке" id="74">
-					<UserVisible>
-						<xr:Common>false</xr:Common>
-					</UserVisible>
-					<EditMode>EnterOnInput</EditMode>
-					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-					<ContextMenu name="КоличествоВУпаковкеКонтекстноеМеню" id="75"/>
-					<ExtendedTooltip name="КоличествоВУпаковкеExtendedTooltip" id="91"/>
-				</InputField>
-				<InputField name="ТоварыВСборке" id="65">
-					<EditMode>EnterOnInput</EditMode>
-					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-					<ContextMenu name="ТоварыВСборкеКонтекстноеМеню" id="66"/>
-					<ExtendedTooltip name="ТоварыВСборкеExtendedTooltip" id="92"/>
-				</InputField>
-				<InputField name="ТоварыСобрать" id="118">
-					<DataPath>1/0:f856536d-2dcc-4824-9e95-b7ac1e4ffb2b/0:14804356-5612-4222-b580-24d82f4b181d</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ТоварыСобратьКонтекстноеМеню" id="119"/>
-					<ExtendedTooltip name="ТоварыСобратьРасширеннаяПодсказка" id="120"/>
-				</InputField>
-				<InputField name="ТоварыСобрано" id="67">
-					<DataPath>Объект.Товары.Количество</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-					<ContextMenu name="ТоварыСобраноКонтекстноеМеню" id="68"/>
-					<ExtendedTooltip name="ТоварыСобраноExtendedTooltip" id="93"/>
-				</InputField>
-				<CheckBoxField name="ТоварыУстановитьРезерв" id="72">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Резерв</v8:content>
-						</v8:item>
-					</Title>
-					<EditMode>EnterOnInput</EditMode>
-					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ТоварыУстановитьРезервКонтекстноеМеню" id="73"/>
-					<ExtendedTooltip name="ТоварыУстановитьРезервExtendedTooltip" id="94"/>
-				</CheckBoxField>
-				<InputField name="ТоварыНеНайдено" id="115">
-					<DataPath>1/0:f856536d-2dcc-4824-9e95-b7ac1e4ffb2b/0:b27115e9-f7c8-4eb7-8098-e2622bb67bb5</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-					<ContextMenu name="ТоварыНеНайденоКонтекстноеМеню" id="116"/>
-					<ExtendedTooltip name="ТоварыНеНайденоРасширеннаяПодсказка" id="117"/>
 				</InputField>
 			</ChildItems>
 		</Table>

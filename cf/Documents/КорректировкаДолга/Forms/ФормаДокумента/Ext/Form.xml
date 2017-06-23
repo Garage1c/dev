@@ -41,8 +41,8 @@
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="Группа9РасширеннаяПодсказка" id="278"/>
 							<ChildItems>
-								<RadioButtonField name="ПоПартнеруСписком" id="202">
-									<DataPath>ПоПартнеруСписком</DataPath>
+								<RadioButtonField name="ПоКонтрагентуСписком" id="202">
+									<DataPath>ПоКонтрагентуСписком</DataPath>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -59,7 +59,7 @@
 												<Presentation>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>По одному партнеру</v8:content>
+														<v8:content>По одному контрагенту</v8:content>
 													</v8:item>
 												</Presentation>
 												<Value xsi:type="xs:decimal">0</Value>
@@ -79,10 +79,10 @@
 											</xr:Value>
 										</xr:Item>
 									</ChoiceList>
-									<ContextMenu name="ПоПартнеруСпискомКонтекстноеМеню" id="203"/>
-									<ExtendedTooltip name="ПоПартнеруСпискомРасширеннаяПодсказка" id="204"/>
+									<ContextMenu name="ПоКонтрагентуСпискомКонтекстноеМеню" id="203"/>
+									<ExtendedTooltip name="ПоКонтрагентуСпискомРасширеннаяПодсказка" id="204"/>
 									<Events>
-										<Event name="OnChange">ПоПартнеруСпискомПриИзменении</Event>
+										<Event name="OnChange">ПоКонтрагентуСпискомПриИзменении</Event>
 									</Events>
 								</RadioButtonField>
 								<InputField name="Дата" id="279">
@@ -101,41 +101,24 @@
 								</Button>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ГруппаПартнера" id="273">
+						<UsualGroup name="ГруппаКонтрагента" id="273">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа партнера</v8:content>
+									<v8:content>Группа контрагента</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа партнера</v8:content>
+									<v8:content>Группа контрагента</v8:content>
 								</v8:item>
 							</ToolTip>
 							<Group>Vertical</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаПартнераРасширеннаяПодсказка" id="274"/>
+							<ExtendedTooltip name="ГруппаКонтрагентаРасширеннаяПодсказка" id="274"/>
 							<ChildItems>
-								<UsualGroup name="Группа8" id="271">
-									<Group>Horizontal</Group>
-									<Representation>None</Representation>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="272"/>
-									<ChildItems>
-										<InputField name="Партнер" id="162">
-											<DataPath>Объект.Партнер</DataPath>
-											<Visible>false</Visible>
-											<ContextMenu name="ПартнерКонтекстноеМеню" id="163"/>
-											<ExtendedTooltip name="ПартнерРасширеннаяПодсказка" id="164"/>
-											<Events>
-												<Event name="OnChange">ПартнерПриИзменении</Event>
-											</Events>
-										</InputField>
-									</ChildItems>
-								</UsualGroup>
 								<UsualGroup name="Группа7" id="255">
 									<Group>Horizontal</Group>
 									<ShowTitle>false</ShowTitle>
@@ -243,63 +226,63 @@
 					<ChildItemsWidth>LeftNarrow</ChildItemsWidth>
 					<ExtendedTooltip name="СтраницаСпискомРасширеннаяПодсказка" id="161"/>
 					<ChildItems>
-						<Table name="Партнеры" id="282">
+						<Table name="Контрагенты" id="282">
 							<Representation>List</Representation>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
-							<DataPath>Партнеры</DataPath>
+							<DataPath>Контрагенты</DataPath>
 							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="ПартнерыКонтекстноеМеню" id="283"/>
-							<AutoCommandBar name="ПартнерыКоманднаяПанель" id="284"/>
-							<ExtendedTooltip name="ПартнерыРасширеннаяПодсказка" id="285"/>
-							<SearchStringAddition name="ПартнерыСтрокаПоиска" id="286">
+							<ContextMenu name="КонтрагентыКонтекстноеМеню" id="283"/>
+							<AutoCommandBar name="КонтрагентыКоманднаяПанель" id="284"/>
+							<ExtendedTooltip name="КонтрагентыРасширеннаяПодсказка" id="285"/>
+							<SearchStringAddition name="КонтрагентыСтрокаПоиска" id="286">
 								<AdditionSource>
-									<Item>Партнеры</Item>
+									<Item>Контрагенты</Item>
 									<Type>SearchStringRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="ПартнерыСтрокаПоискаКонтекстноеМеню" id="287"/>
-								<ExtendedTooltip name="ПартнерыСтрокаПоискаРасширеннаяПодсказка" id="288"/>
+								<ContextMenu name="КонтрагентыСтрокаПоискаКонтекстноеМеню" id="287"/>
+								<ExtendedTooltip name="КонтрагентыСтрокаПоискаРасширеннаяПодсказка" id="288"/>
 							</SearchStringAddition>
-							<ViewStatusAddition name="ПартнерыСостояниеПросмотра" id="289">
+							<ViewStatusAddition name="КонтрагентыСостояниеПросмотра" id="289">
 								<AdditionSource>
-									<Item>Партнеры</Item>
+									<Item>Контрагенты</Item>
 									<Type>ViewStatusRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="ПартнерыСостояниеПросмотраКонтекстноеМеню" id="290"/>
-								<ExtendedTooltip name="ПартнерыСостояниеПросмотраРасширеннаяПодсказка" id="291"/>
+								<ContextMenu name="КонтрагентыСостояниеПросмотраКонтекстноеМеню" id="290"/>
+								<ExtendedTooltip name="КонтрагентыСостояниеПросмотраРасширеннаяПодсказка" id="291"/>
 							</ViewStatusAddition>
-							<SearchControlAddition name="ПартнерыУправлениеПоиском" id="292">
+							<SearchControlAddition name="КонтрагентыУправлениеПоиском" id="292">
 								<AdditionSource>
-									<Item>Партнеры</Item>
+									<Item>Контрагенты</Item>
 									<Type>SearchControl</Type>
 								</AdditionSource>
-								<ContextMenu name="ПартнерыУправлениеПоискомКонтекстноеМеню" id="293"/>
-								<ExtendedTooltip name="ПартнерыУправлениеПоискомРасширеннаяПодсказка" id="294"/>
+								<ContextMenu name="КонтрагентыУправлениеПоискомКонтекстноеМеню" id="293"/>
+								<ExtendedTooltip name="КонтрагентыУправлениеПоискомРасширеннаяПодсказка" id="294"/>
 							</SearchControlAddition>
 							<Events>
-								<Event name="OnEditEnd">ПартнерыПриОкончанииРедактирования</Event>
-								<Event name="OnActivateRow">ПартнерыПриАктивизацииСтроки</Event>
+								<Event name="OnEditEnd">КонтрагентыПриОкончанииРедактирования</Event>
+								<Event name="OnActivateRow">КонтрагентыПриАктивизацииСтроки</Event>
 							</Events>
 							<ChildItems>
-								<InputField name="ПартнерыПартнер" id="295">
-									<DataPath>Партнеры.Партнер</DataPath>
+								<InputField name="КонтрагентыКонтрагент" id="295">
+									<DataPath>Контрагенты.Контрагент</DataPath>
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-									<ContextMenu name="ПартнерыПартнерКонтекстноеМеню" id="296"/>
-									<ExtendedTooltip name="ПартнерыПартнерРасширеннаяПодсказка" id="297"/>
+									<ContextMenu name="КонтрагентыКонтрагентКонтекстноеМеню" id="296"/>
+									<ExtendedTooltip name="КонтрагентыКонтрагентРасширеннаяПодсказка" id="297"/>
 								</InputField>
 							</ChildItems>
 						</Table>
-						<Table name="ВзаиморасчетыПартнера" id="209">
+						<Table name="ВзаиморасчетыКонтрагента" id="209">
 							<Representation>List</Representation>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
-							<DataPath>ВзаиморасчетыПартнера</DataPath>
+							<DataPath>ВзаиморасчетыКонтрагента</DataPath>
 							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="ВзаиморасчетыПартнераКонтекстноеМеню" id="210"/>
-							<AutoCommandBar name="ВзаиморасчетыПартнераКоманднаяПанель" id="211">
+							<ContextMenu name="ВзаиморасчетыКонтрагентаКонтекстноеМеню" id="210"/>
+							<AutoCommandBar name="ВзаиморасчетыКонтрагентаКоманднаяПанель" id="211">
 								<ChildItems>
 									<Button name="ВзаиморасчетыПартнераОбнулить" id="275">
 										<Type>CommandBarButton</Type>
@@ -308,44 +291,37 @@
 									</Button>
 								</ChildItems>
 							</AutoCommandBar>
-							<ExtendedTooltip name="ВзаиморасчетыПартнераРасширеннаяПодсказка" id="212"/>
-							<SearchStringAddition name="ВзаиморасчетыПартнераСтрокаПоиска" id="213">
+							<ExtendedTooltip name="ВзаиморасчетыКонтрагентаРасширеннаяПодсказка" id="212"/>
+							<SearchStringAddition name="ВзаиморасчетыКонтрагентаСтрокаПоиска" id="213">
 								<AdditionSource>
-									<Item>ВзаиморасчетыПартнера</Item>
+									<Item>ВзаиморасчетыКонтрагента</Item>
 									<Type>SearchStringRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="ВзаиморасчетыПартнераСтрокаПоискаКонтекстноеМеню" id="214"/>
-								<ExtendedTooltip name="ВзаиморасчетыПартнераСтрокаПоискаРасширеннаяПодсказка" id="215"/>
+								<ContextMenu name="ВзаиморасчетыКонтрагентаСтрокаПоискаКонтекстноеМеню" id="214"/>
+								<ExtendedTooltip name="ВзаиморасчетыКонтрагентаСтрокаПоискаРасширеннаяПодсказка" id="215"/>
 							</SearchStringAddition>
-							<ViewStatusAddition name="ВзаиморасчетыПартнераСостояниеПросмотра" id="216">
+							<ViewStatusAddition name="ВзаиморасчетыКонтрагентаСостояниеПросмотра" id="216">
 								<AdditionSource>
-									<Item>ВзаиморасчетыПартнера</Item>
+									<Item>ВзаиморасчетыКонтрагента</Item>
 									<Type>ViewStatusRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="ВзаиморасчетыПартнераСостояниеПросмотраКонтекстноеМеню" id="217"/>
-								<ExtendedTooltip name="ВзаиморасчетыПартнераСостояниеПросмотраРасширеннаяПодсказка" id="218"/>
+								<ContextMenu name="ВзаиморасчетыКонтрагентаСостояниеПросмотраКонтекстноеМеню" id="217"/>
+								<ExtendedTooltip name="ВзаиморасчетыКонтрагентаСостояниеПросмотраРасширеннаяПодсказка" id="218"/>
 							</ViewStatusAddition>
-							<SearchControlAddition name="ВзаиморасчетыПартнераУправлениеПоиском" id="219">
+							<SearchControlAddition name="ВзаиморасчетыКонтрагентаУправлениеПоиском" id="219">
 								<AdditionSource>
-									<Item>ВзаиморасчетыПартнера</Item>
+									<Item>ВзаиморасчетыКонтрагента</Item>
 									<Type>SearchControl</Type>
 								</AdditionSource>
-								<ContextMenu name="ВзаиморасчетыПартнераУправлениеПоискомКонтекстноеМеню" id="220"/>
-								<ExtendedTooltip name="ВзаиморасчетыПартнераУправлениеПоискомРасширеннаяПодсказка" id="221"/>
+								<ContextMenu name="ВзаиморасчетыКонтрагентаУправлениеПоискомКонтекстноеМеню" id="220"/>
+								<ExtendedTooltip name="ВзаиморасчетыКонтрагентаУправлениеПоискомРасширеннаяПодсказка" id="221"/>
 							</SearchControlAddition>
 							<ChildItems>
 								<ColumnGroup name="ВзаиморасчетыПартнераГруппа4" id="301">
 									<ExtendedTooltip name="ВзаиморасчетыПартнераГруппа4РасширеннаяПодсказка" id="302"/>
 									<ChildItems>
-										<InputField name="ВзаиморасчетыПартнераПартнер" id="298">
-											<DataPath>ВзаиморасчетыПартнера.Партнер</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
-											<ContextMenu name="ВзаиморасчетыПартнераПартнерКонтекстноеМеню" id="299"/>
-											<ExtendedTooltip name="ВзаиморасчетыПартнераПартнерРасширеннаяПодсказка" id="300"/>
-										</InputField>
 										<InputField name="ВзаиморасчетыПартнераФормаОтношений" id="228">
-											<DataPath>ВзаиморасчетыПартнера.ФормаОтношений</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.ФормаОтношений</DataPath>
 											<EditMode>EnterOnInput</EditMode>
 											<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 											<ContextMenu name="ВзаиморасчетыПартнераФормаОтношенийКонтекстноеМеню" id="229"/>
@@ -357,20 +333,20 @@
 									<ExtendedTooltip name="ВзаиморасчетыПартнераГруппа1РасширеннаяПодсказка" id="250"/>
 									<ChildItems>
 										<InputField name="ВзаиморасчетыПартнераОрганизация" id="225">
-											<DataPath>ВзаиморасчетыПартнера.Организация</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.Организация</DataPath>
 											<EditMode>EnterOnInput</EditMode>
 											<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 											<ContextMenu name="ВзаиморасчетыПартнераОрганизацияКонтекстноеМеню" id="226"/>
 											<ExtendedTooltip name="ВзаиморасчетыПартнераОрганизацияРасширеннаяПодсказка" id="227"/>
 										</InputField>
 										<InputField name="ВзаиморасчетыПартнераКонтрагент" id="222">
-											<DataPath>ВзаиморасчетыПартнера.Контрагент</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.Контрагент</DataPath>
 											<EditMode>EnterOnInput</EditMode>
 											<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 											<ChoiceParameterLinks>
 												<xr:Link>
 													<xr:Name>Отбор.Партнер</xr:Name>
-													<xr:DataPath xsi:type="xs:string">Items.ВзаиморасчетыПартнера.CurrentData.Партнер</xr:DataPath>
+													<xr:DataPath xsi:type="xs:string">209:02023637-7868-4a5f-8576-835a76e0c9ba/10</xr:DataPath>
 													<xr:ValueChange>Clear</xr:ValueChange>
 												</xr:Link>
 											</ChoiceParameterLinks>
@@ -383,12 +359,12 @@
 									<ExtendedTooltip name="ВзаиморасчетыПартнераГруппа6РасширеннаяПодсказка" id="312"/>
 									<ChildItems>
 										<InputField name="ВзаиморасчетыПартнераЗаказ" id="305">
-											<DataPath>ВзаиморасчетыПартнера.Заказ</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.Заказ</DataPath>
 											<EditMode>EnterOnInput</EditMode>
 											<ChoiceParameterLinks>
 												<xr:Link>
 													<xr:Name>Отбор.Партнер</xr:Name>
-													<xr:DataPath xsi:type="xs:string">Items.ВзаиморасчетыПартнера.CurrentData.Партнер</xr:DataPath>
+													<xr:DataPath xsi:type="xs:string">209:02023637-7868-4a5f-8576-835a76e0c9ba/10</xr:DataPath>
 													<xr:ValueChange>Clear</xr:ValueChange>
 												</xr:Link>
 											</ChoiceParameterLinks>
@@ -396,12 +372,12 @@
 											<ExtendedTooltip name="ВзаиморасчетыПартнераЗаказРасширеннаяПодсказка" id="307"/>
 										</InputField>
 										<InputField name="ВзаиморасчетыПартнераДокументОтгрузки" id="308">
-											<DataPath>ВзаиморасчетыПартнера.ДокументОтгрузки</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.ДокументОтгрузки</DataPath>
 											<EditMode>EnterOnInput</EditMode>
 											<ChoiceParameterLinks>
 												<xr:Link>
 													<xr:Name>Отбор.Заказ</xr:Name>
-													<xr:DataPath xsi:type="xs:string">Items.ВзаиморасчетыПартнера.CurrentData.Заказ</xr:DataPath>
+													<xr:DataPath xsi:type="xs:string">Items.ВзаиморасчетыКонтрагента.CurrentData.Заказ</xr:DataPath>
 													<xr:ValueChange>Clear</xr:ValueChange>
 												</xr:Link>
 											</ChoiceParameterLinks>
@@ -415,7 +391,7 @@
 									<ExtendedTooltip name="ВзаиморасчетыПартнераГруппа2РасширеннаяПодсказка" id="252"/>
 									<ChildItems>
 										<InputField name="ВзаиморасчетыПартнераОстатокСумма" id="237">
-											<DataPath>ВзаиморасчетыПартнера.Остаток</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.Остаток</DataPath>
 											<ReadOnly>true</ReadOnly>
 											<Title>
 												<v8:item>
@@ -430,7 +406,7 @@
 											<ExtendedTooltip name="ВзаиморасчетыПартнераОстатокСуммаРасширеннаяПодсказка" id="239"/>
 										</InputField>
 										<InputField name="ВзаиморасчетыПартнераОстатокСуммаУпр" id="240">
-											<DataPath>ВзаиморасчетыПартнера.ОстатокУпр</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.ОстатокУпр</DataPath>
 											<ReadOnly>true</ReadOnly>
 											<Title>
 												<v8:item>
@@ -450,7 +426,7 @@
 									<ExtendedTooltip name="ВзаиморасчетыПартнераГруппа3РасширеннаяПодсказка" id="254"/>
 									<ChildItems>
 										<InputField name="ВзаиморасчетыПартнераСумма" id="231">
-											<DataPath>ВзаиморасчетыПартнера.Сумма</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.Сумма</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -466,7 +442,7 @@
 											</Events>
 										</InputField>
 										<InputField name="ВзаиморасчетыПартнераСуммаУпр" id="234">
-											<DataPath>ВзаиморасчетыПартнера.СуммаУпр</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.СуммаУпр</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -488,7 +464,7 @@
 									<ExtendedTooltip name="ВзаиморасчетыПартнераГруппа5РасширеннаяПодсказка" id="304"/>
 									<ChildItems>
 										<InputField name="ВзаиморасчетыПартнераРезультатСумма" id="243">
-											<DataPath>ВзаиморасчетыПартнера.Результат</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.Результат</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -505,7 +481,7 @@
 											</Events>
 										</InputField>
 										<InputField name="ВзаиморасчетыПартнераРезультатСуммаУпр" id="246">
-											<DataPath>ВзаиморасчетыПартнера.РезультатУпр</DataPath>
+											<DataPath>ВзаиморасчетыКонтрагента.РезультатУпр</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -561,11 +537,6 @@
 											<Events>
 												<Event name="OnChange">ОрганизацияПриИзменении</Event>
 											</Events>
-										</InputField>
-										<InputField name="Партнер1" id="319">
-											<DataPath>Объект.Партнер</DataPath>
-											<ContextMenu name="Партнер1КонтекстноеМеню" id="320"/>
-											<ExtendedTooltip name="Партнер1РасширеннаяПодсказка" id="321"/>
 										</InputField>
 										<InputField name="Контрагент" id="104">
 											<DataPath>Объект.Контрагент</DataPath>
@@ -840,11 +811,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПоПартнеруСписком" id="6">
+		<Attribute name="ПоКонтрагентуСписком" id="6">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>По партнеру списком</v8:content>
+					<v8:content>По контрагенту списком</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -856,11 +827,11 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ВзаиморасчетыПартнера" id="7">
+		<Attribute name="ВзаиморасчетыКонтрагента" id="7">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Взаиморасчеты партнера</v8:content>
+					<v8:content>Взаиморасчеты контрагента</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -967,17 +938,6 @@
 						<v8:TypeSet>cfg:DefinedType.Сумма</v8:TypeSet>
 					</Type>
 				</Column>
-				<Column name="Партнер" id="10">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Партнер</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
-					</Type>
-				</Column>
 				<Column name="Заказ" id="11">
 					<Title>
 						<v8:item>
@@ -1049,39 +1009,39 @@
 				<v8:TypeSet>cfg:DefinedType.Сумма</v8:TypeSet>
 			</Type>
 		</Attribute>
-		<Attribute name="Партнеры" id="12">
+		<Attribute name="Контрагенты" id="12">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Партнеры</v8:content>
+					<v8:content>Контрагенты</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>v8:ValueTable</v8:Type>
 			</Type>
 			<Columns>
-				<Column name="Партнер" id="1">
+				<Column name="Контрагент" id="1">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Партнер</v8:content>
+							<v8:content>Контрагент</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
 		</Attribute>
-		<Attribute name="текПартнер" id="13">
+		<Attribute name="текКонтрагент" id="13">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Тек партнер</v8:content>
+					<v8:content>Тек контрагент</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>
