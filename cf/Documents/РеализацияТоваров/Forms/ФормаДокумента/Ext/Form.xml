@@ -687,6 +687,15 @@
 															<ContextMenu name="ТоварыСборочныйЛистКонтекстноеМеню" id="332"/>
 															<ExtendedTooltip name="ТоварыСборочныйЛистРасширеннаяПодсказка" id="333"/>
 														</InputField>
+														<CheckBoxField name="БольшеНеПоставляется" id="401">
+															<DataPath>Объект.Товары.БольшеНеПоставляется</DataPath>
+															<Visible>false</Visible>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="БольшеНеПоставляетсяКонтекстноеМеню" id="402"/>
+															<ExtendedTooltip name="БольшеНеПоставляетсяРасширеннаяПодсказка" id="403"/>
+														</CheckBoxField>
 													</ChildItems>
 												</Table>
 												<UsualGroup name="ГруппаОперативнойИнформацииТовара" id="117">
@@ -1371,6 +1380,17 @@
 							</v8:NumberQualifiers>
 						</Type>
 					</Column>
+					<Column name="БольшеНеПоставляется" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Больше не поставляется</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
 				</AdditionalColumns>
 			</Columns>
 		</Attribute>
@@ -1460,6 +1480,32 @@
 				</ListSettings>
 			</Settings>
 		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Товары</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Товары.БольшеНеПоставляется</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
 	</Attributes>
 	<Commands>
 		<Command name="Подбор" id="1">
