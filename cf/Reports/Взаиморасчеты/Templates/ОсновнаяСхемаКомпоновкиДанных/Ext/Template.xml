@@ -23,9 +23,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Партнер</dataPath>
 			<field>Партнер</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Приход</dataPath>
@@ -60,10 +57,6 @@
 				<dcscom:periodNumber>1</dcscom:periodNumber>
 				<dcscom:periodType>Main</dcscom:periodType>
 			</role>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Менеджер</dataPath>
-			<field>ПартнерОсновнойМенеджер</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ФормаОтношений</dataPath>
@@ -128,6 +121,17 @@
 			<dataPath>ДокументОтгрузки</dataPath>
 			<field>ДокументОтгрузки</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтрагентОсновнойМенеджер</dataPath>
+			<field>КонтрагентОсновнойМенеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент1</dataPath>
+			<field>Контрагент1</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ   
 	//Взаиморасчет.Регистратор,
@@ -136,8 +140,8 @@
 	Взаиморасчет.Регистратор.Отдел				Отдел,
 	Взаиморасчет.ПериодСекунда ПериодСекунда,
 	Взаиморасчет.Организация,
-	Взаиморасчет.Партнер,
-	Взаиморасчет.Партнер.ОсновнойМенеджер,
+	Взаиморасчет.Контрагент,
+	Взаиморасчет.Контрагент.ОсновнойМенеджер,
 	Взаиморасчет.Контрагент,                   
 	Взаиморасчет.ФормаОтношений,
 	Взаиморасчет.Регистратор,
@@ -150,19 +154,19 @@
 	
 ЛЕВОЕ СОЕДИНЕНИЕ
 	( ВЫБРАТЬ
-		Заказ.Партнер Партнер,
+		Заказ.Контрагент Контрагент,
 		МАКСИМУМ(ВЫБОР КОГДА Заказ ССЫЛКА Документ.ИнтернетЗаказПокупателя ТОГДА ИСТИНА ИНАЧЕ ЛОЖЬ КОНЕЦ) ЕстьИнтернет,
 		МАКСИМУМ(ВЫБОР КОГДА Заказ ССЫЛКА Документ.ЗаказПокупателя ТОГДА ИСТИНА ИНАЧЕ ЛОЖЬ КОНЕЦ) ЕстьЗаказ
 	ИЗ
 		РегистрНакопления.ДолгиПоОтгрузкам.Обороты
 	
 	СГРУППИРОВАТЬ ПО
-		Заказ.Партнер
+		Заказ.Контрагент
 		
 	) ГдеЗаказы
 	
 ПО
-	Взаиморасчет.Партнер = ГдеЗаказы.Партнер</query>
+	Взаиморасчет.Контрагент = ГдеЗаказы.Контрагент</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>ВидКлиента</dataPath>
@@ -261,20 +265,6 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Контрагент</v8:content>
-						</v8:item>
-					</dcsset:userSettingPresentation>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">Партнер</dcsset:left>
-					<dcsset:comparisonType>Equal</dcsset:comparisonType>
-					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Партнеры.ПустаяСсылка</dcsset:right>
-					<dcsset:viewMode>Normal</dcsset:viewMode>
-					<dcsset:userSettingID>adb5f021-2301-4819-9644-2a740f6a990a</dcsset:userSettingID>
-					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Партнер</v8:content>
 						</v8:item>
 					</dcsset:userSettingPresentation>
 				</dcsset:item>

@@ -16,9 +16,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Партнер</dataPath>
 			<field>Партнер</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Количество</dataPath>
@@ -54,10 +51,17 @@
 			<dataPath>СпособОплаты</dataPath>
 			<field>СпособОплаты</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ЗаказНарядыОбороты.ЗаказНаряд,
-	ЗаказНарядыОбороты.Партнер,
+	ЗаказНарядыОбороты.Контрагент,
 	ЗаказНарядыОбороты.Номенклатура,
 	ЗаказНарядыОбороты.КоличествоОборот КАК Количество,
 	ЕСТЬNULL(ЗаказНарядыОбороты.СуммаОборот, 0) КАК Сумма,
@@ -141,7 +145,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Партнер</dcsset:field>
+						<dcsset:field>Контрагент</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

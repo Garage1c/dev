@@ -14,13 +14,6 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ЗаказПартнер</dataPath>
-			<field>ЗаказПартнер</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Номенклатура</dataPath>
 			<field>Номенклатура</field>
 			<role>
@@ -129,6 +122,10 @@
 			<dataPath>СборочныйЛист</dataPath>
 			<field>СборочныйЛист</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказКонтрагент</dataPath>
+			<field>ЗаказКонтрагент</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	НАЧАЛОПЕРИОДА(Сбор.Период, МЕСЯЦ) Месяц,
@@ -137,7 +134,7 @@
 	Сбор.Сборщик,
 	ЗаявПок.Ссылка Процесс,
 	Сбор.Заказ,
-	Сбор.Заказ.Партнер,
+	Сбор.Заказ.Контрагент,
 	Сбор.Номенклатура,
 	Сбор.Упаковка,
 	Сбор.Склад,

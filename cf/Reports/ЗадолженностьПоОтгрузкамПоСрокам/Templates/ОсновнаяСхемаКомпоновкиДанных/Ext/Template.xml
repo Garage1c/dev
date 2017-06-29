@@ -16,9 +16,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Партнер</dataPath>
 			<field>Партнер</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДокументОтгрузки</dataPath>
@@ -85,19 +82,8 @@
 				</v8:item>
 			</title>
 		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ВыбПартнер</dataPath>
-			<field>ВыбПартнер</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Выб партнер</v8:content>
-				</v8:item>
-			</title>
-		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	ВТ.Партнер,
 	ВТ.Контрагент,
 	ВТ.Заказ,
 	ВТ.ДокументОтгрузки,
@@ -112,7 +98,6 @@
 	КОНЕЦ КАК СуммаПросрочено
 ИЗ
 	(ВЫБРАТЬ
-		ДолгиПоОтгрузкамОстаткиИОбороты.Партнер КАК Партнер,
 		ДолгиПоОтгрузкамОстаткиИОбороты.Контрагент КАК Контрагент,
 		ДолгиПоОтгрузкамОстаткиИОбороты.Заказ КАК Заказ,
 		ДолгиПоОтгрузкамОстаткиИОбороты.ДокументОтгрузки КАК ДокументОтгрузки,
@@ -121,8 +106,8 @@
 		Отсрочка.ДнейОтсрочки КАК ДнейОтсрочки,
 		ЕСТЬNULL(РАЗНОСТЬДАТ(ДОБАВИТЬКДАТЕ(ДолгиПоОтгрузкамОстаткиИОбороты.ДокументОтгрузки.Дата, ДЕНЬ, Отсрочка.ДнейОтсрочки), &amp;ДатаОтчета, ДЕНЬ),0) КАК ДнейПросрочено
 	ИЗ
-		РегистрНакопления.ДолгиПоОтгрузкам.Остатки({&amp;ДатаОтчета1}, {Контрагент КАК ВыбКонтрагент, Партнер.* КАК ВыбПартнер}) КАК ДолгиПоОтгрузкамОстаткиИОбороты
-			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Партнеры КАК Отсрочка
+		РегистрНакопления.ДолгиПоОтгрузкам.Остатки({&amp;ДатаОтчета1}, {Контрагент.* КАК ВыбКонтрагент}) КАК ДолгиПоОтгрузкамОстаткиИОбороты
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Контрагенты КАК Отсрочка
 			ПО ДолгиПоОтгрузкамОстаткиИОбороты.Партнер = Отсрочка.Ссылка) КАК ВТ</query>
 	</dataSet>
 	<totalField>
@@ -184,7 +169,7 @@
 					<dcsset:field>Заказ</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Партнер</dcsset:field>
+					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ДнейОтсрочки</dcsset:field>
@@ -212,18 +197,7 @@
 					</dcsset:userSettingPresentation>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер</dcsset:left>
-					<dcsset:comparisonType>Equal</dcsset:comparisonType>
-					<dcsset:userSettingID>0c2d49f9-062a-446d-b4ab-5207e0fccd07</dcsset:userSettingID>
-					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Партнер</v8:content>
-						</v8:item>
-					</dcsset:userSettingPresentation>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер.ОсновнойМенеджер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент.ОсновнойМенеджер</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>80c00ce1-57de-4f93-ba67-10a0245cab1c</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">

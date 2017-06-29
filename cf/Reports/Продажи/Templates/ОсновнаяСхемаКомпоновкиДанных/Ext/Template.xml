@@ -213,16 +213,6 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВыбПартнер</dataPath>
-			<field>ВыбПартнер</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Партнер</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Отдел</dataPath>
 			<field>Отдел</field>
 			<role>
@@ -273,6 +263,16 @@
 			<dataPath>Контрагент</dataPath>
 			<field>Контрагент</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВыбКонтрагент</dataPath>
+			<field>ВыбКонтрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	Прод.ПериодДень КАК ДеньПродаж,
@@ -282,7 +282,7 @@
 	Прод.ПериодКвартал КАК Квартал,
 	Прод.ПериодПолугодие КАК Полугодие,
 	Прод.ПериодГод КАК Год,
-	Спр.Ссылка КАК ВыбПартнер,
+	Спр.Ссылка КАК ВыбКонтрагент,
 	Прод.Менеджер КАК МенеджерПродажи,
 	Спр.Категория КАК КатегорияПартнера,
 	Спр.ТипЦен КАК ТипЦен,
@@ -511,13 +511,12 @@
 					<dcsset:userSettingID>587535d3-ac91-469c-bccc-68c69f40cbca</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>9f407fb3-7384-4d67-81f5-ed9f445e2e39</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер.ОсновнойМенеджер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент.ОсновнойМенеджер</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>e63825d3-9eab-4bd1-b271-6e83b1aaa0a4</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
@@ -669,7 +668,7 @@
 				<dcsset:row>
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ВыбПартнер.ОсновнойМенеджер</dcsset:field>
+							<dcsset:field>ВыбКонтрагент.ОсновнойМенеджер</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -685,7 +684,7 @@
 					<dcsset:item>
 						<dcsset:groupItems>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>ВыбПартнер</dcsset:field>
+								<dcsset:field>ВыбКонтрагент</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -779,13 +778,12 @@
 					<dcsset:userSettingID>587535d3-ac91-469c-bccc-68c69f40cbca</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>0c31a3e8-6363-4ade-bcf3-bf9d283389b3</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер.ОсновнойМенеджер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент.ОсновнойМенеджер</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>0cf44b06-77a1-4243-867e-4652de13270c</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
@@ -868,7 +866,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ВыбПартнер</dcsset:field>
+						<dcsset:field>ВыбКонтрагент</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -999,8 +997,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>cd3a4025-80e1-490a-b619-c85e43228736</dcsset:userSettingID>
 				</dcsset:item>
@@ -1010,8 +1007,7 @@
 					<dcsset:comparisonType>InList</dcsset:comparisonType>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер.ОсновнойМенеджер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент.ОсновнойМенеджер</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>44aca249-04f4-48a8-b476-e8813ccdcbff</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
@@ -1112,7 +1108,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ВыбПартнер.ОсновнойМенеджер</dcsset:field>
+						<dcsset:field>ВыбКонтрагент.ОсновнойМенеджер</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1128,7 +1124,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ВыбПартнер</dcsset:field>
+							<dcsset:field>ВыбКонтрагент</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1225,7 +1221,7 @@
 					<dcsset:comparisonType>InList</dcsset:comparisonType>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер.ОсновнойМенеджер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент.ОсновнойМенеджер</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>c6919d32-7966-4946-8e03-d9e5a1c80c8b</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
@@ -1242,8 +1238,7 @@
 					<dcsset:userSettingID>bfb8e8a0-d807-46b6-bf3b-5ba4f2dd5e2d</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
@@ -1351,7 +1346,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ВыбПартнер</dcsset:field>
+							<dcsset:field>ВыбКонтрагент</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

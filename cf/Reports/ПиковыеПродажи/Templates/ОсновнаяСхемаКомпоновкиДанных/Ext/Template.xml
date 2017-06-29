@@ -24,19 +24,12 @@
 			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ПартнерОсновнойМенеджер</dataPath>
-			<field>ПартнерОсновнойМенеджер</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Сумма</dataPath>
 			<field>Сумма</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Партнер</dataPath>
 			<field>Партнер</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Номенклатура</dataPath>
@@ -198,6 +191,21 @@
 				</dcscor:item>
 			</appearance>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтрагентОсновнойМенеджер</dataPath>
+			<field>КонтрагентОсновнойМенеджер</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	Заказ,
@@ -205,8 +213,8 @@
 	КоличествоОборот Количество,
 	СуммаОборот Сумма,
 	Номенклатура,
-	Партнер,
-	Партнер.ОсновнойМенеджер
+	Контрагент,
+	Контрагент.ОсновнойМенеджер
 Поместить Продажи	
 ИЗ
 РегистрНакопления.Продажи.Обороты(,, ,НЕ Заказ=Неопределено {Номенклатура.КатегорияТовара = &amp;Категория}) КАК Продажи
@@ -223,12 +231,12 @@
 
 ВЫБРАТЬ
 	Номенклатура,
-	Партнер,
+	Контрагент,
 	Выбор когда Количество(Заказ)&lt;&gt;0 Тогда Сумма(Количество)/Количество(Заказ) Иначе 0 Конец СредКолвоПартнер
 Поместить СредниеПродажиПоКлиенту	
 ИЗ
 Продажи
-Сгруппировать по Номенклатура,Партнер
+Сгруппировать по Номенклатура,Контрагент
 ;
 
 
@@ -297,8 +305,8 @@
 	Продажи.Номенклатура КАК Номенклатура,
 	Продажи.Номенклатура.Артикул КАК Артикул,
 	Продажи.Номенклатура.Производитель КАК Производитель,
-	Продажи.Партнер,
-	Продажи.Партнер.ОсновнойМенеджер,
+	Продажи.Контрагент,
+	Продажи.Контрагент.ОсновнойМенеджер,
 	isnull(Допы.ОбщийОстаток,0) ОбщийОстаток,
 	isnull(Допы.ОстатокНаОснСкладах,0) ОстатокНаОснСкладах,
 	isnull(Допы.Заказано,0) Заказано,
@@ -312,7 +320,7 @@
 	
 Левое соединение
 	СредниеПродажиПоКлиенту
-	По Продажи.Номенклатура=СредниеПродажиПоКлиенту.Номенклатура И Продажи.Партнер=СредниеПродажиПоКлиенту.Партнер
+	По Продажи.Номенклатура=СредниеПродажиПоКлиенту.Номенклатура И Продажи.Контрагент=СредниеПродажиПоКлиенту.Контрагент
 	
 Левое соединение
 	Допы
@@ -339,7 +347,7 @@
 	<totalField>
 		<dataPath>СредКолвоПартнер</dataPath>
 		<expression>Максимум(СредКолвоПартнер)</expression>
-		<group>Партнер</group>
+		<group>Контрагент</group>
 	</totalField>
 	<totalField>
 		<dataPath>ВПути</dataPath>
@@ -506,10 +514,10 @@
 					<dcsset:field>ОтклонениеПроцент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Партнер</dcsset:field>
+					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ПартнерОсновнойМенеджер</dcsset:field>
+					<dcsset:field>КонтрагентОсновнойМенеджер</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Сумма</dcsset:field>
@@ -623,14 +631,14 @@
 							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Партнер</dcsset:field>
+							<dcsset:field>Контрагент</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ПартнерОсновнойМенеджер</dcsset:field>
+							<dcsset:field>КонтрагентОсновнойМенеджер</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

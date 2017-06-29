@@ -61,16 +61,6 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Партнер</dataPath>
-			<field>Партнер</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Партнер</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Размещение</dataPath>
 			<field>Размещение</field>
 		</field>
@@ -107,13 +97,23 @@
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	Рез.Размещение 									Склад,
 	Рез.ДокументРезерва.Дата						ДатаРезерва,
 	Рез.ДокументРезерва,
-	Рез.ДокументРезерва.Партнер 					Партнер,
-	Рез.ДокументРезерва.Партнер.ОсновнойМенеджер 	Менеджер,
+	Рез.ДокументРезерва.Контрагент 					Контрагент,
+	Рез.ДокументРезерва.Контрагент.ОсновнойМенеджер 	Менеджер,
 	Рез.Номенклатура,
 	Рез.Номенклатура.Артикул						Артикул,
 	Рез.КоличествоОстаток Резерв,
@@ -186,8 +186,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">Партнер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Контрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>14422dd1-3522-4825-9e57-9af1f6888ba2</dcsset:userSettingID>
 				</dcsset:item>
@@ -245,7 +244,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Партнер</dcsset:field>
+							<dcsset:field>Контрагент</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

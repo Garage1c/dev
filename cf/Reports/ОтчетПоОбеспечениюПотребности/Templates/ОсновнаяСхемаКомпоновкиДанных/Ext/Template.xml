@@ -211,7 +211,7 @@
 	Разм.КоличествоКонечныйОстаток		ЕстьПотребность
 ПОМЕСТИТЬ Резервы
 ИЗ
-	РегистрНакопления.РазмещениеЗаказов.ОстаткиИОбороты(,{&amp;КонецПериода},,,{Номенклатура = &amp;Номенклатура} {Номенклатура.Производитель = &amp;Производитель} {Заказ.Партнер.ОсновнойМенеджер = &amp;Менеджер}) Разм
+	РегистрНакопления.РазмещениеЗаказов.ОстаткиИОбороты(,{&amp;КонецПериода},,,{Номенклатура = &amp;Номенклатура} {Номенклатура.Производитель = &amp;Производитель} {Заказ.Контрагент.ОсновнойМенеджер = &amp;Менеджер}) Разм
 
 ;
 ВЫБРАТЬ
@@ -248,7 +248,7 @@
 	Закуп.КоличествоОстаток			 	Заказано,
 	ВПути.ЗаказПоставщику 				Предзаказ,
 	ВЫБОР КОГДА ВПути.ЗаказПоставщику.ДатаПоступления &lt;&gt; ДАТАВРЕМЯ(1,1,1,0,0,0) ТОГДА  ВПути.ЗаказПоставщику.ДатаПоступления 
-		  КОГДА ВПути.ЗаказПоставщику.Партнер.СрокВПути &lt;&gt; ДАТАВРЕМЯ(1,1,1,0,0,0) ТОГДА ДОБАВИТЬКДАТЕ(ВПути.ЗаказПоставщику.Дата, ДЕНЬ, ВПути.ЗаказПоставщику.Партнер.СрокВПути) 
+		  КОГДА ВПути.ЗаказПоставщику.Контрагент.СрокВПути &lt;&gt; ДАТАВРЕМЯ(1,1,1,0,0,0) ТОГДА ДОБАВИТЬКДАТЕ(ВПути.ЗаказПоставщику.Дата, ДЕНЬ, ВПути.ЗаказПоставщику.Контрагент.СрокВПути) 
 		  КОНЕЦ ПлановаяДатаПоступления, 
 	ВПути.ЗаказПоставщику.Дата 			ДатаОформленияЗаказа,
 	ВПути.КоличествоПриход 				ЗаказаноДляОбеспеченияПотребности,
@@ -573,19 +573,9 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Номенклатура</dcscor:parameter>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Номенклатура.ПустаяСсылка</dcscor:value>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Менеджер</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>1ae0279d-f6d8-4545-bc70-6fddf825128c</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Производитель</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -614,7 +604,7 @@
 						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Заказ.Партнер</dcsset:field>
+						<dcsset:field>Заказ.Контрагент</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

@@ -113,26 +113,6 @@
 			<field>АдресСайта</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВыбПартнер</dataPath>
-			<field>ВыбПартнер</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Выб партнер</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Партнер2</dataPath>
-			<field>Партнер2</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Партнер2</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>ТоварныйЗапас</dataPath>
 			<field>ТоварныйЗапас</field>
 		</field>
@@ -144,20 +124,48 @@
 			<dataPath>Заказ</dataPath>
 			<field>Заказ</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВыбКонтрагент</dataPath>
+			<field>ВыбКонтрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент2</dataPath>
+			<field>Контрагент2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент2</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>// Продажи по партнерам                                                                            
+		<query>// Продажи по Контрагентам                                                                            
 ВЫБРАТЬ
-Заказ.Партнер Партнер,
+Заказ.Контрагент Контрагент,
 Сумма(СуммаОборот) Сумма
 ПОМЕСТИТЬ Продажи
 ИЗ
-РегистрНакопления.Продажи.Обороты(,,, {Заказ.Партнер КАК ВыбПартнер}) Прод
-СГРУППИРОВАТЬ ПО Заказ.Партнер
+РегистрНакопления.Продажи.Обороты(,,, {Заказ.Контрагент КАК ВыбКонтрагент}) Прод
+СГРУППИРОВАТЬ ПО Заказ.Контрагент
 ;
 // Данные по Дилерам (пока анализируем всех парнеров, у кого есть продажи)
 ВЫБРАТЬ Ссылка, ТипЦен, ПланПродаж, АдресСайта, ЕстьБрендыНаГлавнойСтранице, ТоварныйЗапас 
 ПОМЕСТИТЬ Дилеры 
-ИЗ Справочник.Партнеры ГДЕ Ссылка В (ВЫБРАТЬ Партнер ИЗ Продажи)
+ИЗ Справочник.Контрагенты ГДЕ Ссылка В (ВЫБРАТЬ Контрагент ИЗ Продажи)
 ;  
 // Количество топовых позиций
 //ВЫБРАТЬ КОЛИЧЕСТВО(Ссылка) КоличествоТоповыхПозиций ПОМЕСТИТЬ ТоповыеПозиции ИЗ Справочник.Номенклатура ГДЕ Производитель.НашБренд И ТипНоменклатуры = &amp;Товар
@@ -168,16 +176,16 @@
 ;
 //  Продажи только наших брендов
 ВЫБРАТЬ
-Заказ.Партнер Партнер,
+Заказ.Контрагент Контрагент,
 КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Номенклатура) КоличествоПозиций
 ПОМЕСТИТЬ ПродажиДилераНашихБрендов
-ИЗ РегистрНакопления.Продажи.Обороты(,,, Номенклатура В (ВЫБРАТЬ Ссылка ИЗ Справочник.Номенклатура ГДЕ Производитель.НашБренд И ТипНоменклатуры = &amp;Товар) {Заказ.Партнер КАК ВыбПартнер})
-СГРУППИРОВАТЬ ПО Заказ.Партнер
+ИЗ РегистрНакопления.Продажи.Обороты(,,, Номенклатура В (ВЫБРАТЬ Ссылка ИЗ Справочник.Номенклатура ГДЕ Производитель.НашБренд И ТипНоменклатуры = &amp;Товар) {Заказ.Контрагент КАК ВыбКонтрагент})
+СГРУППИРОВАТЬ ПО Заказ.Контрагент
 ;
 
 ВЫБРАТЬ
-Парт.Ссылка 					Партнер,
-Парт.Ссылка 					Партнер2,
+Парт.Ссылка 					Контрагент,
+Парт.Ссылка 					Контрагент2,
 Парт.ТипЦен,
 Парт.ТоварныйЗапас					ТоварныйЗапас,
 Парт.ПланПродаж						ПродажиПлан,
@@ -190,10 +198,10 @@
 Дилеры Парт
 ЛЕВОЕ СОЕДИНЕНИЕ
 Продажи Прод
-ПО Парт.Ссылка = Прод.Партнер
+ПО Парт.Ссылка = Прод.Контрагент
 ЛЕВОЕ СОЕДИНЕНИЕ
 ПродажиДилераНашихБрендов ПродДил
-ПО Парт.Ссылка = ПродДил.Партнер
+ПО Парт.Ссылка = ПродДил.Контрагент
 ЛЕВОЕ СОЕДИНЕНИЕ
 ТоповыеПозиции Топ ПО ИСТИНА</query>
 	</dataSet>
@@ -228,12 +236,12 @@
 			<field>Оценка</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВыбПартнер</dataPath>
-			<field>ВыбПартнер</field>
+			<dataPath>ВыбКонтрагент</dataPath>
+			<field>ВыбКонтрагент</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Выб партнер</v8:content>
+					<v8:content>Выб контрагент</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -245,7 +253,7 @@
 Оценка
 ИЗ
 Справочник.Партнеры.КаналыПродаж
-{ГДЕ Ссылка КАК ВыбПартнер}</query>
+{ГДЕ Ссылка КАК ВыбКонтрагент}</query>
 	</dataSet>
 	<dataSet xsi:type="DataSetQuery">
 		<name>ТочкиПродаж</name>
@@ -312,12 +320,12 @@
 			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВыбПартнер</dataPath>
-			<field>ВыбПартнер</field>
+			<dataPath>ВыбКонтрагент</dataPath>
+			<field>ВыбКонтрагент</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Выб партнер</v8:content>
+					<v8:content>Выб контрагент</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -330,7 +338,7 @@
 ВЫБОР КОГДА ВыгружатьНаСайт ТОГДА 1 ИНАЧЕ 0 КОНЕЦ ВыгружатьНаСайт
 ИЗ
 Справочник.ТочкиПродаж
-{ГДЕ Владелец КАК ВыбПартнер}
+{ГДЕ Владелец КАК ВыбКонтрагент}
 
 
 </query>
@@ -373,12 +381,12 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВыбПартнер</dataPath>
-			<field>ВыбПартнер</field>
+			<dataPath>ВыбКонтрагент</dataPath>
+			<field>ВыбКонтрагент</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Выб партнер</v8:content>
+					<v8:content>Выб контрагент</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -389,26 +397,26 @@
 Страница,
 Бренд
 ИЗ
-Справочник.Партнеры.СтраницыСайта
-{ГДЕ Ссылка КАК ВыбПартнер}
+Справочник.Контрагенты.СтраницыСайта
+{ГДЕ Ссылка КАК ВыбКонтрагент}
 </query>
 	</dataSet>
 	<dataSetLink>
 		<sourceDataSet>НаборДанных1</sourceDataSet>
 		<destinationDataSet>КаналыПродаж</destinationDataSet>
-		<sourceExpression>Партнер</sourceExpression>
+		<sourceExpression>Контрагент</sourceExpression>
 		<destinationExpression>Ссылка</destinationExpression>
 	</dataSetLink>
 	<dataSetLink>
 		<sourceDataSet>НаборДанных1</sourceDataSet>
 		<destinationDataSet>ТочкиПродаж</destinationDataSet>
-		<sourceExpression>Партнер</sourceExpression>
+		<sourceExpression>Контрагент</sourceExpression>
 		<destinationExpression>Владелец</destinationExpression>
 	</dataSetLink>
 	<dataSetLink>
 		<sourceDataSet>НаборДанных1</sourceDataSet>
 		<destinationDataSet>СтраницыСайта</destinationDataSet>
-		<sourceExpression>Партнер</sourceExpression>
+		<sourceExpression>Контрагент</sourceExpression>
 		<destinationExpression>ПартнерСтраницы</destinationExpression>
 	</dataSetLink>
 	<calculatedField>
@@ -495,12 +503,10 @@
 	<totalField>
 		<dataPath>КоличествоТоповыхПозиций</dataPath>
 		<expression>Сумма(КоличествоТоповыхПозиций)</expression>
-		<group>Партнер</group>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоПозиций</dataPath>
 		<expression>Сумма(КоличествоПозиций)</expression>
-		<group>Партнер</group>
 	</totalField>
 	<totalField>
 		<dataPath>ДоляТоповыхПозиций</dataPath>
@@ -525,7 +531,6 @@
 	<totalField>
 		<dataPath>Ссылка</dataPath>
 		<expression>ВЫБОР КОГДА НЕ Ссылка ЕСТЬ NULL ТОГДА СоединитьСтроки(ТаблицаЗначений(НомерСтроки,") ",КаналПродаж," - оценка (",Оценка,");"),,"") ИНАЧЕ "" КОНЕЦ</expression>
-		<group>Партнер</group>
 	</totalField>
 	<totalField>
 		<dataPath>ТочкаПродаж</dataPath>
@@ -534,7 +539,6 @@
 	<totalField>
 		<dataPath>ПартнерСтраницы</dataPath>
 		<expression>ВЫБОР КОГДА НЕ ПартнерСтраницы ЕСТЬ NULL ТОГДА СоединитьСтроки(ТаблицаЗначений(НомерСтрокиСтраницы,") ",Страница," (",Бренд,");" ),,"") ИНАЧЕ "" КОНЕЦ</expression>
-		<group>Партнер</group>
 	</totalField>
 	<totalField>
 		<dataPath>ВыгружатьНаСайт</dataPath>
@@ -543,17 +547,14 @@
 	<totalField>
 		<dataPath>ЕстьБрендыНаГлавнойСтранице</dataPath>
 		<expression>Максимум(ЕстьБрендыНаГлавнойСтранице)</expression>
-		<group>Партнер</group>
 	</totalField>
 	<totalField>
 		<dataPath>АдресСайта</dataPath>
 		<expression>Максимум(АдресСайта)</expression>
-		<group>Партнер</group>
 	</totalField>
 	<totalField>
 		<dataPath>ТипЦен</dataPath>
 		<expression>Максимум(ТипЦен)</expression>
-		<group>Партнер</group>
 	</totalField>
 	<totalField>
 		<dataPath>ВыполнениеПланаПродаж</dataPath>
@@ -568,33 +569,27 @@
 	<totalField>
 		<dataPath>ВыполнениеПланаПродаж</dataPath>
 		<expression>Сумма(ВыполнениеПланаПродаж)*&amp;КоэфВыполненияПлана/100</expression>
-		<group>Партнер2</group>
 	</totalField>
 	<totalField>
 		<dataPath>ДоляТоповыхПозиций</dataPath>
 		<expression>Сумма(ДоляТоповыхПозиций)*&amp;КоэфДолиТоповых/100</expression>
-		<group>Партнер2</group>
 	</totalField>
 	<totalField>
 		<dataPath>ЕстьБрендированиеВнутри</dataPath>
 		<expression>Сумма(ЕстьБрендированиеВнутри)/Количество(ТочкаПродаж)*&amp;КоэфЗаБрендирование</expression>
-		<group>Партнер2</group>
 	</totalField>
 	<totalField>
 		<dataPath>ЕстьБрендированиеСнаружи</dataPath>
 		<expression>Сумма(ЕстьБрендированиеСнаружи)/Количество(ТочкаПродаж)*&amp;КоэфЗаБрендирование</expression>
-		<group>Партнер2</group>
 	</totalField>
 	<totalField>
 		<dataPath>ЕстьБрендыНаГлавнойСтранице</dataPath>
 		<expression>ВЫБОР КОГДА ЕстьБрендыНаГлавнойСтранице ТОГДА &amp;КоэфЗаБрендНаГлавнойСтранице ИНАЧЕ 0 КОНЕЦ</expression>
-		<group>Партнер2</group>
 	</totalField>
 	<totalField>
 		<dataPath>ПартнерСтраницы</dataPath>
 		<expression>ВЫБОР КОГДА Количество(ПартнерСтраницы) &gt; 0 ТОГДА &amp;КоэфЗаБрендыНаСтраницах ИНАЧЕ 0 КОНЕЦ
 </expression>
-		<group>Партнер2</group>
 	</totalField>
 	<totalField>
 		<dataPath>КоэффициентТоварногоЗапаса</dataPath>
@@ -612,7 +607,6 @@
 	<totalField>
 		<dataPath>КоэффициентТоварногоЗапаса</dataPath>
 		<expression>ВЫБОР КОГДА КоэффициентТоварногоЗапаса &gt;= 1 ТОГДА &amp;КоэфЗаТоварныйЗапас ИНАЧЕ 0 КОНЕЦ</expression>
-		<group>Партнер2</group>
 	</totalField>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -906,7 +900,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>454c27b8-d67a-48a8-a374-3753044d02dc</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
@@ -1023,7 +1017,7 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>Партнер</dcsset:field>
+							<dcsset:field>Контрагент</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter/>
@@ -1038,7 +1032,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Партнер</dcsset:field>
+						<dcsset:field>Контрагент</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1195,7 +1189,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Партнер2</dcsset:field>
+							<dcsset:field>Контрагент2</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
