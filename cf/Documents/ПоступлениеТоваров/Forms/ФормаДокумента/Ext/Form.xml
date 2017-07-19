@@ -76,15 +76,6 @@
 								<Event name="OnChange">КонтрагентПриИзменении</Event>
 							</Events>
 						</InputField>
-						<InputField name="Партнер" id="5">
-							<DataPath>Объект.Партнер</DataPath>
-							<Wrap>false</Wrap>
-							<ContextMenu name="ПартнерКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="ПартнерExtendedTooltip" id="175"/>
-							<Events>
-								<Event name="OnChange">ПартнерПриИзменении</Event>
-							</Events>
-						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="РеквизитыШапкиПравые" id="116">
@@ -159,11 +150,17 @@
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаПрикрепленныхФайловРасширеннаяПодсказка" id="360"/>
 						</UsualGroup>
-						<InputField name="Статус" id="414">
-							<DataPath>Объект.Статус</DataPath>
-							<ContextMenu name="СтатусКонтекстноеМеню" id="415"/>
-							<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="416"/>
-						</InputField>
+						<LabelField name="СтатусДокумента" id="417">
+							<DataPath>СтатусДокумента</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СтатусДокументаКонтекстноеМеню" id="418"/>
+							<ExtendedTooltip name="СтатусДокументаРасширеннаяПодсказка" id="419"/>
+						</LabelField>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -1507,6 +1504,17 @@
 					</Type>
 				</Column>
 			</Columns>
+		</Attribute>
+		<Attribute name="СтатусДокумента" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СтатусыЗаказаПоставщику</v8:Type>
+			</Type>
 		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>

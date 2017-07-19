@@ -9,6 +9,9 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Контрагент</dataPath>
 			<field>Контрагент</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
@@ -20,9 +23,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Партнер</dataPath>
 			<field>Партнер</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>День</dataPath>
@@ -74,17 +74,21 @@
 				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
 			</role>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФормаОтношений</dataPath>
+			<field>ФормаОтношений</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ПериодДень День,
 	Организация,
-	Партнер,
+	Контрагент,
 	ВЫБОР КОГДА СуммаКонечныйОстаток &gt; 0 ТОГДА СуммаКонечныйОстаток ИНАЧЕ 0 КОНЕЦ НамДолжны,
 	ВЫБОР КОГДА СуммаКонечныйОстаток &gt; 0 ТОГДА СуммаНачальныйОстаток ИНАЧЕ 0 КОНЕЦ НамДолжныНач,
 	ВЫБОР КОГДА СуммаКонечныйОстаток &lt; 0 ТОГДА -СуммаНачальныйОстаток ИНАЧЕ 0 КОНЕЦ МыДолжныНач,
 	ВЫБОР КОГДА СуммаКонечныйОстаток &lt; 0 ТОГДА -СуммаКонечныйОстаток ИНАЧЕ 0 КОНЕЦ МыДолжны
 ИЗ
-	РегистрНакопления.Взаиморасчеты.ОстаткиИОбороты(, ,Авто , , {(Организация) КАК Организация, (Партнер) КАК Партнер}) КАК ВзаиморасчетыОстаткиИОбороты</query>
+	РегистрНакопления.Взаиморасчеты.ОстаткиИОбороты(, ,Авто , , {(Организация) КАК Организация, (Контрагент) КАК Контрагент}) КАК ВзаиморасчетыОстаткиИОбороты</query>
 	</dataSet>
 	<totalField>
 		<dataPath>МыДолжны</dataPath>
@@ -185,13 +189,7 @@
 							<dcsset:field>НамДолжны</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Партнер.ЭтоГруппа</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
+					<dcsset:filter/>
 					<dcsset:appearance>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
@@ -205,13 +203,7 @@
 							<dcsset:field>МыДолжны</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Партнер.ЭтоГруппа</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
+					<dcsset:filter/>
 					<dcsset:appearance>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
@@ -266,7 +258,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Партнер.ОсновнойМенеджер</dcsset:field>
+						<dcsset:field>Контрагент.ОсновнойМенеджер</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -285,14 +277,19 @@
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
-						<dcscor:value xsi:type="xs:string">Долги партнеров по менеджерам</dcscor:value>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Долги контрагентов по менеджерам</v8:content>
+							</v8:item>
+						</dcscor:value>
 					</dcscor:item>
 				</dcsset:outputParameters>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Партнер</dcsset:field>
+						<dcsset:field>Контрагент</dcsset:field>
 						<dcsset:groupType>Hierarchy</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -308,7 +305,12 @@
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
-						<dcscor:value xsi:type="xs:string">Долги по партнерам</dcscor:value>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Долги по контрагентам</v8:content>
+							</v8:item>
+						</dcscor:value>
 					</dcscor:item>
 				</dcsset:outputParameters>
 			</dcsset:item>

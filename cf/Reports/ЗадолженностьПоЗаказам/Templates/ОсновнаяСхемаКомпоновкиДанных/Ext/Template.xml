@@ -39,14 +39,8 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВыбПартнер</dataPath>
-			<field>ВыбПартнер</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Выб партнер</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
@@ -54,7 +48,7 @@
 	ДолгиПоОтгрузкамОстатки.Заказ,
 	ДолгиПоОтгрузкамОстатки.СуммаОстаток
 ИЗ
-	РегистрНакопления.ДолгиПоЗаказам.Остатки(, {Контрагент КАК ВыбКонтрагент, Партнер.* КАК ВыбПартнер}) КАК ДолгиПоОтгрузкамОстатки</query>
+	РегистрНакопления.ДолгиПоЗаказам.Остатки(, {Контрагент.* КАК ВыбКонтрагент}) КАК ДолгиПоОтгрузкамОстатки</query>
 	</dataSet>
 	<totalField>
 		<dataPath>СуммаОстаток</dataPath>
@@ -83,7 +77,7 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Партнер</dcsset:field>
+					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Заказ</dcsset:field>
@@ -108,18 +102,7 @@
 					</dcsset:userSettingPresentation>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер</dcsset:left>
-					<dcsset:comparisonType>Equal</dcsset:comparisonType>
-					<dcsset:userSettingID>23c0dd16-26ed-48de-bc0b-d35c5964df51</dcsset:userSettingID>
-					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Партнер</v8:content>
-						</v8:item>
-					</dcsset:userSettingPresentation>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ВыбПартнер.ОсновнойМенеджер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ВыбКонтрагент.ОсновнойМенеджер</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>b7c2651f-dcdb-421c-af69-f28dbf0a4c70</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">

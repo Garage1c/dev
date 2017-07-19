@@ -96,13 +96,25 @@
 				<dcscom:periodType>Main</dcscom:periodType>
 			</role>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отдел</dataPath>
+			<field>Отдел</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ПродажиОбороты.Заказ,
 	ПродажиОбороты.КоличествоОборот КАК Количество,
 	ПродажиОбороты.СуммаОборот КАК Сумма,
 	ИнтернетЗаявка.Комментарий КАК Комментарий,
-	ПродажиОбороты.Заказ.Партнер КАК Партнер,
+	ПродажиОбороты.Заказ.Контрагент КАК Контрагент,
 	ПродажиВР.КоличествоЗаказов КАК КоличествоЗаказов,
 	ПродажиОбороты.Период КАК Дата
 ИЗ
@@ -111,15 +123,15 @@
 		ПО ПродажиОбороты.Заказ = ИнтернетЗаявка.Заказ
 		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
 			КОЛИЧЕСТВО(ПродажиОбороты.Заказ) КАК КоличествоЗаказов,
-			ПродажиОбороты.Заказ.Партнер КАК Партнер
+			ПродажиОбороты.Заказ.Контрагент КАК Контрагент
 		ИЗ
 			РегистрНакопления.Продажи.Обороты(, , Регистратор, ) КАК ПродажиОбороты
 		ГДЕ
 			ПродажиОбороты.Заказ ССЫЛКА Документ.ИнтернетЗаказПокупателя
 		
 		СГРУППИРОВАТЬ ПО
-			ПродажиОбороты.Заказ.Партнер) КАК ПродажиВР
-		ПО ПродажиОбороты.Заказ.Партнер = ПродажиВР.Партнер
+			ПродажиОбороты.Заказ.Контрагент) КАК ПродажиВР
+		ПО ПродажиОбороты.Заказ.Контрагент = ПродажиВР.Контрагент
 ГДЕ
 	ПродажиОбороты.Заказ ССЫЛКА Документ.ИнтернетЗаказПокупателя
 	И ИнтернетЗаявка.Комментарий ПОДОБНО &amp;текст</query>
@@ -190,7 +202,7 @@
 			<dcsat:item xsi:type="dcsat:TableRow">
 				<dcsat:tableCell>
 					<dcsat:item xsi:type="dcsat:Field">
-						<dcsat:value xsi:type="dcscor:Parameter">Партнер</dcsat:value>
+						<dcsat:value xsi:type="dcscor:Parameter">Контрагент</dcsat:value>
 					</dcsat:item>
 					<dcsat:appearance>
 						<dcscor:item>
@@ -214,8 +226,8 @@
 			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
-			<dcsat:name>Партнер</dcsat:name>
-			<dcsat:expression>Представление(Партнер)</dcsat:expression>
+			<dcsat:name>Контрагент</dcsat:name>
+			<dcsat:expression>Представление(Контрагент)</dcsat:expression>
 		</parameter>
 	</template>
 	<template>
@@ -245,7 +257,7 @@
 		</parameter>
 	</template>
 	<fieldTemplate>
-		<field>Партнер</field>
+		<field>Контрагент</field>
 		<template>Макет1</template>
 	</fieldTemplate>
 	<fieldTemplate>
@@ -258,7 +270,7 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Партнер</dcsset:field>
+					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Заказ</dcsset:field>
@@ -294,7 +306,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Партнер</dcsset:field>
+						<dcsset:field>Контрагент</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

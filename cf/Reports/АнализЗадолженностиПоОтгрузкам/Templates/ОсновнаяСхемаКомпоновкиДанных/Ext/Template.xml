@@ -13,9 +13,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Партнер</dataPath>
 			<field>Партнер</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДокументОтгрузки</dataPath>
@@ -34,6 +31,9 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Контрагент</dataPath>
 			<field>Контрагент</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаПриход</dataPath>
@@ -98,7 +98,7 @@
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ДолгиПоОтгрузкамОстаткиИОбороты.Регистратор,
-	ДолгиПоОтгрузкамОстаткиИОбороты.Партнер,
+	ДолгиПоОтгрузкамОстаткиИОбороты.Контрагент,
 	ДолгиПоОтгрузкамОстаткиИОбороты.Заказ,
 	ДолгиПоОтгрузкамОстаткиИОбороты.ДокументОтгрузки,
 	ДолгиПоОтгрузкамОстаткиИОбороты.СуммаПриход,
@@ -107,7 +107,7 @@
 	ДолгиПоОтгрузкамОстаткиИОбороты.СуммаНачальныйОстаток,
 	ДолгиПоОтгрузкамОстаткиИОбороты.ПериодСекунда
 ИЗ
-	РегистрНакопления.ДолгиПоОтгрузкам.ОстаткиИОбороты(, , Авто, , Контрагент = &amp;Контрагент {Заказ = &amp;Заказ, Партнер=&amp;Партнер}) КАК ДолгиПоОтгрузкамОстаткиИОбороты</query>
+	РегистрНакопления.ДолгиПоОтгрузкам.ОстаткиИОбороты(, , Авто, , Контрагент = &amp;Контрагент {Заказ = &amp;Заказ}) КАК ДолгиПоОтгрузкамОстаткиИОбороты</query>
 	</dataSet>
 	<totalField>
 		<dataPath>СуммаПриход</dataPath>
@@ -140,20 +140,6 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>Партнер</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Партнер</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Партнеры</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
 		<name>Заказ</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -173,8 +159,8 @@
 				<dcscor:parameter>СвязиПараметровВыбора</dcscor:parameter>
 				<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
 					<dcscor:item>
-						<dcscor:choiceParameter>Отбор.Партнер</dcscor:choiceParameter>
-						<dcscor:value>ПараметрыДанных.Партнер</dcscor:value>
+						<dcscor:choiceParameter>Отбор.Контрагент</dcscor:choiceParameter>
+						<dcscor:value>ПараметрыДанных.Контрагент</dcscor:value>
 						<dcscor:mode xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d7p1:LinkedValueChangeMode">Clear</dcscor:mode>
 					</dcscor:item>
 				</dcscor:value>
@@ -272,12 +258,6 @@
 						<v8:date>0001-01-01T00:00:00</v8:date>
 					</dcscor:value>
 					<dcsset:userSettingID>146bdf16-71c2-4ccc-98f4-6bbfee34e40a</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Партнер</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>80e26d53-a214-483d-89ff-db0e813602bc</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>

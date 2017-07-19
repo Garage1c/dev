@@ -134,6 +134,18 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отдел</dataPath>
+			<field>Отдел</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ПродажиОбороты.Номенклатура,
@@ -141,7 +153,7 @@
 	ПродажиОбороты.СуммаОборот КАК ПродажиСумма
 ПОМЕСТИТЬ ПродажиПартнера
 ИЗ
-	РегистрНакопления.Продажи.Обороты(&amp;НачПериода, &amp;КонПериода, ,  {(Склад В (&amp;Склады))} {(Заказ.Партнер В (&amp;Партнеры))}) КАК ПродажиОбороты
+	РегистрНакопления.Продажи.Обороты(&amp;НачПериода, &amp;КонПериода, ,  {(Склад В (&amp;Склады))} {(Заказ.Контрагент В (&amp;Контрагенты))}) КАК ПродажиОбороты
 ГДЕ
 	ПродажиОбороты.СуммаОборот &gt; 0
 	И ПродажиОбороты.КоличествоОборот &gt; 0
@@ -269,20 +281,6 @@
 		<useRestriction>true</useRestriction>
 	</parameter>
 	<parameter>
-		<name>Партнеры</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Партнеры</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Партнеры</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
 		<name>ПериодРасчета</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -298,6 +296,20 @@
 			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
 			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Контрагенты</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контрагенты</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
@@ -331,9 +343,8 @@
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Партнеры</dcscor:parameter>
+					<dcscor:parameter>Контрагенты</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>549c101d-c3e3-4470-8bc3-6ede0d31e963</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>

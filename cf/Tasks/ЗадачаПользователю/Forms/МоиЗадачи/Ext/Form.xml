@@ -14,6 +14,7 @@
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
@@ -214,6 +215,33 @@
 					</Picture>
 					<ExtendedTooltip name="СписокТекущихПечатьОбъедененногоСборочногоРасширеннаяПодсказка" id="288"/>
 				</Button>
+				<ButtonGroup name="ГруппаОбъединить" id="375">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа объединить</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа объединить</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаОбъединитьРасширеннаяПодсказка" id="376"/>
+					<ChildItems>
+						<Button name="ОбъединитьКнопка" id="373">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Объединить</CommandName>
+							<ExtendedTooltip name="ОбъединитьКнопкаРасширеннаяПодсказка" id="374"/>
+						</Button>
+						<Button name="ОткрытьИОбъединить" id="377">
+							<Type>CommandBarHyperlink</Type>
+							<CommandName>Form.Command.ОткрытьИОбъединитьВыбранные</CommandName>
+							<ExtendedTooltip name="ОткрытьИОбъединитьРасширеннаяПодсказка" id="378"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
 				<Button name="СписокТекущихОткрытьЗадачу" id="289">
 					<Type>CommandBarButton</Type>
 					<Visible>false</Visible>
@@ -317,6 +345,7 @@
 					</SearchControlAddition>
 					<Events>
 						<Event name="Selection">СписокТекущихВыбор</Event>
+						<Event name="OnActivateRow">СписокТекущихПриАктивизацииСтроки</Event>
 					</Events>
 					<ChildItems>
 						<LabelField name="ВесВОчереде" id="321">
@@ -354,6 +383,13 @@
 							<ContextMenu name="КоличествоСтрокВСборочникеКонтекстноеМеню" id="341"/>
 							<ExtendedTooltip name="КоличествоСтрокВСборочникеРасширеннаяПодсказка" id="342"/>
 						</LabelField>
+						<CheckBoxField name="ПокраситьСборочныйЛист" id="387">
+							<DataPath>СписокТекущих.ПокраситьСборочныйЛист</DataPath>
+							<Visible>false</Visible>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПокраситьСборочныйЛистКонтекстноеМеню" id="388"/>
+							<ExtendedTooltip name="ПокраситьСборочныйЛистРасширеннаяПодсказка" id="389"/>
+						</CheckBoxField>
 						<LabelField name="ДатаСтартаЗадачи" id="370">
 							<DataPath>СписокТекущих.ДатаСтартаЗадачи</DataPath>
 							<ContextMenu name="ДатаСтартаЗадачиКонтекстноеМеню" id="371"/>
@@ -924,6 +960,52 @@
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
+						<UsualGroup name="АнимацияСканирования" id="382">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Анимация сканирования</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Анимация сканирования</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="АнимацияСканированияРасширеннаяПодсказка" id="383"/>
+							<ChildItems>
+								<PictureDecoration name="АнимацияКвадратики" id="379">
+									<Height>1</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Анимация квадратики</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.АнимацияКвадратики</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="АнимацияКвадратикиКонтекстноеМеню" id="380"/>
+									<ExtendedTooltip name="АнимацияКвадратикиРасширеннаяПодсказка" id="381"/>
+								</PictureDecoration>
+								<LabelDecoration name="Декорация1" id="384">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>сканирую сборочные листы ...</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="385"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="386"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -942,6 +1024,8 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
+				<Field>СписокТекущих.Склад</Field>
+				<Field>СписокТекущих.RoutePoint</Field>
 				<Field>СписокТекущих.BusinessProcess</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
@@ -963,7 +1047,7 @@
 	Зад.Заказ.Контрагент КАК Контрагент,
 	Зад.Заказ.Контрагент.ОсновнойМенеджер КАК ОсновнойМенеджер,
 	Зад.Наименование,
-	Выбор Когда Зад.Заказ Ссылка Документ.ВнутреннийЗаказ Тогда Зад.Заказ.Заказчик Иначе Зад.Заказ.Склад Конец КАК СкладЗаказ,
+	Выбор КОГДА Зад.Заказ Ссылка Документ.ВнутреннийЗаказ Тогда Зад.Заказ.Заказчик Иначе Зад.Заказ.Склад Конец КАК СкладЗаказ,
 	//ЕСТЬNULL(Зад.Заказ.Склад, Зад.Заказ.Заказчик) КАК СкладЗаказ,
 	Зад.Склад,
 	Зад.Роль,
@@ -971,6 +1055,7 @@
 	Сбор.Код КАК КодОбъедененнойСборки,
 	Сбор.ОбъедененнаяСборка,
 	Закл.Закладка,
+	&amp;ПомечатьСборочники И ЕСТЬNULL(Зад.БизнесПроцесс.СборочныйЛист, &amp;ПустойСборочныйЛист) &lt;&gt; &amp;ПустойСборочныйЛист  ПокраситьСборочныйЛист,
 	Сос.Состояние,
 	ВЫБОР
 		КОГДА Сос.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияЗаказа.ВОчередиНаСклад)
@@ -1162,6 +1247,43 @@
 									<dcscor:value xsi:type="xs:string">ДЛФ=DD</dcscor:value>
 								</dcscor:item>
 							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ПокраситьСборочныйЛист</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">web:Lavender</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#0000FF</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>Текст</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ппппррр</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:presentation xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Покрасить задачи у которых есть сборочные листы</v8:content>
+								</v8:item>
+							</dcsset:presentation>
 						</dcsset:item>
 						<dcsset:viewMode>Normal</dcsset:viewMode>
 						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
@@ -1365,28 +1487,17 @@
 				<Field>СкладЗаказ</Field>
 			</Save>
 		</Attribute>
-		<ConditionalAppearance>
-			<dcsset:item>
-				<dcsset:selection>
-					<dcsset:item>
-						<dcsset:field>СписокТекущих</dcsset:field>
-					</dcsset:item>
-				</dcsset:selection>
-				<dcsset:filter>
-					<dcsset:item xsi:type="dcsset:FilterItemComparison">
-						<dcsset:left xsi:type="dcscor:Field">СписокТекущих.Параллельная</dcsset:left>
-						<dcsset:comparisonType>Equal</dcsset:comparisonType>
-						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-					</dcsset:item>
-				</dcsset:filter>
-				<dcsset:appearance>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ЦветТекста</dcscor:parameter>
-						<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаНезарезервированногоТовара</dcscor:value>
-					</dcscor:item>
-				</dcsset:appearance>
-			</dcsset:item>
-		</ConditionalAppearance>
+		<Attribute name="ЗаказОбъединитель" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ объединитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.Заказ</v8:TypeSet>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ОчиститьВсеФильтры" id="1">
@@ -1558,6 +1669,40 @@
 				</v8:item>
 			</ToolTip>
 			<Action>УдалитьИзСборочногоЛиста</Action>
+		</Command>
+		<Command name="Объединить" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объединить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтрует по задачам которые можно объединить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Объединить</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Объединить</Action>
+		</Command>
+		<Command name="ОткрытьИОбъединитьВыбранные" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть и объединить выбранные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть и объединить выбранные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьИОбъединитьВыбранные</Action>
 		</Command>
 	</Commands>
 	<CommandInterface>

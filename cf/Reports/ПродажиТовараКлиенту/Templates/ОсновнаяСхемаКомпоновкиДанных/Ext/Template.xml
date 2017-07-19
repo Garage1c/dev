@@ -73,6 +73,18 @@
 			<dataPath>Упаковка</dataPath>
 			<field>Упаковка</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Акция</dataPath>
+			<field>Акция</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отдел</dataPath>
+			<field>Отдел</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	Период				ДатаПродажи,
@@ -80,8 +92,8 @@
 	КоличествоОборот 	Количество,
 	СуммаОборот 		Сумма,
 	Номенклатура		,
-	Регистратор.Партнер	Партнер,
-	Регистратор.Партнер.ОсновнойМенеджер Менеджер,
+	Регистратор.Контрагент	Контрагент,
+	Регистратор.Контрагент.ОсновнойМенеджер Менеджер,
 	НАЧАЛОПЕРИОДА(Период, МЕСЯЦ) Месяц
 ИЗ
 	РегистрНакопления.Продажи.Обороты(, , Регистратор, ) КАК ПродажиОбороты</query>
@@ -168,7 +180,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Партнер</dcsset:field>
+							<dcsset:field>Контрагент</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

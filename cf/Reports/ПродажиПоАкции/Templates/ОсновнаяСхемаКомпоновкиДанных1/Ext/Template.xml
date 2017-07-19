@@ -261,6 +261,18 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партия</dataPath>
+			<field>Партия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поставщик</dataPath>
+			<field>Поставщик</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
@@ -270,8 +282,7 @@
 	Прод.ПериодКвартал КАК Квартал,
 	Прод.ПериодПолугодие КАК Полугодие,
 	Прод.ПериодГод КАК Год,
-	//Прод.Заказ.Партнер КАК Партнер,
-	ВЫБОР КОГДА Прод.Заказ = НЕОПРЕДЕЛЕНО ТОГДА Прод.Партнер ИНАЧЕ Прод.Заказ.Партнер КОНЕЦ Партнер,
+	ВЫБОР КОГДА Прод.Заказ = НЕОПРЕДЕЛЕНО ТОГДА Прод.Контрагент ИНАЧЕ Прод.Заказ.Контрагент КОНЕЦ Контрагент,
 	ВЫБОР
 		КОГДА Прод.ДокументПродажи ССЫЛКА Документ.ЧекККМ
 		ТОГДА ИСТИНА
@@ -283,7 +294,7 @@
 		ИНАЧЕ ВЫБОР
 				КОГДА Прод.Заказ ССЫЛКА Документ.ЗаказПокупателя И Прод.Заказ.РозничнаяЗаявка = ИСТИНА
 				ТОГДА Прод.Заказ.Продавец
-				ИНАЧЕ Прод.ДокументПродажи.Партнер.ОсновнойМенеджер
+				ИНАЧЕ Прод.ДокументПродажи.Контрагент.ОсновнойМенеджер
 			КОНЕЦ
 	КОНЕЦ КАК Продавец,
 	Прод.ДокументПродажи КАК ДокументПродажи,
@@ -305,7 +316,7 @@
 		 {	Склад КАК ВыбранныеСклады, 
 		 	Номенклатура.* КАК Номенклатура,
 		 	Номенклатура В (ВЫБРАТЬ Номенклатура ИЗ Справочник.НоменклатурныеГруппы.Состав ГДЕ Ссылка = &amp;НоменклатурнаяГруппа), 
-			Заказ.Партнер.ОсновнойМенеджер В (ВЫБРАТЬ Пользователь ИЗ Справочник.ГруппыПользователей.Состав ГДЕ Ссылка = &amp;ГруппаПользователей),
+			Заказ.Контрагент.ОсновнойМенеджер В (ВЫБРАТЬ Пользователь ИЗ Справочник.ГруппыПользователей.Состав ГДЕ Ссылка = &amp;ГруппаПользователей),
 			Менеджер КАК МенеджерПродажи
 		}) КАК Прод
 	
@@ -587,11 +598,6 @@
 					<dcscor:parameter>НоменклатурнаяГруппа</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:DesignTimeValue">Документ.Акция.ПустаяСсылка</dcscor:value>
 				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ТипЦенСебестоимость</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -765,11 +771,6 @@
 					<dcscor:parameter>НоменклатурнаяГруппа</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>dc14efb6-265d-4aeb-b89f-04989771ae5f</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ТипЦенСебестоимость</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
@@ -967,11 +968,6 @@
 					<dcscor:parameter>НоменклатурнаяГруппа</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>dc14efb6-265d-4aeb-b89f-04989771ae5f</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ТипЦенСебестоимость</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -1249,11 +1245,6 @@
 					<dcscor:parameter>НоменклатурнаяГруппа</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>dc14efb6-265d-4aeb-b89f-04989771ae5f</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ТипЦенСебестоимость</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -1577,11 +1568,6 @@
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>dc14efb6-265d-4aeb-b89f-04989771ae5f</dcsset:userSettingID>
 				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ТипЦенСебестоимость</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -1776,11 +1762,6 @@
 					<dcscor:parameter>НоменклатурнаяГруппа</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>dc14efb6-265d-4aeb-b89f-04989771ae5f</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ТипЦенСебестоимость</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>

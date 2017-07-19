@@ -140,7 +140,7 @@
 	ЦенГр.Номенклатура = Цен.Номенклатура
 
 ЛЕВОЕ СОЕДИНЕНИЕ
-	РегистрСведений.СкидкиПоЦеновымГруппам.СрезПоследних(, УровеньСкидки В (ВЫБРАТЬ УровеньСкидки ИЗ Справочник.Партнеры ГДЕ Ссылка = &amp;Партнер)) Скид
+	РегистрСведений.СкидкиПоЦеновымГруппам.СрезПоследних(, УровеньСкидки В (ВЫБРАТЬ УровеньСкидки ИЗ Справочник.Контрагенты ГДЕ Ссылка = &amp;Контрагент)) Скид
 ПО
 	Скид.ЦеноваяГруппа = ЦенГр.ЦеноваяГруппа 	
 ГДЕ
@@ -191,18 +191,18 @@
 		<expression>ВЫБОР КОГДА &amp;ДатаОтчета= ДатаВремя(1,1,1) Тогда ТекущаяДата() Иначе &amp;ДатаОтчета Конец</expression>
 	</parameter>
 	<parameter>
-		<name>Партнер</name>
+		<name>Контрагент</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Партнер</v8:content>
+				<v8:content>Контрагент</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Партнеры</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
 		</valueType>
 		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<template>
 		<name>Макет7</name>
@@ -1401,9 +1401,8 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Партнер</dcscor:parameter>
+					<dcscor:parameter>Контрагент</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>d9ad0ea0-0b2a-47f4-9102-3f047d71da26</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>

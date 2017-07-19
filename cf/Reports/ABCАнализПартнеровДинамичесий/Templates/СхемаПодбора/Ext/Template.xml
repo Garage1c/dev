@@ -173,6 +173,18 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отдел</dataPath>
+			<field>Отдел</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ВЫБОР
@@ -215,7 +227,7 @@
 				ТОГДА 0
 			ИНАЧЕ ПродажиОбороты.СуммаОборот - ПродажиОбороты.КоличествоОборот * Цены.Цена * КурсыВалютСрезПоследних.Курс / КурсыВалютСрезПоследних.Кратность
 		КОНЕЦ) КАК Прибыль,
-	ПродажиОбороты.Заказ.Партнер КАК Партнер
+	ПродажиОбороты.Заказ.Контрагент КАК Контрагент
 ИЗ
 	РегистрНакопления.Продажи.Обороты(&amp;НачПериода, &amp;КонПериода, , Заказ &lt;&gt; НЕОПРЕДЕЛЕНО) КАК ПродажиОбороты
 		ЛЕВОЕ СОЕДИНЕНИЕ Цены КАК Цены
@@ -227,7 +239,7 @@
 	И ПродажиОбороты.КоличествоОборот &gt; 0
 
 СГРУППИРОВАТЬ ПО
-	ПродажиОбороты.Заказ.Партнер
+	ПродажиОбороты.Заказ.Контрагент
 
 ИМЕЮЩИЕ
 	СУММА(ПродажиОбороты.СуммаОборот - ЕСТЬNULL(ПродажиОбороты.КоличествоОборот * Цены.Цена * КурсыВалютСрезПоследних.Курс / КурсыВалютСрезПоследних.Кратность, 0)) &gt;= 0</query>
@@ -381,7 +393,7 @@
 					<dcsset:field>КоличествоПродаж</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Партнер</dcsset:field>
+					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Прибыль</dcsset:field>
@@ -403,8 +415,7 @@
 					<dcsset:comparisonType>InHierarchy</dcsset:comparisonType>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ДокументПродажи.Партнер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Контрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 				</dcsset:item>
 			</dcsset:filter>

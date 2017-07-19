@@ -273,13 +273,13 @@
 			ТОГДА 1
 		ИНАЧЕ НужнаДляСреднего.ФактПроизводства / НужнаДляСреднего.НоменклатураВремяНаПроизводство
 	КОНЕЦ КАК КоэффициентКПлануПроизводства,
-	НужнаДляСреднего.ЗаказПоставщику.Партнер.СрокВПути КАК ПланСрокВПути,
+	НужнаДляСреднего.ЗаказПоставщику.Контрагент.СрокВПути КАК ПланСрокВПути,
 	НужнаДляСреднего.ФактВПути,
 	ВложенныйЗапрос.ФактВПути КАК СреднееФактВПути,
 	ВЫБОР
-		КОГДА ЕСТЬNULL(НужнаДляСреднего.ЗаказПоставщику.Партнер.СрокВПути, 0) = 0
+		КОГДА ЕСТЬNULL(НужнаДляСреднего.ЗаказПоставщику.Контрагент.СрокВПути, 0) = 0
 			ТОГДА 1
-		ИНАЧЕ НужнаДляСреднего.ФактВПути / НужнаДляСреднего.ЗаказПоставщику.Партнер.СрокВПути
+		ИНАЧЕ НужнаДляСреднего.ФактВПути / НужнаДляСреднего.ЗаказПоставщику.Контрагент.СрокВПути
 	КОНЕЦ КАК КоэффициентКПлануВПути,
 	ВЫБОР
 		КОГДА ЕСТЬNULL(ВложенныйЗапрос.ФактВПути, 0) = 0
@@ -544,8 +544,7 @@
 					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:field>ЗаказПоставщику.Партнер</dcsset:field>
+					<dcsset:field>ЗаказПоставщику.Контрагент</dcsset:field>
 					<dcsset:lwsTitle>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -757,8 +756,7 @@
 					<dcsset:userSettingID>17531913-fccd-407e-ad1b-c12d4dbe336f</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ЗаказПоставщику.Партнер</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ЗаказПоставщику.Контрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>e229e14d-dbb5-4292-ba3e-2cc3325755c6</dcsset:userSettingID>
 				</dcsset:item>

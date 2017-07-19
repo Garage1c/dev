@@ -34,19 +34,93 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ШтрихКод</dataPath>
+			<field>ШтрихКод</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена</dataPath>
+			<field>Цена</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	Яч.Ячейка.Владелец Склад,
-	Яч.Ячейка Ячейка,
-	Яч.Номенклатура Номенклатура,
-	Яч.КоличествоОстаток ВЯчейке
+		<query>ВЫБРАТЬ
+	ШтрихКоды.Объект,
+	МИНИМУМ(ШтрихКоды.ШтрихКод) КАК ШтрихКод
+ПОМЕСТИТЬ ШтрихКоды
 ИЗ
-	РегистрНакопления.ТоварыВЯчейках.Остатки Яч
-</query>
+	РегистрСведений.ШтрихКоды КАК ШтрихКоды
+
+СГРУППИРОВАТЬ ПО
+	ШтрихКоды.Объект
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Яч.Ячейка.Владелец КАК Склад,
+	Яч.Ячейка КАК Ячейка,
+	Яч.Номенклатура КАК Номенклатура,
+	Яч.КоличествоОстаток КАК ВЯчейке,
+	ШтрихКоды.ШтрихКод
+ПОМЕСТИТЬ ШК
+ИЗ
+	РегистрНакопления.ТоварыВЯчейках.Остатки КАК Яч
+		ЛЕВОЕ СОЕДИНЕНИЕ ШтрихКоды КАК ШтрихКоды
+		ПО Яч.Номенклатура = ШтрихКоды.Объект
+
+СГРУППИРОВАТЬ ПО
+	Яч.Ячейка.Владелец,
+	Яч.Ячейка,
+	Яч.Номенклатура,
+	Яч.КоличествоОстаток,
+	ШтрихКоды.ШтрихКод
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ШК.Склад,
+	ШК.Ячейка,
+	ШК.Номенклатура,
+	ШК.ВЯчейке,
+	ЦеныНоменклатурыСрезПоследних.Цена,
+	ШК.ШтрихКод
+ИЗ
+	ШК КАК ШК
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних(
+				,
+				ТипЦен = &amp;ТипЦен
+					И Упаковка = ЗНАЧЕНИЕ(Справочник.УпаковкиНоменклатуры.ПустаяСсылка)
+					И Номенклатура В
+						(ВЫБРАТЬ
+							ШК.Номенклатура
+						ИЗ
+							ШК КАК ШК)) КАК ЦеныНоменклатурыСрезПоследних
+		ПО ШК.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура</query>
 	</dataSet>
+	<calculatedField>
+		<dataPath>Сумма</dataPath>
+		<expression>Цена*ВЯчейке</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сумма</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
 	<totalField>
 		<dataPath>ВЯчейке</dataPath>
 		<expression>Сумма(ВЯчейке)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ШтрихКод</dataPath>
+		<expression>Строка(МАссив(ШтрихКод))</expression>
+		<group>Номенклатура</group>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
 	</totalField>
 	<parameter>
 		<name>Период</name>
@@ -65,6 +139,20 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
+	<parameter>
+		<name>ТипЦен</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тип цен</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ТипыЦен</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
@@ -76,12 +164,32 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ВЯчейке</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ШтрихКод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Склад</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ячейка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Цена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Период</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТипЦен</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>f3d4667f-a407-4cfe-a1af-007ed641d611</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
